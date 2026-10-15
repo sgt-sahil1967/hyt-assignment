@@ -1,0 +1,201 @@
+job_id,resume_id,relevance,ideal_decision,must_haves_met,must_haves_missing,hard_case_tag,bucket,notes,split
+JD01,R023,1,escalate,java,spring boot,child_skill_only,top,Java + Docker but no Spring,test
+JD01,R024,0,escalate,,java;spring boot,child_skill_only;ml_without_python,hard,no Java,test
+JD01,R028,0,escalate,,java;spring boot,,random,no Java,test
+JD01,R033,3,advance,java;spring boot,,child_skill_only;ml_without_python,middle,"Spring Boot + Docker + K8s, 2.5y",test
+JD01,R039,2,advance,java;spring boot,,title_inflation,top,"Java + Spring Boot, 1.5y; senior title inflated",test
+JD01,R047,1,escalate,java,spring boot,child_skill_only;ml_without_python,middle,"Java, Docker, K8s; no Spring",test
+JD01,R052,2,advance,java;spring boot,,title_deflation;child_skill_only,top,"Java + Spring Boot, 4.5y, no containers",test
+JD01,R054,1,escalate,java,spring boot,title_deflation;ml_without_python,middle,"Java, K8s; no Spring",test
+JD01,R056,1,escalate,java;spring boot,,child_skill_only,middle,Spring Boot but 0.5y for mid-senior,test
+JD01,R061,1,escalate,java,spring boot,ml_without_python,hard,"Java + Docker, no Spring",test
+JD01,R063,1,escalate,java,spring boot,child_skill_only,random,"Java + containers, no Spring",test
+JD01,R065,3,advance,java;spring boot,,child_skill_only,random,"Spring Boot (implies Java) + K8s, 5.5y",test
+JD01,R066,0,escalate,,java;spring boot,,random,no Java/Spring,test
+JD01,R069,1,escalate,java,spring boot,child_skill_only,hard,"Java, no Spring",test
+JD01,R082,1,escalate,java,spring boot,title_inflation,top,"Java, 0.5y, no Spring; senior title inflated",test
+JD01,R084,3,advance,java;spring boot,,child_skill_only,top,"Spring Boot + Docker, 5.5y",test
+JD01,R086,2,advance,java;spring boot,,title_inflation;child_skill_only;ml_without_python,top,"Java + Spring Boot, 1.5y",test
+JD01,R088,3,advance,java;spring boot,,child_skill_only,middle,"Spring Boot + K8s, backend 3.5y",test
+JD01,R091,0,escalate,,java;spring boot,child_skill_only;ml_without_python,middle,no Java,test
+JD01,R096,2,advance,java;spring boot,,title_inflation,hard,"Java + Spring Boot, 1.5y",test
+JD02,R003,2,advance,python,,,top,"Python/Django + Docker, 2.5y",dev
+JD02,R005,3,advance,python,,child_skill_only,middle,"Django + K8s + SQL, 2.5y",dev
+JD02,R006,2,advance,python,,child_skill_only,middle,"Python + Django + Docker, 1.5y",dev
+JD02,R014,3,advance,python,,child_skill_only,top,"Django + AWS + SQL, 2.5y",dev
+JD02,R016,3,advance,python,,child_skill_only;ml_without_python,hard,"Django + Docker + K8s + AWS, 2.5y",dev
+JD02,R021,2,advance,python,,child_skill_only,middle,"Django + Docker, 3.5y",dev
+JD02,R022,1,escalate,python,,child_skill_only,middle,Django + AWS but 0.5y,dev
+JD02,R027,1,escalate,python,,child_skill_only,top,Python but 0.5y,dev
+JD02,R032,0,escalate,,python,,top,no Python,dev
+JD02,R037,2,advance,python,,,random,"Python + Django, no infra",dev
+JD02,R057,0,escalate,,python,,random,no Python,dev
+JD02,R059,0,escalate,,python,ml_without_python,hard,no Python,dev
+JD02,R060,0,escalate,,python,,random,no Python; SQL/K8s only,dev
+JD02,R062,3,advance,python,,child_skill_only;ml_without_python,hard,"Django + K8s + Docker, 4.5y",dev
+JD02,R067,2,advance,python,,title_inflation;child_skill_only;ml_without_python,middle,"Django + AWS, 1.5y",dev
+JD02,R068,0,escalate,,python,ml_without_python,hard,no Python,dev
+JD02,R071,3,advance,python,,,top,"Python + Django + SQL, senior 5.5y",dev
+JD02,R076,1,escalate,,python,,random,no Python but SQL/Docker/K8s,dev
+JD02,R079,0,escalate,,python,child_skill_only,top,no Python,dev
+JD02,R087,1,escalate,,python,ml_without_python,middle,no Python but SQL/Docker/K8s,dev
+JD03,R002,1,escalate,node.js;rest api;sql;docker,git;ci/cd;aws;7+ years,,top,Node + React + SQL + Docker but 0.5y,test
+JD03,R008,1,escalate,rest api;git;docker;aws,node.js;sql;ci/cd;7+ years,,random,no Node; strong web/devops set,test
+JD03,R012,1,escalate,node.js;rest api;docker,sql;git;ci/cd;aws;7+ years,child_skill_only,random,"Node + React + Docker, 2.5y",test
+JD03,R028,2,escalate,node.js;rest api;sql;docker;aws,git;ci/cd;7+ years,,top,"Node + AWS + Docker + SQL, 5.5y (<7y)",test
+JD03,R029,1,escalate,node.js;rest api;sql;docker;aws,git;ci/cd;7+ years,,top,Node + full stack set but 2.5y vs 7+,test
+JD03,R036,0,escalate,rest api;sql;git,node.js;docker;ci/cd;aws;7+ years,ml_without_python,top,"no Node, 0.5y",test
+JD03,R041,1,escalate,rest api;git,node.js;sql;docker;ci/cd;aws;7+ years,child_skill_only,top,no Node; Git/JS/React,test
+JD03,R043,1,escalate,rest api;git,node.js;sql;docker;ci/cd;aws;7+ years,,middle,no Node; Git/JS/React,test
+JD03,R046,1,escalate,node.js;rest api;docker,sql;git;ci/cd;aws;7+ years,,middle,Node + Docker but 0.5y,test
+JD03,R047,0,escalate,rest api;docker,node.js;sql;git;ci/cd;aws;7+ years,child_skill_only;ml_without_python,hard,no Node,test
+JD03,R048,1,escalate,node.js;rest api;git,sql;docker;ci/cd;aws;7+ years,,random,"Node + Git, 2.5y",test
+JD03,R055,1,escalate,rest api;sql;git,node.js;docker;ci/cd;aws;7+ years,,random,no Node; SQL/Git/JS,test
+JD03,R072,0,escalate,rest api;git;docker;aws,node.js;sql;ci/cd;7+ years,child_skill_only,middle,"no Node, 0.5y",test
+JD03,R075,1,escalate,node.js;rest api;git,sql;docker;ci/cd;aws;7+ years,ml_without_python,middle,"Node + Git, 0.5y",test
+JD03,R080,1,escalate,rest api;git;docker;aws,node.js;sql;ci/cd;7+ years,,middle,no Node; React/AWS/Docker/Git,test
+JD03,R081,2,escalate,node.js;rest api;docker,sql;git;ci/cd;aws;7+ years,,top,"Node + Docker + JS, 5.5y (<7y)",test
+JD03,R091,1,escalate,rest api;docker,node.js;sql;git;ci/cd;aws;7+ years,child_skill_only;ml_without_python,hard,no Node; JS/React/Docker,test
+JD03,R092,0,escalate,rest api;docker,node.js;sql;git;ci/cd;aws;7+ years,child_skill_only,hard,no Node,test
+JD03,R093,0,escalate,rest api;docker,node.js;sql;git;ci/cd;aws;7+ years,child_skill_only;ml_without_python,hard,no Node,test
+JD03,R097,1,escalate,node.js;rest api;git;aws,sql;docker;ci/cd;7+ years,child_skill_only,middle,"Node + AWS + React + Git, 3.5y",test
+JD04,R009,0,escalate,scripting;containers,aws;spring;infrastructure as code;ci/cd,,middle,"containers + Python, no AWS/Spring",test
+JD04,R011,1,escalate,aws;spring,scripting;containers;infrastructure as code;ci/cd,child_skill_only;ml_without_python,top,Spring + AWS only,test
+JD04,R023,0,escalate,scripting;containers,aws;spring;infrastructure as code;ci/cd,child_skill_only,hard,Python + Docker only,test
+JD04,R028,1,escalate,aws;scripting;containers,spring;infrastructure as code;ci/cd,,top,AWS + Docker + Python; no Spring,test
+JD04,R029,1,escalate,aws;containers,spring;scripting;infrastructure as code;ci/cd,,top,AWS + Docker,test
+JD04,R030,0,escalate,scripting;containers,aws;spring;infrastructure as code;ci/cd,title_deflation,hard,"Python + K8s, no AWS/Spring",test
+JD04,R033,0,escalate,spring;containers,aws;scripting;infrastructure as code;ci/cd,child_skill_only;ml_without_python,middle,"Spring + containers, no AWS",test
+JD04,R035,1,escalate,aws;scripting;containers,spring;infrastructure as code;ci/cd,,random,AWS + Python + Docker; no Spring,test
+JD04,R043,0,escalate,containers,aws;spring;scripting;infrastructure as code;ci/cd,,random,K8s only,test
+JD04,R052,1,escalate,aws;spring;scripting,containers;infrastructure as code;ci/cd,title_deflation;child_skill_only,top,Spring + AWS + Python; no containers,test
+JD04,R053,0,escalate,scripting;containers,aws;spring;infrastructure as code;ci/cd,title_deflation,hard,"Python + containers, no AWS",test
+JD04,R064,0,escalate,,aws;spring;scripting;containers;infrastructure as code;ci/cd,ml_without_python,random,no AWS/Spring/containers,test
+JD04,R065,1,escalate,spring;scripting;containers,aws;infrastructure as code;ci/cd,child_skill_only,middle,Spring + Python + K8s; no AWS,test
+JD04,R072,1,escalate,aws;scripting;containers,spring;infrastructure as code;ci/cd,child_skill_only,random,"AWS + containers + Python, 0.5y",test
+JD04,R081,0,escalate,scripting;containers,aws;spring;infrastructure as code;ci/cd,,middle,"Python + containers, no AWS/Spring",test
+JD04,R084,2,escalate,aws;spring;scripting;containers,infrastructure as code;ci/cd,child_skill_only,top,AWS + Spring + Python + Docker; no IaC/CI,test
+JD04,R086,0,escalate,spring;scripting,aws;containers;infrastructure as code;ci/cd,title_inflation;child_skill_only;ml_without_python,middle,Spring + Python only,test
+JD04,R088,1,escalate,spring;scripting;containers,aws;infrastructure as code;ci/cd,child_skill_only,hard,Spring + Python + K8s; no AWS,test
+JD04,R095,1,escalate,spring;scripting;containers,aws;infrastructure as code;ci/cd,,middle,Spring + K8s + Python; no AWS,test
+JD04,R097,1,escalate,aws;spring,scripting;containers;infrastructure as code;ci/cd,child_skill_only,top,Spring + AWS,test
+JD05,R008,0,escalate,computer science degree,machine learning;c#;sql,,random,no ML/SQL,test
+JD05,R009,1,escalate,sql;computer science degree,machine learning;c#,,random,"no ML but SQL + Docker + K8s, 5.5y",test
+JD05,R010,0,escalate,computer science degree,machine learning;c#;sql;2+ years,child_skill_only,hard,no ML/SQL,test
+JD05,R023,0,escalate,computer science degree,machine learning;c#;sql,child_skill_only,hard,no ML/SQL,test
+JD05,R024,2,escalate,machine learning;sql;computer science degree,c#,child_skill_only;ml_without_python,top,"ML + SQL, 2.5y; no C#",test
+JD05,R026,0,escalate,machine learning;computer science degree,c#;sql;2+ years,title_inflation;ml_without_python,random,"ML but 0.5y, no SQL",test
+JD05,R028,0,escalate,sql;computer science degree,machine learning;c#,,middle,SQL only,test
+JD05,R033,1,escalate,machine learning;computer science degree,c#;sql,child_skill_only;ml_without_python,middle,"ML, 2.5y, no SQL",test
+JD05,R034,0,escalate,computer science degree,machine learning;c#;sql,,middle,no ML/SQL,test
+JD05,R036,1,escalate,machine learning;sql;computer science degree,c#;2+ years,ml_without_python,top,ML + SQL but 0.5y,test
+JD05,R041,0,escalate,computer science degree,machine learning;c#;sql,child_skill_only,middle,no ML,test
+JD05,R044,0,escalate,sql;computer science degree,machine learning;c#,,middle,no ML,test
+JD05,R048,1,escalate,machine learning;computer science degree,c#;sql,,top,"ML, 2.5y, no SQL",test
+JD05,R050,1,escalate,machine learning;sql;computer science degree,c#;2+ years,title_inflation,hard,ML + SQL but 0.5y,test
+JD05,R061,1,escalate,machine learning;computer science degree,c#;sql,ml_without_python,top,"ML, 5.5y, no SQL",test
+JD05,R064,2,escalate,machine learning;sql;computer science degree,c#,ml_without_python,top,"ML + SQL, 5.5y; no C#",test
+JD05,R078,0,escalate,machine learning;computer science degree,c#;sql;2+ years,title_inflation;child_skill_only;ml_without_python,random,"ML but 1.5y, no SQL",test
+JD05,R081,0,escalate,computer science degree,machine learning;c#;sql,,middle,no ML/SQL,test
+JD05,R082,0,escalate,machine learning;computer science degree,c#;sql;2+ years,title_inflation,hard,"ML but 0.5y, no SQL",test
+JD05,R091,1,escalate,machine learning;computer science degree,c#;sql,child_skill_only;ml_without_python,top,"ML, 2.5y, no SQL",test
+JD06,R002,2,escalate,python;computer science degree,git,,middle,"Python + SQL, no Git",test
+JD06,R011,0,escalate,computer science degree,python;git,child_skill_only;ml_without_python,random,no Python/Git,test
+JD06,R017,2,escalate,python;computer science degree,git,title_deflation,hard,"Python + SQL, no Git; 5.5y overqualified",test
+JD06,R019,2,escalate,python;computer science degree,git,,middle,"Python + Django, no Git",test
+JD06,R034,1,escalate,git;computer science degree,python,,random,"Git + web skills, no Python",test
+JD06,R041,3,advance,python;git;computer science degree,,child_skill_only,top,Python + Git + JS,test
+JD06,R044,2,escalate,python;computer science degree,git,,top,"Python + Django + SQL, no Git",test
+JD06,R046,0,escalate,computer science degree,python;git,,middle,no Python/Git,test
+JD06,R047,2,escalate,python;computer science degree,git,child_skill_only;ml_without_python,random,"Django, no Git; 4.5y",test
+JD06,R051,0,escalate,computer science degree,python;git,,random,no Python/Git,test
+JD06,R054,0,escalate,computer science degree,python;git,title_deflation;ml_without_python,hard,no Python/Git,test
+JD06,R055,3,advance,python;git;computer science degree,,,middle,Python + Git + SQL/JS,test
+JD06,R064,0,escalate,computer science degree,python;git,ml_without_python,top,no Python/Git,test
+JD06,R066,3,advance,python;git;computer science degree,,,top,Python + Git + SQL/JS,test
+JD06,R082,3,advance,python;git;computer science degree,,title_inflation,top,"Python + Git + JS, 0.5y",test
+JD06,R093,2,escalate,python;computer science degree,git,child_skill_only;ml_without_python,hard,"Django, no Git; 5.5y overqualified",test
+JD06,R094,3,advance,python;git;computer science degree,,child_skill_only,hard,Python + Git + SQL,test
+JD06,R096,3,advance,python;git;computer science degree,,title_inflation,top,Python + Git + SQL,test
+JD06,R099,1,escalate,git;computer science degree,python,child_skill_only,middle,"Git + SQL, no Python",test
+JD06,R100,2,escalate,python;computer science degree,git,child_skill_only,middle,"Python + Django, no Git",test
+JD07,R003,0,escalate,,typescript;prototyping tools;javascript;node.js;react;redux;css;animation library;aws,,middle,no front-end,dev
+JD07,R005,1,escalate,javascript;react,typescript;prototyping tools;node.js;redux;css;animation library;aws,child_skill_only,top,React,dev
+JD07,R006,0,escalate,javascript;node.js,typescript;prototyping tools;react;redux;css;animation library;aws,child_skill_only,random,Node only,dev
+JD07,R007,0,escalate,javascript;aws,typescript;prototyping tools;node.js;react;redux;css;animation library,ml_without_python,random,JS only,dev
+JD07,R014,0,escalate,aws,typescript;prototyping tools;javascript;node.js;react;redux;css;animation library,child_skill_only,top,no front-end,dev
+JD07,R020,1,escalate,javascript;node.js;react;aws,typescript;prototyping tools;redux;css;animation library,,middle,React + Node,dev
+JD07,R021,1,escalate,javascript;node.js,typescript;prototyping tools;react;redux;css;animation library;aws,child_skill_only,middle,JS + Node,dev
+JD07,R022,1,escalate,javascript;node.js;react;aws,typescript;prototyping tools;redux;css;animation library,child_skill_only,hard,React + Node + AWS,dev
+JD07,R025,0,escalate,,typescript;prototyping tools;javascript;node.js;react;redux;css;animation library;aws,child_skill_only;ml_without_python,middle,no front-end,dev
+JD07,R027,1,escalate,javascript;react,typescript;prototyping tools;node.js;redux;css;animation library;aws,child_skill_only,top,React + JS,dev
+JD07,R031,1,escalate,javascript;react,typescript;prototyping tools;node.js;redux;css;animation library;aws,,middle,React + JS,dev
+JD07,R032,1,escalate,javascript;node.js;aws,typescript;prototyping tools;react;redux;css;animation library,,top,JS + Node; no TS/React,dev
+JD07,R059,0,escalate,javascript,typescript;prototyping tools;node.js;react;redux;css;animation library;aws,ml_without_python,hard,JS only,dev
+JD07,R067,0,escalate,aws,typescript;prototyping tools;javascript;node.js;react;redux;css;animation library,title_inflation;child_skill_only;ml_without_python,hard,no front-end,dev
+JD07,R068,0,escalate,javascript;node.js;aws,typescript;prototyping tools;react;redux;css;animation library,ml_without_python,middle,Node only,dev
+JD07,R071,1,escalate,javascript;react,typescript;prototyping tools;node.js;redux;css;animation library;aws,,top,React + JS,dev
+JD07,R079,1,escalate,javascript;node.js;aws,typescript;prototyping tools;react;redux;css;animation library,child_skill_only,top,JS + Node + AWS,dev
+JD07,R085,0,escalate,javascript,typescript;prototyping tools;node.js;react;redux;css;animation library;aws,ml_without_python,random,JS only,dev
+JD07,R087,0,escalate,javascript,typescript;prototyping tools;node.js;react;redux;css;animation library;aws,ml_without_python,hard,JS only,dev
+JD07,R090,0,escalate,javascript;node.js;aws,typescript;prototyping tools;react;redux;css;animation library,,random,Node only,dev
+JD08,R001,2,escalate,c++;rest api;cloud;sql,boost;linux;nosql,,random,"C++ + SQL + AWS, 5.5y; no Boost/Linux",dev
+JD08,R005,1,escalate,c++;rest api;sql,boost;linux;cloud;nosql,child_skill_only,top,"C++ + SQL, 2.5y",dev
+JD08,R007,0,escalate,rest api;cloud,c++;boost;linux;sql;nosql,ml_without_python,hard,no C++,dev
+JD08,R014,1,escalate,c++;rest api;cloud;sql,boost;linux;nosql,child_skill_only,middle,"C++ + AWS + SQL, 2.5y",dev
+JD08,R015,1,escalate,c++;rest api,boost;linux;cloud;sql;nosql,child_skill_only;ml_without_python,middle,"C++, 2.5y",dev
+JD08,R021,0,escalate,rest api,c++;boost;linux;cloud;sql;nosql,child_skill_only,hard,no C++,dev
+JD08,R022,0,escalate,rest api;cloud,c++;boost;linux;sql;nosql,child_skill_only,random,no C++,dev
+JD08,R027,1,escalate,c++;rest api,boost;linux;cloud;sql;nosql,child_skill_only,middle,"C++, 0.5y",dev
+JD08,R031,0,escalate,rest api,c++;boost;linux;cloud;sql;nosql,,random,no C++,dev
+JD08,R032,1,escalate,c++;rest api;cloud;sql,boost;linux;nosql,,top,"C++ + SQL + AWS, 2.5y",dev
+JD08,R037,1,escalate,c++;rest api,boost;linux;cloud;sql;nosql,,top,"C++, 2.5y",dev
+JD08,R059,0,escalate,rest api,c++;boost;linux;cloud;sql;nosql,ml_without_python,hard,no C++,dev
+JD08,R062,1,escalate,c++;rest api,boost;linux;cloud;sql;nosql,child_skill_only;ml_without_python,hard,"C++, 4.5y; no SQL/AWS",dev
+JD08,R067,1,escalate,c++;rest api;cloud,boost;linux;sql;nosql,title_inflation;child_skill_only;ml_without_python,top,"C++ + AWS, 1.5y",dev
+JD08,R070,0,escalate,rest api;cloud;sql,c++;boost;linux;nosql,,random,no C++,dev
+JD08,R071,0,escalate,rest api;sql,c++;boost;linux;cloud;nosql,,top,no C++,dev
+JD08,R076,1,escalate,c++;rest api;sql,boost;linux;cloud;nosql,,middle,"C++ + SQL + containers, 4.5y; no cloud",dev
+JD08,R079,0,escalate,rest api;cloud,c++;boost;linux;sql;nosql,child_skill_only,top,no C++,dev
+JD08,R085,0,escalate,rest api,c++;boost;linux;cloud;sql;nosql,ml_without_python,middle,no C++,dev
+JD08,R087,0,escalate,rest api;sql,c++;boost;linux;cloud;nosql,ml_without_python,middle,no C++,dev
+JD09,R004,1,escalate,python;react;computer science degree,vue.js;node.js;aws,child_skill_only,random,Python + React,test
+JD09,R008,1,escalate,react;aws;computer science degree,python;vue.js;node.js,,middle,React + AWS,test
+JD09,R010,1,escalate,node.js;react;aws;computer science degree,python;vue.js,child_skill_only,hard,"Node + React + AWS, 1.5y",test
+JD09,R019,2,escalate,python;node.js;aws;computer science degree,vue.js;react,,random,"Python + Node + AWS, 4.5y; no Vue",test
+JD09,R026,0,escalate,react;computer science degree,python;vue.js;node.js;aws,title_inflation;ml_without_python,top,React only,test
+JD09,R029,1,escalate,node.js;react;aws;computer science degree,python;vue.js,,top,"Node + React + AWS, 2.5y",test
+JD09,R035,1,escalate,python;aws;computer science degree,vue.js;node.js;react,,middle,Python + AWS,test
+JD09,R041,1,escalate,python;react;computer science degree,vue.js;node.js;aws,child_skill_only,top,Python + React,test
+JD09,R043,0,escalate,react;computer science degree,python;vue.js;node.js;aws,,random,React only,test
+JD09,R050,1,escalate,python;react;computer science degree,vue.js;node.js;aws,title_inflation,hard,Python + React,test
+JD09,R053,0,escalate,python;computer science degree,vue.js;node.js;react;aws,title_deflation,hard,Python only,test
+JD09,R054,0,escalate,node.js;computer science degree,python;vue.js;react;aws,title_deflation;ml_without_python,middle,Node only,test
+JD09,R066,1,escalate,python;aws;computer science degree,vue.js;node.js;react,,top,Python + AWS,test
+JD09,R075,0,escalate,node.js;computer science degree,python;vue.js;react;aws,ml_without_python,hard,Node only,test
+JD09,R078,1,escalate,python;node.js;react;aws;computer science degree,vue.js,title_inflation;child_skill_only;ml_without_python,top,Python + Node + React + AWS but 1.5y for senior,test
+JD09,R080,1,escalate,python;react;aws;computer science degree,vue.js;node.js,,middle,"Python + React + AWS, 1.5y",test
+JD09,R082,1,escalate,python;react;computer science degree,vue.js;node.js;aws,title_inflation,top,Python + React,test
+JD09,R084,1,escalate,python;aws;computer science degree,vue.js;node.js;react,child_skill_only,middle,Python + AWS,test
+JD09,R098,0,escalate,python;computer science degree,vue.js;node.js;react;aws,,random,Python only,test
+JD09,R099,1,escalate,node.js;aws;computer science degree,python;vue.js;react,child_skill_only,middle,Node + AWS,test
+JD10,R002,2,advance,sql;programming language;computer science degree,,,top,"SQL + Python, 0.5y",test
+JD10,R004,1,escalate,programming language;computer science degree,sql,child_skill_only,hard,no SQL,test
+JD10,R017,3,advance,sql;programming language;computer science degree,,title_deflation,middle,"SQL + Python, 5.5y",test
+JD10,R023,1,escalate,programming language;computer science degree,sql,child_skill_only,middle,no SQL,test
+JD10,R028,3,advance,sql;programming language;computer science degree,,,random,"SQL + C++/Python, 5.5y",test
+JD10,R039,2,advance,sql;programming language;computer science degree,,title_inflation,top,"SQL + Java, 1.5y",test
+JD10,R040,1,escalate,programming language;computer science degree,sql,ml_without_python,hard,no SQL,test
+JD10,R042,1,escalate,programming language;computer science degree,sql,child_skill_only,hard,no SQL,test
+JD10,R045,1,escalate,programming language;computer science degree,sql,,middle,no SQL,test
+JD10,R049,2,advance,sql;programming language;computer science degree,,,random,"SQL + Java, 0.5y",test
+JD10,R050,2,advance,sql;programming language;computer science degree,,title_inflation,top,"SQL + Python, 0.5y",test
+JD10,R054,1,escalate,programming language;computer science degree,sql,title_deflation;ml_without_python,hard,no SQL,test
+JD10,R061,1,escalate,programming language;computer science degree,sql,ml_without_python,random,no SQL,test
+JD10,R064,3,advance,sql;programming language;computer science degree,,ml_without_python,top,"SQL + Java, 5.5y",test
+JD10,R080,1,escalate,programming language;computer science degree,sql,,middle,no SQL,test
+JD10,R093,1,escalate,programming language;computer science degree,sql,child_skill_only;ml_without_python,middle,no SQL,test
+JD10,R094,3,advance,sql;programming language;computer science degree,,child_skill_only,top,"SQL + Python, 2.5y",test
+JD10,R095,1,escalate,programming language;computer science degree,sql,,random,no SQL,test
+JD10,R096,2,advance,sql;programming language;computer science degree,,title_inflation,top,"SQL + Java/Python, 1.5y",test
+JD10,R100,1,escalate,programming language;computer science degree,sql,child_skill_only,middle,no SQL,test

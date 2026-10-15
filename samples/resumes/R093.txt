@@ -1,0 +1,15 @@
+[NAME]
+Address: [ADDRESS], Cambridge, UK
+Email: [EMAIL]
+Phone: [PHONE]
+Professional Summary
+Software engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.
+Skills
+C++, Docker, Spring Boot, Django, Kubernetes, Machine Learning
+Experience
+Backend Developer at BrightCode Solutions (2018 - Present)
+- Developed scalable web applications
+- Built REST APIs
+- Collaborated with cross‐functional teams
+Education
+BSc Computer Science – University of Leeds (2017)

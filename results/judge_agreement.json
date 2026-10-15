@@ -1,0 +1,33 @@
+{
+  "n": 7,
+  "n_human_rated": 40,
+  "n_judged_total": 7,
+  "groundedness": {
+    "weighted_kappa": 0.0,
+    "spearman": null,
+    "exact_agreement": 0.143,
+    "human_mean": 4.143,
+    "judge_mean": 5.0
+  },
+  "gap_correctness": {
+    "weighted_kappa": NaN,
+    "spearman": null,
+    "exact_agreement": 1.0,
+    "human_mean": 5.0,
+    "judge_mean": 5.0
+  },
+  "specificity": {
+    "weighted_kappa": 0.0,
+    "spearman": null,
+    "exact_agreement": 0.0,
+    "human_mean": 4.0,
+    "judge_mean": 5.0
+  },
+  "usefulness": {
+    "weighted_kappa": 0.0,
+    "spearman": null,
+    "exact_agreement": 0.0,
+    "human_mean": 3.0,
+    "judge_mean": 5.0
+  }
+}

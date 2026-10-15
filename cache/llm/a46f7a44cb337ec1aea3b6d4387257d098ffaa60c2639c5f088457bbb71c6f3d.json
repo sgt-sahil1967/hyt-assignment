@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate has 2 of the 4 available core skills (Python, AWS) and 5.5 years of experience, which meets the criteria for relevance 1.\"}"}

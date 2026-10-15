@@ -1,0 +1,45 @@
+Title: Junior Software Engineer
+Location: Brixton, England, United Kingdom (Hybrid)
+Level: Associate
+
+Write, test, and maintain high-quality Python code for software applications
+Work closely with senior developers, project managers, and other stakeholders to understand project requirements and deliver solutions
+Troubleshoot and debug software issues, identify bottlenecks, and propose effective solutions
+Participate in code reviews to ensure code quality, maintainability, and adherence to coding standards
+Create and maintain technical documentation for software development processes, code, and project specifications
+Conduct unit testing and assist in system and integration testing to ensure software quality
+Stay updated on industry trends, emerging technologies, and best practices in Python development
+Work within a collaborative development environment, utilizing version control systems and participating in Agile development methodologies
+Requirements
+Bachelor's degree in Computer Science, Software Engineering, or a related field or equivalent experiience
+Strong understanding of Python programming language and its libraries
+Ability to analyse problems and implement effective solutions
+Good communication skills to collaborate with team members and understand project requirements
+Ability to work well in a team and learn from senior developers
+Willingness to learn new technologies and adapt to changing project requirements
+Familiarity with version control systems, such as Git
+Understanding of Software Development Life Cycle (SDLC): Basic understanding of the software development process
+Pay attention to detail to ensure the quality of the code and deliverables
+Ability to manage time effectively and prioritize tasks in a dynamic work environment
+Desirable Skills (not Mandatory But Advantageous)
+Knowledge of web development frameworks such as Django or Flask
+Understanding of databases, both SQL and NoSQL
+Basic knowledge of HTML, CSS, and JavaScript
+Familiarity with basic DevOps practices and tools
+Experience with testing frameworks such as pytest
+Benefits
+We're a studio that believes in nurturing a community of talent to create compelling worlds that people want to spend time in. At the forefront of our work lies extraordinary artists. Jellyfish empowers our employees to think outside the box and achieve common goals. We pledge to embed a diverse and inclusive workforce, so that you can focus on doing what you love best.
+Our supported environment fosters growth, making a remarkable place to build a career.
+We are currently working toward B Corp certification
+Numerous social events (for families too) throughout the year to keep you entertained, engaged and involved, no matter where you are based
+The opportunity to work with diverse talent in an international market
+Thursday drinks in our studio's garden
+Wellbeing programs and other mental health initiatives - your health is our priority
+Time off in lieu for our artists and 100% flexible working arrangements. This role would require attendance in our Brixton studio 1 day per week minimum.
+Jellyfish Pictures is an equal opportunity employer, we take accountability to ensure our recruitment process is based on merit alone, without regard to ethnicity, age, gender, race, disability, sexual orientation/preference, national origin, religion, or any other category protected by law.
+Please let us know if you require any reasonable adjustments during the interview process by contacting our talent team on:
+[EMAIL]
+About Us:
+Founded in 2001, Jellyfish Pictures has grown from the original "two-man band" into an internationally recognised operation. Known for their world-class animation and VFX, beautifully rendered imagery and multi-platform content, Jellyfish's critically acclaimed work has earned them multiple awards. These include EMMY, BAFTA, highly sought-after VES Awards, and several other accolades.
+Show more
+Show less

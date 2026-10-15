@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate has JavaScript and Node.js, meeting the criteria for a relevance of 1, but lacks React, TypeScript, and other core front-end requirements.\"}"}

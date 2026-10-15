@@ -1,0 +1,283 @@
+# Skill normalisation data (hand-curated).
+# aliases: surface form (lowercase) -> canonical name
+# parents: canonical -> list of parents. A child satisfies a parent requirement, never the reverse.
+# Versioned skills are separate canonicals (angularjs != angular, python2 != python).
+
+aliases:
+  # languages
+  py: python
+  python3: python
+  python 3: python
+  js: javascript
+  ecmascript: javascript
+  es6: javascript
+  vanilla js: javascript
+  vanilla javascript: javascript
+  ts: typescript
+  golang: go
+  go lang: go
+  cpp: c++
+  c plus plus: c++
+  modern c++: c++
+  "c/c++": c++
+  csharp: c#
+  c sharp: c#
+  ".net": .net
+  dotnet: .net
+  ".net core": .net
+  ".net 5/6": .net
+  asp.net: asp.net
+  asp .net: asp.net
+  java 8: java
+  java 11: java
+  java 17: java
+  core java: java
+  kotlin/jvm: kotlin
+  bash scripting: bash
+  shell: bash
+  shell scripting: bash
+  "bash scripting/shell": bash
+  zsh: bash
+  # web
+  reactjs: react
+  react.js: react
+  react js: react
+  nodejs: node.js
+  node: node.js
+  node js: node.js
+  vue: vue.js
+  vuejs: vue.js
+  angular 2+: angular
+  angular.js: angularjs
+  next: next.js
+  nextjs: next.js
+  express: express.js
+  expressjs: express.js
+  html5: html
+  css3: css
+  sass/css: css
+  scss: sass
+  redux toolkit: redux
+  rest: rest api
+  rest apis: rest api
+  restful: rest api
+  restful api: rest api
+  restful apis: rest api
+  restful services: rest api
+  restful design: rest api
+  rest services: rest api
+  api design: rest api
+  web apis: rest api
+  api: rest api
+  apis: rest api
+  api development: rest api
+  api solutions: rest api
+  restful services and api design: rest api
+  ai and machine learning: machine learning
+  ai: machine learning
+  artificial intelligence: machine learning
+  graph ql: graphql
+  grpc/protobuf: grpc
+  gprc: grpc
+  # framework categories (JDs often say "web frameworks such as Django or Flask": any framework satisfies)
+  web framework: web framework
+  web frameworks: web framework
+  web development framework: web framework
+  web development frameworks: web framework
+  web application framework: web framework
+  web application frameworks: web framework
+  backend framework: web framework
+  backend frameworks: web framework
+  back-end frameworks: web framework
+  server-side framework: web framework
+  server-side frameworks: web framework
+  frontend framework: frontend framework
+  frontend frameworks: frontend framework
+  front-end framework: frontend framework
+  front-end frameworks: frontend framework
+  javascript frameworks: frontend framework
+  ui frameworks: frontend framework
+  nest: nestjs
+  nest.js: nestjs
+  koa.js: koa
+  tailwind: tailwind css
+  tailwindcss: tailwind css
+  react native: react native
+  # backend frameworks
+  spring framework: spring
+  springboot: spring boot
+  spring-boot: spring boot
+  spring boot microservices: spring boot
+  django rest framework: django
+  drf: django
+  fastapi: fastapi
+  ruby on rails: rails
+  ror: rails
+  # data / db
+  postgres: postgresql
+  postgre: postgresql
+  psql: postgresql
+  ms sql: sql server
+  mssql: sql server
+  microsoft sql server: sql server
+  mysql db: mysql
+  mongo: mongodb
+  mongo db: mongodb
+  no-sql: nosql
+  non-relational databases: nosql
+  nonrelational databases: nosql
+  relational databases: relational database
+  relational database: relational database
+  sql database: relational database
+  rdbms: relational database
+  database: relational database
+  databases: relational database
+  orm: orm
+  # cloud / devops
+  amazon web services: aws
+  aws cloud: aws
+  ec2: ec2
+  s3: s3
+  google cloud: gcp
+  google cloud platform: gcp
+  microsoft azure: azure
+  k8s: kubernetes
+  kube: kubernetes
+  docker compose: docker
+  containers: containerisation
+  containerization: containerisation
+  container orchestration: containerisation
+  containerisation and orchestration: containerisation
+  containerization and orchestration: containerisation
+  containerisation/orchestration: containerisation
+  ci: ci/cd
+  cd: ci/cd
+  ci cd: ci/cd
+  cicd: ci/cd
+  continuous integration: ci/cd
+  continuous delivery: ci/cd
+  continuous integration/continuous deployment: ci/cd
+  ci/cd pipelines: ci/cd
+  gitlab ci: gitlab
+  github actions: github actions
+  travis: travis ci
+  iac: infrastructure as code
+  infrastructure-as-code: infrastructure as code
+  scripting and automation: scripting
+  scripting: scripting
+  cloud infrastructure: cloud
+  cloud computing: cloud
+  cloud platforms: cloud
+  cloud services: cloud
+  version control: version control
+  version control systems: version control
+  source control: version control
+  github: git
+  # ml
+  ml: machine learning
+  ai/ml: machine learning
+  machine-learning: machine learning
+  machine learning algorithms: machine learning
+  deep-learning: deep learning
+  dl: deep learning
+  sklearn: scikit-learn
+  scikit learn: scikit-learn
+  tf: tensorflow
+  torch: pytorch
+  nlp: natural language processing
+  # generic
+  software: programming language
+  software development: programming language
+  software engineering: programming language
+  coding: programming language
+  programming languages: programming language
+  programming: programming language
+  object oriented programming: oop
+  object-oriented programming: oop
+  testing frameworks: testing
+  unit testing: testing
+  automated testing: testing
+
+parents:
+  # frameworks -> languages (+ framework categories)
+  django: [python, web framework]
+  flask: [python, web framework]
+  fastapi: [python, web framework]
+  express.js: [node.js, web framework]
+  nestjs: [node.js, typescript, web framework]
+  koa: [node.js, web framework]
+  laravel: [php, web framework]
+  symfony: [php, web framework]
+  gin: [go, web framework]
+  phoenix: [web framework]
+  tailwind css: [css]
+  vue.js: [javascript, frontend framework]
+  svelte: [javascript, frontend framework]
+  react native: [react]
+  pandas: [python]
+  numpy: [python]
+  pytest: [python, testing]
+  scikit-learn: [python, machine learning]
+  pytorch: [python, deep learning]
+  tensorflow: [python, deep learning]
+  deep learning: [machine learning]
+  natural language processing: [machine learning]
+  spring boot: [spring, web framework]
+  spring: [java]
+  hibernate: [java]
+  kotlin: [jvm]
+  java: [jvm, programming language]
+  react: [javascript, frontend framework]
+  angular: [typescript, frontend framework]
+  angularjs: [javascript, frontend framework]
+  next.js: [react, web framework]
+  node.js: [javascript]
+  redux: [react]
+  typescript: [javascript]
+  rails: [ruby, web framework]
+  asp.net: [.net, web framework]
+  .net: [c#]
+  sass: [css]
+  # languages -> generic
+  python: [programming language, scripting]
+  javascript: [programming language]
+  ruby: [programming language, scripting]
+  go: [programming language]
+  rust: [programming language]
+  c++: [programming language]
+  c: [programming language]
+  c#: [programming language]
+  php: [programming language]
+  scala: [programming language, jvm]
+  bash: [scripting]
+  # data
+  postgresql: [sql, relational database]
+  mysql: [sql, relational database]
+  sql server: [sql, relational database]
+  oracle: [sql, relational database]
+  sqlite: [sql, relational database]
+  sql: [relational database]
+  mongodb: [nosql]
+  dynamodb: [nosql, aws]
+  redis: [nosql]
+  cassandra: [nosql]
+  # cloud / devops
+  ec2: [aws]
+  s3: [aws]
+  lambda: [aws]
+  rds: [aws]
+  aws: [cloud]
+  gcp: [cloud]
+  azure: [cloud]
+  docker: [containerisation]
+  kubernetes: [containerisation]
+  terraform: [infrastructure as code]
+  cloudformation: [infrastructure as code, aws]
+  jenkins: [ci/cd]
+  gitlab: [ci/cd, git]
+  github actions: [ci/cd]
+  travis ci: [ci/cd]
+  git: [version control]
+  ci/cd: [devops]
+  containerisation: [devops]
+  infrastructure as code: [devops]

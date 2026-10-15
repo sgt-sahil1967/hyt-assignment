@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"Meets 3 core skills (Python, React, AWS) but has only 1.5 years of experience, which is below the threshold for a senior role and the specific JD09 relevance 2 criteria.\"}"}

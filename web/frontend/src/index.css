@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-raised: var(--raised);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+}
+
+:root {
+  --bg: #f7f7f8;
+  --panel: #ffffff;
+  --raised: #f1f1f3;
+  --line: #e4e4e7;
+  --fg: #18181b;
+  --muted: #52525b;
+  --faint: #a1a1aa;
+  --accent: #7c3aed;
+  --accent-soft: rgb(124 58 237 / 0.1);
+  color-scheme: light;
+}
+.dark {
+  --bg: #0b0b0d;
+  --panel: #121215;
+  --raised: #1a1a1f;
+  --line: #26262c;
+  --fg: #ededf0;
+  --muted: #a1a1aa;
+  --faint: #63636b;
+  --accent: #a78bfa;
+  --accent-soft: rgb(167 139 250 / 0.12);
+  color-scheme: dark;
+}
+
+html, body, #root { height: 100%; }
+html, body { overflow: hidden; } /* the app owns its scroll areas */
+body { background: var(--bg); color: var(--fg); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+* { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+mark.ev { background: rgb(167 139 250 / 0.28); color: inherit; border-radius: 3px; padding: 0 2px; }
+.light mark.ev, :root:not(.dark) mark.ev { background: rgb(124 58 237 / 0.18); }
+@keyframes slidein { from { transform: translateX(24px); opacity: 0 } to { transform: none; opacity: 1 } }
+.slidein { animation: slidein .18s ease-out; }
+@keyframes fadein { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: none } }
+.fadein { animation: fadein .2s ease-out; }

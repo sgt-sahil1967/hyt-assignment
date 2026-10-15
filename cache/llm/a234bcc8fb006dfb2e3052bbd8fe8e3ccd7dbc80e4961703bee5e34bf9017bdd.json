@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate has Node.js (implying JavaScript), which meets the rubric's criteria for a relevance of 1 for this front-end role, but lacks React and other core requirements.\"}"}

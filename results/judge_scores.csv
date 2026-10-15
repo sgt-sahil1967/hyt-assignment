@@ -1,0 +1,41 @@
+job_id,resume_id,groundedness,gap_correctness,specificity,usefulness,rationale,error
+JD01,R023,5.0,5.0,5.0,5.0,"The explanation is completely faithful to the scorer output. It accurately cites the overall score (0.2833), quotes the strongest evidence directly from the evidence array, correctly identifies all major missing must-have and nice-to-have gaps, and clearly explains that the candidate was escalated despite missing key qualifications.",
+JD01,R028,5.0,5.0,5.0,5.0,"The explanation is fully grounded in the provided scorer output and resume. It accurately cites the candidate's score (0.2333), strengths (REST API and Docker), and all missing must-have requirements (Java, Spring Boot, CI/CD, and monitoring). It also clearly conveys why the application was escalated for manual review.",
+JD01,R066,5.0,5.0,5.0,5.0,"The explanation accurately reflects all elements of the scorer output and resume. It correctly identifies the candidate's score (0.24), decision (escalate), key strengths ('REST API' and 'Kubernetes'), and primary missing must-have requirements (Java, Spring Boot, CI/CD, and monitoring) without introducing any hallucinatory details.",
+JD01,R091,5.0,5.0,5.0,5.0,"The explanation is fully accurate and supported by the scorer output and resume. It correctly identifies the overall score, the matched skills (REST API and Kubernetes), and the precise missing must-have and nice-to-have gaps. It clearly explains why the application was escalated for manual review, making it highly useful for a recruiter.",
+JD01,R096,5.0,5.0,5.0,5.0,"The explanation is fully grounded in the provided scorer output, accurately referencing scores, strengths, and gaps. It correctly highlights both must-have gaps (CI/CD, monitoring) and nice-to-have gaps (API gateway, containerisation), as well as the experience gap (1.54 years). It is specific and highly useful for a recruiter reviewing an escalated application.",
+JD03,R008,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD03,R012,5.0,5.0,5.0,5.0,"The explanation is accurate, fully grounded in the provided scorer output, and correctly identifies all critical must-have gaps (Ruby, SQL, Git, CI/CD, Cloud Computing) and the experience deficit (2.5 years vs 7 years required). It provides specific quotes and metrics and clearly explains the rationale behind the escalation.",
+JD03,R029,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD03,R041,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD03,R048,5.0,5.0,5.0,5.0,"The explanation accurately reflects all elements of the scorer output. It correctly states the score (0.18), decision (escalate), key strengths (REST API, Node.js, Git), all critical must-have gaps (ruby, reactjs, sql, docker, ci/cd, cloud computing), and the exact years of experience (2.5 years vs requirement). Everything is fully grounded, specific, and useful for a recruiter.",
+JD03,R091,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD04,R011,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD04,R028,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD04,R052,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD04,R097,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD05,R008,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD05,R009,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD05,R026,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD05,R028,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD05,R033,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD05,R048,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD05,R078,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD06,R019,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD06,R047,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD06,R054,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD06,R066,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD06,R100,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD09,R008,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD09,R019,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD09,R026,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD09,R035,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD09,R043,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD09,R050,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD09,R066,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD09,R075,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD10,R002,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD10,R004,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD10,R017,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD10,R028,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+JD10,R039,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash

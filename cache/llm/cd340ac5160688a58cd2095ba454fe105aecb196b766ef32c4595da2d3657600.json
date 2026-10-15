@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 2, \"ideal_decision\": \"escalate\", \"reason\": \"Has Python and nice-to-haves like Django and SQL, but is missing the Git must-have.\"}"}

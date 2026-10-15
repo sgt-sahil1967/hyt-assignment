@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate has Node.js and several relevant skills (SQL, React, Docker), but only 0.5 years of experience, failing the 7+ years requirement for this senior role.\"}"}

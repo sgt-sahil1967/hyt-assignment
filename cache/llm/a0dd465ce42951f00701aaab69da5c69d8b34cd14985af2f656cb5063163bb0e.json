@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 0, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate lacks the primary required technology (C++) and does not meet the criteria for a higher grade.\"}"}

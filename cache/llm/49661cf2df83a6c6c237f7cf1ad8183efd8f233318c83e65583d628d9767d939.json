@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 0, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate lacks C++, which is the primary technology required for this role, and has no other significant overlap with the stack.\"}"}

@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate has AWS and Docker but lacks Spring and scripting, meeting only two of the four available core requirements.\"}"}

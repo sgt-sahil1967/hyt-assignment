@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"Missing Node.js and SQL, but has 4.5 years of experience and 3 relevant web skills (JavaScript, React, REST APIs).\"}"}

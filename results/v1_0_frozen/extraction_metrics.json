@@ -1,0 +1,116 @@
+{
+  "schema_valid_rate": 1.0,
+  "documents_evaluated": 106,
+  "documents_unavailable_api": [
+    "R038",
+    "R073",
+    "R074",
+    "R077"
+  ],
+  "extraction_attempts_histogram": {
+    "1": 100
+  },
+  "resume_skill": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "n_resumes": 38
+  },
+  "yoe_mae_years": 0.0,
+  "education_level_accuracy": 1.0,
+  "jd": {
+    "JD01": {
+      "must_p": 0.4,
+      "must_r": 1.0,
+      "must_f1": 0.571,
+      "nice_f1": 0.889,
+      "min_years_ok": true,
+      "seniority_pred": "mid",
+      "seniority_gold": "mid"
+    },
+    "JD02": {
+      "must_p": 1.0,
+      "must_r": 1.0,
+      "must_f1": 1.0,
+      "nice_f1": 0.545,
+      "min_years_ok": true,
+      "seniority_pred": "mid",
+      "seniority_gold": "mid"
+    },
+    "JD03": {
+      "must_p": 0.778,
+      "must_r": 1.0,
+      "must_f1": 0.875,
+      "nice_f1": 0.833,
+      "min_years_ok": true,
+      "seniority_pred": "senior",
+      "seniority_gold": "senior"
+    },
+    "JD04": {
+      "must_p": 1.0,
+      "must_r": 1.0,
+      "must_f1": 1.0,
+      "nice_f1": 0.0,
+      "min_years_ok": true,
+      "seniority_pred": "mid",
+      "seniority_gold": "mid"
+    },
+    "JD05": {
+      "must_p": 1.0,
+      "must_r": 1.0,
+      "must_f1": 1.0,
+      "nice_f1": 0.923,
+      "min_years_ok": true,
+      "seniority_pred": "mid",
+      "seniority_gold": "mid"
+    },
+    "JD06": {
+      "must_p": 1.0,
+      "must_r": 1.0,
+      "must_f1": 1.0,
+      "nice_f1": 0.941,
+      "min_years_ok": true,
+      "seniority_pred": "junior",
+      "seniority_gold": "junior"
+    },
+    "JD07": {
+      "must_p": 0.9,
+      "must_r": 1.0,
+      "must_f1": 0.947,
+      "nice_f1": 0.6,
+      "min_years_ok": true,
+      "seniority_pred": "mid",
+      "seniority_gold": "mid"
+    },
+    "JD08": {
+      "must_p": 0.857,
+      "must_r": 0.857,
+      "must_f1": 0.857,
+      "nice_f1": 1.0,
+      "min_years_ok": true,
+      "seniority_pred": "senior",
+      "seniority_gold": "senior"
+    },
+    "JD09": {
+      "must_p": 1.0,
+      "must_r": 1.0,
+      "must_f1": 1.0,
+      "nice_f1": 0.0,
+      "min_years_ok": true,
+      "seniority_pred": "senior",
+      "seniority_gold": "senior"
+    },
+    "JD10": {
+      "must_p": 1.0,
+      "must_r": 1.0,
+      "must_f1": 1.0,
+      "nice_f1": 1.0,
+      "min_years_ok": true,
+      "seniority_pred": "mid",
+      "seniority_gold": "mid"
+    }
+  },
+  "jd_must_f1_macro": 0.925,
+  "jd_nice_f1_macro": 0.6731,
+  "embedding_fallback_matches": []
+}

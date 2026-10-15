@@ -1,0 +1,15 @@
+[NAME]
+Address: [ADDRESS], Nottingham, UK
+Email: [EMAIL]
+Phone: [PHONE]
+Professional Summary
+Software engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.
+Skills
+Kubernetes, SQL, JavaScript, Python, REST APIs, Git
+Experience
+Full Stack Developer at BrightCode Solutions (2020 - Present)
+- Developed scalable web applications
+- Built REST APIs
+- Collaborated with cross‐functional teams
+Education
+BSc Computer Science – University of Manchester (2017)

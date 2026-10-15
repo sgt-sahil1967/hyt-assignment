@@ -1,0 +1,75 @@
+PY := .venv/bin/python
+export PYTHONPATH := .
+
+.PHONY: setup data golden test run eval fairness adversarial judge reproduce reproduce-v1.0 app api web web-install
+
+setup:            ## create venv + install pinned deps
+	uv venv -p 3.11 .venv || python3.11 -m venv .venv
+	uv pip install -p .venv -r requirements.txt || .venv/bin/pip install -r requirements.txt
+
+data:             ## sanitise + mask resumes, select JDs -> data/processed/
+	$(PY) data/prepare.py
+
+golden:           ## sample pairs, build labels + extraction gold (labels are hand-assigned in golden/make_labels.py)
+	$(PY) golden/sample.py
+	$(PY) golden/make_labels.py
+	$(PY) golden/make_extraction_gold.py
+
+test:             ## unit tests
+	$(PY) -m pytest -q tests
+
+app:              ## Streamlit app (UI only; logic in agent.py). Click "Load sample data".
+	.venv/bin/streamlit run app/app.py
+
+api:              ## FastAPI backend for the full-stack app (http://localhost:8765/docs)
+	.venv/bin/uvicorn web.backend.main:app --port 8765
+
+web-install:
+	npm --prefix web/frontend install
+
+web:              ## React/Vite workspace (http://localhost:5180); run `make api` in another terminal
+	npm --prefix web/frontend run dev
+
+run:              ## example: screen one job
+	$(PY) -m src.pipeline --job JD02 --top 10 --explain 2
+
+eval:             ## full evaluation harness on the golden set
+	$(PY) -m eval.run golden
+	$(PY) -m eval.run tune
+	$(PY) -m eval.run metrics
+	$(PY) -m eval.run baselines
+	$(PY) -m eval.run extraction
+	$(PY) -m eval.run robustness
+	$(PY) -m eval.run ablations
+
+fairness:
+	$(PY) -m eval.fairness
+
+adversarial:
+	$(PY) -m eval.adversarial
+
+judge:
+	$(PY) -m eval.judge run 40   # the 40 human-rated explanations (judge quota is ~20/day per key)
+	$(PY) -m eval.judge agree
+	$(PY) -m eval.judge labels
+
+# HEADLINE (REPORT §4-5, §8): the frozen v1.0 system, from the committed cache and masked data.
+# No API key, no raw data. Writes results/v1_0_reproduced/ and checks it against results/v1_0_frozen/.
+reproduce-v1.0: export HYT_OFFLINE=1
+reproduce-v1.0: export HYT_PROFILE=v1.0
+reproduce-v1.0: data
+	env -u HYT_PROFILE $(PY) -m pytest -q tests
+	$(PY) -m eval.run golden
+	$(PY) -m eval.run tune
+	$(PY) -m eval.run metrics
+	$(PY) -m eval.run baselines
+	$(PY) -m eval.run ablations
+	$(PY) -m eval.adversarial
+	$(PY) eval/compare_v1_0.py
+
+# Everything from the committed cache: no API key, no network for the LLM.
+# (needs the raw data/ folder for ingestion; the sentence-embedding cache is committed too)
+reproduce: export HYT_OFFLINE=1
+reproduce: data golden test eval fairness adversarial judge
+	$(PY) -m eval.run v1_1
+	@echo "reproduced the current system (v1.1, REPORT §5b) from cache -> results/"

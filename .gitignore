@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/resume/
+data/jd/
+data/processed/*.txt
+.pytest_cache/
+web/backend/state.json
+web/frontend/node_modules/
+web/frontend/dist/
+cache/private/
+.claude/
+results/_*.log
+results/v1_0_reproduced/

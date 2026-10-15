@@ -1,0 +1,242 @@
+{
+  "note": "post-hoc changes made after test evaluation; v1.0 remains the headline",
+  "t_high": 0.49,
+  "A_v1_0_frozen": {
+    "test": {
+      "ranking": {
+        "ndcg@5": {
+          "mean": 0.9828,
+          "lo": 0.888,
+          "hi": 1.0
+        },
+        "ndcg@10": {
+          "mean": 0.9122,
+          "lo": 0.8386,
+          "hi": 0.9615
+        },
+        "p@5": {
+          "mean": 0.6,
+          "lo": 0.4286,
+          "hi": 0.7143
+        },
+        "mrr": {
+          "mean": 1.0,
+          "lo": 0.8888,
+          "hi": 1.0
+        }
+      },
+      "spearman": 0.6481,
+      "decision": {
+        "confusion": {
+          "ideal_advance&advanced": 10,
+          "ideal_escalate&advanced": 0,
+          "ideal_advance&escalated": 13,
+          "ideal_escalate&escalated": 117
+        },
+        "recall_ideal_advance": 0.4348,
+        "precision_auto_advance": 1.0,
+        "advanced_with_relevance>=2": 1.0,
+        "recall_good_relevance>=2_advanced": 0.2778,
+        "escalation_rate": 0.9286,
+        "expected_cost": 65.0,
+        "expected_cost_per_pair": 0.4643,
+        "n": 140
+      }
+    },
+    "dev": {
+      "ranking": {
+        "ndcg@5": 0.914462479946379,
+        "ndcg@10": 0.8554596683277343,
+        "p@5": 0.39999999999999997,
+        "mrr": 1.0
+      },
+      "spearman": 0.6662,
+      "decision": {
+        "confusion": {
+          "ideal_advance&advanced": 10,
+          "ideal_escalate&advanced": 0,
+          "ideal_advance&escalated": 0,
+          "ideal_escalate&escalated": 50
+        },
+        "recall_ideal_advance": 1.0,
+        "precision_auto_advance": 1.0,
+        "advanced_with_relevance>=2": 1.0,
+        "recall_good_relevance>=2_advanced": 0.9091,
+        "escalation_rate": 0.8333,
+        "expected_cost": 0.0,
+        "expected_cost_per_pair": 0.0,
+        "n": 60
+      }
+    }
+  },
+  "B_plus_framework_taxonomy": {
+    "test": {
+      "ranking": {
+        "ndcg@5": {
+          "mean": 0.9828,
+          "lo": 0.8884,
+          "hi": 1.0
+        },
+        "ndcg@10": {
+          "mean": 0.9121,
+          "lo": 0.84,
+          "hi": 0.961
+        },
+        "p@5": {
+          "mean": 0.6,
+          "lo": 0.4286,
+          "hi": 0.7143
+        },
+        "mrr": {
+          "mean": 1.0,
+          "lo": 0.8888,
+          "hi": 1.0
+        }
+      },
+      "spearman": 0.6463,
+      "decision": {
+        "confusion": {
+          "ideal_advance&advanced": 10,
+          "ideal_escalate&advanced": 0,
+          "ideal_advance&escalated": 13,
+          "ideal_escalate&escalated": 117
+        },
+        "recall_ideal_advance": 0.4348,
+        "precision_auto_advance": 1.0,
+        "advanced_with_relevance>=2": 1.0,
+        "recall_good_relevance>=2_advanced": 0.2778,
+        "escalation_rate": 0.9286,
+        "expected_cost": 65.0,
+        "expected_cost_per_pair": 0.4643,
+        "n": 140
+      }
+    },
+    "dev": {
+      "ranking": {
+        "ndcg@5": 0.914462479946379,
+        "ndcg@10": 0.8554596683277343,
+        "p@5": 0.39999999999999997,
+        "mrr": 1.0
+      },
+      "spearman": 0.6662,
+      "decision": {
+        "confusion": {
+          "ideal_advance&advanced": 10,
+          "ideal_escalate&advanced": 0,
+          "ideal_advance&escalated": 0,
+          "ideal_escalate&escalated": 50
+        },
+        "recall_ideal_advance": 1.0,
+        "precision_auto_advance": 1.0,
+        "advanced_with_relevance>=2": 1.0,
+        "recall_good_relevance>=2_advanced": 0.9091,
+        "escalation_rate": 0.8333,
+        "expected_cost": 0.0,
+        "expected_cost_per_pair": 0.0,
+        "n": 60
+      }
+    }
+  },
+  "C_v1_1_plus_career_switch_informational": {
+    "test": {
+      "ranking": {
+        "ndcg@5": {
+          "mean": 0.9828,
+          "lo": 0.8884,
+          "hi": 1.0
+        },
+        "ndcg@10": {
+          "mean": 0.9121,
+          "lo": 0.84,
+          "hi": 0.961
+        },
+        "p@5": {
+          "mean": 0.6,
+          "lo": 0.4286,
+          "hi": 0.7143
+        },
+        "mrr": {
+          "mean": 1.0,
+          "lo": 0.8888,
+          "hi": 1.0
+        }
+      },
+      "spearman": 0.6463,
+      "decision": {
+        "confusion": {
+          "ideal_advance&advanced": 14,
+          "ideal_escalate&advanced": 0,
+          "ideal_advance&escalated": 9,
+          "ideal_escalate&escalated": 117
+        },
+        "recall_ideal_advance": 0.6087,
+        "precision_auto_advance": 1.0,
+        "advanced_with_relevance>=2": 1.0,
+        "recall_good_relevance>=2_advanced": 0.3889,
+        "escalation_rate": 0.9,
+        "expected_cost": 45.0,
+        "expected_cost_per_pair": 0.3214,
+        "n": 140
+      }
+    },
+    "dev": {
+      "ranking": {
+        "ndcg@5": 0.914462479946379,
+        "ndcg@10": 0.8554596683277343,
+        "p@5": 0.39999999999999997,
+        "mrr": 1.0
+      },
+      "spearman": 0.6662,
+      "decision": {
+        "confusion": {
+          "ideal_advance&advanced": 10,
+          "ideal_escalate&advanced": 0,
+          "ideal_advance&escalated": 0,
+          "ideal_escalate&escalated": 50
+        },
+        "recall_ideal_advance": 1.0,
+        "precision_auto_advance": 1.0,
+        "advanced_with_relevance>=2": 1.0,
+        "recall_good_relevance>=2_advanced": 0.9091,
+        "escalation_rate": 0.8333,
+        "expected_cost": 0.0,
+        "expected_cost_per_pair": 0.0,
+        "n": 60
+      }
+    }
+  },
+  "decision_flips_v1_0_to_v1_1": [
+    {
+      "job_id": "JD06",
+      "resume_id": "R055",
+      "decision_v10": "escalate",
+      "split": "test",
+      "ideal_decision": "advance",
+      "decision_v11": "advance"
+    },
+    {
+      "job_id": "JD06",
+      "resume_id": "R094",
+      "decision_v10": "escalate",
+      "split": "test",
+      "ideal_decision": "advance",
+      "decision_v11": "advance"
+    },
+    {
+      "job_id": "JD10",
+      "resume_id": "R094",
+      "decision_v10": "escalate",
+      "split": "test",
+      "ideal_decision": "advance",
+      "decision_v11": "advance"
+    },
+    {
+      "job_id": "JD10",
+      "resume_id": "R028",
+      "decision_v10": "escalate",
+      "split": "test",
+      "ideal_decision": "advance",
+      "decision_v11": "advance"
+    }
+  ]
+}

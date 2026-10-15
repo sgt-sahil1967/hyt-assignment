@@ -1,0 +1,232 @@
+{
+  "t_high": 0.49,
+  "n_pairs": {
+    "dev": 60,
+    "test": 140
+  },
+  "test": {
+    "ranking": {
+      "ndcg@5": {
+        "mean": 0.9828,
+        "lo": 0.888,
+        "hi": 1.0
+      },
+      "ndcg@10": {
+        "mean": 0.9122,
+        "lo": 0.8386,
+        "hi": 0.9615
+      },
+      "p@5": {
+        "mean": 0.6,
+        "lo": 0.4286,
+        "hi": 0.7143
+      },
+      "mrr": {
+        "mean": 1.0,
+        "lo": 0.8888,
+        "hi": 1.0
+      }
+    },
+    "spearman_score_vs_relevance": 0.6481,
+    "decision": {
+      "confusion": {
+        "ideal_advance&advanced": 10,
+        "ideal_escalate&advanced": 0,
+        "ideal_advance&escalated": 13,
+        "ideal_escalate&escalated": 117
+      },
+      "recall_ideal_advance": 0.4348,
+      "precision_auto_advance": 1.0,
+      "advanced_with_relevance>=2": 1.0,
+      "recall_good_relevance>=2_advanced": 0.2778,
+      "escalation_rate": 0.9286,
+      "expected_cost": 65.0,
+      "expected_cost_per_pair": 0.4643,
+      "n": 140
+    },
+    "per_job": {
+      "JD01": {
+        "ndcg@5": 0.9908183105074706,
+        "ndcg@10": 0.9037179312263731,
+        "p@5": 1.0,
+        "mrr": 1.0,
+        "spearman": 0.754
+      },
+      "JD03": {
+        "ndcg@5": 0.9578347709816888,
+        "ndcg@10": 0.8851794049863476,
+        "p@5": 0.4,
+        "mrr": 1.0,
+        "spearman": 0.493
+      },
+      "JD04": {
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.8106698559467996,
+        "p@5": 0.2,
+        "mrr": 1.0,
+        "spearman": 0.365
+      },
+      "JD05": {
+        "ndcg@5": 0.9306514554231109,
+        "ndcg@10": 0.9026513982848354,
+        "p@5": 0.4,
+        "mrr": 1.0,
+        "spearman": 0.586
+      },
+      "JD06": {
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.9775763605840813,
+        "p@5": 1.0,
+        "mrr": 1.0,
+        "spearman": 0.913
+      },
+      "JD09": {
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.9057860041306182,
+        "p@5": 0.2,
+        "mrr": 1.0,
+        "spearman": 0.496
+      },
+      "JD10": {
+        "ndcg@5": 1.0,
+        "ndcg@10": 1.0,
+        "p@5": 1.0,
+        "mrr": 1.0,
+        "spearman": 0.904
+      }
+    },
+    "reason_counts": {
+      "MISSING_MUST_HAVE": 125,
+      "BELOW_THRESHOLD": 29,
+      "LOW_FIT": 96,
+      "LOCATION_MISMATCH": 36,
+      "CAREER_SWITCH": 22,
+      "OVERQUALIFIED": 4,
+      "BORDERLINE_SCORE": 1
+    },
+    "queue_counts": {
+      "review": 34,
+      "low_priority": 96,
+      "advance": 10
+    },
+    "explanation_groundedness": {
+      "explanations": 140,
+      "quotes": 314,
+      "ungrounded_quotes": 0,
+      "groundedness_rate": 1.0,
+      "explanations_with_any_ungrounded": 0
+    }
+  },
+  "dev": {
+    "ranking": {
+      "ndcg@5": {
+        "mean": 0.9145,
+        "lo": 0.6596,
+        "hi": 1.0
+      },
+      "ndcg@10": {
+        "mean": 0.8555,
+        "lo": 0.6954,
+        "hi": 0.9558
+      },
+      "p@5": {
+        "mean": 0.4,
+        "lo": 0.3333,
+        "hi": 0.5333
+      },
+      "mrr": {
+        "mean": 1.0,
+        "lo": 1.0,
+        "hi": 1.0
+      }
+    },
+    "spearman_score_vs_relevance": 0.6662,
+    "decision": {
+      "confusion": {
+        "ideal_advance&advanced": 10,
+        "ideal_escalate&advanced": 0,
+        "ideal_advance&escalated": 0,
+        "ideal_escalate&escalated": 50
+      },
+      "recall_ideal_advance": 1.0,
+      "precision_auto_advance": 1.0,
+      "advanced_with_relevance>=2": 1.0,
+      "recall_good_relevance>=2_advanced": 0.9091,
+      "escalation_rate": 0.8333,
+      "expected_cost": 0.0,
+      "expected_cost_per_pair": 0.0,
+      "n": 60
+    },
+    "per_job": {
+      "JD02": {
+        "ndcg@5": 1.0,
+        "ndcg@10": 1.0,
+        "p@5": 1.0,
+        "mrr": 1.0,
+        "spearman": 0.931
+      },
+      "JD07": {
+        "ndcg@5": 0.830419897363192,
+        "ndcg@10": 0.7375728492866022,
+        "p@5": 0.0,
+        "mrr": NaN,
+        "spearman": 0.27
+      },
+      "JD08": {
+        "ndcg@5": 0.9129675424759451,
+        "ndcg@10": 0.8288061556966011,
+        "p@5": 0.2,
+        "mrr": 1.0,
+        "spearman": 0.484
+      }
+    },
+    "reason_counts": {
+      "BELOW_THRESHOLD": 2,
+      "MISSING_MUST_HAVE": 48,
+      "LOW_FIT": 48,
+      "LOCATION_MISMATCH": 20
+    },
+    "queue_counts": {
+      "advance": 10,
+      "review": 2,
+      "low_priority": 48
+    },
+    "explanation_groundedness": {
+      "explanations": 60,
+      "quotes": 114,
+      "ungrounded_quotes": 0,
+      "groundedness_rate": 1.0,
+      "explanations_with_any_ungrounded": 0
+    }
+  },
+  "bias_length": {
+    "pearson_score_vs_words": 0.1122,
+    "words_range": [
+      69,
+      72
+    ],
+    "note": "corpus resumes are 73-76 words, so this check has almost no power here"
+  },
+  "hard_cases_test": {
+    "child_skill_only": {
+      "n": 57,
+      "mean_abs_rank_err": null,
+      "decision_accuracy": 0.86
+    },
+    "ml_without_python": {
+      "n": 38,
+      "mean_abs_rank_err": null,
+      "decision_accuracy": 0.947
+    },
+    "title_deflation": {
+      "n": 11,
+      "mean_abs_rank_err": null,
+      "decision_accuracy": 0.909
+    },
+    "title_inflation": {
+      "n": 18,
+      "mean_abs_rank_err": null,
+      "decision_accuracy": 0.833
+    }
+  }
+}

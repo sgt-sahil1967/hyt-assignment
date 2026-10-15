@@ -1,0 +1,12 @@
+{
+  "judge_model": "gemini-3.5-flash",
+  "n": 40,
+  "n_judged": 7,
+  "mean_scores": {
+    "groundedness": 5.0,
+    "gap_correctness": 5.0,
+    "specificity": 5.0,
+    "usefulness": 5.0
+  },
+  "failures": 33
+}

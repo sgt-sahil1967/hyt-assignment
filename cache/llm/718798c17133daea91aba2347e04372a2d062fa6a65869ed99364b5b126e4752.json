@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 2, \"ideal_decision\": \"advance\", \"reason\": \"Meets all core requirements including SQL and a degree, but has very limited professional experience (0.5 years).\"}"}

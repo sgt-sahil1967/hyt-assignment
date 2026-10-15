@@ -1,0 +1,17 @@
+{
+  "n_jds": 10,
+  "n_resume_files": 100,
+  "n_resumes": 100,
+  "duplicates": [],
+  "non_english": [],
+  "hidden_text": [],
+  "injection": [],
+  "mask_totals": {
+    "[NAME]": 100,
+    "[EMAIL]": 100,
+    "[PHONE]": 100,
+    "[ADDRESS]": 100,
+    "[URL]": 0,
+    "[DOB]": 0
+  }
+}

@@ -1,0 +1,368 @@
+[
+  {
+    "t_high": 0.2,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.21,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.22,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.23,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.24,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.25,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.26,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.27,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.28,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.29,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.3,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.31,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.32,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.33,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.34,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.35,
+    "expected_cost": 2.0,
+    "escalation_rate": 0.8,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.36,
+    "expected_cost": 1.0,
+    "escalation_rate": 0.8167,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.37,
+    "expected_cost": 1.0,
+    "escalation_rate": 0.8167,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.38,
+    "expected_cost": 1.0,
+    "escalation_rate": 0.8167,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.39,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.4,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.41,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.42,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.43,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.44,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.45,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.46,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.47,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.48,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.49,
+    "expected_cost": 0.0,
+    "escalation_rate": 0.8333,
+    "recall_ideal_advance": 1.0
+  },
+  {
+    "t_high": 0.5,
+    "expected_cost": 5.0,
+    "escalation_rate": 0.85,
+    "recall_ideal_advance": 0.9
+  },
+  {
+    "t_high": 0.51,
+    "expected_cost": 15.0,
+    "escalation_rate": 0.8833,
+    "recall_ideal_advance": 0.7
+  },
+  {
+    "t_high": 0.52,
+    "expected_cost": 15.0,
+    "escalation_rate": 0.8833,
+    "recall_ideal_advance": 0.7
+  },
+  {
+    "t_high": 0.53,
+    "expected_cost": 25.0,
+    "escalation_rate": 0.9167,
+    "recall_ideal_advance": 0.5
+  },
+  {
+    "t_high": 0.54,
+    "expected_cost": 25.0,
+    "escalation_rate": 0.9167,
+    "recall_ideal_advance": 0.5
+  },
+  {
+    "t_high": 0.55,
+    "expected_cost": 35.0,
+    "escalation_rate": 0.95,
+    "recall_ideal_advance": 0.3
+  },
+  {
+    "t_high": 0.56,
+    "expected_cost": 45.0,
+    "escalation_rate": 0.9833,
+    "recall_ideal_advance": 0.1
+  },
+  {
+    "t_high": 0.57,
+    "expected_cost": 45.0,
+    "escalation_rate": 0.9833,
+    "recall_ideal_advance": 0.1
+  },
+  {
+    "t_high": 0.58,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.59,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.6,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.61,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.62,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.63,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.64,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.65,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.66,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.67,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.68,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.69,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.7,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.71,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.72,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.73,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.74,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.75,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.76,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.77,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.78,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.79,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  },
+  {
+    "t_high": 0.8,
+    "expected_cost": 50.0,
+    "escalation_rate": 1.0,
+    "recall_ideal_advance": 0.0
+  }
+]

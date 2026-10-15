@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate has C++, SQL, and AWS, but only 2.5 years of experience, falling short of the 3.5 years required for a relevance score of 2.\"}"}

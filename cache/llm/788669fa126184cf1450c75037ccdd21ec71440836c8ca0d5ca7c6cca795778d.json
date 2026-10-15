@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 3, \"ideal_decision\": \"advance\", \"reason\": \"Meets the core Python requirement (via Django), has 2.5 years of experience, and possesses two nice-to-haves (AWS and SQL).\"}"}

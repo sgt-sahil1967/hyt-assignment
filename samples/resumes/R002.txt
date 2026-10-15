@@ -1,0 +1,15 @@
+[NAME]
+Address: [ADDRESS], Bristol, UK
+Email: [EMAIL]
+Phone: [PHONE]
+Professional Summary
+Software engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.
+Skills
+REST APIs, React, SQL, Node.js, Python, Docker
+Experience
+Full Stack Developer at CloudBridge UK (2023 - Present)
+- Developed scalable web applications
+- Built REST APIs
+- Collaborated with cross‐functional teams
+Education
+BSc Computer Science – University of Manchester (2017)

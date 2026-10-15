@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\":1,\"ideal_decision\":\"escalate\",\"reason\":\"The candidate has Machine Learning and SQL skills but lacks the required 2+ years of experience (0.5y) and the unmeetable C# requirement.\"}"}

@@ -1,0 +1,9 @@
+{
+  "runs": 3,
+  "pairs": 140,
+  "score_std_mean": 0.0,
+  "score_std_max": 0.0,
+  "score_range_max": 0.0,
+  "decision_flip_rate": 0.0,
+  "within_job_rank_spearman_mean": 1.0
+}

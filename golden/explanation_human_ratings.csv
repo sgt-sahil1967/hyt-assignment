@@ -1,0 +1,41 @@
+job_id,resume_id,groundedness,gap_correctness,specificity,usefulness,note
+JD01,R023,4,5,4,3,calls listed skills "experience"; generic escalation sentence
+JD01,R028,4,5,4,3,same template; does not say LOW_FIT goes to low-priority queue
+JD01,R066,4,5,4,3,
+JD01,R091,4,5,4,3,
+JD01,R096,4,5,4,3,
+JD03,R008,4,5,4,3,
+JD03,R012,5,5,4,3,correctly says listed
+JD03,R029,5,5,4,3,
+JD03,R041,5,4,4,3,states 2.54y without saying it is the shortfall
+JD03,R048,4,5,4,3,
+JD03,R091,4,5,4,3,
+JD04,R011,4,5,4,3,
+JD04,R028,4,5,4,3,
+JD04,R052,4,5,4,3,
+JD04,R097,4,5,4,3,
+JD05,R008,5,5,4,3,
+JD05,R009,3,5,4,2,wrong cause: says escalated due to 5.5y experience
+JD05,R026,4,5,4,3,
+JD05,R028,4,5,4,3,
+JD05,R033,4,5,4,3,
+JD05,R048,5,5,4,3,
+JD05,R078,5,5,4,3,
+JD06,R019,3,4,4,2,CAREER_SWITCH misread as real career change
+JD06,R047,4,5,3,3,vague 'relevant experience and background'
+JD06,R054,4,5,4,3,
+JD06,R066,5,5,4,4,
+JD06,R100,3,4,4,2,CAREER_SWITCH misread as career switcher
+JD09,R008,5,5,4,3,
+JD09,R019,5,5,4,4,
+JD09,R026,5,5,4,3,
+JD09,R035,5,5,4,3,
+JD09,R043,3,5,4,2,wrong cause: escalated due to overall experience
+JD09,R050,3,3,4,3,experience gap arithmetic wrong (0.5y total read as 0.5y short)
+JD09,R066,5,5,4,3,
+JD09,R075,3,3,4,3,experience gap arithmetic wrong
+JD10,R002,4,5,4,4,
+JD10,R004,2,2,4,2,false: says CS degree missing (degree met)
+JD10,R017,5,5,4,4,
+JD10,R028,3,4,4,2,CAREER_SWITCH misread as changing career paths
+JD10,R039,5,5,4,4,

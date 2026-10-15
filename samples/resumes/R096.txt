@@ -1,0 +1,15 @@
+[NAME]
+Address: [ADDRESS], Manchester, UK
+Email: [EMAIL]
+Phone: [PHONE]
+Professional Summary
+Software engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.
+Skills
+Spring Boot, Python, Node.js, Java, SQL, Git
+Experience
+Senior Software Engineer at NextGen Systems (2022 - Present)
+- Developed scalable web applications
+- Built REST APIs
+- Collaborated with cross‐functional teams
+Education
+BSc Computer Science – University of Bristol (2017)

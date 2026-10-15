@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\":0,\"ideal_decision\":\"escalate\",\"reason\":\"Missing core must-haves AWS and Spring; only has Python and containers (Docker/Kubernetes), which does not meet the threshold for relevance 1.\"}"}

@@ -1,0 +1,74 @@
+# HYT AI Screening Agent — single source of truth for models, weights, thresholds, paths.
+seed: 13
+as_of_date: "2024-01-15"          # "Present" resolves to the JD posting era (Dec 2023-Jan 2024), pinned
+
+paths:
+  resumes_dir: data/resume
+  jd_csv: data/jd/postings2.csv
+  processed: data/processed
+  cache: cache
+  results: results
+  golden: golden
+  synthetic: synthetic
+
+llm:
+  provider: gemini                 # overridden by LLM_PROVIDER env var
+  model: gemini-3.1-flash-lite     # overridden by GEMINI_MODEL env var
+  judge_model: gemini-3.5-flash    # explanation judge: different, larger model than the generator; same vendor
+  labeller_model: gemini-3-flash-preview  # independent second labeller for golden-set agreement
+  temperature: 0.0
+  prompt_version: v1
+  max_retries_api: 4
+  offline: false                   # true = cache only, never call the API (set by `make reproduce`)
+
+normalize:
+  skills_file: src/skills.yaml     # v1.1; the frozen v1.0 map is src/skills_v1_0.yaml (HYT_PROFILE=v1.0)
+
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+  fallback_threshold: 0.80         # skill-normalisation embedding fallback (tuned on dev)
+
+# Selected JDs: row index in postings2.csv. Split by job; each resume belongs to one split only.
+jobs:
+  JD01: {row: 1383, split: test}   # Java / Spring Boot microservices (Leeds, hybrid)
+  JD02: {row: 6727, split: dev}    # Python microservices (London, hybrid)
+  JD03: {row: 8847, split: test}   # Senior full-stack Node.js (Birmingham, remote)
+  JD04: {row: 4993, split: test}   # SRE: AWS + Spring + containers (Coventry, onsite)
+  JD05: {row: 1683, split: test}   # AI developer: ML + C# + SQL (Bracknell, hybrid) - impossible must-have
+  JD06: {row: 5780, split: test}   # Junior Python engineer (Brixton, hybrid) - entry level
+  JD07: {row: 6605, split: dev}    # Front-end JS/React (London, remote)
+  JD08: {row: 3160, split: dev}    # Senior C++ (Edinburgh) - hard negative for this pool
+  JD09: {row: 1473, split: test}   # Senior SWE Python/Node/React/AWS (London, hybrid)
+  JD10: {row: 197,  split: test}   # Vague generic SWE posting
+
+golden:
+  dev_resume_fraction: 0.30
+  pairs_per_job: 20
+  buckets: {top: 6, middle: 6, random: 4, hard: 4}
+
+mask:
+  names: true                      # mask header name line -> [NAME]; fairness suite toggles this
+
+sanitize:
+  min_words: 40
+
+score:
+  weights: {must_have: 0.50, nice_to_have: 0.15, experience: 0.20, role_relevance: 0.15}
+  evidence_strength: {used: 1.0, listed: 0.5, learning: 0.25, missing: 0.0}
+  missing_must_have_cap: 0.60        # multiplicative: fit *= cap when any must-have has zero evidence
+  title_skill_weight: 2.0            # requirement weight when the technology is named in the job title
+  internship_weight: 0.5
+  entry_level_project_substitution_years: 1.0
+  vague_jd_must_weight: 0.5        # vague JD: nice-to-haves promoted to must-haves at this weight
+  role_relevance_rescale: [0.15, 0.75]   # raw cosine -> [0,1]
+
+decide:
+  t_high: 0.55                     # overwritten by tuning on dev (results/thresholds.json)
+  t_low: 0.30
+  delta: 0.05
+  cost_missed_good: 5
+  cost_advanced_weak: 1
+  overqualified_years_over: 3      # yoe > seniority band max + this -> OVERQUALIFIED (junior: > 5y)
+  career_switch_relevance: 0.25   # tuned on dev (DECISIONS #26): dev cost flat from off to 0.30, value kept
+  career_switch_blocking: false    # v1.1 policy (DECISIONS #27): informational; true = frozen v1.0 behaviour
+  stuffing_min_skills: 25          # >= this many listed skills with no usage evidence -> manipulation flag

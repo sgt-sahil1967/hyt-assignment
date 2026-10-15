@@ -1,0 +1,86 @@
+{
+  "frozen_system": {
+    "ranking": {
+      "ndcg@5": 0.9827577909874672,
+      "ndcg@10": 0.9122258507370079,
+      "p@5": 0.6,
+      "mrr": 1.0
+    },
+    "decision": {
+      "confusion": {
+        "ideal_advance&advanced": 10,
+        "ideal_escalate&advanced": 0,
+        "ideal_advance&escalated": 13,
+        "ideal_escalate&escalated": 117
+      },
+      "recall_ideal_advance": 0.4348,
+      "precision_auto_advance": 1.0,
+      "advanced_with_relevance>=2": 1.0,
+      "recall_good_relevance>=2_advanced": 0.2778,
+      "escalation_rate": 0.9286,
+      "expected_cost": 65.0,
+      "expected_cost_per_pair": 0.4643,
+      "n": 140
+    }
+  },
+  "oracle_jd_requirements": {
+    "ranking": {
+      "ndcg@5": 0.9802315177093007,
+      "ndcg@10": 0.9316308106627142,
+      "p@5": 0.6,
+      "mrr": 1.0
+    },
+    "decision": {
+      "confusion": {
+        "ideal_advance&advanced": 18,
+        "ideal_escalate&advanced": 0,
+        "ideal_advance&escalated": 5,
+        "ideal_escalate&escalated": 117
+      },
+      "recall_ideal_advance": 0.7826,
+      "precision_auto_advance": 1.0,
+      "advanced_with_relevance>=2": 1.0,
+      "recall_good_relevance>=2_advanced": 0.5,
+      "escalation_rate": 0.8714,
+      "expected_cost": 25.0,
+      "expected_cost_per_pair": 0.1786,
+      "n": 140
+    }
+  },
+  "career_switch_non_blocking": {
+    "decision": {
+      "confusion": {
+        "ideal_advance&advanced": 14,
+        "ideal_escalate&advanced": 0,
+        "ideal_advance&escalated": 9,
+        "ideal_escalate&escalated": 117
+      },
+      "recall_ideal_advance": 0.6087,
+      "precision_auto_advance": 1.0,
+      "advanced_with_relevance>=2": 1.0,
+      "recall_good_relevance>=2_advanced": 0.3889,
+      "escalation_rate": 0.9,
+      "expected_cost": 45.0,
+      "expected_cost_per_pair": 0.3214,
+      "n": 140
+    }
+  },
+  "oracle_jd_and_career_switch_non_blocking": {
+    "decision": {
+      "confusion": {
+        "ideal_advance&advanced": 22,
+        "ideal_escalate&advanced": 0,
+        "ideal_advance&escalated": 1,
+        "ideal_escalate&escalated": 117
+      },
+      "recall_ideal_advance": 0.9565,
+      "precision_auto_advance": 1.0,
+      "advanced_with_relevance>=2": 1.0,
+      "recall_good_relevance>=2_advanced": 0.6111,
+      "escalation_rate": 0.8429,
+      "expected_cost": 5.0,
+      "expected_cost_per_pair": 0.0357,
+      "n": 140
+    }
+  }
+}

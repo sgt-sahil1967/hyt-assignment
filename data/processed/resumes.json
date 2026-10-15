@@ -1,0 +1,2202 @@
+{
+  "R001": {
+    "id": "R001",
+    "source": "software_engineer_cv_1.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJava, AWS, SQL, JavaScript, Docker, C++\nExperience\nBackend Developer at NextGen Systems (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "9fde48fc7b9fa248735fc2223c6837f5ca0415d2325fbd5bc35fca573a058a81",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R002": {
+    "id": "R002",
+    "source": "software_engineer_cv_2.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Bristol, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nREST APIs, React, SQL, Node.js, Python, Docker\nExperience\nFull Stack Developer at CloudBridge UK (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "98f074eca691f08f3397b6dd3a66f78cdf39be16e1d9b439eaa0d460d2b44be1",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R003": {
+    "id": "R003",
+    "source": "software_engineer_cv_3.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nC++, Python, REST APIs, Django, Docker, Git\nExperience\nFull Stack Developer at DataWave Technologies (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "d3f2c3ab7118abef9a455d06896a6ce0a268392d3d9b32bfc531f1efa4934e5b",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R004": {
+    "id": "R004",
+    "source": "software_engineer_cv_4.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJavaScript, React, REST APIs, Python, Django, Spring Boot\nExperience\nSoftware Engineer at DataWave Technologies (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "d4e7e5474f1de915d9a5d460118dbe11989ed9aa40201e3928256429e52bd42d",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R005": {
+    "id": "R005",
+    "source": "software_engineer_cv_5.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nKubernetes, Spring Boot, React, C++, SQL, Django\nExperience\nFull Stack Developer at NextGen Systems (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "3726e60ced956d85e093f9fd788cc3239573f1e1a1dc0e97873a3c5db56bb9fa",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R006": {
+    "id": "R006",
+    "source": "software_engineer_cv_6.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDjango, Node.js, Git, Docker, Spring Boot, Python\nExperience\nSoftware Engineer at NextGen Systems (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "821f814858eb5b372bbaa5936c71f6d869bb83ae79d88ea043eef326c69e4ab1",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R007": {
+    "id": "R007",
+    "source": "software_engineer_cv_7.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nREST APIs, JavaScript, Machine Learning, Java, Git, AWS\nExperience\nFull Stack Developer at DataWave Technologies (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "8c854d3e3610eb68dba3f5e88f2cdbe842532222ab2db179ccb3fe05563c44dc",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R008": {
+    "id": "R008",
+    "source": "software_engineer_cv_8.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJavaScript, Docker, Git, Kubernetes, AWS, React\nExperience\nSoftware Engineer at NextGen Systems (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "285faa580b3138b6bd789e9fca3aaa91b6e25b97355a75ce8e6ff7fbffb6de43",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R009": {
+    "id": "R009",
+    "source": "software_engineer_cv_9.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Sheffield, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDocker, SQL, C++, REST APIs, Python, Kubernetes\nExperience\nFull Stack Developer at DataWave Technologies (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "175ee3e25f77f2deeb17e83180b339e97a6b5d97dd771e4b45b3b842f9e29d42",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R010": {
+    "id": "R010",
+    "source": "software_engineer_cv_10.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, Git, REST APIs, AWS, Node.js, React\nExperience\nJunior Software Engineer at NextGen Systems (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "61e2d5110bdce88138293dbbc71ef20ca66f845e7f0e742f9056cbcfcafb8fce",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R011": {
+    "id": "R011",
+    "source": "software_engineer_cv_11.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nMachine Learning, Node.js, Spring Boot, C++, JavaScript, AWS\nExperience\nSenior Software Engineer at BrightCode Solutions (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "3c37998c0c8da489702cc24be9d703f04edeb16e2c204d89709367f9fc5e97f0",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R012": {
+    "id": "R012",
+    "source": "software_engineer_cv_12.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Sheffield, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nKubernetes, Node.js, React, Docker, REST APIs, Spring Boot\nExperience\nSoftware Engineer at BrightCode Solutions (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "ebedf0cc78836a1b3971381f382a591b42192020ece8dfbc6aee8e3eeae04a3a",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R013": {
+    "id": "R013",
+    "source": "software_engineer_cv_13.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nMachine Learning, Kubernetes, Python, Node.js, Django, REST APIs\nExperience\nSenior Software Engineer at CloudBridge UK (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "044aef71e9f3693f17431864db869aa665fc4b9fb2371efe3162039c24d04896",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R014": {
+    "id": "R014",
+    "source": "software_engineer_cv_14.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nAWS, Django, Spring Boot, Git, C++, SQL\nExperience\nFull Stack Developer at BrightCode Solutions (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "35e978ae847ffa91496389b63de1ab1de452407e0f7ce0046b2bb0cf1a17f669",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R015": {
+    "id": "R015",
+    "source": "software_engineer_cv_15.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nMachine Learning, Git, Django, C++, Spring Boot, Node.js\nExperience\nJunior Software Engineer at BrightCode Solutions (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "d73115390c2a657f852f549ee56a3572bdf99b754ec9acc5ebacf1aff70bfaf3",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R016": {
+    "id": "R016",
+    "source": "software_engineer_cv_16.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Birmingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDjango, Java, Docker, Kubernetes, AWS, Machine Learning\nExperience\nJunior Software Engineer at BrightCode Solutions (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "9c1e4f8f6e2977d8b0334e217223d9bce2b641973b2b5d1b6da85d92d92730d3",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R017": {
+    "id": "R017",
+    "source": "software_engineer_cv_17.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, Node.js, SQL, Kubernetes, React, Docker\nExperience\nJunior Software Engineer at BrightCode Solutions (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "6f77daa9587433969ebdfbbcbca5a61da9f7292c9d2a1fcb106333cb6806cb69",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R018": {
+    "id": "R018",
+    "source": "software_engineer_cv_18.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Bristol, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nC++, Machine Learning, JavaScript, Docker, Java, SQL\nExperience\nJunior Software Engineer at CloudBridge UK (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "99ee7de1b622cbdd2f486de2d6766e64e31ecc832bc4d06ca156b08cebc41dec",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R019": {
+    "id": "R019",
+    "source": "software_engineer_cv_19.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Bristol, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, AWS, Docker, JavaScript, Python, Django\nExperience\nFull Stack Developer at TechNova Ltd (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "cb5518b96d9372ed53c1f2007e2b194fde618bc77ccb5fe731897c486af9e75b",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R020": {
+    "id": "R020",
+    "source": "software_engineer_cv_20.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nAWS, C++, SQL, Node.js, React, Docker\nExperience\nSoftware Engineer at CloudBridge UK (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "480f7a7df3b9c4ea64b6816bcda76049d1e11c90f3fc84346ec34c3de77783f7",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R021": {
+    "id": "R021",
+    "source": "software_engineer_cv_21.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Liverpool, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJavaScript, Node.js, Git, Docker, Django, REST APIs\nExperience\nFull Stack Developer at DataWave Technologies (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "a92ad11902cd8ebb466d343d070f750b013d1ac9a2944670d6f933a562575375",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R022": {
+    "id": "R022",
+    "source": "software_engineer_cv_22.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Liverpool, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nGit, REST APIs, React, Node.js, AWS, Django\nExperience\nFull Stack Developer at CloudBridge UK (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "3616bc93aed5daca05f3c3a39d010484033bcb11da705223b7c661cf8c7a0af2",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R023": {
+    "id": "R023",
+    "source": "software_engineer_cv_23.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDjango, Java, REST APIs, C++, React, Docker\nExperience\nFull Stack Developer at DataWave Technologies (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "5838caadc14d1d99bc9c67a6d903c8f8a3a93fef608b8c577b302c739dff01cd",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R024": {
+    "id": "R024",
+    "source": "software_engineer_cv_24.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nKubernetes, SQL, Django, REST APIs, Node.js, Machine Learning\nExperience\nBackend Developer at NextGen Systems (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "089c3294a6638bec1b2284d3a45a192769f65bdf0275e6a9cc1a4effa672bf3f",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R025": {
+    "id": "R025",
+    "source": "software_engineer_cv_25.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Liverpool, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nMachine Learning, Docker, Java, Django, Spring Boot, REST APIs\nExperience\nBackend Developer at NextGen Systems (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "f95721c3f464f80942b2c825060eefb3e36084efd719e0e42b220b4302ee45aa",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R026": {
+    "id": "R026",
+    "source": "software_engineer_cv_26.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nGit, Kubernetes, Docker, Machine Learning, C++, React\nExperience\nSenior Software Engineer at BrightCode Solutions (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "0da79af7c16939c1740574c20f4216f26c727e9d17bce621189aa8065c8835b3",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R027": {
+    "id": "R027",
+    "source": "software_engineer_cv_27.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Liverpool, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nREST APIs, Python, C++, Spring Boot, React, JavaScript\nExperience\nFull Stack Developer at DataWave Technologies (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "a3e1f46ddd4c3842b77815b61b43179ee1920c5b05f999453d82c470f00178e5",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R028": {
+    "id": "R028",
+    "source": "software_engineer_cv_28.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Liverpool, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nC++, Node.js, AWS, Docker, SQL, Python\nExperience\nFull Stack Developer at CloudBridge UK (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "503b7c095677b49b7f9dfc1ee69ea5eb09b7d3d48b56d8c75213bd08f5748f40",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R029": {
+    "id": "R029",
+    "source": "software_engineer_cv_29.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Birmingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDocker, AWS, React, SQL, REST APIs, Node.js\nExperience\nFull Stack Developer at DataWave Technologies (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "7cb67e88c64520d56928fa4b967e46d543efe15ca4513e0a0e05bc523664b038",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R030": {
+    "id": "R030",
+    "source": "software_engineer_cv_30.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, Django, Kubernetes, Python, JavaScript, SQL\nExperience\nJunior Software Engineer at CloudBridge UK (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "fae79645965779c3717ed6b8f725b4f9ba5a564fc813419b7a6d08cb3efe4c6e",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R031": {
+    "id": "R031",
+    "source": "software_engineer_cv_31.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nReact, Docker, Python, Java, JavaScript, REST APIs\nExperience\nBackend Developer at BrightCode Solutions (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "5b480c44c3516623ed9b042c5fde672a160d59b117537e0be01adf8efbcae26a",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R032": {
+    "id": "R032",
+    "source": "software_engineer_cv_32.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSQL, Node.js, Git, JavaScript, C++, AWS\nExperience\nSenior Software Engineer at CloudBridge UK (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "0953b193252070dc2918a8f6a45d9bb6d53286b95648372ad5a58dbc24e3fafc",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R033": {
+    "id": "R033",
+    "source": "software_engineer_cv_33.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, Docker, Machine Learning, Kubernetes, JavaScript, Node.js\nExperience\nJunior Software Engineer at CloudBridge UK (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "09a12e8ef8eeaf1d5d9d58e010eda2f144a1eb8b8d4dfbd751083b3542891b0d",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R034": {
+    "id": "R034",
+    "source": "software_engineer_cv_34.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJavaScript, Node.js, Git, Docker, Kubernetes, React\nExperience\nBackend Developer at NextGen Systems (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "baf0c18c1b0b1913f66b94f0c77d5a356f0321814c839ed7460f8dd123f762ff",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R035": {
+    "id": "R035",
+    "source": "software_engineer_cv_35.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nAWS, Java, Python, Docker, Git, Machine Learning\nExperience\nSoftware Engineer at DataWave Technologies (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "a787a0e9f380a15d2895653c009ca38a470b9fa82de512507233b574c61c208b",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R036": {
+    "id": "R036",
+    "source": "software_engineer_cv_36.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Sheffield, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nREST APIs, SQL, Machine Learning, Git, Kubernetes, Java\nExperience\nFull Stack Developer at CloudBridge UK (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "67a27857f13350081a6bbcdf395f648c66edc03d239a3b24021d34f9d8e9668c",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R037": {
+    "id": "R037",
+    "source": "software_engineer_cv_37.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nC++, React, JavaScript, Django, Python, Machine Learning\nExperience\nFull Stack Developer at NextGen Systems (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "0bc383f202d2f0d2a264ed4b7ab20d2bc172b1ac087f7ca5c5178b2000ac0661",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R038": {
+    "id": "R038",
+    "source": "software_engineer_cv_38.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Liverpool, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nC++, Docker, SQL, Java, AWS, Python\nExperience\nSoftware Engineer at CloudBridge UK (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "d712f7fe8ce0f565fcfa2ba795ee0fb5ecbdb78a7e4c1af9f0b3d77c9d065095",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R039": {
+    "id": "R039",
+    "source": "software_engineer_cv_39.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Birmingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, Java, React, REST APIs, SQL, JavaScript\nExperience\nSenior Software Engineer at CloudBridge UK (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "2883fba6913057b60b74c72f8a4ca29024dbcfb2eda084ad0d52988b78156547",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R040": {
+    "id": "R040",
+    "source": "software_engineer_cv_40.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Bristol, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nMachine Learning, Git, Spring Boot, Node.js, Java, C++\nExperience\nBackend Developer at BrightCode Solutions (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "b5dbb9fdd2ae3e8513d6a95c255e9ed4017c9a8d8b2169ce58ebd635a90b1bb4",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R041": {
+    "id": "R041",
+    "source": "software_engineer_cv_41.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Birmingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, Git, JavaScript, Spring Boot, REST APIs, React\nExperience\nSenior Software Engineer at DataWave Technologies (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "78766d97a466defa454e61b59fb9e448389be1bc6c68b1aaf2b12940e1d18731",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R042": {
+    "id": "R042",
+    "source": "software_engineer_cv_42.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDjango, Docker, Git, Node.js, AWS, Kubernetes\nExperience\nBackend Developer at NextGen Systems (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "61cf200b5eecd7f9ec550a0c9062e68e537c757c15f7c908078c02077309196a",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R043": {
+    "id": "R043",
+    "source": "software_engineer_cv_43.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Birmingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nGit, Java, JavaScript, Kubernetes, REST APIs, React\nExperience\nSoftware Engineer at NextGen Systems (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "c685b6343cdcbefa8707d623253504995d656dff0122311e4a8963eca5bd79af",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R044": {
+    "id": "R044",
+    "source": "software_engineer_cv_44.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Bristol, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, C++, Django, SQL, Spring Boot, Java\nExperience\nFull Stack Developer at NextGen Systems (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "1325f67294e0b6509c61c6acec0d7a6776cd34f446e9340f76c2615242cfe9a8",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R045": {
+    "id": "R045",
+    "source": "software_engineer_cv_45.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Bristol, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nAWS, Git, REST APIs, Node.js, React, JavaScript\nExperience\nSoftware Engineer at NextGen Systems (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "f5beff50cc848e2a717ef38fb7455023684181aa1b07fb597eb12f26909d7d3d",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R046": {
+    "id": "R046",
+    "source": "software_engineer_cv_46.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, C++, Docker, Java, REST APIs, React\nExperience\nBackend Developer at DataWave Technologies (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "efaa8d204d431ef492d4e657e9e01161dfde9f49af6210fcdc3e38f35382e70d",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R047": {
+    "id": "R047",
+    "source": "software_engineer_cv_47.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Sheffield, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDjango, Kubernetes, REST APIs, Machine Learning, Docker, Java\nExperience\nSenior Software Engineer at BrightCode Solutions (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "74db98f055586482dda451ccced68844c2abcf6994c7a993eec95209efe7aa67",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R048": {
+    "id": "R048",
+    "source": "software_engineer_cv_48.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Sheffield, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, Git, Machine Learning, Node.js, Java, C++\nExperience\nFull Stack Developer at DataWave Technologies (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "1fe2f9fd7edfbeacad3a8b1c64218ee53239cd948f61568cc16d14552503354d",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R049": {
+    "id": "R049",
+    "source": "software_engineer_cv_49.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSQL, AWS, REST APIs, Java, JavaScript, Docker\nExperience\nJunior Software Engineer at BrightCode Solutions (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "e50276667a1a35541df81188d851617586a06a772e256bc203df561b3880b149",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R050": {
+    "id": "R050",
+    "source": "software_engineer_cv_50.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Birmingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, Django, Machine Learning, SQL, React, Kubernetes\nExperience\nSenior Software Engineer at CloudBridge UK (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "a746afe5555cb8fbd8787e7ab87682016eade920a0e316a4d3407c928ecd6294",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R051": {
+    "id": "R051",
+    "source": "software_engineer_cv_51.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nREST APIs, SQL, Node.js, C++, React, JavaScript\nExperience\nJunior Software Engineer at NextGen Systems (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "6cc4da1ea3a22fd545310b623d5ebd81706f46d903e674e6f716bd890d5b39d3",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R052": {
+    "id": "R052",
+    "source": "software_engineer_cv_52.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leeds, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, Django, Java, REST APIs, React, AWS\nExperience\nJunior Software Engineer at DataWave Technologies (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "1dee11ff5b71ec8880912df32421ea5d2a1a08a9b330326aa6b6007b14861ef8",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R053": {
+    "id": "R053",
+    "source": "software_engineer_cv_53.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDocker, Machine Learning, Kubernetes, Git, SQL, Python\nExperience\nJunior Software Engineer at BrightCode Solutions (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "73ab2c3ae6db4722179b8c23680b575c1e1839eebd1f5783fc00b287eee73ff1",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R054": {
+    "id": "R054",
+    "source": "software_engineer_cv_54.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, Kubernetes, Machine Learning, JavaScript, REST APIs, Java\nExperience\nJunior Software Engineer at DataWave Technologies (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "9a573159937c39c9c638525a314f8bb348d19e10ab20b6e28718f636ca3f2277",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R055": {
+    "id": "R055",
+    "source": "software_engineer_cv_55.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nKubernetes, SQL, JavaScript, Python, REST APIs, Git\nExperience\nFull Stack Developer at BrightCode Solutions (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "8d4b2747bf5007c971182288daf736aa5d38cad560136901374b1002255f670e",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R056": {
+    "id": "R056",
+    "source": "software_engineer_cv_56.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nKubernetes, Spring Boot, C++, React, Git, Python\nExperience\nJunior Software Engineer at NextGen Systems (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "c74d00d41746b91fcf09233dc06dae46aa20e1ed794d517025adf6ac1ec7a172",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R057": {
+    "id": "R057",
+    "source": "software_engineer_cv_57.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJavaScript, Git, Docker, Java, React, Kubernetes\nExperience\nBackend Developer at DataWave Technologies (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "aae3dc11e9c01650df72ef4d38fbc557f3a770a6acdf693303b049d1c49cd0fb",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R058": {
+    "id": "R058",
+    "source": "software_engineer_cv_58.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nC++, Machine Learning, Kubernetes, REST APIs, Java, JavaScript\nExperience\nSoftware Engineer at DataWave Technologies (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "2d26628a161544893b139588c02265524f968a22b7f2b5a302687f7b9a0e702f",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R059": {
+    "id": "R059",
+    "source": "software_engineer_cv_59.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nREST APIs, Spring Boot, Git, JavaScript, Machine Learning, Java\nExperience\nBackend Developer at CloudBridge UK (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "68157e55fe02feaf2749583105c5071f3859cecb4fe2906aa2ac666e46482782",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R060": {
+    "id": "R060",
+    "source": "software_engineer_cv_60.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, SQL, Kubernetes, JavaScript, REST APIs, Git\nExperience\nBackend Developer at BrightCode Solutions (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "71c13e280cc6ff81ab58e3b804f4b8f43e583ff172746e4422a63ed1841d449a",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R061": {
+    "id": "R061",
+    "source": "software_engineer_cv_61.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Manchester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, Java, JavaScript, Machine Learning, Docker, Git\nExperience\nBackend Developer at DataWave Technologies (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "2532a891f56fcf64dca62a5ac8654438916a10516f5eaa8f481e245f98a074b8",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R062": {
+    "id": "R062",
+    "source": "software_engineer_cv_62.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Sheffield, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nMachine Learning, Django, Kubernetes, C++, Git, Docker\nExperience\nSoftware Engineer at CloudBridge UK (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "a6227cfb4d467c62176dafcdf0c827bbbff6fd8304549b44125e7f11b2180f89",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R063": {
+    "id": "R063",
+    "source": "software_engineer_cv_63.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, Java, Kubernetes, React, Django, Docker\nExperience\nBackend Developer at DataWave Technologies (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "39c19791f7394f3a0bcc13849aea84a925e880bb07e0d6961ca5e0372907929f",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R064": {
+    "id": "R064",
+    "source": "software_engineer_cv_64.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Bristol, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nReact, JavaScript, SQL, Machine Learning, Java, REST APIs\nExperience\nSenior Software Engineer at DataWave Technologies (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "13dadf1f4acc97732cf556d72e8ba91edd9ac18e3e2d9b627a8a2710ffb2571a",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R065": {
+    "id": "R065",
+    "source": "software_engineer_cv_65.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leeds, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nReact, Python, JavaScript, Spring Boot, Kubernetes, Machine Learning\nExperience\nSoftware Engineer at TechNova Ltd (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "4aa1a50b4a2557c62651b2d50bc3125e56691e975e3d4007ced266caf43c5e1b",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R066": {
+    "id": "R066",
+    "source": "software_engineer_cv_66.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, AWS, JavaScript, Kubernetes, Git, SQL\nExperience\nSenior Software Engineer at NextGen Systems (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "b00b1da17f6bad2d87d92fc86712b61d13fe890bf024611e043f63bf2b0f4fc3",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R067": {
+    "id": "R067",
+    "source": "software_engineer_cv_67.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Manchester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nAWS, Machine Learning, REST APIs, C++, Django, Git\nExperience\nSenior Software Engineer at TechNova Ltd (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "08790516332c36e2b1ad6e7f0c4f1f7c91e864932582a2f03d25af460e91e50d",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R068": {
+    "id": "R068",
+    "source": "software_engineer_cv_68.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nKubernetes, AWS, REST APIs, Machine Learning, C++, Node.js\nExperience\nFull Stack Developer at TechNova Ltd (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "026ff57ee7a005ad628e2e07d1048c1b5143967cc9463d30639611fa05e237ab",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R069": {
+    "id": "R069",
+    "source": "software_engineer_cv_69.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Manchester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJavaScript, C++, REST APIs, Django, Java, Git\nExperience\nJunior Software Engineer at NextGen Systems (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "c239206fa0301b4a558f1ff09a4096d12c19ce3d5944566af47a50d434a8de6e",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R070": {
+    "id": "R070",
+    "source": "software_engineer_cv_70.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSQL, Kubernetes, REST APIs, Docker, Git, AWS\nExperience\nFull Stack Developer at DataWave Technologies (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "6b0cce99934f52405491bcedeb53a1dcbf7cbed29f86f2cfaf627ca7ccb58e66",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R071": {
+    "id": "R071",
+    "source": "software_engineer_cv_71.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, SQL, Machine Learning, React, JavaScript, Django\nExperience\nSenior Software Engineer at TechNova Ltd (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "558e8bf32970f16a3227929556643d6a4c9ada54eace5ea16d90c7b7abe62d55",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R072": {
+    "id": "R072",
+    "source": "software_engineer_cv_72.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nGit, JavaScript, AWS, Kubernetes, Docker, Django\nExperience\nJunior Software Engineer at DataWave Technologies (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "ac1775aa020bae859f3ef3f55db00efcad63b9da26de17846b1a890c0b154256",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R073": {
+    "id": "R073",
+    "source": "software_engineer_cv_73.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nREST APIs, SQL, Spring Boot, Node.js, JavaScript, React\nExperience\nSoftware Engineer at CloudBridge UK (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "a2fc851b4c959dca120ad19fa00d49995b2c045a0d9173d322c389c776f7dcb8",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R074": {
+    "id": "R074",
+    "source": "software_engineer_cv_74.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leeds, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nREST APIs, Kubernetes, Machine Learning, Spring Boot, JavaScript, Django\nExperience\nBackend Developer at BrightCode Solutions (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "3c549c3c4bd87d9f7c830265f573967b0b0de71cc07a530090d41e3a18fde2ea",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R075": {
+    "id": "R075",
+    "source": "software_engineer_cv_75.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nGit, Java, C++, Machine Learning, Node.js, REST APIs\nExperience\nBackend Developer at NextGen Systems (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "ff5cd5caddf5b9edce54233320837d5d2df9887046dbbedee1cda52381fe1de3",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R076": {
+    "id": "R076",
+    "source": "software_engineer_cv_76.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Birmingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nGit, SQL, Docker, C++, Kubernetes, Java\nExperience\nBackend Developer at DataWave Technologies (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "0d3ba96a02a2561481399e134f6c9cfced7a8f5ab58224d326aaae4c7beb1355",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R077": {
+    "id": "R077",
+    "source": "software_engineer_cv_77.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nAWS, Docker, REST APIs, Java, Git, JavaScript\nExperience\nSoftware Engineer at BrightCode Solutions (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "bfff8137aea5886442063a767023de617c14645d9109b9311a5e992c7f9822d5",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R078": {
+    "id": "R078",
+    "source": "software_engineer_cv_78.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nMachine Learning, React, Django, Node.js, AWS, Java\nExperience\nSenior Software Engineer at DataWave Technologies (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "1f19f416753a6951c804eb86f007e4312b24e821d5a1a6e4454ec24da4804bdf",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R079": {
+    "id": "R079",
+    "source": "software_engineer_cv_79.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, Docker, JavaScript, Node.js, REST APIs, AWS\nExperience\nSenior Software Engineer at CloudBridge UK (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "23265baf577e4c56dba95959d7c6b88863b88ba33b33ec0877162e5fec1d1cc8",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R080": {
+    "id": "R080",
+    "source": "software_engineer_cv_80.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nReact, AWS, JavaScript, Docker, Git, Python\nExperience\nBackend Developer at BrightCode Solutions (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "4bac3435b5d7e7a1aeaf269bc1c54c300bfdc22f660080ec2c0bcd38019a6c45",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R081": {
+    "id": "R081",
+    "source": "software_engineer_cv_81.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Bristol, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, Python, C++, Docker, JavaScript, Kubernetes\nExperience\nFull Stack Developer at TechNova Ltd (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "673f2c3e26f7985050f707e0979ea8de9ff539e6cf0e4522ea48e9d84a9e7222",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R082": {
+    "id": "R082",
+    "source": "software_engineer_cv_82.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leeds, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJavaScript, Machine Learning, Java, Python, Git, React\nExperience\nSenior Software Engineer at NextGen Systems (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "c4024935e3a923dbb760e88f14f80a830ce742279e8ac04e8b90243e51064bf4",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R083": {
+    "id": "R083",
+    "source": "software_engineer_cv_83.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Birmingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDjango, Kubernetes, C++, Node.js, Java, Spring Boot\nExperience\nBackend Developer at BrightCode Solutions (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "92b74fd66f47c14412e0adb7d626ae25dddd1ca21c2ca6c7a26192cde153c337",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R084": {
+    "id": "R084",
+    "source": "software_engineer_cv_84.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Nottingham, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nC++, AWS, Python, Machine Learning, Spring Boot, Docker\nExperience\nSoftware Engineer at DataWave Technologies (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "f90acbbd71e39b8042bc78f7d546fd76a26025c18c3b59529901489310c5da4a",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R085": {
+    "id": "R085",
+    "source": "software_engineer_cv_85.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDocker, JavaScript, REST APIs, Git, Machine Learning, Kubernetes\nExperience\nBackend Developer at TechNova Ltd (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "64d3a94b60737f00d132a8a03ea1392c33e71c9e06e2db84434334ec52360d06",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R086": {
+    "id": "R086",
+    "source": "software_engineer_cv_86.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leeds, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, Django, JavaScript, C++, Java, Machine Learning\nExperience\nSenior Software Engineer at BrightCode Solutions (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "27c16136bf31ed5e169f3b82261598bc524b54d79e3bc6d60e2e209e963d7d9e",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R087": {
+    "id": "R087",
+    "source": "software_engineer_cv_87.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Liverpool, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nJavaScript, Kubernetes, Git, Machine Learning, Docker, SQL\nExperience\nBackend Developer at BrightCode Solutions (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "7eb19c6bda676cb09a581997d28797d4fb681c5957c86a8c61530606e3e132c6",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R088": {
+    "id": "R088",
+    "source": "software_engineer_cv_88.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, Node.js, Django, Python, C++, Kubernetes\nExperience\nBackend Developer at BrightCode Solutions (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "866ca9a53fc1a2c80cbb9da3c89c8238ac9068a2d54c66e165361e92e4859cad",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R089": {
+    "id": "R089",
+    "source": "software_engineer_cv_89.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Sheffield, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, Docker, Machine Learning, C++, Java, Kubernetes\nExperience\nSoftware Engineer at CloudBridge UK (2023 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "501f60c6c3d19018e0542cb7880f3538ac2d9e96fcffde2858db22c410ecc443",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R090": {
+    "id": "R090",
+    "source": "software_engineer_cv_90.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, C++, AWS, Django, Docker, Node.js\nExperience\nJunior Software Engineer at CloudBridge UK (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "a078aa1753277bf8abd01c859ff1ef22b098402eae71907f3fb540ea8b7100ac",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R091": {
+    "id": "R091",
+    "source": "software_engineer_cv_91.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDjango, JavaScript, React, Kubernetes, Docker, Machine Learning\nExperience\nSenior Software Engineer at DataWave Technologies (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "0d11a7740a7a906f96274f3aadab9cf03c25e749ef1f6100a2cf2c781f726748",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R092": {
+    "id": "R092",
+    "source": "software_engineer_cv_92.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nDocker, Django, React, Java, Kubernetes, REST APIs\nExperience\nBackend Developer at BrightCode Solutions (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Birmingham (2017)",
+    "text_hash": "3b27bcab513c8fc40f3e2fb95aa025267d59827df7d4f2629c1f130b7f4c4927",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R093": {
+    "id": "R093",
+    "source": "software_engineer_cv_93.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nC++, Docker, Spring Boot, Django, Kubernetes, Machine Learning\nExperience\nBackend Developer at BrightCode Solutions (2018 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "6944859712eed55f07d93b5335f28bb110aa50bf8c659d43190b892df2e08c04",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R094": {
+    "id": "R094",
+    "source": "software_engineer_cv_94.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Manchester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nMachine Learning, SQL, REST APIs, Spring Boot, Python, Git\nExperience\nBackend Developer at TechNova Ltd (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "cc3f03c8ce10b4db6d376caa0997cdd8f07e73544c9c7b6411671c0db8fc10be",
+    "words": 72,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R095": {
+    "id": "R095",
+    "source": "software_engineer_cv_95.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], London, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, REST APIs, Kubernetes, Java, Python, Django\nExperience\nSoftware Engineer at BrightCode Solutions (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "cc71acfa66d0bd7ab2ce6f39abb2a88881075ec52857ad73ec1ae5da0e2ffec3",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R096": {
+    "id": "R096",
+    "source": "software_engineer_cv_96.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Manchester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nSpring Boot, Python, Node.js, Java, SQL, Git\nExperience\nSenior Software Engineer at NextGen Systems (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "13872f45a844fdc4102fca5d387309e1ef2b4db334f7bc59ed92f02b0a8fab3e",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R097": {
+    "id": "R097",
+    "source": "software_engineer_cv_97.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Cambridge, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, AWS, Spring Boot, React, C++, Git\nExperience\nBackend Developer at TechNova Ltd (2020 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Leeds (2017)",
+    "text_hash": "816af27fc727b20ab25b897fed306766dee9576decb782ab0095d0410dfdc441",
+    "words": 70,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R098": {
+    "id": "R098",
+    "source": "software_engineer_cv_98.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Leicester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, Django, Java, JavaScript, SQL, Kubernetes\nExperience\nBackend Developer at CloudBridge UK (2022 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Bristol (2017)",
+    "text_hash": "8c7e7c99e7f719ebf9e87b7a3840a77bf8971248f5b3c310e28c32b23895c9ed",
+    "words": 69,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R099": {
+    "id": "R099",
+    "source": "software_engineer_cv_99.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Sheffield, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nNode.js, Spring Boot, AWS, REST APIs, Git, SQL\nExperience\nSoftware Engineer at NextGen Systems (2021 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Nottingham (2017)",
+    "text_hash": "c07ac4efcdc128f3f8c06069cdd236d9e1ad08c384a00a51cf0beda257a778cc",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  },
+  "R100": {
+    "id": "R100",
+    "source": "software_engineer_cv_100.docx",
+    "text": "[NAME]\nAddress: [ADDRESS], Manchester, UK\nEmail: [EMAIL]\nPhone: [PHONE]\nProfessional Summary\nSoftware engineer with experience building scalable applications, APIs, and cloud solutions. Strong problem‐solving skills and passion for clean code.\nSkills\nPython, Docker, Django, React, Node.js, Spring Boot\nExperience\nFull Stack Developer at TechNova Ltd (2019 - Present)\n- Developed scalable web applications\n- Built REST APIs\n- Collaborated with cross‐functional teams\nEducation\nBSc Computer Science – University of Manchester (2017)",
+    "text_hash": "fe083a8717d8309ad828357f19c6865d3300c9d82f9d5d19b3c7a664f8226e4d",
+    "words": 71,
+    "language": "en",
+    "flags": {
+      "hidden_text_removed": false,
+      "injection_suspected": false,
+      "chars_removed": 0
+    },
+    "injection_matches": [],
+    "mask_counts": {
+      "[EMAIL]": 1,
+      "[URL]": 0,
+      "[DOB]": 0,
+      "[ADDRESS]": 1,
+      "[PHONE]": 1,
+      "[NAME]": 1
+    }
+  }
+}

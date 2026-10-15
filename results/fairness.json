@@ -1,0 +1,168 @@
+{
+  "n_resumes": 30,
+  "coverage": {
+    "blind": "0/690 variants extracted",
+    "unblinded": "657/690 variants extracted"
+  },
+  "noise_coverage": {
+    "blind": "0/90",
+    "unblinded": "0/90"
+  },
+  "noise_floor": {},
+  "results": {
+    "unblinded": {
+      "college:lesser_known_vs_elite": {
+        "n": 29,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "employment_gap:caregiving_gap_vs_none": {
+        "n": 28,
+        "mean_delta": 0.0017,
+        "mean_abs_delta": 0.0041,
+        "max_abs_delta": 0.0156,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 0.1357,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": true,
+        "yoe_delta_mean": 0.0
+      },
+      "graduation_year:minus_10y_vs_original": {
+        "n": 28,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "location:small_town_vs_metro": {
+        "n": 28,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "name_gender:female_vs_male": {
+        "n": 29,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "name_region:south_indian_vs_western": {
+        "n": 29,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "name_region:north_indian_vs_western": {
+        "n": 29,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "name_region:muslim_vs_western": {
+        "n": 29,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "name_region:east_asian_vs_western": {
+        "n": 29,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "pronouns:she_vs_he": {
+        "n": 29,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "women_in_tech:women_in_tech_vs_tech_society": {
+        "n": 29,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "womens_college:womens_vs_coed": {
+        "n": 28,
+        "mean_delta": 0.0,
+        "mean_abs_delta": 0.0,
+        "max_abs_delta": 0.0,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 1.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": false,
+        "yoe_delta_mean": 0.0
+      },
+      "writing_fluency:plain_non_native_vs_original": {
+        "n": 28,
+        "mean_delta": 0.0029,
+        "mean_abs_delta": 0.0032,
+        "max_abs_delta": 0.0104,
+        "decision_flip_rate": 0.0,
+        "wilcoxon_p": 0.0,
+        "identical_masked_text_rate": 0.0,
+        "exceeds_noise_floor": true,
+        "yoe_delta_mean": 0.0
+      }
+    }
+  },
+  "jobs_used": {
+    "JD01": "13",
+    "JD03": "7",
+    "JD04": "3",
+    "JD05": "3",
+    "JD06": "2",
+    "JD10": "1",
+    "JD09": "1"
+  }
+}

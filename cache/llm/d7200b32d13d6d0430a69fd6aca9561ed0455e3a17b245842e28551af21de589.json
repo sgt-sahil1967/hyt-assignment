@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 0, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate lacks the primary required technology (Python) and the mandatory version control skill (Git), and is overqualified for a junior role with 5.5 years of experience.\"}"}

@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 1, \"ideal_decision\": \"escalate\", \"reason\": \"The candidate has Node.js and four other relevant skills (SQL, Docker, AWS, React), but only 2.5 years of experience, which is below the 4.5-year threshold required for a relevance score of 2.\"}"}

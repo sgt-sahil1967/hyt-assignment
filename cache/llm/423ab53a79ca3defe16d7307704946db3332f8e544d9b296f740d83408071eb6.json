@@ -1,0 +1,1 @@
+{"model": "gemini-3-flash-preview", "prompt_version": "v1", "salt": "", "text": "{\"relevance\": 3, \"ideal_decision\": \"advance\", \"reason\": \"Meets all core requirements (Python, Git, degree) and has relevant nice-to-haves (JavaScript, React) with appropriate junior-level experience.\"}"}

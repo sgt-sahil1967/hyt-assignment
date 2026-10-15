@@ -1,0 +1,7 @@
+{
+  "n": 30,
+  "second_rater": "gemini-3-flash-preview with rubric.md (LLM, not a human)",
+  "relevance_weighted_kappa": 0.982,
+  "relevance_exact_agreement": 0.967,
+  "decision_agreement": 1.0
+}
