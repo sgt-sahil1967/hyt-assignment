@@ -24,6 +24,57 @@ The pipeline CLI prints ranked candidates with score, components (must / nice / 
 codes, must-have evidence, gaps and an explanation. Every run is appended to `results/decision_log.jsonl`
 (model, prompt version, config hash, threshold).
 
+### Windows (PowerShell)
+
+`make` isn't available on Windows, so use these commands instead. You need **Python 3.11** (from python.org or
+`winget install Python.Python.3.11`) and git. Run everything from the repository root:
+
+```powershell
+git clone https://github.com/sgt-sahil1967/hyt-assignment.git
+cd hyt-assignment
+
+py -3.11 -m venv .venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass   # only if activation is blocked; affects this window only
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+$env:PYTHONUTF8 = "1"       # read the repo's UTF-8 files correctly (Windows defaults to cp1252)
+$env:HYT_OFFLINE = "1"      # run from the committed cache: no API key needed
+streamlit run app\app.py
+```
+
+Then open http://localhost:8501 and press **⚡ Load sample data**.
+
+* **Without activating the venv:** run `.\.venv\Scripts\python.exe -m streamlit run app\app.py` (after setting the two
+  `$env:` variables above in the same window).
+* **New terminal windows** need `.\.venv\Scripts\Activate.ps1` and the `$env:` lines again; they don't persist.
+* **First run:** it downloads the local embedding model (`all-MiniLM-L6-v2`, about 90 MB) from Hugging Face once, so it
+  needs internet that time only. `pip install` also downloads PyTorch, which is large.
+* **`py` not found:** use the full path to `python.exe` from your Python 3.11 install instead.
+* **Live Gemini calls** (optional): `Copy-Item .env.example .env`, put your key in `.env`, and turn on "Allow live
+  Gemini calls" in the app's sidebar.
+
+Other `make` targets on Windows (venv activated, same window):
+
+```powershell
+python -m pytest -q tests                                      # make test
+
+# make reproduce-v1.0  (headline numbers, offline)
+$env:PYTHONUTF8 = "1"; $env:HYT_OFFLINE = "1"; $env:HYT_PROFILE = "v1.0"
+python -m eval.run golden; python -m eval.run tune; python -m eval.run metrics
+python -m eval.run baselines; python -m eval.run ablations; python -m eval.adversarial
+python eval\compare_v1_0.py
+Remove-Item Env:HYT_PROFILE                                    # back to the current system
+
+python -m eval.real_set run                                    # make real-set
+uvicorn web.backend.main:app --port 8765                       # make api (keep this window open)
+```
+
+For the React workspace, open a second PowerShell window and run
+`npm --prefix web/frontend install; npm --prefix web/frontend run dev` (Node.js 20+), then go to http://localhost:5180.
+These Windows steps haven't been tested on a Windows machine; the commands mirror the `Makefile` targets.
+
 ## Two ways to see it
 
 Both apps call the same function, `agent.screen(candidate_text, criteria) -> dict` in [`agent.py`](agent.py), and both
