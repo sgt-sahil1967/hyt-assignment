@@ -43,8 +43,10 @@ def ingest_text(rid: str, raw: str, html: bool = False, mask_names: bool | None 
 
 
 def jd_extraction(jd: dict, salt: str = "") -> dict | None:
+    from .requirements import postprocess
+
     x, meta = extract_jd(jd["text"], salt=salt)
-    return x.model_dump() if x else None
+    return postprocess(x.model_dump(), jd["text"]) if x else None
 
 
 def resume_extraction(r: dict, salt: str = "") -> tuple[dict | None, dict]:

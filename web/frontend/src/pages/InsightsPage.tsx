@@ -119,8 +119,23 @@ export default function InsightsPage() {
                       <td className="font-mono">{t.decision.recall_ideal_advance.toFixed(2)}</td><td className="font-mono">{t.decision.precision_auto_advance?.toFixed(2)}</td>
                       <td className="font-mono">{Math.round(t.decision.escalation_rate * 100)}%</td><td className="font-mono">{t.decision.expected_cost}</td>
                     </tr>)
-                })}</tbody>
+                })}
+                {d.posthoc?.E_v1_2 && (() => {
+                  const t = d.posthoc.E_v1_2.golden_test
+                  return (
+                    <tr className="border-t border-line">
+                      <td className="py-1.5">v1.2: + 4 real-data fixes (#15c)</td><td className="font-mono">{t.spearman.toFixed(3)}</td>
+                      <td className="font-mono">{t.recall_ideal_advance.toFixed(2)}</td><td className="font-mono">{t.precision_auto_advance?.toFixed(2)}</td>
+                      <td className="font-mono">{Math.round(t.escalation_rate * 100)}%</td><td className="font-mono">{t.expected_cost}</td>
+                    </tr>)
+                })()}</tbody>
               </table>
+              {d.real_set && (
+                <p className="mt-3 rounded-lg bg-raised/60 p-2.5 text-xs text-muted">
+                  Real-resume sanity set (Kaggle, 50 pairs, labels by Sonnet agents pending review): Spearman <b className="text-fg">{d.real_set.systems.score.spearman.toFixed(2)}</b> vs ≤ {Math.max(d.real_set.systems.tfidf.spearman, d.real_set.systems.embedding.spearman, d.real_set.systems.keyword.spearman).toFixed(2)} for baselines;
+                  {' '}{d.real_set.decision_current.confusion['ideal_advance&advanced']}/{d.real_set.ideal_advance} good candidates advanced, {d.real_set.decision_current.confusion['ideal_escalate&advanced']} wrong advances.
+                </p>
+              )}
               <p className="mt-3 text-xs text-muted">{d.v1_1.decision_flips_v1_0_to_v1_1.length} decisions changed, all escalate → advance, and all are candidates the labels say should advance.</p>
             </Card>
           )}

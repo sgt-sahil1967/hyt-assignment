@@ -59,7 +59,10 @@ def decide(sr: ScoreResult, jd: dict, flags: list[str], params: dict | None = No
     if any(0 < e.strength < 0.5 for e in must):
         reasons.append("AMBIGUOUS_EVIDENCE")
     band = SENIORITY_MAX_YEARS.get(jd.get("seniority", "unspecified"), 99)
-    if sr.yoe > band + d["overqualified_years_over"]:
+    # v1.2: years above the band only matter for genuinely junior roles; the v1.0 band was calibrated on synthetic
+    # careers (<= 5.5 years) and flagged 34/50 real mid-level candidates. A role asking for 3+ years isn't junior.
+    junior_role = jd.get("seniority") in ("intern", "junior") and not (jd.get("min_years") or 0) >= 3
+    if (junior_role or not d.get("overqualified_junior_only", False)) and sr.yoe > band + d["overqualified_years_over"]:
         reasons.append("OVERQUALIFIED")
     rel = sr.components.get("role_relevance")
     if rel is not None and rel < d["career_switch_relevance"] and (sr.components.get("must_have") or 0) >= 0.5:

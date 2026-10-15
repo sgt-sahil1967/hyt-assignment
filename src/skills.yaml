@@ -185,6 +185,9 @@ aliases:
   tf: tensorflow
   torch: pytorch
   nlp: natural language processing
+  # operating systems
+  unix: unix
+  linux: linux
   # generic
   software: programming language
   software development: programming language

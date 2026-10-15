@@ -77,7 +77,8 @@ LLM calls for real uploaded resumes are cached in `cache/private/` (gitignored),
 ### 13. Data: a local corpus instead of the brief's Kaggle datasets
 At the author's request, the pipeline uses 100 templated synthetic `.docx` resumes and 10 hand-picked UK postings from a
 local LinkedIn postings file (not the *arshkon* dataset named in the brief). This is disclosed throughout and is the main
-limitation in REPORT §10; a real-resume sanity set is planned.
+limitation in REPORT §10. A 50-pair real-resume sanity set from the brief's own Kaggle datasets (§5c) checks it. Resumes
+are picked by *content*, because Kaggle's category label is unreliable: only 18 of 120 "IT" resumes are developers.
 
 ### 14. Evaluation integrity: frozen headline, diagnostics kept separate, failures are missing data
 The headline is the system frozen before test (archived in `results/v1_0_frozen/`, reproducible exactly). Ablations
@@ -91,4 +92,9 @@ such as Django or Flask". 5 test scores changed, 0 decisions. (b) **`CAREER_SWIT
 flat from "off" to 0.30 (the corpus has no career switchers), so the pre-committed rule kept 0.25. Making it non-blocking
 is a policy choice justified by that missing evidence, not by the test ablation. Test: recall 0.43 → 0.61, precision
 1.00 (14/14), 4 decisions changed, all correct; dev unchanged. **Cost:** the fake-skills attack goes from 2/4 to 4/4
-auto-advanced. The next mitigation is to require ≥ 1 "used" must-have to auto-advance.
+auto-advanced. The next mitigation is to require ≥ 1 "used" must-have to auto-advance. (c) **v1.2, four real-data fixes**
+(REPORT §5c): example lists become one requirement needing ⌈n/3⌉ ≤ 3 items, because a first "any one" version advanced
+5 weak candidates; `OVERQUALIFIED` applies only to junior roles; the "best fit" injection false positive is fixed; and
+"a/b" requirements accept either part. All are deterministic code behind flags that are off in the v1.0 profile. Golden
+decisions are unchanged; on the real set the one good candidate is advanced with 0 wrong advances. The real set
+informed the design, so it is not a clean test of v1.2.

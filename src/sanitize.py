@@ -28,6 +28,23 @@ INJECTION_PATTERNS = [
     r"\boutput\s+(json|score|decision)\b",
 ]
 INJECTION_RE = re.compile("|".join(INJECTION_PATTERNS), re.IGNORECASE)
+# v1.2 (fix: "best fit" in honest business prose was flagged): the fit phrase only counts when it is asserted about
+# the candidate ("this candidate is a perfect fit", "I am the ideal candidate"), not "to determine the best fit".
+_FIT_LOOSE = r"\b(perfect|ideal|best)\s+(fit|candidate|match)\b"
+_FIT_STRICT = (r"\b(?:is|am|are|be|as)\s+(?:a|an|the)\s+(?:perfect|ideal|best)\s+(?:fit|candidate|match)\b"
+               r"|\b(?:perfect|ideal)\s+candidate\b")
+INJECTION_RE_STRICT = re.compile("|".join(_FIT_STRICT if p == _FIT_LOOSE else p for p in INJECTION_PATTERNS),
+                                 re.IGNORECASE)
+
+
+def _injection_re():
+    try:
+        from .config import cfg
+
+        strict = cfg().get("sanitize", {}).get("strict_fit_phrase", False)
+    except Exception:  # noqa: BLE001 - sanitiser must work without config
+        strict = True
+    return INJECTION_RE_STRICT if strict else INJECTION_RE
 
 
 @dataclass
@@ -58,7 +75,7 @@ def _collapse_ws(text: str) -> str:
 def sanitize_text(text: str, hidden_removed_chars: int = 0) -> Sanitized:
     text, n_inv = _clean_unicode(text)
     text = _collapse_ws(text)
-    matches = [m.group(0) for m in INJECTION_RE.finditer(text)]
+    matches = [m.group(0) for m in _injection_re().finditer(text)]
     return Sanitized(
         clean_text=text,
         flags={

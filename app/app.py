@@ -319,6 +319,11 @@ def eval_page():
         st.dataframe(pd.DataFrame([{"version": names[k], "spearman": v11[k]["test"]["spearman"],
                                     **{kk: v11[k]["test"]["decision"][kk] for kk in ("recall_ideal_advance", "precision_auto_advance", "escalation_rate", "expected_cost")}}
                                    for k in names]), hide_index=True, width="stretch")
+        ph = load_json("posthoc.json")
+        if ph and "E_v1_2" in ph:
+            v12 = ph["E_v1_2"]["golden_test"]
+            st.caption(f"v1.2 (+ 4 real-data fixes, #15c): spearman {v12['spearman']}, recall {v12['recall_ideal_advance']}, "
+                       f"precision {v12['precision_auto_advance']}, escalation {v12['escalation_rate']}, cost {v12['expected_cost']}")
         st.caption(f"Changes made after the test evaluation, added one at a time. {len(v11['decision_flips_v1_0_to_v1_1'])} decisions "
                    "flipped, all escalate → advance, all labelled 'advance'. The headline stays v1.0.")
     ab = load_json("ablations.json")

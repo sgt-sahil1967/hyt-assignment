@@ -92,4 +92,7 @@ def satisfies(candidate: str, requirement: str) -> str | None:
 def is_known(name: str) -> bool:
     """True if the term maps onto the curated skill vocabulary (so taxonomy matching applies)."""
     _, _, vocab = _data()
-    return canon(name, allow_embedding=False) in vocab
+    if canon(name, allow_embedding=False) in vocab:
+        return True
+    return "/" in name and cfg()["score"].get("split_slash_requirements", False) and \
+        any(canon(p, allow_embedding=False) in vocab for p in name.split("/") if p.strip())

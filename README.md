@@ -57,7 +57,7 @@ run from the cache by default (no API key needed).
 ```bash
 make setup                     # once: Python 3.11 venv + pinned dependencies
 make reproduce-v1.0            # HEADLINE numbers (REPORT §4-5, §8): frozen v1.0 system
-make reproduce                 # current system (v1.1, REPORT §5b) + fairness, adversarial, judge
+make reproduce                 # current system (v1.2, REPORT §5b-5c) + fairness, adversarial, judge, real set
 ```
 
 * Both run fully **offline** (`HYT_OFFLINE=1`): every LLM response comes from the committed `cache/llm/` and every
@@ -66,7 +66,7 @@ make reproduce                 # current system (v1.1, REPORT §5b) + fairness, 
   `data/processed/*.json`; `make data` re-derives those only if the raw `data/` folder is present.
 * `reproduce-v1.0` writes `results/v1_0_reproduced/` and finishes with `eval/compare_v1_0.py`, which checks every
   headline figure against the frozen archive `results/v1_0_frozen/` (exact match; bootstrap CI bounds ±0.01).
-* Measured on a fresh clone: `reproduce-v1.0` 55 s (30/30 headline figures exact), `reproduce` 89 s (after `make setup`).
+* Measured on a fresh clone: `reproduce-v1.0` 55 s (30/30 headline figures exact), `reproduce` 121 s (after `make setup`).
 
 ## Layout
 
@@ -117,6 +117,10 @@ corrupt files return a clear error.
   job level, job_type, job_summary, job_skills, date_posted`. The schema matches a subset of the Kaggle
   **"1.3M LinkedIn Jobs & Skills (2024)"** dataset by *asaniczka*, **not** the brief's *arshkon/linkedin-job-postings*.
   10 UK postings were hand-picked (`config.yaml: jobs`).
+* **Real-resume sanity set** (REPORT §5c): `data/prepare_real.py` samples 45 resumes from Kaggle
+  *snehaanbhawal/resume-dataset* (selected by content, not category) and 5 postings from *arshkon/linkedin-job-postings*
+  into 50 pairs. Only the masked subset (`data/processed_real/`) and Sonnet-agent labels (`golden_real/`, pending author
+  review) are committed. `make real-set` re-runs it offline; the raw Kaggle CSVs (`data/kaggle/`) are gitignored.
 * Neither raw file is committed. The pipeline runs from the committed, PII-masked `data/processed/*.json`, and only
   masked text is ever sent to an LLM API or stored in the cache.
 

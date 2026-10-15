@@ -34,6 +34,10 @@ def cfg() -> dict:
     if os.environ.get("HYT_PROFILE") == "v1.0":  # frozen, pre-registered headline system (make reproduce-v1.0)
         c["normalize"] = {**c.get("normalize", {}), "skills_file": "src/skills_v1_0.yaml"}
         c["decide"]["career_switch_blocking"] = True
+        c["decide"]["overqualified_junior_only"] = False
+        c["score"]["split_slash_requirements"] = False
+        c["score"]["consolidate_example_lists"] = False
+        c["sanitize"]["strict_fit_phrase"] = False
         c["paths"]["results"] = "results/v1_0_reproduced"
     tuned = ROOT / c["paths"]["results"] / "thresholds.json"
     if tuned.exists() and os.environ.get("HYT_IGNORE_TUNED") != "1":

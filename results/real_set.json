@@ -1,0 +1,197 @@
+{
+  "n_pairs": 50,
+  "n_jobs": 5,
+  "n_resumes": 27,
+  "extraction_model": "claude-sonnet-agent",
+  "labeller": "claude-sonnet agents (blind), pending author review",
+  "t_high": 0.49,
+  "label_distribution": {
+    "0": 34,
+    "1": 13,
+    "2": 3
+  },
+  "ideal_advance": 1,
+  "extraction_failures": 0,
+  "systems": {
+    "score": {
+      "ranking": {
+        "ndcg@5": {
+          "mean": 0.9882,
+          "lo": 0.8362,
+          "hi": 1.0
+        },
+        "ndcg@10": {
+          "mean": 0.9882,
+          "lo": 0.8666,
+          "hi": 1.0
+        },
+        "p@5": {
+          "mean": 0.12,
+          "lo": 0.0,
+          "hi": 0.24
+        },
+        "mrr": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      "spearman": 0.6847
+    },
+    "keyword": {
+      "ranking": {
+        "ndcg@5": {
+          "mean": 0.3907,
+          "lo": 0.2371,
+          "hi": 0.6042
+        },
+        "ndcg@10": {
+          "mean": 0.5449,
+          "lo": 0.5017,
+          "hi": 0.7165
+        },
+        "p@5": {
+          "mean": 0.08,
+          "lo": 0.0,
+          "hi": 0.2
+        },
+        "mrr": {
+          "mean": 0.25,
+          "lo": 0.1429,
+          "hi": 0.625
+        }
+      },
+      "spearman": 0.0233
+    },
+    "tfidf": {
+      "ranking": {
+        "ndcg@5": {
+          "mean": 0.6305,
+          "lo": 0.4483,
+          "hi": 0.8666
+        },
+        "ndcg@10": {
+          "mean": 0.7438,
+          "lo": 0.6234,
+          "hi": 0.9221
+        },
+        "p@5": {
+          "mean": 0.12,
+          "lo": 0.0,
+          "hi": 0.24
+        },
+        "mrr": {
+          "mean": 1.0,
+          "lo": 0.3333,
+          "hi": 1.0
+        }
+      },
+      "spearman": 0.2574
+    },
+    "embedding": {
+      "ranking": {
+        "ndcg@5": {
+          "mean": 0.5137,
+          "lo": 0.3426,
+          "hi": 0.7634
+        },
+        "ndcg@10": {
+          "mean": 0.6328,
+          "lo": 0.5548,
+          "hi": 0.844
+        },
+        "p@5": {
+          "mean": 0.08,
+          "lo": 0.0,
+          "hi": 0.2
+        },
+        "mrr": {
+          "mean": 0.5,
+          "lo": 0.1667,
+          "hi": 1.0
+        }
+      },
+      "spearman": 0.3422
+    }
+  },
+  "decision_current": {
+    "confusion": {
+      "ideal_advance&advanced": 1,
+      "ideal_escalate&advanced": 0,
+      "ideal_advance&escalated": 0,
+      "ideal_escalate&escalated": 49
+    },
+    "recall_ideal_advance": 1.0,
+    "precision_auto_advance": 1.0,
+    "advanced_with_relevance>=2": 1.0,
+    "recall_good_relevance>=2_advanced": 0.3333,
+    "escalation_rate": 0.98,
+    "expected_cost": 0.0,
+    "expected_cost_per_pair": 0.0,
+    "n": 50
+  },
+  "decision_career_switch_blocking": {
+    "confusion": {
+      "ideal_advance&advanced": 1,
+      "ideal_escalate&advanced": 0,
+      "ideal_advance&escalated": 0,
+      "ideal_escalate&escalated": 49
+    },
+    "recall_ideal_advance": 1.0,
+    "precision_auto_advance": 1.0,
+    "advanced_with_relevance>=2": 1.0,
+    "recall_good_relevance>=2_advanced": 0.3333,
+    "escalation_rate": 0.98,
+    "expected_cost": 0.0,
+    "expected_cost_per_pair": 0.0,
+    "n": 50
+  },
+  "by_pool": {
+    "developer": {
+      "n": 41,
+      "mean_score": 0.25,
+      "mean_label": 0.41,
+      "advanced": 1
+    },
+    "it_non_developer": {
+      "n": 9,
+      "mean_score": 0.208,
+      "mean_label": 0.22,
+      "advanced": 0
+    }
+  },
+  "per_job": {
+    "K01": {
+      "spearman": 0.696,
+      "ideal_advance": 0,
+      "advanced_v1_1": 0
+    },
+    "K02": {
+      "spearman": 0.524,
+      "ideal_advance": 0,
+      "advanced_v1_1": 0
+    },
+    "K03": {
+      "spearman": 0.696,
+      "ideal_advance": 0,
+      "advanced_v1_1": 0
+    },
+    "K04": {
+      "spearman": 0.607,
+      "ideal_advance": 1,
+      "advanced_v1_1": 1
+    },
+    "K05": {
+      "spearman": 0.696,
+      "ideal_advance": 0,
+      "advanced_v1_1": 0
+    }
+  },
+  "reason_counts": {
+    "MISSING_MUST_HAVE": 49,
+    "LOW_FIT": 42,
+    "BELOW_THRESHOLD": 7,
+    "AMBIGUOUS_EVIDENCE": 1,
+    "OVERQUALIFIED": 9
+  }
+}

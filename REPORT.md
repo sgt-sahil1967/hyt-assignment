@@ -104,6 +104,7 @@ must-haves to "nice" shortlists **all 8 of 8** golden "should advance" candidate
 | **v1.0 frozen** (headline) | 0.648 | 0.912 | 0.43 | 1.00 (10/10) | 0.93 | 65 |
 | + framework categories in the skill map (DECISIONS #15a) | 0.646 | 0.912 | 0.43 | 1.00 | 0.93 | 65 |
 | **v1.1** = + `CAREER_SWITCH` informational (#15b) | 0.646 | 0.912 | **0.61** | **1.00 (14/14)** | 0.90 | **45** |
+| **v1.2** = + four real-data fixes (#15c, §5c) | 0.642 | 0.911 | 0.61 | 1.00 (14/14) | 0.90 | 45 |
 
 * **#15a** came from a real uploaded resume: Express.js and FastAPI got no credit for "web frameworks such as
   Django or Flask". It changes 5 test scores and 0 decisions.
@@ -118,6 +119,42 @@ must-haves to "nice" shortlists **all 8 of 8** golden "should advance" candidate
 * **Caveat:** these changes were chosen with knowledge of the test errors (the ablation in §5 had already exposed
   `CAREER_SWITCH`), so v1.1's test numbers are **optimistic**. Only a fresh labelled set can confirm them. v1.1
   is still far from the oracle ceiling (recall 0.96), because JD requirement extraction remains the main loss.
+
+## 5c. Real-resume sanity set (the brief's Kaggle datasets; added after the test evaluation)
+
+The main evaluation is on synthetic templates. To check real data, 45 resumes from *snehaanbhawal/resume-dataset* and
+5 software postings from *arshkon/linkedin-job-postings* (the brief's primary datasets) were sampled into 50 pairs
+(5 jobs × 10 resumes, BM25 top/middle + random). **Resumes were selected by content, not by Kaggle category:** only
+18 of the 120 "INFORMATION-TECHNOLOGY" resumes are software developers, while about 85 developer resumes sit in other
+categories. **Nothing was tuned on this set** (T_high = 0.49 from dev). Two caveats: extraction was done by Claude
+Sonnet agents (cached under their own model name) because of the Gemini quota, and the **labels are by separate,
+blind Sonnet agents, pending the author's review** (`golden_real/`).
+
+| real set, 50 pairs | Spearman | NDCG@5 [95% CI] | P@5 |
+|---|---|---|---|
+| **pipeline** | **0.75** | **0.99** [0.88, 1.00] | 0.12 |
+| embedding cosine | 0.34 | 0.51 [0.34, 0.76] | 0.08 |
+| TF-IDF cosine | 0.26 | 0.63 [0.45, 0.87] | 0.12 |
+| keyword Jaccard | 0.02 | 0.39 [0.24, 0.60] | 0.08 |
+
+* **Ranking holds up on messy text** (resumes of 321–2,670 words, "Company Name" / "City , State" placeholders,
+  duplicated sections, detached dates): the gap over the baselines is larger than on the synthetic set.
+* **Real resumes rarely fit real postings:** labels 0 / 1 / 2 / 3 = 34 / 13 / 3 / 0, and only 1 ideal advance. This set
+  therefore tests mostly *not advancing weak candidates*, which the pipeline did perfectly (0 wrong advances). It can't
+  measure recall: the single good candidate was escalated, and escalation was 100% under both v1.0 and v1.1.
+* **Four real-data failure modes, fixed in v1.2** (deterministic code behind flags that are off in the frozen v1.0
+  profile; DECISIONS #15c):
+  (1) **Example lists became separate must-haves.** K04's "MySQL, Redis, Ngnix, Kubernetes… etc." gave 9 must-haves;
+      it is now one requirement needing ⌈n/3⌉ ≤ 3 of the items, with proportional credit below that. The detector reads
+      only the short comma run next to "etc./such as/e.g." (scraped bullets are often glued together without
+      punctuation) and tolerates typos ("Ngnix"). A first version that accepted *any one* item advanced 5 weak
+      candidates, so it was replaced.
+  (2) **`OVERQUALIFIED`** applies only to intern/junior roles that don't ask for 3+ years (34 → 9 flags).
+  (3) **The "best fit" injection false positive:** fit phrases count only when asserted about the candidate.
+  (4) **Slash requirements** (`unix/linux`) accept either part.
+* **v1.2 on this set:** the one good candidate is auto-advanced; 0 wrong advances; escalation 98%. Within-job ranking is
+  unchanged (mean within-job Spearman 0.66 → 0.64, NDCG@5 0.990 → 0.988). On the golden set, 0 decisions change and
+  dev is unchanged. **Caveat:** v1.2 was developed *on* this set, so it is no longer a held-out test for v1.2.
 
 ## 6. Explanation quality
 
@@ -217,7 +254,7 @@ resumes (#14).
 * **The labeller isn't independent.** Claude wrote the scoring design, the rubric and the labels. The rubric shares the
   system's conventions, and κ = 0.98 with an LLM second rater shows consistency, not truth. There are no human
   recruiter labels.
-* **The data is synthetic and templated.** Extraction F1 = 1.0, YOE MAE = 0, zero run-to-run variance and exactly-zero
+* **The headline data is synthetic and templated** (the real-resume set in §5c is small, with AI labels and 1 ideal advance). Extraction F1 = 1.0, YOE MAE = 0, zero run-to-run variance and exactly-zero
   fairness deltas are all easier on 75-word template resumes than on real ones. Evidence weighting, date parsing and
   projects are exercised mainly by unit tests.
 * **Small n.** 7 test JDs and 10 auto-advances. Precision 10/10 has a Wilson 95% lower bound of about 0.72.

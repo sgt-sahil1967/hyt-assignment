@@ -57,7 +57,23 @@ def candidate_skills(res: dict) -> dict[str, dict]:
 
 def _match(req: dict, skills: dict[str, dict]) -> tuple[float, Optional[str], str, Optional[str]]:
     options = [canon(req["name"])] + [canon(a) for a in req.get("alternatives", []) or []]
+    if cfg()["score"].get("split_slash_requirements", False) and "/" in req["name"] and canon(req["name"]) != "ci/cd":
+        # v1.2: "unix/linux", "html/css" -> either part satisfies (the combined string is rarely in the skill map)
+        options += [canon(p) for p in req["name"].split("/") if p.strip()]
     best = (0.0, None, "missing", None)
+    need = int(req.get("min_matches") or 1)
+    if need > 1:  # example-list group: proportional credit until `need` distinct items are evidenced
+        hits = []
+        for opt in dict.fromkeys(options[1:]):
+            for c, info in skills.items():
+                if satisfies(c, opt):
+                    hits.append((info["strength"], c, info["basis"], info["quote"]))
+                    break
+        if not hits:
+            return best
+        top = max(hits)
+        frac = min(1.0, len(hits) / need)
+        return (round(top[0] * frac, 4), top[1], f"{top[2]}+group:{len(hits)}/{need}", top[3])
     for opt in options:
         for c, info in skills.items():
             how = satisfies(c, opt)

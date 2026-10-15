@@ -14,3 +14,4 @@ cache/private/
 .claude/
 results/_*.log
 results/v1_0_reproduced/
+data/kaggle/

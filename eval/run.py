@@ -415,19 +415,22 @@ def v1_1():
       B  + framework taxonomy  (DECISIONS #15a; changes scores)
       C  + CAREER_SWITCH info  (DECISIONS #15b; changes decisions only) = v1.1
     """
+    from .posthoc import OFF, flags
+
     d = cfg()["decide"]
     jds, res = load()
     lab = labels()
     rows = []
-    for jid, g in lab.groupby("job_id"):
-        rows += screen_resumes(jid, jds[jid], {k: res[k] for k in g.resume_id})
+    with flags(OFF):  # v1.1 = before the v1.2 fixes (see eval/posthoc.py for v1.2)
+        for jid, g in lab.groupby("job_id"):
+            rows += screen_resumes(jid, jds[jid], {k: res[k] for k in g.resume_id})
     cur = pd.DataFrame(rows).merge(lab, on=["job_id", "resume_id"])
     frozen = pd.DataFrame(read_json(R / "v1_0_frozen" / "golden_predictions.json")).merge(lab, on=["job_id", "resume_id"])
     frozen = frozen.assign(decision=redecide(frozen, {"career_switch_blocking": True, "t_high": d["t_high"]}))
     variants = {
         "A_v1_0_frozen": frozen,
-        "B_plus_framework_taxonomy": cur.assign(decision=redecide(cur, {"career_switch_blocking": True})),
-        "C_v1_1_plus_career_switch_informational": cur.assign(decision=redecide(cur, {"career_switch_blocking": False})),
+        "B_plus_framework_taxonomy": cur.assign(decision=redecide(cur, {"career_switch_blocking": True, "overqualified_junior_only": False})),
+        "C_v1_1_plus_career_switch_informational": cur.assign(decision=redecide(cur, {"career_switch_blocking": False, "overqualified_junior_only": False})),
     }
     out = {"note": "post-hoc changes made after test evaluation; v1.0 remains the headline", "t_high": d["t_high"]}
     for name, df in variants.items():

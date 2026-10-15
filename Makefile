@@ -1,7 +1,7 @@
 PY := .venv/bin/python
 export PYTHONPATH := .
 
-.PHONY: setup data golden test run eval fairness adversarial judge reproduce reproduce-v1.0 app api web web-install
+.PHONY: setup data golden test run eval fairness adversarial judge reproduce reproduce-v1.0 real-set app api web web-install
 
 setup:            ## create venv + install pinned deps
 	uv venv -p 3.11 .venv || python3.11 -m venv .venv
@@ -67,9 +67,14 @@ reproduce-v1.0: data
 	$(PY) -m eval.adversarial
 	$(PY) eval/compare_v1_0.py
 
+real-set:         ## real-resume sanity set (Kaggle resumes + arshkon postings), offline from cache
+	HYT_OFFLINE=1 $(PY) -m eval.real_set run
+
 # Everything from the committed cache: no API key, no network for the LLM.
 # (needs the raw data/ folder for ingestion; the sentence-embedding cache is committed too)
 reproduce: export HYT_OFFLINE=1
 reproduce: data golden test eval fairness adversarial judge
 	$(PY) -m eval.run v1_1
-	@echo "reproduced the current system (v1.1, REPORT §5b) from cache -> results/"
+	$(PY) -m eval.real_set run
+	$(PY) -m eval.posthoc
+	@echo "reproduced the current system (v1.2, REPORT §5b-5c) from cache -> results/"

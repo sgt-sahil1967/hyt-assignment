@@ -59,13 +59,15 @@ def _parse_jd_text(text: str) -> str:
 
 def parse_criteria(criteria: Any) -> dict:
     """Normalise any accepted `criteria` form into a requirements dict (JD extraction schema + job metadata)."""
+    from src.requirements import postprocess
+
     if isinstance(criteria, str):
-        jd = json.loads(_parse_jd_text(criteria.strip()))
+        jd = postprocess(json.loads(_parse_jd_text(criteria.strip())), criteria)
         jd.setdefault("job_type", "")
         return jd
     if isinstance(criteria, dict) and "job_id" in criteria and "must_have" not in criteria:
         meta = _benchmark_jobs()[criteria["job_id"]]
-        jd = json.loads(_parse_jd_text(meta["text"].strip()))
+        jd = postprocess(json.loads(_parse_jd_text(meta["text"].strip())), meta["text"])
         jd.update(job_id=criteria["job_id"], job_type=meta["job_type"], location_meta=meta["location"])
         return jd
     if isinstance(criteria, dict):

@@ -52,12 +52,15 @@ mask:
 
 sanitize:
   min_words: 40
+  strict_fit_phrase: true          # v1.2: "best fit" counts as injection only when asserted about the candidate
 
 score:
   weights: {must_have: 0.50, nice_to_have: 0.15, experience: 0.20, role_relevance: 0.15}
   evidence_strength: {used: 1.0, listed: 0.5, learning: 0.25, missing: 0.0}
   missing_must_have_cap: 0.60        # multiplicative: fit *= cap when any must-have has zero evidence
   title_skill_weight: 2.0            # requirement weight when the technology is named in the job title
+  split_slash_requirements: true   # v1.2: "unix/linux" -> either part satisfies (false in the v1.0 profile)
+  consolidate_example_lists: true  # v1.2: "A, B, C, etc." -> one any-of requirement (false in the v1.0 profile)
   internship_weight: 0.5
   entry_level_project_substitution_years: 1.0
   vague_jd_must_weight: 0.5        # vague JD: nice-to-haves promoted to must-haves at this weight
@@ -71,5 +74,6 @@ decide:
   cost_advanced_weak: 1
   overqualified_years_over: 3      # yoe > seniority band max + this -> OVERQUALIFIED (junior: > 5y)
   career_switch_relevance: 0.25   # tuned on dev (DECISIONS #15b): dev cost flat from off to 0.30, value kept
+  overqualified_junior_only: true  # v1.2: OVERQUALIFIED only for intern/junior roles (false in the v1.0 profile)
   career_switch_blocking: false    # v1.1 policy (DECISIONS #15b): informational; true = frozen v1.0 behaviour
   stuffing_min_skills: 25          # >= this many listed skills with no usage evidence -> manipulation flag

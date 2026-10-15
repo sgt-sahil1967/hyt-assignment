@@ -188,7 +188,7 @@ def activity(jid: str):
 def insights():
     names = ["metrics.json", "baselines.json", "ablations.json", "extraction_metrics.json", "robustness.json",
              "adversarial.json", "fairness.json", "judge_summary.json", "judge_agreement.json", "label_agreement.json",
-             "v1_1.json"]
+             "v1_1.json", "posthoc.json", "real_set.json"]
     return _finite({n.removesuffix(".json"): agent.results(n) for n in names})
 
 

@@ -1,0 +1,48 @@
+{
+ "K01": [
+  "Python expertise",
+  "NumPy/pandas data processing",
+  "matplotlib/Plotly visualization",
+  "SQL querying",
+  "Git",
+  "AWS",
+  "Azure",
+  "QA testing experience",
+  "7+ years experience (5+ with MS/PhD)"
+ ],
+ "K02": [
+  "5+ years Node.js API development",
+  "5 years AWS",
+  "Node.js backend REST API development",
+  "REST microservices in serverless architecture",
+  "NoSQL (DynamoDB)",
+  "Git",
+  "event/message-driven design",
+  "writing/executing tests (Node Lambda)",
+  "agile environment"
+ ],
+ "K03": [
+  "Bachelor's in CS/related",
+  "5+ years as Data Engineer or Software Developer",
+  "data warehouse/transformation solutions (Domo/Snowflake or similar)",
+  "scripting language (Python/JavaScript/R)",
+  "data modeling/integration/quality",
+  "cloud platform (AWS/Azure/GCP)"
+ ],
+ "K04": [
+  "Bachelor's degree in CS or related with 5+ years experience",
+  "3+ years programming in C/C++/Java/Python/Go/Rust",
+  "3+ years building CI/CD pipelines",
+  "Unix/Linux; networking fundamentals; distributed systems",
+  "Experience with MySQL/Redis/Nginx/Kubernetes/Docker/OpenStack/Hadoop/Spark/Flink"
+ ],
+ "K05": [
+  ".NET",
+  "C++",
+  "PowerShell",
+  "MS SQL Server",
+  "Troubleshooting complex systems",
+  "Web services/APIs",
+  "Distributed large-scale highly available systems"
+ ]
+}
