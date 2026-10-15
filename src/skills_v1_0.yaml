@@ -1,4 +1,4 @@
-# FROZEN v1.0 skill map (before DECISIONS #25 framework categories). Used only by `make reproduce-v1.0`.
+# FROZEN v1.0 skill map (before DECISIONS #15a framework categories). Used only by `make reproduce-v1.0`.
 # Do not edit: it exists so the pre-registered headline numbers stay reproducible.
 # Skill normalisation data (hand-curated).
 # aliases: surface form (lowercase) -> canonical name

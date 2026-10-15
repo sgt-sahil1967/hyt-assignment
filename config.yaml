@@ -14,7 +14,8 @@ paths:
 llm:
   provider: gemini                 # overridden by LLM_PROVIDER env var
   model: gemini-3.1-flash-lite     # overridden by GEMINI_MODEL env var
-  judge_model: gemini-3.5-flash    # explanation judge: different, larger model than the generator; same vendor
+  judge_model: claude-sonnet (agent, low effort)   # reported judge: different model family (DECISIONS #9)
+  judge_model_gemini: gemini-3.5-flash             # legacy API judge path (eval.judge run), quota-limited
   labeller_model: gemini-3-flash-preview  # independent second labeller for golden-set agreement
   temperature: 0.0
   prompt_version: v1
@@ -69,6 +70,6 @@ decide:
   cost_missed_good: 5
   cost_advanced_weak: 1
   overqualified_years_over: 3      # yoe > seniority band max + this -> OVERQUALIFIED (junior: > 5y)
-  career_switch_relevance: 0.25   # tuned on dev (DECISIONS #26): dev cost flat from off to 0.30, value kept
-  career_switch_blocking: false    # v1.1 policy (DECISIONS #27): informational; true = frozen v1.0 behaviour
+  career_switch_relevance: 0.25   # tuned on dev (DECISIONS #15b): dev cost flat from off to 0.30, value kept
+  career_switch_blocking: false    # v1.1 policy (DECISIONS #15b): informational; true = frozen v1.0 behaviour
   stuffing_min_skills: 25          # >= this many listed skills with no usage evidence -> manipulation flag

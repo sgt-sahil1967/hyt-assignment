@@ -48,8 +48,8 @@ fairness:
 adversarial:
 	$(PY) -m eval.adversarial
 
-judge:
-	$(PY) -m eval.judge run 40   # the 40 human-rated explanations (judge quota is ~20/day per key)
+judge:            ## judge = Claude Sonnet agent (scores committed, see eval/judge_prompt_sonnet.md); recompute stats only
+	$(PY) -m eval.judge summary
 	$(PY) -m eval.judge agree
 	$(PY) -m eval.judge labels
 

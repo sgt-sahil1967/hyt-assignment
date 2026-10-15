@@ -314,8 +314,8 @@ def eval_page():
     v11 = load_json("v1_1.json")
     if v11:
         st.subheader("Post-hoc v1.1 vs frozen v1.0")
-        names = {"A_v1_0_frozen": "v1.0 frozen (headline)", "B_plus_framework_taxonomy": "+ framework categories (#25)",
-                 "C_v1_1_plus_career_switch_informational": "v1.1: + CAREER_SWITCH informational (#27)"}
+        names = {"A_v1_0_frozen": "v1.0 frozen (headline)", "B_plus_framework_taxonomy": "+ framework categories (#15a)",
+                 "C_v1_1_plus_career_switch_informational": "v1.1: + CAREER_SWITCH informational (#15b)"}
         st.dataframe(pd.DataFrame([{"version": names[k], "spearman": v11[k]["test"]["spearman"],
                                     **{kk: v11[k]["test"]["decision"][kk] for kk in ("recall_ideal_advance", "precision_auto_advance", "escalation_rate", "expected_cost")}}
                                    for k in names]), hide_index=True, width="stretch")

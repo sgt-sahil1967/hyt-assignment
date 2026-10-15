@@ -99,7 +99,7 @@ def run(limit: int | None = None):
     if limit:
         df = df.head(limit)
     jds, res = load()
-    model = cfg()["llm"]["judge_model"]
+    model = cfg()["llm"]["judge_model_gemini"]
 
     def one(r):
         p = JUDGE_PROMPT.format(rubric=RUBRIC, title=jds[r["job_id"]]["title"], payload=_payload(r),
@@ -110,11 +110,24 @@ def run(limit: int | None = None):
     with ThreadPoolExecutor(WORKERS) as ex:
         out = list(ex.map(one, df.to_dict("records")))
     jdf = pd.DataFrame(out)
-    jdf.to_csv(R / "judge_scores.csv", index=False)
+    # the Gemini judge path is kept for reference only; the reported judge is Claude Sonnet (judge_prompt_sonnet.md),
+    # whose scores live in results/judge_scores.csv and must never be overwritten by this function
+    jdf.to_csv(R / "judge_scores_gemini.csv", index=False)
     summ = {c: round(float(jdf[c].mean()), 3) for c in CRITERIA if c in jdf}
-    write_json(R / "judge_summary.json", {"judge_model": model, "n": int(len(jdf)), "n_judged": int(jdf[CRITERIA[0]].notna().sum()) if CRITERIA[0] in jdf else 0, "mean_scores": summ,
+    write_json(R / "judge_summary_gemini.json", {"judge_model": model, "n": int(len(jdf)), "n_judged": int(jdf[CRITERIA[0]].notna().sum()) if CRITERIA[0] in jdf else 0, "mean_scores": summ,
                                           "failures": int(jdf.get("error", pd.Series(dtype=str)).notna().sum())})
     print(summ)
+
+
+def summary():
+    """Summary of the reported judge (Claude Sonnet agent; scores committed in results/judge_scores.csv)."""
+    j = pd.read_csv(R / "judge_scores.csv")
+    write_json(R / "judge_summary.json", {
+        "judge_model": "claude-sonnet (low effort, separate Claude Code agent; prompt in eval/judge_prompt_sonnet.md)",
+        "n": int(len(j)), "n_judged": int(j[CRITERIA[0]].notna().sum()),
+        "mean_scores": {c: round(float(j[c].mean()), 3) for c in CRITERIA},
+        "groundedness_le_3": int((j.groundedness <= 3).sum())})
+    print(json.loads((R / "judge_summary.json").read_text()))
 
 
 def agree():
@@ -122,13 +135,16 @@ def agree():
     j = pd.read_csv(R / "judge_scores.csv")
     m = h.merge(j, on=["job_id", "resume_id"], suffixes=("_human", "_judge"))
     m = m.dropna(subset=[f"{c}_judge" for c in CRITERIA])  # judge calls lost to quota are excluded, not imputed
-    out = {"n": int(len(m)), "n_human_rated": int(len(h)), "n_judged_total": int(j[CRITERIA[0]].notna().sum())}
+    out = {"n": int(len(m)), "n_reference_rated": int(len(h)), "n_judged_total": int(j[CRITERIA[0]].notna().sum()),
+           "judge": "claude-sonnet (agent)",
+           "reference_rater": "Claude Opus (the AI coding assistant), same family as the judge, so agreement is likely "
+                              "inflated; replace golden/explanation_human_ratings.csv with the author's ratings and re-run"}
     for c in CRITERIA:
         a, b = m[f"{c}_human"].astype(int), m[f"{c}_judge"].astype(int)
         out[c] = {"weighted_kappa": round(weighted_kappa(a, b, labels=[1, 2, 3, 4, 5]), 3),
                   "spearman": round(float(spearmanr(a, b)[0]), 3) if a.nunique() > 1 and b.nunique() > 1 else None,
                   "exact_agreement": round(float((a == b).mean()), 3),
-                  "human_mean": round(float(a.mean()), 3), "judge_mean": round(float(b.mean()), 3)}
+                  "reference_mean": round(float(a.mean()), 3), "judge_mean": round(float(b.mean()), 3)}
     write_json(R / "judge_agreement.json", out)
     print(json.dumps(out, indent=1))
 
@@ -168,5 +184,5 @@ def labels(n: int = 30):
 
 
 if __name__ == "__main__":
-    fn = {"sheet": sheet, "run": run, "agree": agree, "labels": labels}[sys.argv[1]]
+    fn = {"sheet": sheet, "run": run, "summary": summary, "agree": agree, "labels": labels}[sys.argv[1]]
     fn(*(int(a) for a in sys.argv[2:]))

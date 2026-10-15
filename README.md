@@ -109,22 +109,31 @@ corrupt files return a clear error.
 
 ## Data
 
-* **Resumes**: `data/resume/software_engineer_cv_{1..100}.docx`. These are synthetic and templated: 6 skills from a
-  pool of 15, one role, the same three bullets, BSc CS 2017, UK addresses.
-* **JDs**: `data/jd/postings2.csv` (9,380 LinkedIn software postings). 10 UK postings were hand-picked
-  (`config.yaml: jobs`).
-* Only masked text is sent to the API and stored in the cache.
+* **Resumes**: `data/resume/software_engineer_cv_{1..100}.docx`, **synthetic** and templated (6 skills from a pool of
+  15, one role, the same three bullets, BSc CS 2017, UK addresses). Supplied by the author; they are *not* the
+  brief's primary Kaggle Resume Dataset (*snehaanbhawal/resume-dataset*), and this is the main limitation (REPORT §10).
+* **JDs**: `data/jd/postings2.csv`: 9,380 real LinkedIn software-engineering postings (US/UK/CA/AU, all first seen
+  25 Dec 2023), with columns `job_title, company, job_location, job_link, first_seen, search_city, search_country,
+  job level, job_type, job_summary, job_skills, date_posted`. The schema matches a subset of the Kaggle
+  **"1.3M LinkedIn Jobs & Skills (2024)"** dataset by *asaniczka*, **not** the brief's *arshkon/linkedin-job-postings*.
+  10 UK postings were hand-picked (`config.yaml: jobs`).
+* Neither raw file is committed. The pipeline runs from the committed, PII-masked `data/processed/*.json`, and only
+  masked text is ever sent to an LLM API or stored in the cache.
 
 ## Models
 
 | role | model |
 |---|---|
 | extraction + explanation | `gemini-3.1-flash-lite` (temperature 0) |
-| judge + second labeller | `gemini-3.5-flash` |
+| LLM judge (40 explanations) | Claude Sonnet, low effort, run as a separate agent (`eval/judge_prompt_sonnet.md`) |
+| second golden-set labeller | `gemini-3-flash-preview` |
 | embeddings (role relevance, normalisation fallback, baseline) | `sentence-transformers/all-MiniLM-L6-v2` (local) |
 
 ## Credits
 
+* **Job postings**: LinkedIn postings, apparently from Kaggle "1.3M LinkedIn Jobs & Skills (2024)" (asaniczka). See Data.
+* **AI assistance**: built with Claude Code (Anthropic) as a coding assistant. The golden labels and the 40 reference
+  explanation ratings were drafted with it (REPORT §3, §6). The LLM judge is Claude Sonnet; the pipeline's LLM is Gemini.
 * Skill alias list and taxonomy: hand-written for this project.
 * Fairness name lists: hand-picked common names; no external list was used.
 * Libraries: see `requirements.txt` (pydantic, google-genai, sentence-transformers, rank_bm25, rapidfuzz, scikit-learn,

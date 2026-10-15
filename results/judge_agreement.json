@@ -1,33 +1,35 @@
 {
-  "n": 7,
-  "n_human_rated": 40,
-  "n_judged_total": 7,
+  "n": 40,
+  "n_reference_rated": 40,
+  "n_judged_total": 40,
+  "judge": "claude-sonnet (agent)",
+  "reference_rater": "Claude Opus (the AI coding assistant), same family as the judge, so agreement is likely inflated; replace golden/explanation_human_ratings.csv with the author's ratings and re-run",
   "groundedness": {
-    "weighted_kappa": 0.0,
-    "spearman": null,
-    "exact_agreement": 0.143,
-    "human_mean": 4.143,
-    "judge_mean": 5.0
+    "weighted_kappa": 0.658,
+    "spearman": 0.55,
+    "exact_agreement": 0.475,
+    "reference_mean": 4.125,
+    "judge_mean": 4.175
   },
   "gap_correctness": {
-    "weighted_kappa": NaN,
-    "spearman": null,
-    "exact_agreement": 1.0,
-    "human_mean": 5.0,
-    "judge_mean": 5.0
+    "weighted_kappa": 0.53,
+    "spearman": 0.353,
+    "exact_agreement": 0.625,
+    "reference_mean": 4.725,
+    "judge_mean": 4.425
   },
   "specificity": {
-    "weighted_kappa": 0.0,
-    "spearman": null,
-    "exact_agreement": 0.0,
-    "human_mean": 4.0,
-    "judge_mean": 5.0
+    "weighted_kappa": 0.019,
+    "spearman": 0.099,
+    "exact_agreement": 0.3,
+    "reference_mean": 3.975,
+    "judge_mean": 3.275
   },
   "usefulness": {
-    "weighted_kappa": 0.0,
-    "spearman": null,
-    "exact_agreement": 0.0,
-    "human_mean": 3.0,
-    "judge_mean": 5.0
+    "weighted_kappa": 0.409,
+    "spearman": 0.46,
+    "exact_agreement": 0.8,
+    "reference_mean": 2.975,
+    "judge_mean": 2.8
   }
 }

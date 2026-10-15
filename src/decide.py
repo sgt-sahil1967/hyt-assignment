@@ -12,7 +12,7 @@ INFO_ONLY = {"LOCATION_MISMATCH"}  # reported to the recruiter, never blocks adv
 def info_codes(params: dict | None = None) -> set[str]:
     """Reason codes shown to the recruiter that never block an auto-advance on their own.
 
-    CAREER_SWITCH is informational since v1.1 (DECISIONS #27): the corpus has no genuine career switchers to validate
+    CAREER_SWITCH is informational since v1.1 (DECISIONS #15b): the corpus has no genuine career switchers to validate
     a blocking flag against. `career_switch_blocking: true` restores the frozen v1.0 policy.
     """
     d = {**cfg()["decide"], **(params or {})}

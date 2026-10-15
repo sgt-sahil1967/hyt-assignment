@@ -1,12 +1,12 @@
 {
-  "judge_model": "gemini-3.5-flash",
+  "judge_model": "claude-sonnet (low effort, separate Claude Code agent; prompt in eval/judge_prompt_sonnet.md)",
   "n": 40,
-  "n_judged": 7,
+  "n_judged": 40,
   "mean_scores": {
-    "groundedness": 5.0,
-    "gap_correctness": 5.0,
-    "specificity": 5.0,
-    "usefulness": 5.0
+    "groundedness": 4.175,
+    "gap_correctness": 4.425,
+    "specificity": 3.275,
+    "usefulness": 2.8
   },
-  "failures": 33
+  "groundedness_le_3": 9
 }

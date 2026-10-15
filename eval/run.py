@@ -412,8 +412,8 @@ def tune_career_switch():
 def v1_1():
     """Frozen v1.0 vs post-hoc changes, added one at a time, on both splits (scores re-run from cached extractions):
       A  v1.0 frozen           (results/v1_0_frozen)
-      B  + framework taxonomy  (DECISIONS #25; changes scores)
-      C  + CAREER_SWITCH info  (DECISIONS #27; changes decisions only) = v1.1
+      B  + framework taxonomy  (DECISIONS #15a; changes scores)
+      C  + CAREER_SWITCH info  (DECISIONS #15b; changes decisions only) = v1.1
     """
     d = cfg()["decide"]
     jds, res = load()

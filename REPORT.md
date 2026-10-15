@@ -11,9 +11,9 @@ system frozen on dev. Sources: `results/*.json`. Two demo apps wrap the same `ag
 > were made *after* the test evaluation, on evidence from real uploaded resumes and dev data. They are reported
 > separately as **post-hoc v1.1** in §5b and are never mixed into the headline.
 >
-> **Status.** All suites have run. Two are partial because of free-tier Gemini quotas, and both are marked where they
-> appear: the **blind** fairness mode (0/690 extractions; only the unblinded mode is reported) and the **LLM judge**
-> (7 of 40 reference-rated explanations judged).
+> **Status.** All suites have run. The **blind** fairness mode is missing (0/690 extractions, free-tier Gemini quota),
+> so only the unblinded mode is reported. The LLM judge covers all 40 explanations, but agreement is currently measured
+> against AI-made reference ratings (§6).
 
 ## 1. Problem framing
 
@@ -21,15 +21,17 @@ For a recruiter, "good" means two things. First, a **short list they can trust**
 meets the must-haves. Second, **nothing silently lost**: everyone else gets a reason and a queue position, not a
 rejection. So the agent only **auto-advances** or **escalates** (with reason codes and a low-priority queue for
 `LOW_FIT`). Missing a good candidate is weighted 5× worse than advancing a weak one.
-Not built: auto-reject, fine-tuning, multiple job families, and "ideal resume" vector retrieval (DECISIONS #20).
+Not built: auto-reject, fine-tuning, multiple job families, and "ideal resume" vector retrieval (DECISIONS #2).
 
 ## 2. System
 
 ```
-docx/html ─► sanitise (NFKC, zero-width/tag chars, hidden runs/CSS, injection regex) ─► PII mask ─► Gemini extraction (JSON schema, temp 0, cached)
-JD text   ─────────────────────────────────────────────────────────────────────────► Gemini extraction (must/nice/alternatives/min years)
-            ─► normalise (190 aliases, parent/child taxonomy, embedding fallback) + experience from dates (code)
-            ─► fit score (code) ─► decision policy (code) ─► explanation (LLM sees scorer output only) ─► quote check (code)
+resume (pdf/docx/html) → sanitise (unicode, hidden text, injection flags) → PII mask ─┐
+job description ──────────────────────────────────────────────────────────────────────┤
+                                     Gemini extraction (JSON schema, temp 0, cached) ◄┘   [LLM]
+  → normalise skills (aliases, parent/child taxonomy) + years from dates               [code]
+  → fit score + evidence + gaps → decision policy (advance | escalate + reasons)        [code]
+  → explanation from scorer output only (LLM) → quote check (code)
 ```
 
 **LLM reads, code judges.** The fit score is
@@ -100,15 +102,15 @@ must-haves to "nice" shortlists **all 8 of 8** golden "should advance" candidate
 | test, 140 pairs | Spearman | NDCG@10 | recall | precision | escalation | cost |
 |---|---|---|---|---|---|---|
 | **v1.0 frozen** (headline) | 0.648 | 0.912 | 0.43 | 1.00 (10/10) | 0.93 | 65 |
-| + framework categories in the skill map (DECISIONS #25) | 0.646 | 0.912 | 0.43 | 1.00 | 0.93 | 65 |
-| **v1.1** = + `CAREER_SWITCH` informational (#27) | 0.646 | 0.912 | **0.61** | **1.00 (14/14)** | 0.90 | **45** |
+| + framework categories in the skill map (DECISIONS #15a) | 0.646 | 0.912 | 0.43 | 1.00 | 0.93 | 65 |
+| **v1.1** = + `CAREER_SWITCH` informational (#15b) | 0.646 | 0.912 | **0.61** | **1.00 (14/14)** | 0.90 | **45** |
 
-* **#25** came from a real uploaded resume: Express.js and FastAPI got no credit for "web frameworks such as
+* **#15a** came from a real uploaded resume: Express.js and FastAPI got no credit for "web frameworks such as
   Django or Flask". It changes 5 test scores and 0 decisions.
-* **#27** follows a dev-only tuning pass (#26) that could not calibrate the flag, because the corpus has no career
+* **#15b** follows a dev-only tuning pass that could not calibrate the flag, because the corpus has no career
   switchers. Exactly 4 test decisions change (JD06/R055, JD06/R094, JD10/R094, JD10/R028), all escalate → advance
   and all labelled "advance". Dev results are identical for every variant (cost 0).
-* **Security trade-off of #27:** `CAREER_SWITCH` had been (accidentally) stopping 2 of the 4 "fake skills added to
+* **Security trade-off of #15b:** `CAREER_SWITCH` had been (accidentally) stopping 2 of the 4 "fake skills added to
   the skills list" attacks, because the attacked resumes' job titles didn't fit the role. Under v1.1 that attack
   auto-advances **4/4** (v1.0: 2/4); every other attack is unchanged (§8). A recall gain on honest candidates is
   paid for with weaker protection against a candidate who simply lies. The planned mitigation is to require at least
@@ -127,10 +129,25 @@ must-haves to "nice" shortlists **all 8 of 8** golden "should advance" candidate
   specificity 4.0, usefulness 3.0. Quotes are safe, but claims are not always: 8 of 40 misread a reason code
   (`CAREER_SWITCH` as "a history of changing careers"), gave a wrong cause, or got the experience-gap arithmetic
   wrong. One (JD10/R004) said a degree was missing when it wasn't.
-* **LLM judge** (`gemini-3.5-flash`): **only 7 of 40 judged** before the daily quota ran out on every key. It gave
-  **5/5 on every criterion for all 7**, where reference means were 3.0–4.1, including the items with real errors. A judge
-  that can't fail is not a validator. Agreement can't be computed (κ undefined), and this judge should not be
-  trusted until it's calibrated against human ratings.
+* **LLM judge: Claude Sonnet**, a different model family from the Gemini generator, run as a separate agent at low
+  effort, blind to the reference ratings, with a fixed rubric (`eval/judge_prompt_sonnet.md`). It scored all 40
+  (`results/judge_scores.csv`): groundedness 4.2, gap correctness 4.4, specificity 3.3, usefulness 2.8, with 9/40 at
+  groundedness ≤ 3. It independently caught the same real errors as the reference ratings: the false "missing degree"
+  (JD10/R004 → 1), "0.5 years" read as "0.5 years short" (JD09/R050, R075), `CAREER_SWITCH` read as a career history,
+  and invented causes of escalation.
+
+  | judge vs reference, n = 40 | groundedness | gap correctness | specificity | usefulness |
+  |---|---|---|---|---|
+  | weighted κ (quadratic) | 0.66 | 0.53 | 0.02 | 0.41 |
+  | Spearman | 0.55 | 0.35 | 0.10 | 0.46 |
+  | mean (reference / judge) | 4.1 / 4.2 | 4.7 / 4.4 | 4.0 / 3.3 | 3.0 / 2.8 |
+
+  The judge is trustworthy for **groundedness** (it finds factual errors) and **usefulness**, and not for
+  **specificity**, where the two raters disagree on what "specific" means. **Caveat:** the reference rater is Claude
+  Opus, the same family as the judge, so these κ are likely optimistic. They become judge–*human* agreement only
+  once the author's ratings replace `golden/explanation_human_ratings.csv` and `make judge` is re-run.
+  A Gemini judge was tried first and abandoned: the free tier allowed only 7 of 40 items, and it gave 5/5 to all of
+  them.
 * **Stale explanations**: an explanation describes one scoring. The workspace marks it *outdated* when requirements
   or the threshold change, instead of showing text that contradicts the new decision.
 
@@ -147,7 +164,7 @@ scored as empty). The blind mitigation mode got 0/690 extractions (quota) and is
   (Wilcoxon p < 0.001) but tiny. It comes via role-relevance embeddings, as predicted in the plan.
 * **Caregiving gap**: the suite **found a bug**. The extractor recorded "Career break – family caregiving
   (2016–2017)" as a job, adding a year of experience. The fix is in code (`experience.py` skips non-employment
-  entries; DECISIONS #24). After it: mean |Δ| 0.004, p = 0.14, 0 flips. All 200 golden scores were unchanged.
+  entries; DECISIONS #3). After it: mean |Δ| 0.004, p = 0.14, 0 flips. All 200 golden scores were unchanged.
 * **Noise floor**: the fairness reruns were lost to quota. The robustness run (§4) shows zero run-to-run variance at
   temperature 0, so any non-zero Δ is attributable to the variant.
 
@@ -166,23 +183,32 @@ stripped or caught. Two gaps remain. **Lying in the skills list can't be detecte
 extractor as the candidate's skills. Mitigations for next week: extract skills only from defined resume sections, and
 require at least one "used" must-have before auto-advance.
 
-## 9. Failure analysis (real examples)
+## 9. Failure analysis: top 5 (real examples, hypotheses)
 
-1. **Responsibilities extracted as must-haves** (JD01: "build pipelines", "monitoring" → `ci/cd`, `monitoring`). All 8
-   good Java/Spring candidates were escalated. Fixed in the product by recruiter confirmation of requirements (§5).
-2. **`CAREER_SWITCH` misfires** on title-only role text (JD06/R055, R094; JD10/R094, R028). Dev-only tuning (#26)
-   was flat from "off" to 0.30, and the corpus has no career switchers to calibrate against. In v1.1 the flag is
-   informational (#27, §5b): it recovers these 4 candidates, but those numbers are optimistic.
-3. **Explanations misread codes and numbers**, and the judge doesn't notice (§6). Fix: deterministic templates for
-   codes and gaps.
-4. **Trigger-free injection and fake skills** get through (§8).
-5. **Ties and weak ranking where nobody fits**: listed-only evidence everywhere means identical skill sets tie (ordered
-   by ID), and JD04 / JD03 / dev JD07 have Spearman 0.37 / 0.49 / 0.27.
-6. **Skill-map gaps on real resumes**: "web frameworks such as Django or Flask" gave no credit for Express.js or
-   FastAPI. Fixed after the test evaluation with framework categories (DECISIONS #25). Measured on the golden set:
-   5 scores changed, 0 decisions, Spearman 0.648 → 0.646. The workspace now flags requirements outside the skill map.
-7. **Process bugs found and fixed**: the caregiving gap counted as work (§7), and the evaluation harness at first
-   scored quota failures as empty resumes, which produced a fake "perfectly fair" blind mode (DECISIONS #23).
+1. **JD responsibilities extracted as must-haves.** *Example:* JD01's "orchestrating build pipelines… integrating
+   monitoring" became must-haves `ci/cd` and `monitoring`; all 8 good Java/Spring Boot candidates were capped and
+   escalated. *Hypothesis:* the prompt treats core responsibilities as requirements when a JD has no explicit
+   required/desirable split, and JD01 has none. *Evidence:* oracle requirements lift recall 0.43 → 0.78 (§5).
+   *Response:* recruiter confirmation in the requirements panel.
+2. **Skill-map gaps between category phrases and concrete skills.** *Example:* "web development frameworks such as
+   Django or Flask" was cleaned to `web`, so an uploaded resume's Express.js and FastAPI got no credit. *Hypothesis:*
+   JDs name categories while resumes name tools, and the cleaner strips the category words. *Response:* framework
+   categories (#15a) plus a panel flag for unmapped requirements.
+3. **`CAREER_SWITCH` misfires.** *Example:* JD06/R055 and R094, JD10/R094 and R028: genuine software engineers escalated
+   as career switchers. *Hypothesis:* role relevance is an embedding cosine of short titles plus identical template
+   bullets, which isn't comparable across jobs (dev JD08 median 0.12 vs JD07 0.55). Dev tuning was flat (#15b).
+4. **Explanations misstate codes and numbers.** *Example:* JD10/R004 says a CS degree is missing (strength 1.0);
+   JD09/R050 calls 0.5 years of experience "0.5 years below" a 4-year bar. 9/40 score ≤ 3 on groundedness by the
+   judge (8/40 reference). *Hypothesis:* the payload gives reason codes without definitions and leaves gap arithmetic
+   to the LLM. *Fix:* deterministic templates for codes and gaps.
+5. **Lies and trigger-free injection get through.** *Example:* JD01/R047 with JD must-haves added to its skills list
+   was auto-advanced (fake skills: 2/4 in v1.0, 4/4 in v1.1); a "reviewer comment" with no trigger words got 1/4
+   through. *Hypothesis:* listed-skill credit can't tell true from false, and the extractor reads skills from any text
+   block. *Fix:* require ≥ 1 "used" must-have; extract skills from resume sections only.
+
+*Also observed:* identical skill sets tie (ordered by ID) and ranking is weak where nobody fits (JD04 Spearman 0.37).
+Two process bugs were caught and fixed: a caregiving break counted as work (§7), and quota failures scored as empty
+resumes (#14).
 
 ## 10. What is misleading about my headline number
 
@@ -195,8 +221,8 @@ require at least one "used" must-have before auto-advance.
   fairness deltas are all easier on 75-word template resumes than on real ones. Evidence weighting, date parsing and
   projects are exercised mainly by unit tests.
 * **Small n.** 7 test JDs and 10 auto-advances. Precision 10/10 has a Wilson 95% lower bound of about 0.72.
-* **Quota-limited evidence.** The judge has n = 7, the blind fairness mode is missing, and fairness used 30 resumes,
-  not 40.
+* **Quota-limited evidence.** The blind fairness mode is missing and fairness used 30 resumes, not 40. Judge
+  agreement is against AI-made reference ratings (same family as the judge), not yet against a human.
 * **Test exposure.** JD extraction prompts were iterated while looking at all 10 JD extractions (not at labels or
   metrics). The post-hoc ablations and both v1.1 changes were made after seeing test errors, so v1.1's test
   numbers are optimistic and are kept out of the headline.
@@ -204,7 +230,7 @@ require at least one "used" must-have before auto-advance.
 ## 11. Next week
 
 Human recruiter labels (2 raters, adjudicated). A real resume corpus, including genuine career switchers, to decide whether
-`CAREER_SWITCH` should ever block again, and a fresh test set to confirm v1.1. Templated explanations for codes and gaps. Calibrating or
-replacing the judge once the author has rated the 40 explanations.
+`CAREER_SWITCH` should ever block again, and a fresh test set to confirm v1.1. Templated explanations for codes and gaps. Measuring the judge
+against the author's own ratings of the 40 explanations.
 Section-scoped skill extraction against trigger-free injection. Finishing blind-mode fairness. Feeding recruiter
 requirement edits and stage overrides back as labels. A calibrated probability of "should advance".

@@ -1,41 +1,41 @@
-job_id,resume_id,groundedness,gap_correctness,specificity,usefulness,rationale,error
-JD01,R023,5.0,5.0,5.0,5.0,"The explanation is completely faithful to the scorer output. It accurately cites the overall score (0.2833), quotes the strongest evidence directly from the evidence array, correctly identifies all major missing must-have and nice-to-have gaps, and clearly explains that the candidate was escalated despite missing key qualifications.",
-JD01,R028,5.0,5.0,5.0,5.0,"The explanation is fully grounded in the provided scorer output and resume. It accurately cites the candidate's score (0.2333), strengths (REST API and Docker), and all missing must-have requirements (Java, Spring Boot, CI/CD, and monitoring). It also clearly conveys why the application was escalated for manual review.",
-JD01,R066,5.0,5.0,5.0,5.0,"The explanation accurately reflects all elements of the scorer output and resume. It correctly identifies the candidate's score (0.24), decision (escalate), key strengths ('REST API' and 'Kubernetes'), and primary missing must-have requirements (Java, Spring Boot, CI/CD, and monitoring) without introducing any hallucinatory details.",
-JD01,R091,5.0,5.0,5.0,5.0,"The explanation is fully accurate and supported by the scorer output and resume. It correctly identifies the overall score, the matched skills (REST API and Kubernetes), and the precise missing must-have and nice-to-have gaps. It clearly explains why the application was escalated for manual review, making it highly useful for a recruiter.",
-JD01,R096,5.0,5.0,5.0,5.0,"The explanation is fully grounded in the provided scorer output, accurately referencing scores, strengths, and gaps. It correctly highlights both must-have gaps (CI/CD, monitoring) and nice-to-have gaps (API gateway, containerisation), as well as the experience gap (1.54 years). It is specific and highly useful for a recruiter reviewing an escalated application.",
-JD03,R008,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD03,R012,5.0,5.0,5.0,5.0,"The explanation is accurate, fully grounded in the provided scorer output, and correctly identifies all critical must-have gaps (Ruby, SQL, Git, CI/CD, Cloud Computing) and the experience deficit (2.5 years vs 7 years required). It provides specific quotes and metrics and clearly explains the rationale behind the escalation.",
-JD03,R029,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD03,R041,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD03,R048,5.0,5.0,5.0,5.0,"The explanation accurately reflects all elements of the scorer output. It correctly states the score (0.18), decision (escalate), key strengths (REST API, Node.js, Git), all critical must-have gaps (ruby, reactjs, sql, docker, ci/cd, cloud computing), and the exact years of experience (2.5 years vs requirement). Everything is fully grounded, specific, and useful for a recruiter.",
-JD03,R091,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD04,R011,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD04,R028,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD04,R052,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD04,R097,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD05,R008,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD05,R009,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD05,R026,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD05,R028,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD05,R033,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD05,R048,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD05,R078,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD06,R019,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD06,R047,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD06,R054,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD06,R066,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD06,R100,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD09,R008,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD09,R019,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD09,R026,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD09,R035,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD09,R043,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD09,R050,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD09,R066,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD09,R075,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD10,R002,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD10,R004,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD10,R017,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD10,R028,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
-JD10,R039,,,,,,LLMError: daily quota exhausted on all 4 key(s) for gemini-3.5-flash
+job_id,resume_id,groundedness,gap_correctness,specificity,usefulness,rationale
+JD01,R023,5,5,3,3,Accurate but generic escalation with no check guidance
+JD01,R028,5,5,3,3,Accurate but generic escalation
+JD01,R066,5,5,3,3,Accurate but generic escalation
+JD01,R091,5,5,3,3,Accurate but generic escalation
+JD01,R096,4,4,4,3,Gives 1.54y without stating the 2y implied requirement
+JD03,R008,4,4,3,3,States 4.5y experience gap without the 7y requirement
+JD03,R012,4,4,3,3,Experience gap vs 7y left vague
+JD03,R029,4,4,3,3,Experience gap vs 7y left vague
+JD03,R041,4,3,3,3,Lists 2.54y as a gap without saying 7y is required
+JD03,R048,4,4,3,3,Experience gap vs 7y left vague
+JD03,R091,4,3,3,3,Lists 2.54y as a gap without saying 7y is required
+JD04,R011,5,5,3,3,Location mismatch mentioned but not explained
+JD04,R028,5,5,3,3,Location mismatch mentioned but not explained
+JD04,R052,5,5,3,3,Location mismatch mentioned but not explained
+JD04,R097,5,5,3,3,Location mismatch mentioned but not explained
+JD05,R008,5,5,4,3,Accurate; generic escalation
+JD05,R009,3,5,4,3,Attributes escalation to 5.54y experience rather than reason codes
+JD05,R026,5,4,4,3,Experience gap given as less than two years only
+JD05,R028,5,5,4,3,Accurate; generic escalation
+JD05,R033,5,5,4,3,Accurate; generic escalation
+JD05,R048,5,5,4,3,Accurate; generic escalation
+JD05,R078,5,4,4,3,Experience gap vague
+JD06,R019,3,5,3,2,CAREER_SWITCH misread as candidate being a career switcher
+JD06,R047,4,5,3,3,Strongest evidence vague (relevant experience and background)
+JD06,R054,5,5,4,3,Accurate; generic escalation
+JD06,R066,4,4,3,3,Nice-to-haves not labelled and low role relevance omitted
+JD06,R100,3,5,3,2,CAREER_SWITCH misread as candidate being a career switcher
+JD09,R008,5,5,3,3,Accurate; generic escalation
+JD09,R019,5,5,3,3,Accurate; generic escalation
+JD09,R026,5,5,4,3,Accurate and states 0.5y vs 4y
+JD09,R035,5,5,3,3,Does not state the 4y threshold
+JD09,R043,3,5,3,2,Invents overall professional experience as escalation cause
+JD09,R050,2,3,3,2,Says 0.5y less than 4y when actual shortfall is 3.5y
+JD09,R066,5,5,3,3,Accurate; generic escalation
+JD09,R075,2,2,3,2,Says 0.5y less than 4y when actual shortfall is 3.5y
+JD10,R002,2,2,3,2,Misstates 0.54y as 0.5y below 2y and career switch vague
+JD10,R004,1,2,3,2,Claims missing CS degree though strength is 1.0
+JD10,R017,4,5,3,3,Role relevance remark vague but no false claims
+JD10,R028,3,5,3,2,CAREER_SWITCH misdescribed as history of changing careers
+JD10,R039,5,5,4,3,Accurate

@@ -111,7 +111,7 @@ export default function InsightsPage() {
               note="Changes made after the test evaluation, measured one at a time. v1.0 stays the headline. Dev results unchanged for every variant.">
               <table className="w-full text-xs">
                 <thead><tr className="text-left text-muted"><th className="pb-1.5 font-medium">Version</th><th className="font-medium">Spearman</th><th className="font-medium">Recall</th><th className="font-medium">Precision</th><th className="font-medium">Escalated</th><th className="font-medium">Cost</th></tr></thead>
-                <tbody>{([['A_v1_0_frozen', 'v1.0 frozen (headline)'], ['B_plus_framework_taxonomy', '+ framework categories (#25)'], ['C_v1_1_plus_career_switch_informational', 'v1.1: + CAREER_SWITCH informational (#27)']] as const).map(([k, label]) => {
+                <tbody>{([['A_v1_0_frozen', 'v1.0 frozen (headline)'], ['B_plus_framework_taxonomy', '+ framework categories (#15a)'], ['C_v1_1_plus_career_switch_informational', 'v1.1: + CAREER_SWITCH informational (#15b)']] as const).map(([k, label]) => {
                   const t = d.v1_1[k].test
                   return (
                     <tr key={k} className={cx('border-t border-line', k.startsWith('C') && 'font-medium')}>
