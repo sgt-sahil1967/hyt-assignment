@@ -1,4 +1,4 @@
-"""v1.2 fixes found on the real-resume set (REPORT §5c). Each is behind a config flag that is off in the v1.0 profile."""
+"""v1.2 fixes found on the real-resume set (REPORT §5.2). Each is behind a config flag that is off in the v1.0 profile."""
 import pytest
 
 from src.config import cfg

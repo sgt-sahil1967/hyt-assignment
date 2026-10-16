@@ -19,3 +19,8 @@ data/kaggle/
 # internal notes and local-only tooling (not part of the submission)
 VERIFICATION.md
 tools/add_keys.py
+
+# LaTeX build leftovers
+report/*.aux
+report/*.log
+report/main.pdf

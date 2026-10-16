@@ -120,7 +120,7 @@ run from the cache by default (no API key needed).
 ```bash
 make setup                     # once: Python 3.11 venv + pinned dependencies
 make reproduce-v1.0            # HEADLINE numbers (REPORT §4-5, §8): frozen v1.0 system
-make reproduce                 # current system (v1.3, REPORT §5b-5c) + fairness, adversarial, judge, real set
+make reproduce                 # current system (v1.3, REPORT §5.1-5.2) + fairness, adversarial, judge, real set
 ```
 
 * Both run fully **offline** (`HYT_OFFLINE=1`): every LLM response comes from the committed `cache/llm/` and every
@@ -184,7 +184,7 @@ corrupt files return a clear error.
   job level, job_type, job_summary, job_skills, date_posted`. The schema matches a subset of the Kaggle
   **"1.3M LinkedIn Jobs & Skills (2024)"** dataset by *asaniczka*, **not** the brief's *arshkon/linkedin-job-postings*.
   10 UK postings were hand-picked (`config.yaml: jobs`).
-* **Real-resume sanity set** (REPORT §5c): `data/prepare_real.py` samples 45 resumes from Kaggle
+* **Real-resume sanity set** (REPORT §5.2): `data/prepare_real.py` samples 45 resumes from Kaggle
   *snehaanbhawal/resume-dataset* (selected by content, not category) and 5 postings from *arshkon/linkedin-job-postings*
   into 50 pairs. Only the masked subset (`data/processed_real/`) and Sonnet-agent labels (`golden_real/`, pending author
   review) are committed. `make real-set` re-runs it offline; the raw Kaggle CSVs (`data/kaggle/`) are gitignored.

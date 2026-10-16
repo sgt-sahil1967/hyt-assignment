@@ -83,4 +83,4 @@ reproduce: data golden test eval fairness adversarial judge
 	$(PY) -m eval.run v1_1
 	$(PY) -m eval.real_set run
 	$(PY) -m eval.posthoc
-	@echo "reproduced the current system (v1.3, REPORT §5b-5c) from cache -> results/"
+	@echo "reproduced the current system (v1.3, REPORT §5.1-5.2) from cache -> results/"

@@ -2,7 +2,7 @@
 
 The LLM sometimes turns an *example list* into separate must-haves: "Experience with MySQL, Redis, Nginx, Kubernetes,
 Docker, OpenStack, Hadoop, Spark, Flink, etc." became 9 must-haves, so no real candidate could meet them all (REPORT
-§5c). Code fixes that from the JD text itself: when ≥ 3 requirements of the same level are all named in one clause
+§5.2). Code fixes that from the JD text itself: when ≥ 3 requirements of the same level are all named in one clause
 that is marked as a list of examples ("etc.", "e.g.", "such as", "or similar", "including", "for example"), they are
 merged into ONE requirement whose alternatives are those items, so any one of them satisfies it.
 """
