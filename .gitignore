@@ -15,3 +15,7 @@ cache/private/
 results/_*.log
 results/v1_0_reproduced/
 data/kaggle/
+
+# internal notes and local-only tooling (not part of the submission)
+VERIFICATION.md
+tools/add_keys.py

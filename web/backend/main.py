@@ -70,6 +70,10 @@ class SettingsIn(BaseModel):
     live: bool
 
 
+class RuntimeSettingsIn(BaseModel):
+    values: dict[str, bool | int | float | str]
+
+
 @app.get("/api/settings")
 def settings():
     return {**agent.settings(), "stages": STAGES, "reason_help": agent.REASON_HELP}
@@ -77,8 +81,27 @@ def settings():
 
 @app.put("/api/settings")
 def put_settings(s: SettingsIn):
-    agent.set_offline(not s.live)
+    E.update_settings({"llm.offline": not s.live})
     return agent.settings()
+
+
+@app.get("/api/settings/runtime")
+def runtime_settings():
+    """Every tunable setting (group, label, bounds, help) with its current and default value, plus recent changes."""
+    return E.settings_view()
+
+
+@app.put("/api/settings/runtime")
+def put_runtime_settings(body: RuntimeSettingsIn):
+    try:
+        return E.update_settings(body.values)
+    except ValueError as e:
+        raise HTTPException(422, str(e))
+
+
+@app.post("/api/settings/runtime/reset")
+def reset_runtime_settings():
+    return E.update_settings(None, reset=True)
 
 
 @app.get("/api/jobs")

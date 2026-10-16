@@ -13,6 +13,31 @@ export interface Settings {
   as_of_date: string
   info_codes: string[]
   reason_help: Record<string, string>
+  weights: Record<'must_have' | 'nice_to_have' | 'experience' | 'role_relevance', number>
+  missing_must_have_cap: number
+}
+
+export type SettingValue = boolean | number | string
+
+export interface SettingSpec {
+  key: string
+  group: string
+  label: string
+  kind: 'float' | 'int' | 'bool' | 'choice'
+  min?: number
+  max?: number
+  step?: number
+  options?: string[]
+  help?: string
+  value: SettingValue
+  default: SettingValue
+}
+
+export interface RuntimeSettings {
+  settings: SettingSpec[]
+  overrides: Record<string, SettingValue>
+  changed?: Record<string, SettingValue>
+  history: { at: string; by: string; changed: Record<string, SettingValue> }[]
 }
 
 export interface JobSummary {
@@ -137,6 +162,9 @@ async function call<T>(method: string, path: string, body?: unknown): Promise<T>
 export const api = {
   settings: () => call<Settings>('GET', '/settings'),
   setLive: (live: boolean) => call<Settings>('PUT', '/settings', { live }),
+  runtime: () => call<RuntimeSettings>('GET', '/settings/runtime'),
+  setRuntime: (values: Record<string, SettingValue>) => call<RuntimeSettings>('PUT', '/settings/runtime', { values }),
+  resetRuntime: () => call<RuntimeSettings>('POST', '/settings/runtime/reset'),
   jobs: () => call<JobSummary[]>('GET', '/jobs'),
   createJob: (title: string, text: string) => call<{ id: string }>('POST', '/jobs', { title, text }),
   job: (id: string) => call<JobDetail>('GET', `/jobs/${id}`),

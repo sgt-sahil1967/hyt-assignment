@@ -44,6 +44,12 @@ class Engine:
         self._parsed: dict[str, dict] = {}
         self._screened: dict[tuple, list[dict]] = {}
         self._labels = {(r["job_id"], r["resume_id"]): r for r in agent.golden_labels()}
+        agent.settings_spec()  # capture the start-up defaults before any override
+        try:
+            agent.update_settings(self.state.get("settings", {}))
+        except ValueError as e:  # a stale or hand-edited override: fall back to the defaults
+            print("ignoring saved settings:", e)
+            self.state["settings"] = {}
 
     # ---------------------------------------------------------------- persistence
     def save(self):
@@ -117,7 +123,7 @@ class Engine:
     def version(self, jid: str) -> str:
         js = self.job_state(jid)
         return json.dumps([self.requirements(jid), self.min_years(jid), self.threshold(jid),
-                           sorted(self.pool(jid)), agent.settings()["offline"]], sort_keys=True)
+                           sorted(self.pool(jid)), agent.settings_spec()["overrides"]], sort_keys=True)
 
     # ---------------------------------------------------------------- candidates
     def pool(self, jid: str) -> dict[str, str]:
@@ -343,6 +349,26 @@ class Engine:
 
     def activity(self, jid: str) -> list[dict]:
         return list(reversed(self.job_state(jid)["history"]))[:200]
+
+    # ---------------------------------------------------------------- runtime settings
+    def update_settings(self, patch: dict | None, reset: bool = False) -> dict:
+        """Apply (or reset) runtime settings. Every job re-screens on next read; human stage moves are kept."""
+        with self.lock:
+            if reset:
+                agent.reset_settings()
+                changed = {"reset": True}
+            else:
+                changed = agent.update_settings(patch or {})
+            if changed:
+                self._parsed.clear()  # requirement post-processing flags apply at parse time
+                self._screened.clear()
+                self.state["settings"] = agent.settings_spec()["overrides"]
+                self.state.setdefault("settings_history", []).append({"at": _now(), "by": "recruiter", "changed": changed})
+                self.save()
+            return {"changed": changed, **self.settings_view()}
+
+    def settings_view(self) -> dict:
+        return {**agent.settings_spec(), "history": self.state.get("settings_history", [])[-20:][::-1]}
 
     def warm(self):
         t = time.time()

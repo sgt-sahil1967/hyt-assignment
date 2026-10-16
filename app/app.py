@@ -67,7 +67,8 @@ def evidence_table(evidence: list[dict]):
 
 
 @st.cache_data(show_spinner=False)
-def run_screen(candidates: tuple, criteria: str, live: bool, received: str | None = None) -> list[dict]:
+def run_screen(candidates: tuple, criteria: str, live: bool, received: str | None = None, cfg_key: str = "") -> list[dict]:
+    """cfg_key: the runtime-settings fingerprint, so a settings change re-screens instead of hitting the cache."""
     agent.set_offline(not live)
     out = []
     for cid, text, html, hidden in candidates:
@@ -87,6 +88,47 @@ PAGES = ["Screen candidates", "Overview", "Benchmark jobs", "Golden set", "Evalu
 page = st.sidebar.radio("Page", PAGES, label_visibility="collapsed")
 live = st.sidebar.toggle("Allow live Gemini calls", value=False,
                          help="Off = answers come only from cache/ (free, reproducible). On = new text calls the API.")
+
+
+def settings_panel() -> str:
+    """Runtime settings (src/settings.py) for this session. Returns a fingerprint for the screening cache."""
+    spec = [s for s in agent.settings_spec()["settings"] if s["group"] != "Model"]  # live toggle sits above
+    ov = st.session_state.setdefault("overrides", {})
+    with st.sidebar.expander(f"⚙️ Settings{f' · {len(ov)} changed' if ov else ''}"):
+        with st.form("settings", border=False):
+            vals = {}
+            for group in dict.fromkeys(s["group"] for s in spec):
+                st.markdown(f"**{group}**")
+                for s in (x for x in spec if x["group"] == group):
+                    cur, h = ov.get(s["key"], s["default"]), s.get("help")
+                    if s["kind"] == "bool":
+                        vals[s["key"]] = st.toggle(s["label"], value=bool(cur), help=h)
+                    elif s["kind"] == "int":
+                        vals[s["key"]] = int(st.number_input(s["label"], s["min"], s["max"], int(cur), step=1, help=h))
+                    else:
+                        vals[s["key"]] = st.slider(s["label"], float(s["min"]), float(s["max"]), float(cur),
+                                                   step=float(s["step"]), help=h)
+            a, b = st.columns(2)
+            apply, reset = a.form_submit_button("Apply", type="primary"), b.form_submit_button("Defaults")
+        defaults = {s["key"]: s["default"] for s in spec}
+        if apply or reset:
+            new = {} if reset else {k: v for k, v in vals.items() if v != defaults[k]}
+            agent.reset_settings()
+            try:
+                agent.update_settings(new)
+                st.session_state["overrides"] = new
+                st.rerun()
+            except ValueError as e:
+                st.error(str(e))
+        if ov:
+            st.caption("Evaluation pages show numbers measured with the defaults.")
+    # config is process-wide: re-apply this session's choice on every run
+    agent.reset_settings()
+    agent.update_settings(st.session_state["overrides"])
+    return json.dumps(st.session_state["overrides"], sort_keys=True)
+
+
+CFG_KEY = settings_panel()
 agent.set_offline(not live)
 S = agent.settings()
 c = {"decide": {"t_high": S["t_high"]}, "llm": {"model": S["model"], "judge_model": S["judge_model"]}}
@@ -136,7 +178,7 @@ def screen_candidates_page():
             return
         with st.spinner("Screening…"):
             try:
-                out = run_screen(tuple(st.session_state["cands"]), jd_text, live, st.session_state.get("received"))
+                out = run_screen(tuple(st.session_state["cands"]), jd_text, live, st.session_state.get("received"), CFG_KEY)
             except Exception as e:
                 st.error(f"Could not parse the job description: {e}. Turn on live calls for a new JD.")
                 return
@@ -177,7 +219,7 @@ def benchmark_page():
     lab = labels()
     g = lab[lab.job_id == jid]
     texts = agent.benchmark_resumes()
-    out = run_screen(tuple((r, texts[r], False, 0) for r in g.resume_id), jobs[jid]["text"], live)
+    out = run_screen(tuple((r, texts[r], False, 0) for r in g.resume_id), jobs[jid]["text"], live, None, CFG_KEY)
     df = pd.DataFrame([o for o in out if "error" not in o]).sort_values(["score", "candidate_id"], ascending=[False, True])
     df = df.merge(g[["resume_id", "relevance", "ideal_decision"]], left_on="candidate_id", right_on="resume_id")
     view = pd.DataFrame({"candidate": df.candidate_id, "score": df.score, "decision": df.decision,

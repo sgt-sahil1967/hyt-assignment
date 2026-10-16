@@ -84,10 +84,10 @@ run from the cache by default (no API key needed).
 |---|---|---|
 | Purpose | Replicate the project in seconds | Show the product as a recruiter would use it |
 | Start | `.venv/bin/streamlit run app/app.py`, then press **⚡ Load sample data** | `make api` (port 8765) and `make web-install && make web` (port 5180) |
-| What you get | Screen any JD + resumes; benchmark jobs; all evaluation dashboards | Jobs → workspace with parsed requirements (left), ranked candidates (middle), evidence drawer (right) |
+| What you get | Screen any JD + resumes; benchmark jobs; all evaluation dashboards; ⚙️ Settings in the sidebar | Jobs table → workspace with ranked candidates, a requirements sheet, a candidate panel, Insights and Settings |
 
 **Workspace flow** (`web/`, React 19 + Vite + Tailwind, FastAPI):
-* **Requirements panel**: the agent's parsed must-haves and nice-to-haves, with how many applicants show evidence for
+* **Requirements** (button in each job's header): the agent's parsed must-haves and nice-to-haves, with how many applicants show evidence for
   each. A recruiter can switch any requirement between Must / Nice / Off, add one, or set minimum years. The job
   re-ranks instantly from cached extractions, with no LLM call. This is the fix for the evaluation's #1 failure
   mode: on JD01, demoting two wrongly extracted must-haves shortlists all 8 good candidates.
@@ -97,11 +97,18 @@ run from the cache by default (no API key needed).
   **Needs review** tab shows the agent's escalation queue.
 * **Threshold slider** with a live preview of who enters or leaves the shortlist. **Filters**: years, education,
   minimum score, "must show evidence for X", hide flagged.
-* **Candidate drawer**: score breakdown, per-requirement evidence (used / listed / implied by taxonomy), reason codes in
+* **Candidate panel** (tabs: Summary, Evidence, Resume, Activity): score breakdown, per-requirement evidence (used / listed / implied by taxonomy), reason codes in
   plain English, a manipulation alert, the masked resume with evidence highlighted, the explanation (flagged as
   *outdated* once requirements change), and the audit trail.
 * **Coverage matrix** (candidates × requirements), **resume upload** (PDF, .docx, .html or .txt; hidden text and
   injection are stripped and flagged), **Insights** page with the evaluation results. Candidates are shown blind, by ID.
+* **Settings** page: change the agent while it runs (no code edits). It covers the threshold, borderline band and
+  low-priority cut-off, score weights and evidence credit, the missing-must-have multiplier, career-switch and
+  overqualified rules, the four v1.2 flags, safety thresholds, cache-only mode and the extraction model. Values are
+  validated (e.g. used ≥ listed ≥ learning), every job re-screens on apply, human stage moves are kept, and overrides
+  persist in the gitignored `web/backend/state.json`. `config.yaml` and the reported numbers never change; Insights
+  warns while any setting differs from the default. The same settings are in the Streamlit sidebar
+  (`src/settings.py`; API: `GET/PUT /api/settings/runtime`).
 
 ## Reproduce the results (no API key, no raw data, ~2 minutes)
 

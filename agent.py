@@ -221,13 +221,32 @@ def settings() -> dict:
     c = cfg()
     return {"model": c["llm"]["model"], "judge_model": c["llm"]["judge_model"], "t_high": c["decide"]["t_high"],
             "t_low": c["decide"]["t_low"], "delta": c["decide"]["delta"], "offline": bool(c["llm"]["offline"]),
-            "as_of_date": c["as_of_date"], "info_codes": sorted(info_codes())}
+            "as_of_date": c["as_of_date"], "info_codes": sorted(info_codes()), "weights": dict(c["score"]["weights"]),
+            "missing_must_have_cap": c["score"]["missing_must_have_cap"]}
 
 
 def set_offline(offline: bool) -> None:
-    from src.config import cfg
+    update_settings({"llm.offline": offline})
 
-    cfg()["llm"]["offline"] = offline
+
+def settings_spec() -> dict:
+    """Every runtime-tunable setting with its current and default value (see src/settings.py)."""
+    from src import settings as s
+
+    return s.describe()
+
+
+def update_settings(patch: dict) -> dict:
+    """Validate and apply {dotted.key: value}; raises ValueError. Returns the keys that changed."""
+    from src import settings as s
+
+    return s.apply(patch)
+
+
+def reset_settings() -> None:
+    from src import settings as s
+
+    s.reset()
 
 
 def sample_data() -> dict:
