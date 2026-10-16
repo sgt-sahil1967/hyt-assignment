@@ -158,7 +158,8 @@ src/
   explain.py / grounded.py  evidence-only explanation + quote verification
   pipeline.py            screen(job_id) -> ranked results; CLI
 baselines/               keyword Jaccard, TF-IDF, embedding cosine, LLM zero-shot (ablation)
-golden/                  rubric, sampler, labels (200 pairs), extraction gold, ratings, relabels
+golden/                  rubric, sampler, labels (200 pairs, AI-drafted), extraction gold, ratings, relabels, and my own
+                         review: blind_sample.md + human_labels.csv (60 blind labels), human_review_raw.md (40 verdicts)
 eval/                    run.py (metrics, tuning, baselines, robustness, ablations), judge.py, fairness.py, adversarial.py
 synthetic/               SYNTHETIC fairness / adversarial variants (never in the golden set)
 cache/                   LLM responses (masked inputs only) + embeddings

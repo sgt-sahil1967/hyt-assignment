@@ -1,0 +1,41 @@
+job_id,resume_id,system_score,system_decision,ai_label_ideal,author_verdict_on_score,author_would_advance,requirement_notes,source
+JD01,R023,0.2833,escalate,escalate,score_too_low,yes (implied: 0.6-0.7),ci/cd listed as both must and nice; monitoring should be nice; api gateway cannot be judged (resume shows REST APIs at scale),Claude reading of golden/human_review_raw.md; author to confirm
+JD01,R028,0.2333,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD01,R066,0.2445,escalate,escalate,agree,no,ci/cd listed as both must and nice,Claude reading of golden/human_review_raw.md; author to confirm
+JD01,R091,0.2445,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD01,R096,0.2806,escalate,advance,score_too_low,unclear (agrees experience is lacking),monitoring should be nice; ci/cd double-listed; covers java and spring boot,Claude reading of golden/human_review_raw.md; author to confirm
+JD03,R008,0.2417,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD03,R012,0.1908,escalate,escalate,score_too_low,no (agrees escalation is justified),"git can be assumed from ""collaborated with cross-functional teams""",Claude reading of golden/human_review_raw.md; author to confirm
+JD03,R029,0.2347,escalate,escalate,score_too_low,no (agrees escalation is justified),"same as JD03/R012: git can be assumed from ""collaborated with cross-functional teams""","author clarified: ""same verdict"" means same as the previous item (R012)"
+JD03,R041,0.1862,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD03,R048,0.1847,escalate,escalate,agree,no,resume is for a different role,Claude reading of golden/human_review_raw.md; author to confirm
+JD03,R091,0.1862,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD04,R011,0.215,escalate,escalate,unclear,unclear,scripting ambiguous as must-have; ci/cd should not be must-have,Claude reading of golden/human_review_raw.md; author to confirm
+JD04,R028,0.2759,escalate,escalate,score_too_low,yes,"infrastructure as code and ci/cd should be nice, not must; should score very high",Claude reading of golden/human_review_raw.md; author to confirm
+JD04,R052,0.2369,escalate,escalate,score_too_low,yes,should have been passed ahead,Claude reading of golden/human_review_raw.md; author to confirm
+JD04,R097,0.2081,escalate,escalate,score_too_low,yes (a bit lower than R028/R052),same as R028/R052,Claude reading of golden/human_review_raw.md; author to confirm
+JD05,R008,0.2433,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD05,R009,0.262,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD05,R026,0.1886,escalate,escalate,score_too_low,"yes (implied: ""much higher"")",experience should not pull the score down; ML implies OO/C#-transferable skills,Claude reading of golden/human_review_raw.md; author to confirm
+JD05,R028,0.2695,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD05,R033,0.2686,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD05,R048,0.262,escalate,escalate,agree,no,missing C# can be adapted to from Java/C++,Claude reading of golden/human_review_raw.md; author to confirm
+JD05,R078,0.2411,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD06,R019,0.3017,escalate,escalate,unclear,unclear,"html/css, pytest and git should not be required for a python developer",Claude reading of golden/human_review_raw.md; author to confirm
+JD06,R047,0.3153,escalate,escalate,unclear,unclear,"javascript should be the must-have; candidate is python, not web",Claude reading of golden/human_review_raw.md; author to confirm
+JD06,R054,0.2773,escalate,escalate,unclear,unclear,ML implies python; git can be assumed,Claude reading of golden/human_review_raw.md; author to confirm
+JD06,R066,0.6182,advance,advance,unclear,unclear,html/css and pytest should be ruled out; no-sql reasonable,Claude reading of golden/human_review_raw.md; author to confirm
+JD06,R100,0.3017,escalate,escalate,score_too_low,yes,"""should have received a high score""",Claude reading of golden/human_review_raw.md; author to confirm
+JD09,R008,0.3131,escalate,escalate,agree,no,"""most accurate score of all the pairs""",Claude reading of golden/human_review_raw.md; author to confirm
+JD09,R019,0.3361,escalate,escalate,score_too_low,unclear (suggests ~0.5),gaps are plausible,Claude reading of golden/human_review_raw.md; author to confirm
+JD09,R026,0.1756,escalate,escalate,unclear,unclear,"ML implies python; node.js, AWS and experience points valid (author wrote JD08R026)",Claude reading of golden/human_review_raw.md; author to confirm
+JD09,R035,0.2969,escalate,escalate,unclear,unclear,"same as JD09/R026: ML implies python; node.js, AWS and experience points valid","author clarified: ""same verdict"" means same as the previous item (R026)"
+JD09,R043,0.2837,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD09,R050,0.2051,escalate,escalate,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD09,R066,0.3109,escalate,escalate,unclear,unclear,vue.js over-weighted as must-have,Claude reading of golden/human_review_raw.md; author to confirm
+JD09,R075,0.1512,escalate,escalate,unclear,unclear,same as R066,"author clarified: ""same explanation"" means same as the previous item (R066)"
+JD10,R002,0.4851,escalate,advance,agree,no,,Claude reading of golden/human_review_raw.md; author to confirm
+JD10,R004,0.3595,escalate,escalate,score_too_low,no decision change,explanation correct; score could be higher,Claude reading of golden/human_review_raw.md; author to confirm
+JD10,R017,0.6902,advance,advance,score_too_low,no decision change,perfect match deserves more than 0.69,Claude reading of golden/human_review_raw.md; author to confirm
+JD10,R028,0.6568,escalate,advance,score_too_low,no decision change,same as R017,"author clarified: ""same word"" means same as the previous item (R017)"
+JD10,R039,0.6366,advance,advance,unclear,unclear,0.5y below implied experience should lower it relative to R017/R028,Claude reading of golden/human_review_raw.md; author to confirm

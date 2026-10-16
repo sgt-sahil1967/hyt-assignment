@@ -1,0 +1,84 @@
+{
+  "n_pairs": 60,
+  "note": "author's blind hand labels vs the AI-drafted golden labels; labels.csv is unchanged",
+  "relevance": {
+    "exact_agreement": 0.383,
+    "within_one": 0.967,
+    "weighted_kappa_quadratic": 0.597,
+    "spearman": 0.761,
+    "author_higher": 37,
+    "author_lower": 0,
+    "mean_author_minus_ai": 0.65,
+    "author_distribution": {
+      "0": 2,
+      "1": 28,
+      "2": 22,
+      "3": 8
+    },
+    "ai_distribution": {
+      "0": 21,
+      "1": 25,
+      "2": 10,
+      "3": 4
+    }
+  },
+  "decision": {
+    "agreement": 0.667,
+    "kappa": 0.299,
+    "author_advance": 28,
+    "ai_advance": 8,
+    "both_advance": 8,
+    "author_only_advance": 20,
+    "ai_only_advance": 0
+  },
+  "per_job_exact_relevance_agreement": {
+    "JD01": 0.67,
+    "JD02": 0.5,
+    "JD03": 0.5,
+    "JD04": 0.33,
+    "JD05": 0.0,
+    "JD06": 0.5,
+    "JD07": 0.67,
+    "JD08": 0.33,
+    "JD09": 0.17,
+    "JD10": 0.17
+  },
+  "system_on_these_pairs": {
+    "v1_0_headline": {
+      "against_ai_labels": {
+        "spearman": 0.63,
+        "system_advanced": 5,
+        "ideal_advance": 8,
+        "true_advances": 5,
+        "precision": 1.0,
+        "recall": 0.625
+      },
+      "against_author_labels": {
+        "spearman": 0.58,
+        "system_advanced": 5,
+        "ideal_advance": 28,
+        "true_advances": 5,
+        "precision": 1.0,
+        "recall": 0.179
+      }
+    },
+    "current_v1_3": {
+      "against_ai_labels": {
+        "spearman": 0.626,
+        "system_advanced": 6,
+        "ideal_advance": 8,
+        "true_advances": 6,
+        "precision": 1.0,
+        "recall": 0.75
+      },
+      "against_author_labels": {
+        "spearman": 0.581,
+        "system_advanced": 6,
+        "ideal_advance": 28,
+        "true_advances": 6,
+        "precision": 1.0,
+        "recall": 0.214
+      }
+    }
+  }
+}

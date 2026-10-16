@@ -45,7 +45,9 @@ escalates as `BORDERLINE_SCORE` instead of flipping on noise. Escalation rate is
 
 ### 8. Golden set: labels before the scorer, split by job, pools not chosen by the system
 The 200 labels were written from a sheet showing no scores, before `score.py` existed. They were drafted by the AI
-assistant at the author's request; the author's review is pending, and the second rater is in REPORT §3. Resumes
+assistant at the author's request. The author then hand-labelled 60 pairs blind: they were more generous than the
+draft on 37 pairs and stricter on none (kappa 0.60), so `labels.csv` is kept as drafted for the frozen headline and the
+difference is reported in REPORT §10. The second rater is in REPORT §3. Resumes
 were partitioned 30/70 (seed 13) *before* sampling pairs, so each resume is in exactly one split (validated). Pools
 are BM25-seeded plus random and rule-picked hard cases, so the system under test didn't choose its own candidates.
 One rubric slip found later (JD07/R090) was left unchanged rather than edit labels post hoc.

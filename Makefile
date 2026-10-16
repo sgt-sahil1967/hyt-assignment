@@ -1,7 +1,7 @@
 PY := .venv/bin/python
 export PYTHONPATH := .
 
-.PHONY: setup data golden test run eval fairness adversarial judge reproduce reproduce-v1.0 real-set app api web web-install
+.PHONY: review-labels report setup data golden test run eval fairness adversarial judge reproduce reproduce-v1.0 real-set app api web web-install
 
 setup:            ## create venv + install pinned deps
 	uv venv -p 3.11 .venv || python3.11 -m venv .venv
@@ -14,6 +14,9 @@ golden:           ## sample pairs, build labels + extraction gold (labels are ha
 	$(PY) golden/sample.py
 	$(PY) golden/make_labels.py
 	$(PY) golden/make_extraction_gold.py
+
+report:           ## REPORT.md -> REPORT.pdf (LaTeX via Tectonic; max 6 pages)
+	$(PY) tools/report_pdf.py
 
 test:             ## unit tests
 	$(PY) -m pytest -q tests
@@ -47,6 +50,9 @@ fairness:
 
 adversarial:
 	$(PY) -m eval.adversarial
+
+review-labels:    ## author's blind hand labels vs the AI-drafted golden labels -> results/human_label_agreement.json
+	$(PY) -m eval.review_labels
 
 judge:            ## judge = Claude Sonnet agent (scores committed, see eval/judge_prompt_sonnet.md); recompute stats only
 	$(PY) -m eval.judge summary
