@@ -9,7 +9,7 @@ data/processed/*.txt
 .pytest_cache/
 web/backend/state.json
 web/frontend/node_modules/
-web/frontend/dist/
+# web/frontend/dist/ is committed: FastAPI Cloud does not run npm, so the built workspace ships in the repo
 cache/private/
 .claude/
 results/_*.log
@@ -31,3 +31,16 @@ cache/llm/e30fad4c078a4b0c1efc0f98268148de3f42f68e5a5626d909f943d9fa82dec5.json
 # stray cached JD parse and local-only data (not part of the submission)
 cache/llm/e30fad4c078a4b0c1efc0f98268148de3f42f68e5a5626d909f943d9fa82dec5.json
 data/new data/
+
+# pilot on the public resume_corpus: masked subset and agent scratch stay local
+data/processed_corpus/
+
+# FastAPI Cloud link created by the first deploy
+.fastapicloud/
+
+# notes and generated sheets the reviewer does not need (regenerate: golden/sample.py, eval.judge sheet, golden/make_blind_sample.py)
+DEPLOY.md
+REPORT.md
+golden/labelling_sheet.md
+golden/explanation_rating_sheet.md
+golden/blind_sample.md

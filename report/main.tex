@@ -14,11 +14,13 @@
 \usepackage{menukeys}
 \usepackage{titlesec}
 \usepackage{booktabs,array,tabularx} % tables
-\setlength{\parskip}{.8mm}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\setlength{\parskip}{.6mm}
 \renewcommand{\baselinestretch}{0.9}
 \setcounter{MaxMatrixCols}{20}
 
-\title{\huge HYT AI Screening Agent \\ \LARGE {Report for the Graduate 2027 take-home}}
+\title{\huge HYT AI Screening Agent Report}
 \author{\Large Sahil Patil \\ sahilpatil1205@gmail.com \\ github.com/sgt-sahil1967/hyt-assignment}
 \pdfauthor{Sahil Patil}
 
@@ -71,17 +73,39 @@ A screening agent helps a recruiter if two things hold. The shortlist can be tru
 I left out automatic rejection, fine-tuning, other job families, and an ``ideal resume'' vector search. Similarity is not fit, and it gives the recruiter nothing to check.
 
 \section{How it works}
-
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.6\linewidth]{workspace.png}
+\begin{tikzpicture}[node distance=5mm and 5mm, every node/.style={font=\footnotesize},
+  box/.style={draw, rounded corners=2pt, align=center, minimum height=10mm, text width=37mm, inner sep=3pt},
+  code/.style={box, fill=gray!10}, llm/.style={box, fill=orange!18}, io/.style={box, dashed},
+  arr/.style={-{Stealth[length=2mm]}, thick}]
+\node[io] (in) {\textbf{Input}\\ resume (PDF, DOCX, HTML, TXT) and job description};
+\node[code, right=of in] (clean) {\textbf{1. Clean}\\ fix unicode, strip hidden text, flag AI-directed text, mask contacts};
+\node[llm, right=of clean] (read) {\textbf{2. Read (LLM)}\\ Gemini fills a fixed JSON schema, temperature 0, cached};
+\node[code, right=of read] (norm) {\textbf{3. Normalise}\\ skill aliases, parent/child map, years from dates};
+\node[code, below=9mm of norm] (score) {\textbf{4. Score}\\ evidence per requirement, weighted fit, cut by 40\% if a must-have is missing};
+\node[code, left=of score] (decide) {\textbf{5. Decide}\\ threshold, every must-have, blocking flags};
+\node[llm, left=of decide] (explain) {\textbf{6. Explain (LLM)}\\ from the scorer's output only; code checks each quote};
+\node[io, left=of explain] (out) {\textbf{Recruiter}\\ shortlist, or escalate with reason codes; never reject};
+\draw[arr] (in) -- (clean); \draw[arr] (clean) -- (read); \draw[arr] (read) -- (norm);
+\draw[arr] (norm) -- (score); \draw[arr] (score) -- (decide); \draw[arr] (decide) -- (explain); \draw[arr] (explain) -- (out);
+\draw[arr, dashed] (clean.south) -- node[pos=0.62, sloped, above, font=\scriptsize] {manipulation flags} (decide.north west);
+\end{tikzpicture}
+\caption{The pipeline. Orange steps use an LLM; grey steps are plain code. The LLM never produces a score or a decision.}
+\label{fig:flow}
+\end{figure}
+
+
+\begin{figure}[b]
+\centering
+\includegraphics[width=0.5\linewidth]{workspace.png}
 \caption{The recruiter workspace (React and FastAPI). The panel shows one shortlisted candidate: the score split into its four parts, and each must-have with its evidence.}
 \label{fig:app}
 \end{figure}
 
-Each document is cleaned first: unicode is fixed, hidden text is removed, text that talks to an AI is flagged, and the name and contact details are masked. Gemini then reads it into a fixed JSON format (temperature 0, answers cached). After that everything is plain code. Skills are normalised (Spring Boot counts as Java, never the other way round), years of experience come from the dates, and each requirement is checked for evidence in the resume. The code decides. Last, the LLM writes an explanation from the scorer's output only, and code checks that every quote appears in the resume. The rule I kept to is that the LLM reads and the code judges.
+Figure~\ref{fig:flow} shows the pipeline. The rule I kept to is that the LLM reads and the code judges: Gemini only turns text into fixed JSON and writes the explanation, and every number and decision comes from plain code (Spring Boot counts as Java, never the other way round, and years come from the dates).
 
-The fit score is $0.50\cdot\text{must} + 0.15\cdot\text{nice} + 0.20\cdot\text{experience} + 0.15\cdot\text{role relevance}$. A skill counts fully if a role or project bullet shows it in use, half if it is only listed, and a quarter if the candidate is still learning it. A missing must-have multiplies the score by 0.6. To be shortlisted, a candidate needs a score at or above the threshold, evidence for every must-have, any stated minimum years met, and no blocking flag (manipulation, failed parse, unclear dates, sparse or non-English resume, over- or under-qualified, career switch). Figure~\ref{fig:app} shows one shortlisted candidate in the app.
+The fit score is $0.50\cdot\text{must} + 0.15\cdot\text{nice} + 0.20\cdot\text{experience} + 0.15\cdot\text{role relevance}$. A skill counts fully if a role or project bullet shows it in use, half if it is only listed, and a quarter if the candidate is still learning it. A missing must-have multiplies the score by 0.6. To be shortlisted, a candidate needs a score at or above the threshold, evidence for every must-have, any stated minimum years met, and no blocking flag  such as suspected manipulation or a failed parse. Figure~\ref{fig:app} shows the app.
 
 \section{Data and golden set}
 
@@ -143,9 +167,15 @@ v1.3: escalate far below the seniority asked & 0.642 & 0.61 & 1.00 (14/14) & 0.9
 \label{tab:ver}
 \end{table}
 
-The framework fix came from an uploaded resume: Express.js and FastAPI now count for ``web frameworks such as Django or Flask'', which moves five test scores and no decision. The dev set has no real career switchers, so I could not tune \code{CAREER\_SWITCH} and made it informational as a policy choice. Four test decisions change, all from escalate to advance, and all four are labelled advance. It has a cost: the flag had been stopping 2 of the 4 ``fake skills added to the skills list'' attacks by accident, and without it all 4 are shortlisted (section 8). I gained recall on honest candidates and lost some protection against a candidate who lies.
+\begin{itemize}
+\item \textbf{Framework categories.} Express.js and FastAPI now count for ``web frameworks such as Django or Flask''. Five test scores move, no decision does.
+\item \textbf{\code{CAREER\_SWITCH} informational.} The dev set has no real career switchers, so I could not tune it and made it informational as a policy choice. Four test decisions change, all from escalate to advance, and all four are labelled advance.
+\item \textbf{Its cost.} The flag had been stopping 2 of the 4 ``fake skills'' attacks by accident; without it all 4 are shortlisted (section 8). More recall on honest candidates, less protection against one who lies.
+\item \textbf{v1.3.} A 2.6-year candidate was shortlisted for a Lead role with no stated minimum. Senior and lead roles with no stated minimum now escalate anyone below half the implied years (senior 4, lead 6). No decision changes on the golden or real set.
+\end{itemize}
+I chose all of these knowing the test errors, so the v1.1 numbers are optimistic and only a fresh labelled set can confirm them.
 
-For v1.3, a candidate with 2.6 years was shortlisted for a Lead role with no stated minimum, because the implied minimum of 6 years only lowered one part of the score. Now a senior or lead role with no stated minimum escalates anyone below half the implied years. No decision changes on the golden or real set. I chose all of these knowing the test errors, so the v1.1 numbers are optimistic and only a fresh labelled set can confirm them.
+
 
 \subsection{Check on real resumes}
 
@@ -168,15 +198,15 @@ embedding over the whole text (later variant) & 0.64 & 0.90 [0.72, 1.00] \\
 \label{tab:real}
 \end{table}
 
-The ranking holds up on messy text (resumes of 321 to 2,670 words, with placeholders and duplicated sections). Real resumes rarely fit real postings: grades 0 to 3 are 34, 13, 3 and 0, and only one pair should advance. So this set mostly tests whether the agent avoids shortlisting weak candidates, which it did perfectly, and it cannot measure recall.
+ The ranking holds up on messy text. Real resumes rarely fit real postings: grades 0 to 3 are 34, 13, 3 and 0, and only one pair should advance. So this set mostly tests whether the agent avoids shortlisting weak candidates, which it did perfectly, and it cannot measure recall.
 
-Four failures showed up, and each got a plain-code fix behind a flag that is off in the frozen version. An example list like ``MySQL, Redis, Nginx, Kubernetes\ldots{} etc.'' had become nine separate must-haves and is now one requirement needing a third of the items (my first fix accepted any one item and shortlisted 5 weak candidates). ``Overqualified'' now applies only to junior roles, which cut 34 flags to 9. The phrase ``best fit'' in ordinary job text was being flagged as an injection. And ``unix/linux'' now accepts either part. I developed these on this set, so it is no longer a clean test for them. The embedding baseline only reads the first 256 tokens; averaging over 150-word windows lifts it here but hurts on the short synthetic resumes (-0.15), so Table~\ref{tab:main} keeps the baseline as first evaluated.
+Four failures showed up, and each got a plain-code fix behind a flag that is off in the frozen version. An example list like ``MySQL, Redis, Nginx, Kubernetes\ldots{} etc.'' had become nine separate must-haves and is now one requirement needing a third of the items (my first fix accepted any one item and shortlisted 5 weak candidates). ``Overqualified'' now applies only to junior roles, which cut 34 flags to 9. The phrase ``best fit'' in ordinary job text was being flagged as an injection. And ``unix/linux'' now accepts either part. I developed these on this set, so it is no longer a clean test for them. 
 
 \section{Explanation quality}
 
 Code checks every quote: all 314 quoted spans in the 140 test explanations appear in the resume (114 of 114 on dev), and a quote that does not match is removed. Quotes are safe, but claims are not always. For 40 test explanations I have a first set of 1 to 5 ratings made before any judge output, by Claude and not a human. The averages are groundedness 4.1, gap correctness 4.7, specificity 4.0 and usefulness 3.0. Eight of the 40 misread a reason code, gave a wrong cause or got the years arithmetic wrong, and one said a degree was missing when it was there.
 
-The judge is Claude Sonnet, a different model family from the Gemini that writes the explanations. It ran as a separate pass with a fixed rubric (\code{eval/judge\_prompt\_sonnet.md}), did not see the reference ratings, and caught the same real errors. A Gemini judge I tried first was dropped: the free quota allowed 7 of 40 items and it gave all of them 5 out of 5. Against the reference ratings the judge's weighted kappa is 0.66 for groundedness, 0.53 for gap correctness, 0.41 for usefulness and 0.02 for specificity, so it can be trusted on the first three and not on specificity, where the two raters mean different things.
+The judge is Claude Sonnet, a different model family from the Gemini that writes the explanations. It ran as a separate pass with a fixed rubric (\code{eval/judge\_prompt\_sonnet.md}), did not see the reference ratings, and caught the same real errors.  Against the reference ratings the judge's weighted kappa is 0.66 for groundedness, 0.53 for gap correctness, 0.41 for usefulness and 0.02 for specificity, so it can be trusted on the first three and not on specificity, where the two raters mean different things.
 
 The brief asks how well the judge agrees with a human, and I cannot answer that yet. The reference rater is a Claude model too, so these kappas are probably optimistic. I wrote my own verdicts on 40 pairs (section 10), but those are not 1 to 5 ratings. The rating sheet is ready (\code{golden/explanation\_rating\_sheet.md}), and once I fill it in, \code{make judge} recomputes the agreement.
 
@@ -184,9 +214,14 @@ The brief asks how well the judge agrees with a human, and I cannot answer that 
 
 I took 30 test resumes, changed one thing at a time and ran the whole pipeline again: 13 comparisons, of which 657 of 690 variants completed. The rest failed on API quota, and I left them out instead of scoring them as empty resumes.
 
-For most signals nothing moved: the score difference was exactly 0 and no decision flipped. That covers the name (male or female, and Western, South-Indian, North-Indian, Muslim or East-Asian), pronouns, a women-in-tech membership, an elite or little-known university, a women's or co-ed college, graduation ten years earlier, and a big-city or small-town address. None of these is an input to the score, and the extracted skills and roles did not change. Plain, non-native English did move the score slightly (average 0.003, largest 0.010, no flips), through the role-relevance embedding.
+\begin{itemize}
+\item \textbf{No change at all} (score difference exactly 0, no decision flipped): the name (male or female; Western, South-Indian, North-Indian, Muslim or East-Asian), pronouns, a women-in-tech membership, an elite or little-known university, a women's or co-ed college, graduation ten years earlier, and a big-city or small-town address. None is an input to the score, and the extracted skills and roles did not change.
+\item \textbf{Plain, non-native English:} average change 0.003, largest 0.010, no flips, through the role-relevance embedding.
+\item \textbf{Caregiving break:} found a real bug. The break was read as a job and added a year of experience. The code now skips non-employment entries; afterwards the average change was 0.004, no flips.
+\item \textbf{Not done:} a stricter blind mode (hides university, pronouns, graduation year) hit the daily Gemini quota, 0 of 690 completed.
+\end{itemize}
 
-The caregiving test found a real bug: a career break for caregiving was read as a job and added a year of experience. The code now skips non-employment entries, and afterwards the average change was 0.004 with no flips. I also built a stricter blind mode that hides university, pronouns and graduation year, but its runs hit the daily Gemini quota (0 of 690 completed), so it is not evaluated.
+
 
 \section{Prompt injection and adversarial resumes}
 
@@ -233,11 +268,16 @@ My own review of 40 pairs added three patterns. All 13 times I thought a score w
 
 \section{What is misleading about my headline number}
 
-NDCG@5 of 0.98 sits near the ceiling because each pool has 20 candidates and few are good. Rank correlation (0.65) is the better ranking number, and the LLM asked directly gets 0.60.
+\begin{itemize}
+\item \textbf{NDCG@5 of 0.98 sits near the ceiling} because each pool has 20 candidates and few are good. Rank correlation (0.65) is the better ranking number, and the LLM asked directly gets 0.60.
+\item \textbf{The labels are not independent, and mine are more generous.} The rubric and the 200 labels were drafted with Claude, which also helped write the scorer, so they share its conventions: a candidate missing any must-have is never advanced. I labelled 60 pairs blind. My grades are within one grade of the draft on 97\% of them and exactly equal on 38\%, and are higher on 37 pairs and lower on none (weighted kappa 0.60, rank correlation 0.76). I would shortlist 28 of the 60 and the draft 8 (decision kappa 0.30), mostly because I accept implied or adaptable skills, such as machine learning implying Python or Java adapting to C\#. On those 60 pairs the system's precision stays at 100\% (all 5 it shortlisted are ones I would shortlist) and its rank correlation barely moves (0.63 against the draft, 0.58 against mine), but its recall falls from 0.63 to 0.18. So the recall in Table~\ref{tab:main} is probably far too high, and precision is the number to lean on. This is a small, hand-picked sample and one person's opinion, and I had seen the system's reasoning on other pairs before labelling. There are no labels from a human recruiter, and the 0.98 agreement with the Gemini rater shows consistency and not truth.
 
-The labels are not independent, and mine are more generous. The rubric and the 200 labels were drafted with Claude, which also helped write the scorer, so they share its conventions: a candidate missing any must-have is never advanced. I labelled 60 pairs blind. My grades are within one grade of the draft on 97\% of them and exactly equal on 38\%, and are higher on 37 pairs and lower on none (weighted kappa 0.60, rank correlation 0.76). I would shortlist 28 of the 60 and the draft 8 (decision kappa 0.30), mostly because I accept implied or adaptable skills, such as machine learning implying Python or Java adapting to C\#. On those 60 pairs the system's precision stays at 100\% (all 5 it shortlisted are ones I would shortlist) and its rank correlation barely moves (0.63 against the draft, 0.58 against mine), but its recall falls from 0.63 to 0.18. So the recall in Table~\ref{tab:main} is probably far too high, and precision is the number to lean on. This is a small, hand-picked sample and one person's opinion, and I had seen the system's reasoning on other pairs before labelling. There are no labels from a human recruiter, and the 0.98 agreement with the Gemini rater shows consistency and not truth.
 
-The main data is synthetic and templated, and the real-resume set is small, labelled by AI, and has one pair that should advance. Perfect extraction, zero run-to-run variation and zero fairness differences are all easier on 75-word templates than on real resumes. The numbers are small as well: 7 test jobs and 10 shortlisted candidates, and a precision of 10 out of 10 has a 95\% lower bound of about 0.72. Finally, I iterated the job-description prompt while looking at all 10 extractions (not at labels or metrics), and the v1.1 changes came after I saw test errors, so their numbers are optimistic and kept out of the headline.
+
+\item \textbf{The main data is synthetic and templated,} and the real-resume set is small, labelled by AI, and has one pair that should advance. Perfect extraction, zero run-to-run variation and zero fairness differences are all easier on 75-word templates.
+\item \textbf{Small numbers.} 7 test jobs and 10 shortlisted candidates; a precision of 10 out of 10 has a 95\% lower bound of about 0.72.
+\item \textbf{Test exposure.} I iterated the job-description prompt while looking at all 10 extractions (not labels or metrics), and the v1.1 changes came after I saw test errors, so their numbers are optimistic and kept out of the headline.
+\end{itemize}
 
 \section{What I would do with one more week}
 
@@ -248,6 +288,6 @@ Second, the matching. I would build a skill graph linking higher-level and lower
 Third, production. I would rebuild the pipeline on LangChain, with LangGraph for the flow, to make it more production ready: tracing, retries, saved state for the human-in-the-loop steps (escalations and stage moves), and a proper job queue, with the Gemini calls and the cache behind the same interface. That is about reliability and not accuracy. The accuracy problems above are in the prompts, the requirements and the labels, and a new framework will not fix them. After that I would feed recruiter edits and stage moves back in as labels, and turn the score into a calibrated probability of ``should advance''.
 
 \vspace{4pt}
-\noindent\textit{Built with Python, Gemini (\code{gemini-3.1-flash-lite}) for reading, Claude Sonnet for judging, sentence-transformers (\code{all-MiniLM-L6-v2}), scikit-learn, rank-bm25, FastAPI, React and Streamlit. Data: Kaggle \code{arshkon/linkedin-job-postings} and \code{snehaanbhawal/resume-dataset}, plus the synthetic resumes in section 3.}
+\noindent\textit{Built with Python, Gemini (\code{gemini-3.1-flash-lite}), Claude Sonnet (judge), sentence-transformers, scikit-learn, rank-bm25, FastAPI, React and Streamlit. Data: Kaggle \code{arshkon/linkedin-job-postings} and \code{snehaanbhawal/resume-dataset}, plus the synthetic resumes in section 3.}
 
 \end{document}

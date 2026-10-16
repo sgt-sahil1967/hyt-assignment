@@ -436,7 +436,10 @@ class Engine:
         for k in ("keyword", "tfidf", "embedding", "embedding_chunked"):
             v = bs[cid][k]
             t = thr.get(k)
-            out.append(entry(k, round(v, 4), 1 + sum(x[k] > v for x in bs.values()), t,
+            if v is None:  # lite mode: no embedding model for this text
+                out.append(entry(k, None, None, t, None, status="unavailable"))
+                continue
+            out.append(entry(k, round(v, 4), 1 + sum(x[k] is not None and x[k] > v for x in bs.values()), t,
                              None if t is None else ("advance" if v >= t else "escalate")))
         up = self.state["uploads"].get(cid)
         z = agent.zero_shot(meta["text"], self.pool(jid)[cid], allow_call=run_llm and not agent.settings()["offline"],

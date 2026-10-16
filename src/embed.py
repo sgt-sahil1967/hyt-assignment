@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import threading
 
 import numpy as np
@@ -33,12 +34,18 @@ def save():
         _dirty = False
 
 
+class EmbeddingUnavailable(RuntimeError):
+    """Lite mode (HYT_LITE=1, e.g. the cloud demo): the model is not installed, so only cached texts can be embedded."""
+
+
 def embed(texts: list[str]) -> np.ndarray:
     global _model, _dirty
     cache = _load()
     name = cfg()["embedding"]["model"]
     keys = [sha(name, t) for t in texts]
     missing = [t for t, k in zip(texts, keys) if k not in cache]
+    if missing and os.environ.get("HYT_LITE") == "1":
+        raise EmbeddingUnavailable(f"{len(missing)} text(s) not in the embedding cache and HYT_LITE=1")
     if missing:
         with _lock:
             if _model is None:

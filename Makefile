@@ -15,7 +15,7 @@ golden:           ## sample pairs, build labels + extraction gold (labels are ha
 	$(PY) golden/make_labels.py
 	$(PY) golden/make_extraction_gold.py
 
-report:           ## REPORT.md -> REPORT.pdf (LaTeX via Tectonic; max 6 pages)
+report:           ## report/main.tex -> REPORT.pdf (LaTeX via Tectonic; max 6 pages)
 	$(PY) tools/report_pdf.py
 
 test:             ## unit tests

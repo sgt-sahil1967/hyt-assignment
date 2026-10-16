@@ -52,10 +52,13 @@ def canon(name: str, allow_embedding: bool = True) -> str:
 
 @lru_cache(maxsize=4096)
 def _embedding_fallback(term: str) -> str | None:
-    from .embed import embed
+    from .embed import EmbeddingUnavailable, embed
 
     _, _, vocab = _data()
-    vecs = embed([term] + vocab)
+    try:
+        vecs = embed([term] + vocab)
+    except EmbeddingUnavailable:
+        return None
     sims = vecs[1:] @ vecs[0]
     i = int(sims.argmax())
     thr = cfg()["embedding"]["fallback_threshold"]

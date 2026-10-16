@@ -340,9 +340,20 @@ def baseline_scores(jd_text: str, texts: dict[str, str], corpus: list[str]) -> d
     from src.embed import embed
 
     tf = TfidfScorer(corpus)
-    embed([jd_text[:4000]] + [resume_body(t) for t in texts.values()])  # one batch instead of one call per pair
+    from src.embed import EmbeddingUnavailable
+
+    def safe(f, t):
+        try:
+            return f(jd_text, t)
+        except EmbeddingUnavailable:  # lite mode: text not in the embedding cache
+            return None
+
+    try:
+        embed([jd_text[:4000]] + [resume_body(t) for t in texts.values()])  # one batch instead of one call per pair
+    except EmbeddingUnavailable:
+        pass
     return {cid: {"keyword": keyword.score(jd_text, t), "tfidf": tf.score(jd_text, t),
-                  "embedding": embedding.score(jd_text, t), "embedding_chunked": embedding.score_chunked(jd_text, t)}
+                  "embedding": safe(embedding.score, t), "embedding_chunked": safe(embedding.score_chunked, t)}
             for cid, t in texts.items()}
 
 

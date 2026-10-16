@@ -5,7 +5,7 @@ import re
 from typing import Optional
 
 from .config import cfg
-from .embed import cosine
+from .embed import EmbeddingUnavailable, cosine
 from .experience import compute_yoe
 from .normalize import canon, satisfies
 from .schemas import Evidence, ScoreResult
@@ -162,12 +162,14 @@ def score_pair(job_id: str, resume_id: str, jd: dict, res: dict, as_of=None) -> 
 
     # role relevance: what the candidate has been doing vs what the role is
     rt = role_text(res)
+    rel = None  # missing components are renormalised away
     if rt.strip():
-        raw = cosine(rt, f"{jd.get('title', '')}. {jd.get('summary', '')}")
-        lo, hi = c["role_relevance_rescale"]
-        rel = max(0.0, min(1.0, (raw - lo) / (hi - lo)))
-    else:
-        rel = None
+        try:
+            raw = cosine(rt, f"{jd.get('title', '')}. {jd.get('summary', '')}")
+            lo, hi = c["role_relevance_rescale"]
+            rel = max(0.0, min(1.0, (raw - lo) / (hi - lo)))
+        except EmbeddingUnavailable:
+            pass
 
     w = dict(c["weights"])
     w["must_have"] *= must_w_scale

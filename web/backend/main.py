@@ -261,3 +261,12 @@ def _finite(o):
     if isinstance(o, list):
         return [_finite(v) for v in o]
     return o
+
+
+# The built React workspace (npm --prefix web/frontend run build), served on the same origin as /api so one deployment
+# serves both. Mounted last so every /api route above takes precedence. Absent in local dev, where Vite serves it.
+_DIST = ROOT / "web" / "frontend" / "dist"
+if _DIST.is_dir():
+    from fastapi.staticfiles import StaticFiles  # noqa: E402
+
+    app.mount("/", StaticFiles(directory=_DIST, html=True), name="workspace")

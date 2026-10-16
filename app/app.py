@@ -492,8 +492,11 @@ def robustness_page():
 
 def report_page():
     st.title("Report & decision log")
-    t1, t2, t3 = st.tabs(["REPORT.md", "DECISIONS.md", "Decision log (latest)"])
-    t1.markdown((ROOT / "REPORT.md").read_text())
+    t1, t2, t3 = st.tabs(["Report", "DECISIONS.md", "Decision log (latest)"])
+    pdf = ROOT / "REPORT.pdf"
+    t1.markdown("The report is `REPORT.pdf` (source: `report/main.tex`, rebuild with `make report`).")
+    if pdf.exists():
+        t1.download_button("Download REPORT.pdf", pdf.read_bytes(), file_name="REPORT.pdf", mime="application/pdf")
     t2.markdown((ROOT / "DECISIONS.md").read_text())
     log = R / "decision_log.jsonl"
     if log.exists():

@@ -7,13 +7,13 @@ harness that measures whether it can be trusted.
 > Experience, coverage, score and decision are deterministic Python, traceable to quoted evidence.
 > The agent never rejects: it **auto-advances** or **escalates to a human with a reason code**.
 
-See [REPORT.md](REPORT.md) for results and [DECISIONS.md](DECISIONS.md) for the decision log.
+See [REPORT.pdf](REPORT.pdf) for results and [DECISIONS.md](DECISIONS.md) for the decision log.
 
 ## Quick start
 
 ```bash
 make setup                     # Python 3.11 venv + pinned deps (uv if present, else pip)
-cp .env.example .env           # GEMINI_API_KEY=..., LLM_PROVIDER=gemini, GEMINI_MODEL=gemini-3.1-flash-lite
+echo GEMINI_API_KEY=your-key > .env   # optional: only needed for live Gemini calls
 make data                      # data/resume/*.docx + data/jd/postings2.csv -> sanitised, masked data/processed/
 make test                      # unit tests (sanitise, mask, dates, taxonomy)
 python -m src.pipeline --job JD02 --top 10 --explain 3
@@ -52,7 +52,7 @@ Then open http://localhost:8501 and press **⚡ Load sample data**.
 * **First run:** it downloads the local embedding model (`all-MiniLM-L6-v2`, about 90 MB) from Hugging Face once, so it
   needs internet that time only. `pip install` also downloads PyTorch, which is large.
 * **`py` not found:** use the full path to `python.exe` from your Python 3.11 install instead.
-* **Live Gemini calls** (optional): `Copy-Item .env.example .env`, put your key in `.env`, and turn on "Allow live
+* **Live Gemini calls** (optional): `Set-Content .env "GEMINI_API_KEY=your-key"`, and turn on "Allow live
   Gemini calls" in the app's sidebar.
 
 Other `make` targets on Windows (venv activated, same window):
@@ -159,7 +159,7 @@ src/
   pipeline.py            screen(job_id) -> ranked results; CLI
 baselines/               keyword Jaccard, TF-IDF, embedding cosine, LLM zero-shot (ablation)
 golden/                  rubric, sampler, labels (200 pairs, AI-drafted), extraction gold, ratings, relabels, and my own
-                         review: blind_sample.md + human_labels.csv (60 blind labels), human_review_raw.md (40 verdicts)
+                         review: human_labels.csv (60 blind labels, from blind_sample_responses_author.txt), human_review_raw.md (40 verdicts)
 eval/                    run.py (metrics, tuning, baselines, robustness, ablations), judge.py, fairness.py, adversarial.py
 synthetic/               SYNTHETIC fairness / adversarial variants (never in the golden set)
 cache/                   LLM responses (masked inputs only) + embeddings
