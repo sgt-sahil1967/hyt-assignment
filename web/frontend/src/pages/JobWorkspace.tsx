@@ -1,7 +1,8 @@
-import { ArrowDownUp, Check, ChevronDown, Eye, FileUp, History, LayoutGrid, List, ListChecks, MoreHorizontal, Search, ShieldAlert, SlidersHorizontal, Tag, UploadCloud, X } from 'lucide-react'
+import { ArrowDownUp, Check, ChevronDown, Eye, FileUp, History, LayoutGrid, List, ListChecks, MoreHorizontal, Search, ShieldAlert, SlidersHorizontal, Tag, UploadCloud, Users, X } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { api, type Candidate, type JobDetail, type Requirement, type Settings, type Stage } from '../api'
 import CandidateDrawer, { friendlyError } from '../components/CandidateDrawer'
+import PoolPicker from '../components/PoolPicker'
 import RequirementsPanel from '../components/RequirementsPanel'
 import { Button, Callout, Chip, cx, Dot, Empty, IconButton, Menu, MenuItem, Modal, reasonLabel, Score, Segmented, Sheet, Spinner, STAGE_META, StagePill, Switch, Tabs, useToast } from '../components/ui'
 
@@ -32,6 +33,7 @@ export default function JobWorkspace({ id, settings, onTitle }: { id: string; se
   const [editingReqs, setEditingReqs] = useState(false)
   const [uploading, setUploading] = useState(false)
   const [activity, setActivity] = useState(false)
+  const [picking, setPicking] = useState(false)
   const toast = useToast()
 
   const reload = useCallback(async () => {
@@ -39,8 +41,13 @@ export default function JobWorkspace({ id, settings, onTitle }: { id: string; se
     setJob(j)
     setCands(c)
     onTitle(j.title)
+    return { j, c }
   }, [id, onTitle])
-  useEffect(() => { reload().catch((e) => toast({ title: 'Could not load job', body: e.message, tone: 'error' })) }, [reload, toast])
+  useEffect(() => {
+    reload()
+      .then(({ j, c }) => { if (j.kind === 'custom' && c.length === 0) setPicking(true) }) // a new role starts empty
+      .catch((e) => toast({ title: 'Could not load job', body: e.message, tone: 'error' }))
+  }, [reload, toast])
 
   const reportDiff = (title: string, d: { entered_shortlist: string[]; left_shortlist: string[] }, undo?: () => Promise<unknown>) =>
     toast({
@@ -103,6 +110,7 @@ export default function JobWorkspace({ id, settings, onTitle }: { id: string; se
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2">
+            {job.kind === 'custom' && <Button onClick={() => setPicking(true)}><Users size={14} />Candidates<span className="text-faint">{cands.length}</span></Button>}
             <Button onClick={() => setEditingReqs(true)}><ListChecks size={14} />Requirements<span className="text-faint">{nMust} must · {nNice} nice</span></Button>
             <ThresholdControl job={job} cands={cands} onApply={async (t) => { const d = await api.setThreshold(id, t); await reload(); reportDiff(`Auto-shortlist threshold set to ${t.toFixed(2)}`, d, () => api.setThreshold(id, job.threshold)) }} />
             <Button variant="primary" onClick={() => setUploading(true)}><FileUp size={14} />Add resumes</Button>
@@ -182,7 +190,17 @@ export default function JobWorkspace({ id, settings, onTitle }: { id: string; se
       </div>
 
       <div className="min-h-0 flex-1 overflow-auto px-4 pb-6 md:px-6">
-        {filtered.length === 0 ? (
+        {cands.length === 0 ? (
+          <div className="grid place-items-center py-16 text-center">
+            <Users size={20} className="mb-3 text-faint" />
+            <div className="text-[13px] font-medium">No candidates in this role yet</div>
+            <div className="mt-1 max-w-sm text-[13px] text-muted">Choose from resumes that are already parsed, or upload new ones.</div>
+            <div className="mt-4 flex gap-2">
+              {job.kind === 'custom' && <Button variant="primary" onClick={() => setPicking(true)}><Users size={14} />Choose candidates</Button>}
+              <Button onClick={() => setUploading(true)}><FileUp size={14} />Upload resumes</Button>
+            </div>
+          </div>
+        ) : filtered.length === 0 ? (
           <Empty icon={<Search size={20} />} title="No candidates here" body={tab === 'interview' ? 'Move candidates here from the shortlist. Only a person can do that.' : activeFilters || q ? 'Try loosening the filters.' : undefined} />
         ) : view === 'list' ? (
           <CandidateTable rows={filtered} job={job} selected={selected} onSelect={setSelected} showLabels={showLabels} infoCodes={settings?.info_codes ?? []} onMove={move} />
@@ -198,6 +216,7 @@ export default function JobWorkspace({ id, settings, onTitle }: { id: string; se
         <CandidateDrawer jobId={id} cid={selected} settings={settings} showLabels={showLabels} onClose={() => setSelected(null)} onChanged={reload} />
       )}
       <UploadModal open={uploading} onClose={() => setUploading(false)} jobId={id} offline={settings?.offline ?? true} onDone={reload} />
+      <PoolPicker open={picking} onClose={() => setPicking(false)} jobId={id} onDone={reload} />
       <ActivityModal open={activity} onClose={() => setActivity(false)} jobId={id} />
     </div>
   )

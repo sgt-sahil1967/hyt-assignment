@@ -7,14 +7,14 @@
   "test": {
     "ranking": {
       "ndcg@5": {
-        "mean": 0.9828,
-        "lo": 0.888,
+        "mean": 0.9812,
+        "lo": 0.8731,
         "hi": 1.0
       },
       "ndcg@10": {
-        "mean": 0.9122,
-        "lo": 0.8386,
-        "hi": 0.9615
+        "mean": 0.9108,
+        "lo": 0.83,
+        "hi": 0.9593
       },
       "p@5": {
         "mean": 0.6,
@@ -27,21 +27,21 @@
         "hi": 1.0
       }
     },
-    "spearman_score_vs_relevance": 0.6481,
+    "spearman_score_vs_relevance": 0.6422,
     "decision": {
       "confusion": {
-        "ideal_advance&advanced": 10,
+        "ideal_advance&advanced": 14,
         "ideal_escalate&advanced": 0,
-        "ideal_advance&escalated": 13,
+        "ideal_advance&escalated": 9,
         "ideal_escalate&escalated": 117
       },
-      "recall_ideal_advance": 0.4348,
+      "recall_ideal_advance": 0.6087,
       "precision_auto_advance": 1.0,
       "advanced_with_relevance>=2": 1.0,
-      "recall_good_relevance>=2_advanced": 0.2778,
-      "escalation_rate": 0.9286,
-      "expected_cost": 65.0,
-      "expected_cost_per_pair": 0.4643,
+      "recall_good_relevance>=2_advanced": 0.3889,
+      "escalation_rate": 0.9,
+      "expected_cost": 45.0,
+      "expected_cost_per_pair": 0.3214,
       "n": 140
     },
     "per_job": {
@@ -67,18 +67,18 @@
         "spearman": 0.365
       },
       "JD05": {
-        "ndcg@5": 0.9306514554231109,
-        "ndcg@10": 0.9026513982848354,
+        "ndcg@5": 0.9194888330036862,
+        "ndcg@10": 0.8934283838083793,
         "p@5": 0.4,
         "mrr": 1.0,
-        "spearman": 0.586
+        "spearman": 0.571
       },
       "JD06": {
         "ndcg@5": 1.0,
-        "ndcg@10": 0.9775763605840813,
+        "ndcg@10": 0.9765011103633457,
         "p@5": 1.0,
         "mrr": 1.0,
-        "spearman": 0.913
+        "spearman": 0.907
       },
       "JD09": {
         "ndcg@5": 1.0,
@@ -102,16 +102,17 @@
       "LOCATION_MISMATCH": 36,
       "CAREER_SWITCH": 22,
       "OVERQUALIFIED": 4,
+      "UNDER_SENIORITY": 8,
       "BORDERLINE_SCORE": 1
     },
     "queue_counts": {
-      "review": 34,
+      "review": 30,
       "low_priority": 96,
-      "advance": 10
+      "advance": 14
     },
     "explanation_groundedness": {
       "explanations": 140,
-      "quotes": 314,
+      "quotes": 213,
       "ungrounded_quotes": 0,
       "groundedness_rate": 1.0,
       "explanations_with_any_ungrounded": 0
@@ -120,14 +121,14 @@
   "dev": {
     "ranking": {
       "ndcg@5": {
-        "mean": 0.9145,
-        "lo": 0.6596,
+        "mean": 0.8884,
+        "lo": 0.6306,
         "hi": 1.0
       },
       "ndcg@10": {
-        "mean": 0.8555,
-        "lo": 0.6954,
-        "hi": 0.9558
+        "mean": 0.8539,
+        "lo": 0.6945,
+        "hi": 0.9543
       },
       "p@5": {
         "mean": 0.4,
@@ -140,7 +141,7 @@
         "hi": 1.0
       }
     },
-    "spearman_score_vs_relevance": 0.6662,
+    "spearman_score_vs_relevance": 0.6743,
     "decision": {
       "confusion": {
         "ideal_advance&advanced": 10,
@@ -173,18 +174,19 @@
         "spearman": 0.27
       },
       "JD08": {
-        "ndcg@5": 0.9129675424759451,
-        "ndcg@10": 0.8288061556966011,
+        "ndcg@5": 0.8347911247384279,
+        "ndcg@10": 0.8241228299188185,
         "p@5": 0.2,
         "mrr": 1.0,
-        "spearman": 0.484
+        "spearman": 0.483
       }
     },
     "reason_counts": {
       "BELOW_THRESHOLD": 2,
       "MISSING_MUST_HAVE": 48,
       "LOW_FIT": 48,
-      "LOCATION_MISMATCH": 20
+      "LOCATION_MISMATCH": 20,
+      "UNDER_SENIORITY": 5
     },
     "queue_counts": {
       "advance": 10,
@@ -193,25 +195,25 @@
     },
     "explanation_groundedness": {
       "explanations": 60,
-      "quotes": 114,
+      "quotes": 67,
       "ungrounded_quotes": 0,
       "groundedness_rate": 1.0,
       "explanations_with_any_ungrounded": 0
     }
   },
   "bias_length": {
-    "pearson_score_vs_words": 0.1122,
+    "pearson_score_vs_words": 0.1158,
     "words_range": [
       69,
       72
     ],
-    "note": "corpus resumes are 73-76 words, so this check has almost no power here"
+    "note": "masked corpus resumes span only a few words, so this check has almost no power here"
   },
   "hard_cases_test": {
     "child_skill_only": {
       "n": 57,
       "mean_abs_rank_err": null,
-      "decision_accuracy": 0.86
+      "decision_accuracy": 0.895
     },
     "ml_without_python": {
       "n": 38,

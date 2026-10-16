@@ -49,3 +49,13 @@ def test_change_takes_effect_and_resets():
 
 def test_unchanged_value_is_not_reported():
     assert settings.apply({"decide.delta": settings.current()["decide.delta"]}) == {}
+
+
+def test_cache_only_never_calls_the_api(monkeypatch):
+    """The Compare tab reads LLM zero-shot from cache; cache_only() must stop a call even in live mode."""
+    from src import llm
+
+    monkeypatch.setitem(cfg()["llm"], "offline", False)
+    monkeypatch.setattr(llm, "_call", lambda *a, **k: (_ for _ in ()).throw(AssertionError("API called")))
+    with llm.cache_only(), pytest.raises(llm.CacheMiss):
+        llm.generate("a prompt that is certainly not cached 7f3a", salt="test")

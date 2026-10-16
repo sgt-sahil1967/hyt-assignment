@@ -29,6 +29,8 @@ class LLMError(RuntimeError):
 # Calls made while screening a real uploaded resume are cached in cache/private/ (gitignored), never in the
 # committed cache/llm/. Set via the `private_cache()` context manager (agent.screen does this for uploads).
 _PRIVATE: ContextVar[bool] = ContextVar("hyt_private_cache", default=False)
+# Read the cache but never call the API, for this call only (the global `offline` flag is shared across requests).
+_CACHE_ONLY: ContextVar[bool] = ContextVar("hyt_cache_only", default=False)
 
 
 @contextmanager
@@ -38,6 +40,15 @@ def private_cache(on: bool = True):
         yield
     finally:
         _PRIVATE.reset(token)
+
+
+@contextmanager
+def cache_only(on: bool = True):
+    token = _CACHE_ONLY.set(on)
+    try:
+        yield
+    finally:
+        _CACHE_ONLY.reset(token)
 
 
 def _cache_dir(private: bool | None = None) -> Path:
@@ -140,7 +151,7 @@ def generate(prompt: str, *, schema: Optional[Type[BaseModel]] = None, model: Op
         if hit.exists():
             STATS["cache_hits"] += 1
             return json.loads(hit.read_text())["text"]
-    if c["offline"]:
+    if c["offline"] or _CACHE_ONLY.get():
         raise CacheMiss(f"offline and no cache entry for {key[:12]}")
     STATS["calls"] += 1
     text = _call(prompt, model, schema, temperature)

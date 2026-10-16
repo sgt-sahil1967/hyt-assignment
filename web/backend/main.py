@@ -66,6 +66,10 @@ class JobIn(BaseModel):
     job_type: str = ""
 
 
+class PoolIn(BaseModel):
+    ids: list[str]
+
+
 class SettingsIn(BaseModel):
     live: bool
 
@@ -189,6 +193,32 @@ def explain(jid: str, cid: str):
         raise HTTPException(503, f"Explanation needs a live Gemini call ({type(e).__name__}).")
 
 
+@app.post("/api/jobs/{jid}/candidates/{cid}/compare")
+def compare(jid: str, cid: str, llm: bool = False):
+    """Pipeline vs baselines for one candidate. Computed on request only; llm=true allows one Gemini call."""
+    _job(jid)
+    try:
+        return E.compare(jid, cid, run_llm=llm)
+    except StopIteration:
+        raise HTTPException(404, f"unknown candidate {cid}")
+
+
+@app.get("/api/jobs/{jid}/library")
+def library(jid: str):
+    """Already-parsed resumes a recruiter can add to this role (no LLM call)."""
+    _job(jid)
+    return E.library(jid)
+
+
+@app.put("/api/jobs/{jid}/pool")
+def put_pool(jid: str, body: PoolIn):
+    _job(jid)
+    try:
+        return E.set_pool(jid, body.ids)
+    except ValueError as e:
+        raise HTTPException(422, str(e))
+
+
 @app.post("/api/jobs/{jid}/upload")
 async def upload(jid: str, files: list[UploadFile] = File(...)):
     _job(jid)
@@ -209,10 +239,17 @@ def activity(jid: str):
 
 @app.get("/api/insights")
 def insights():
-    names = ["metrics.json", "baselines.json", "ablations.json", "extraction_metrics.json", "robustness.json",
-             "adversarial.json", "fairness.json", "judge_summary.json", "judge_agreement.json", "label_agreement.json",
+    # headline (frozen v1.0, REPORT §4-5, §8) from results/v1_0_frozen/; the other suites from results/ (current system)
+    headline = ["metrics.json", "baselines.json", "ablations.json", "extraction_metrics.json", "adversarial.json"]
+    names = ["robustness.json", "fairness.json", "judge_summary.json", "judge_agreement.json", "label_agreement.json",
              "v1_1.json", "posthoc.json", "real_set.json"]
-    return _finite({n.removesuffix(".json"): agent.results(n) for n in names})
+    out = {n.removesuffix(".json"): agent.headline(n) for n in headline}
+    out |= {n.removesuffix(".json"): agent.results(n) for n in names}
+    # baselines added after the freeze (e.g. embedding_chunked) do not depend on the system version: show them alongside
+    if out["baselines"] is not None:
+        cur = agent.results("baselines.json") or {}
+        out["baselines"] |= {k: v for k, v in cur.items() if k not in out["baselines"] and k != "score"}
+    return _finite(out)
 
 
 def _finite(o):

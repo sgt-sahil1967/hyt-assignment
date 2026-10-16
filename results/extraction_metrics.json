@@ -54,7 +54,7 @@
       "must_p": 1.0,
       "must_r": 1.0,
       "must_f1": 1.0,
-      "nice_f1": 0.923,
+      "nice_f1": 0.727,
       "min_years_ok": true,
       "seniority_pred": "mid",
       "seniority_gold": "mid"
@@ -81,7 +81,7 @@
       "must_p": 0.857,
       "must_r": 0.857,
       "must_f1": 0.857,
-      "nice_f1": 1.0,
+      "nice_f1": 0.6,
       "min_years_ok": true,
       "seniority_pred": "senior",
       "seniority_gold": "senior"
@@ -106,6 +106,6 @@
     }
   },
   "jd_must_f1_macro": 0.925,
-  "jd_nice_f1_macro": 0.6731,
+  "jd_nice_f1_macro": 0.6135,
   "embedding_fallback_matches": []
 }

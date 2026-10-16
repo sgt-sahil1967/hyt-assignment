@@ -2,14 +2,14 @@
   "score": {
     "ranking": {
       "ndcg@5": {
-        "mean": 0.9828,
-        "lo": 0.888,
+        "mean": 0.9812,
+        "lo": 0.8731,
         "hi": 1.0
       },
       "ndcg@10": {
-        "mean": 0.9122,
-        "lo": 0.8386,
-        "hi": 0.9615
+        "mean": 0.9108,
+        "lo": 0.83,
+        "hi": 0.9593
       },
       "p@5": {
         "mean": 0.6,
@@ -22,22 +22,22 @@
         "hi": 1.0
       }
     },
-    "spearman": 0.6481,
+    "spearman": 0.6422,
     "threshold_dev": 0.49,
     "decision": {
       "confusion": {
-        "ideal_advance&advanced": 10,
+        "ideal_advance&advanced": 14,
         "ideal_escalate&advanced": 0,
-        "ideal_advance&escalated": 13,
+        "ideal_advance&escalated": 9,
         "ideal_escalate&escalated": 117
       },
-      "recall_ideal_advance": 0.4348,
+      "recall_ideal_advance": 0.6087,
       "precision_auto_advance": 1.0,
       "advanced_with_relevance>=2": 1.0,
-      "recall_good_relevance>=2_advanced": 0.2778,
-      "escalation_rate": 0.9286,
-      "expected_cost": 65.0,
-      "expected_cost_per_pair": 0.4643,
+      "recall_good_relevance>=2_advanced": 0.3889,
+      "escalation_rate": 0.9,
+      "expected_cost": 45.0,
+      "expected_cost_per_pair": 0.3214,
       "n": 140
     }
   },
@@ -45,13 +45,13 @@
     "ranking": {
       "ndcg@5": {
         "mean": 0.6726,
-        "lo": 0.5791,
-        "hi": 0.8382
+        "lo": 0.5762,
+        "hi": 0.8329
       },
       "ndcg@10": {
         "mean": 0.7445,
-        "lo": 0.6666,
-        "hi": 0.8441
+        "lo": 0.6712,
+        "hi": 0.8373
       },
       "p@5": {
         "mean": 0.4286,
@@ -60,7 +60,7 @@
       },
       "mrr": {
         "mean": 0.7109,
-        "lo": 0.5667,
+        "lo": 0.5655,
         "hi": 1.0
       }
     },
@@ -87,13 +87,13 @@
     "ranking": {
       "ndcg@5": {
         "mean": 0.7247,
-        "lo": 0.6258,
-        "hi": 0.8623
+        "lo": 0.6244,
+        "hi": 0.8632
       },
       "ndcg@10": {
         "mean": 0.7443,
-        "lo": 0.6799,
-        "hi": 0.8571
+        "lo": 0.6787,
+        "hi": 0.8576
       },
       "p@5": {
         "mean": 0.4571,
@@ -102,7 +102,7 @@
       },
       "mrr": {
         "mean": 0.7952,
-        "lo": 0.6222,
+        "lo": 0.6166,
         "hi": 1.0
       }
     },
@@ -129,13 +129,13 @@
     "ranking": {
       "ndcg@5": {
         "mean": 0.6456,
-        "lo": 0.5579,
-        "hi": 0.8167
+        "lo": 0.5611,
+        "hi": 0.8058
       },
       "ndcg@10": {
         "mean": 0.7036,
-        "lo": 0.6311,
-        "hi": 0.8239
+        "lo": 0.6359,
+        "hi": 0.8172
       },
       "p@5": {
         "mean": 0.4286,
@@ -144,7 +144,7 @@
       },
       "mrr": {
         "mean": 0.7048,
-        "lo": 0.5492,
+        "lo": 0.5472,
         "hi": 1.0
       }
     },
@@ -167,17 +167,59 @@
       "n": 140
     }
   },
+  "embedding_chunked": {
+    "ranking": {
+      "ndcg@5": {
+        "mean": 0.6404,
+        "lo": 0.531,
+        "hi": 0.7917
+      },
+      "ndcg@10": {
+        "mean": 0.7037,
+        "lo": 0.6134,
+        "hi": 0.8019
+      },
+      "p@5": {
+        "mean": 0.4286,
+        "lo": 0.3143,
+        "hi": 0.5714
+      },
+      "mrr": {
+        "mean": 0.6833,
+        "lo": 0.4762,
+        "hi": 0.9
+      }
+    },
+    "spearman": -0.1494,
+    "threshold_dev": 0.6402,
+    "decision": {
+      "confusion": {
+        "ideal_advance&advanced": 6,
+        "ideal_escalate&advanced": 77,
+        "ideal_advance&escalated": 17,
+        "ideal_escalate&escalated": 40
+      },
+      "recall_ideal_advance": 0.2609,
+      "precision_auto_advance": 0.0723,
+      "advanced_with_relevance>=2": 0.1446,
+      "recall_good_relevance>=2_advanced": 0.3333,
+      "escalation_rate": 0.4071,
+      "expected_cost": 162.0,
+      "expected_cost_per_pair": 1.1571,
+      "n": 140
+    }
+  },
   "llm_zeroshot": {
     "ranking": {
       "ndcg@5": {
         "mean": 0.7147,
-        "lo": 0.656,
-        "hi": 0.8389
+        "lo": 0.6517,
+        "hi": 0.8365
       },
       "ndcg@10": {
         "mean": 0.788,
-        "lo": 0.7471,
-        "hi": 0.8716
+        "lo": 0.747,
+        "hi": 0.8725
       },
       "p@5": {
         "mean": 0.5714,
@@ -186,7 +228,7 @@
       },
       "mrr": {
         "mean": 0.7857,
-        "lo": 0.7182,
+        "lo": 0.7181,
         "hi": 1.0
       }
     },

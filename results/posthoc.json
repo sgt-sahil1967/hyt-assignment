@@ -436,12 +436,75 @@
       "fake_skills_auto_advance": 1.0
     }
   },
+  "F_v1_3": {
+    "golden_test": {
+      "spearman": 0.6422,
+      "ndcg@10": 0.9108,
+      "recall_ideal_advance": 0.6087,
+      "precision_auto_advance": 1.0,
+      "escalation_rate": 0.9,
+      "expected_cost": 45.0,
+      "advanced": 14,
+      "wrong_advances": 0,
+      "reason_counts": {
+        "MISSING_MUST_HAVE": 125,
+        "BELOW_THRESHOLD": 29,
+        "LOW_FIT": 96,
+        "LOCATION_MISMATCH": 36,
+        "CAREER_SWITCH": 22,
+        "OVERQUALIFIED": 4,
+        "UNDER_SENIORITY": 8,
+        "BORDERLINE_SCORE": 1
+      }
+    },
+    "golden_dev": {
+      "spearman": 0.6743,
+      "ndcg@10": 0.8539,
+      "recall_ideal_advance": 1.0,
+      "precision_auto_advance": 1.0,
+      "escalation_rate": 0.8333,
+      "expected_cost": 0.0,
+      "advanced": 10,
+      "wrong_advances": 0,
+      "reason_counts": {
+        "BELOW_THRESHOLD": 2,
+        "MISSING_MUST_HAVE": 48,
+        "LOW_FIT": 48,
+        "LOCATION_MISMATCH": 20,
+        "UNDER_SENIORITY": 5
+      }
+    },
+    "real_set": {
+      "spearman": 0.6847,
+      "ndcg@10": 0.9882,
+      "recall_ideal_advance": 1.0,
+      "precision_auto_advance": 1.0,
+      "escalation_rate": 0.98,
+      "expected_cost": 0.0,
+      "advanced": 1,
+      "wrong_advances": 0,
+      "reason_counts": {
+        "MISSING_MUST_HAVE": 49,
+        "LOW_FIT": 42,
+        "BELOW_THRESHOLD": 7,
+        "AMBIGUOUS_EVIDENCE": 1,
+        "OVERQUALIFIED": 9
+      }
+    },
+    "adversarial": {
+      "detection": 0.75,
+      "auto_advance": 0.1562,
+      "fake_skills_auto_advance": 1.0
+    }
+  },
   "decision_changes_v1_1_to_v1_2_golden": [],
+  "decision_changes_v1_2_to_v1_3_golden": [],
   "decision_changes_v1_1_to_v1_2_real": [
     {
       "pair": "K04/K21297521",
       "from": "escalate",
       "to": "advance"
     }
-  ]
+  ],
+  "decision_changes_v1_2_to_v1_3_real": []
 }

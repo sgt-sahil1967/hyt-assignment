@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from .config import cfg
 from .schemas import Decision, ScoreResult
+from .score import IMPLIED_MIN_YEARS
 
 SENIORITY_MAX_YEARS = {"intern": 1, "junior": 2, "mid": 6, "senior": 12, "lead": 20, "unspecified": 99}
 BLOCKING_FLAGS = {"SUSPECTED_MANIPULATION", "EXTRACTION_FAILED", "LOW_CONFIDENCE_DATES", "SPARSE_RESUME", "NON_ENGLISH"}
@@ -64,6 +65,12 @@ def decide(sr: ScoreResult, jd: dict, flags: list[str], params: dict | None = No
     junior_role = jd.get("seniority") in ("intern", "junior") and not (jd.get("min_years") or 0) >= 3
     if (junior_role or not d.get("overqualified_junior_only", False)) and sr.yoe > band + d["overqualified_years_over"]:
         reasons.append("OVERQUALIFIED")
+    # v1.3: a senior/lead role that states no minimum years still implies one (score.IMPLIED_MIN_YEARS). Falling far
+    # short of it only lowered experience_fit, so a 2.6-year candidate could be auto-shortlisted for a Lead role.
+    implied = IMPLIED_MIN_YEARS.get(jd.get("seniority", "unspecified"), 0)
+    if (d.get("under_seniority_blocking", False) and jd.get("seniority") in ("senior", "lead") and not jd.get("min_years")
+            and sr.yoe < implied * d.get("under_seniority_fraction", 0.5)):
+        reasons.append("UNDER_SENIORITY")
     rel = sr.components.get("role_relevance")
     if rel is not None and rel < d["career_switch_relevance"] and (sr.components.get("must_have") or 0) >= 0.5:
         reasons.append("CAREER_SWITCH")

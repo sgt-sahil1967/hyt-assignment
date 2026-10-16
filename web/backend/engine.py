@@ -43,6 +43,7 @@ class Engine:
         self._extractions: dict[str, dict | None] = {}
         self._parsed: dict[str, dict] = {}
         self._screened: dict[tuple, list[dict]] = {}
+        self._baselines: dict[tuple, dict] = {}  # (job, jd text, pool) -> {cid: {system: score}}; filled on demand
         self._labels = {(r["job_id"], r["resume_id"]): r for r in agent.golden_labels()}
         agent.settings_spec()  # capture the start-up defaults before any override
         try:
@@ -127,8 +128,55 @@ class Engine:
 
     # ---------------------------------------------------------------- candidates
     def pool(self, jid: str) -> dict[str, str]:
+        """Candidates for a role. Benchmark roles: the fixed golden-set pool + uploads. A new role starts empty and
+        holds only the library resumes a recruiter picked (`custom_jobs[jid]["pool"]`) + resumes uploaded to it."""
         ups = {cid: u["text"] for cid, u in self.state["uploads"].items() if u["job_id"] == jid}
-        return {**self._texts, **ups}
+        cj = self.state["custom_jobs"].get(jid)
+        if cj is None or cj.get("pool") is None:  # benchmark role, or a role created before pools existed
+            return {**self._texts, **ups}
+        lib = self._library_texts()
+        return {**{c: lib[c] for c in cj["pool"] if c in lib}, **ups}
+
+    def _library_texts(self) -> dict[str, str]:
+        return {**self._texts, **{cid: u["text"] for cid, u in self.state["uploads"].items()}}
+
+    def library(self, jid: str) -> list[dict]:
+        """Every already-parsed resume (benchmark corpus + uploads), with a short profile, for the pool picker."""
+        prof: dict[str, dict] = {}
+        for j in [next(iter(self._bench))] + sorted({u["job_id"] for u in self.state["uploads"].values()}):
+            if j in self.job_ids():
+                for o in self.screened(j):  # profiles come from cached extractions: no LLM call
+                    prof.setdefault(o["candidate_id"], o)
+        mine = set(self.pool(jid))
+        out = []
+        for cid in self._library_texts():
+            o = prof.get(cid)
+            up = self.state["uploads"].get(cid)
+            out.append({"id": cid, "title": o["profile"]["title"] if o else "", "years": o["years_experience"] if o else None,
+                        "skills": (o["profile"]["skills"] if o else [])[:8], "parsed": bool(o) and not o["extraction_error"],
+                        "source": f"uploaded · {up['filename']}" if up else "benchmark corpus", "in_pool": cid in mine,
+                        "own_upload": bool(up) and up["job_id"] == jid})
+        return out
+
+    def set_pool(self, jid: str, ids: list[str]) -> dict:
+        cj = self.state["custom_jobs"].get(jid)
+        if cj is None:
+            raise ValueError("benchmark roles keep their golden-set candidate pool")
+        lib = self._library_texts()
+        own = {c for c, u in self.state["uploads"].items() if u["job_id"] == jid}
+        unknown = [c for c in ids if c not in lib]
+        if unknown:
+            raise ValueError(f"unknown resume(s): {', '.join(unknown[:5])}")
+        with self.lock:
+            before = set(self.pool(jid))
+            cj["pool"] = sorted(c for c in dict.fromkeys(ids) if c not in own)
+            after = set(self.pool(jid))
+            added, removed = sorted(after - before), sorted(before - after)
+            if added or removed:
+                self.job_state(jid)["history"].append({"at": _now(), "by": "recruiter", "candidate": None,
+                                                       "action": f"pool:+{len(added)}/-{len(removed)}"})
+            self.save()
+            return {"added": added, "removed": removed, "size": len(after)}
 
     def _screen_one(self, jid: str, cid: str, text: str, crit: dict, t: float) -> dict:
         up = self.state["uploads"].get(cid, {})
@@ -343,12 +391,65 @@ class Engine:
             jid = f"C{len(self.state['custom_jobs']) + 1:02d}"
             self.state["custom_jobs"][jid] = {"title": title or p.get("title") or "Untitled role", "text": text,
                                               "location": location or p.get("location") or "", "job_type": job_type,
-                                              "level": p.get("seniority", ""), "at": _now()}
+                                              "level": p.get("seniority", ""), "at": _now(), "pool": []}
             self.save()
             return {"id": jid}
 
     def activity(self, jid: str) -> list[dict]:
         return list(reversed(self.job_state(jid)["history"]))[:200]
+
+    # ---------------------------------------------------------------- baseline comparison (on demand only)
+    def _pool_baselines(self, jid: str) -> dict:
+        meta, pool = self.job_meta(jid), self.pool(jid)
+        key = (jid, meta["text"], tuple(sorted(pool)))
+        if key not in self._baselines:
+            # same TF-IDF corpus as eval.run baselines (all benchmark JDs + resumes), plus this role's extra documents
+            corpus = [j["text"] for j in self._bench.values()] + list(self._texts.values())
+            corpus += ([meta["text"]] if meta["kind"] == "custom" else []) + [t for c, t in pool.items() if c not in self._texts]
+            scores = agent.baseline_scores(meta["text"], pool, corpus)  # outside the lock: may take a few seconds
+            with self.lock:
+                self._baselines = {k: v for k, v in self._baselines.items() if k[0] != jid}
+                self._baselines[key] = scores
+        return self._baselines[key]
+
+    def compare(self, jid: str, cid: str, run_llm: bool = False) -> dict:
+        """How each baseline would have ranked and decided this candidate, next to the pipeline.
+
+        Runs only when a recruiter asks. Keyword/TF-IDF/embedding are scored once per role (needed for ranks) and
+        cached; LLM zero-shot is read from the cache unless `run_llm` allows one API call for this pair.
+        """
+        rows = self.screened(jid)
+        me = next(o for o in rows if o["candidate_id"] == cid)
+        meta, n = self.job_meta(jid), len(rows)
+        bs = self._pool_baselines(jid)
+        thr = agent.baseline_thresholds()
+        lab = self._labels.get((jid, cid))
+        ideal = lab["ideal_decision"] if lab else None
+
+        def entry(key, score, rank, threshold, decision, **extra):
+            name, how = (("HYT pipeline", "Evidence-weighted fit from extracted requirements; every must-have and the threshold must pass.")
+                         if key == "pipeline" else agent.BASELINES[key])
+            return {"key": key, "name": name, "how": how, "score": score, "rank": rank, "threshold": threshold,
+                    "decision": decision, "agrees": None if ideal is None or decision is None else decision == ideal, **extra}
+
+        out = [entry("pipeline", me["score"], 1 + sum(o["score"] > me["score"] for o in rows), self.threshold(jid), me["decision"])]
+        for k in ("keyword", "tfidf", "embedding", "embedding_chunked"):
+            v = bs[cid][k]
+            t = thr.get(k)
+            out.append(entry(k, round(v, 4), 1 + sum(x[k] > v for x in bs.values()), t,
+                             None if t is None else ("advance" if v >= t else "escalate")))
+        up = self.state["uploads"].get(cid)
+        z = agent.zero_shot(meta["text"], self.pool(jid)[cid], allow_call=run_llm and not agent.settings()["offline"],
+                            private=up is not None)
+        zt = thr.get("llm_zeroshot")
+        if z["status"] == "ok":
+            out.append(entry("llm_zeroshot", z["score"], None, zt, "advance" if z["score"] >= zt else "escalate",
+                             own_decision=z["own_decision"], status="ok"))
+        else:
+            out.append(entry("llm_zeroshot", None, None, zt, None, status=z["status"]))
+        return {"pool_size": n, "systems": out,
+                "label": {"relevance": lab["relevance"], "ideal": ideal} if lab else None,
+                "live": not agent.settings()["offline"]}
 
     # ---------------------------------------------------------------- runtime settings
     def update_settings(self, patch: dict | None, reset: bool = False) -> dict:

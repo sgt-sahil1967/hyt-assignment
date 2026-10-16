@@ -11,6 +11,7 @@ Variants (each row = previous row + one change, except D*, which are C + exactly
   D3 C + slash requirements ("unix/linux") accept either part               (v1.2 fix 4)
   D4 C + example lists ("A, B, C, etc.") collapsed into one any-of requirement (v1.2 fix 1)
   E  C + all four                                          = v1.2
+  F  E + UNDER_SENIORITY for senior/lead roles with no stated minimum   = v1.3    DECISIONS #15d
 """
 from __future__ import annotations
 
@@ -35,7 +36,7 @@ FIXES = {"strict_fit_phrase": ("sanitize", "strict_fit_phrase"),
          "overqualified_junior_only": ("decide", "overqualified_junior_only"),
          "split_slash_requirements": ("score", "split_slash_requirements"),
          "consolidate_example_lists": ("score", "consolidate_example_lists")}
-OFF = {k: False for k in FIXES}
+OFF = {k: False for k in FIXES} | {"under_seniority_blocking": False}
 VARIANTS = {
     "B_plus_framework_taxonomy": {"career_switch_blocking": True, **OFF},
     "C_v1_1": {"career_switch_blocking": False, **OFF},
@@ -43,7 +44,8 @@ VARIANTS = {
     "D2_overqualified_junior_only": {"career_switch_blocking": False, **OFF, "overqualified_junior_only": True},
     "D3_slash_requirements": {"career_switch_blocking": False, **OFF, "split_slash_requirements": True},
     "D4_example_lists": {"career_switch_blocking": False, **OFF, "consolidate_example_lists": True},
-    "E_v1_2": {"career_switch_blocking": False, **{k: True for k in FIXES}},
+    "E_v1_2": {"career_switch_blocking": False, **{k: True for k in FIXES}, "under_seniority_blocking": False},
+    "F_v1_3": {"career_switch_blocking": False, **{k: True for k in FIXES}, "under_seniority_blocking": True},
 }
 
 
@@ -134,13 +136,14 @@ def main():
               f"| REAL spearman={rr['spearman']:.3f} adv={rr['advanced']} wrong={rr['wrong_advances']} esc={rr['escalation_rate']:.2f} "
               f"| ADV det={out[name]['adversarial']['detection']:.2f} auto={out[name]['adversarial']['auto_advance']:.2f}")
     for split in ("golden", "real"):
-        a, b = flips["C_v1_1"][split].sort_index(), flips["E_v1_2"][split].sort_index()
-        b = b.reindex(a.index)
-        ch = a[a != b]
-        out[f"decision_changes_v1_1_to_v1_2_{split}"] = [{"pair": "/".join(k), "from": a[k], "to": b[k]} for k in ch.index]
+        for x, y, tag in (("C_v1_1", "E_v1_2", "v1_1_to_v1_2"), ("E_v1_2", "F_v1_3", "v1_2_to_v1_3")):
+            a, b = flips[x][split].sort_index(), flips[y][split].sort_index()
+            b = b.reindex(a.index)
+            ch = a[a != b]
+            out[f"decision_changes_{tag}_{split}"] = [{"pair": "/".join(k), "from": a[k], "to": b[k]} for k in ch.index]
     write_json(path("results") / "posthoc.json", out)
-    print("changes v1.1->v1.2:", {k: v for k, v in out.items() if k.startswith("decision_changes")})
-    # leave results/adversarial.json describing the current system (all v1.2 flags on, as in config.yaml)
+    print("decision changes:", {k: v for k, v in out.items() if k.startswith("decision_changes")})
+    # leave results/adversarial.json describing the current system (all flags as in config.yaml)
     from . import adversarial as adv
     adv.main()
 

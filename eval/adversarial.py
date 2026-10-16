@@ -8,7 +8,9 @@ Per case: score delta vs the clean version, whether it was auto-advanced, whethe
 from __future__ import annotations
 
 import html as _html
+import io
 import json
+import zipfile
 from pathlib import Path
 
 import pandas as pd
@@ -70,7 +72,13 @@ def _write_docx(content: str, f: Path) -> Path:
     run = d.add_paragraph().add_run(hidden)
     run.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
     run.font.size = Pt(2)
-    d.save(str(f))
+    buf = io.BytesIO()
+    d.save(buf)
+    # re-zip with a fixed timestamp so a rerun leaves the committed .docx byte-identical
+    with zipfile.ZipFile(buf) as zin, zipfile.ZipFile(f, "w", zipfile.ZIP_DEFLATED) as zout:
+        for i in zin.infolist():
+            zout.writestr(zipfile.ZipInfo(i.filename, date_time=(1980, 1, 1, 0, 0, 0)), zin.read(i.filename),
+                          compress_type=zipfile.ZIP_DEFLATED)
     return f
 
 

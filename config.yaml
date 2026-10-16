@@ -75,5 +75,7 @@ decide:
   overqualified_years_over: 3      # yoe > seniority band max + this -> OVERQUALIFIED (junior: > 5y)
   career_switch_relevance: 0.25   # tuned on dev (DECISIONS #15b): dev cost flat from off to 0.30, value kept
   overqualified_junior_only: true  # v1.2: OVERQUALIFIED only for intern/junior roles (false in the v1.0 profile)
+  under_seniority_blocking: true   # v1.3 (DECISIONS #15d): senior/lead role, no stated minimum, yoe < fraction x implied -> escalate
+  under_seniority_fraction: 0.5    # of the implied minimum (senior 4y, lead 6y); false in the v1.0 profile
   career_switch_blocking: false    # v1.1 policy (DECISIONS #15b): informational; true = frozen v1.0 behaviour
   stuffing_min_skills: 25          # >= this many listed skills with no usage evidence -> manipulation flag

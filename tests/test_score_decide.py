@@ -121,3 +121,15 @@ def test_failed_explanation_is_none_not_error_text(monkeypatch):
          "education": []}
     out = agent.screen("Python", {"title": "t", "must_have": [{"name": "python"}]}, extraction=x, explain=True)
     assert out["explanation"] is None and "quota" in out["explanation_error"]
+
+
+def test_under_seniority_escalates_lead_role_without_stated_minimum():
+    """v1.3: a 2.6-year candidate meeting every must-have was auto-shortlisted for a Lead role (implied 6y)."""
+    on = {**P, "under_seniority_blocking": True, "under_seniority_fraction": 0.5}
+    lead = {**JD, "seniority": "lead", "min_years": None}
+    d = decide(_sr(0.8, [1.0], yoe=2.6), lead, [], on)
+    assert "UNDER_SENIORITY" in d.reasons and d.decision == "escalate"
+    assert "UNDER_SENIORITY" not in decide(_sr(0.8, [1.0], yoe=3.5), lead, [], on).reasons  # >= half of 6y
+    assert "UNDER_SENIORITY" not in decide(_sr(0.8, [1.0], yoe=1.0), {**JD, "seniority": "mid"}, [], on).reasons
+    assert "UNDER_SENIORITY" not in decide(_sr(0.8, [1.0], yoe=2.6), {**lead, "min_years": 2}, [], on).reasons  # stated
+    assert decide(_sr(0.8, [1.0], yoe=2.6), lead, [], {**P, "under_seniority_blocking": False}).decision == "advance"

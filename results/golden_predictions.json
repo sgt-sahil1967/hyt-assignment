@@ -8637,7 +8637,7 @@
     "rank": 1,
     "job_id": "JD05",
     "resume_id": "R064",
-    "score": 0.3062,
+    "score": 0.3137,
     "decision": "escalate",
     "queue": "review",
     "reasons": [
@@ -8647,7 +8647,7 @@
     ],
     "components": {
       "must_have": 0.5,
-      "nice_to_have": 0.1667,
+      "nice_to_have": 0.25,
       "experience": 1.0,
       "role_relevance": 0.2358
     },
@@ -8687,6 +8687,14 @@
         "quote": "SQL"
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -8709,55 +8717,30 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
       "missing must-have: c#",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: containerisation",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.3062 for the AI Software Developer position. The strongest evidence for their application includes a computer science degree and experience listed in \"Machine Learning\", \"SQL\", \"React\", and \"React\". Key gaps include a lack of experience in C#, .NET, TypeScript, containerisation, and NoSQL. Despite the low score and missing must-have requirements, the application has been escalated for further review due to the candidate's career switch background and total years of experience.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 2867b6f69d50"
     }
   },
   {
     "rank": 2,
     "job_id": "JD05",
     "resume_id": "R024",
-    "score": 0.3012,
+    "score": 0.3087,
     "decision": "escalate",
     "queue": "review",
     "reasons": [
@@ -8767,7 +8750,7 @@
     ],
     "components": {
       "must_have": 0.5,
-      "nice_to_have": 0.1667,
+      "nice_to_have": 0.25,
       "experience": 1.0,
       "role_relevance": 0.18
     },
@@ -8807,6 +8790,14 @@
         "quote": "SQL"
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "kubernetes",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:kubernetes->containerisation",
+        "quote": "Kubernetes"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -8829,9 +8820,87 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: c#",
+      "missing nice-have: .net",
+      "missing nice-have: typescript"
+    ],
+    "flags": [],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for afea4f1aee94"
+    }
+  },
+  {
+    "rank": 3,
+    "job_id": "JD05",
+    "resume_id": "R028",
+    "score": 0.277,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "MISSING_MUST_HAVE",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.375,
+      "nice_to_have": 0.25,
+      "experience": 1.0,
+      "role_relevance": 0.2444
+    },
+    "yoe": 5.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "computer science degree",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 1.0,
+        "basis": "degree",
+        "quote": null
       },
       {
-        "requirement": "react.js",
+        "requirement": "machine learning",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "c#",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "sql",
+        "level": "must",
+        "matched_skill": "sql",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "SQL"
+      },
+      {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "docker",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:docker->containerisation",
+        "quote": "Docker"
+      },
+      {
+        "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -8839,15 +8908,15 @@
         "quote": null
       },
       {
-        "requirement": "containerisation",
+        "requirement": "javascript",
         "level": "nice",
-        "matched_skill": "kubernetes",
+        "matched_skill": "node.js",
         "strength": 0.5,
-        "basis": "listed+taxonomy:kubernetes->containerisation",
-        "quote": "Kubernetes"
+        "basis": "listed+taxonomy:node.js->javascript",
+        "quote": "Node.js"
       },
       {
-        "requirement": "nosql",
+        "requirement": "typescript",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -8856,25 +8925,25 @@
       }
     ],
     "gaps": [
+      "missing must-have: machine learning",
       "missing must-have: c#",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.3012 for the AI Software Developer position. The strongest evidence for their application includes a computer science degree, \"Machine Learning\", \"SQL\", \"Node.js\", and \"Kubernetes\". Key gaps include a lack of experience with C#, .NET, TypeScript, React.js, and NoSQL. The application was escalated for manual review despite being below the scoring threshold because the candidate is undergoing a career switch and is missing a required skill.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for b43238d6de18"
     }
   },
   {
-    "rank": 3,
+    "rank": 4,
     "job_id": "JD05",
     "resume_id": "R091",
     "score": 0.2762,
@@ -8926,6 +8995,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -8948,175 +9025,31 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "kubernetes",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:kubernetes->containerisation",
-        "quote": "Kubernetes"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
       "missing must-have: c#",
       "missing must-have: sql",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2762 for the AI Software Developer position. The strongest evidence for their application is a computer science degree and experience listed as \"Machine Learning\", \"JavaScript\", \"React\", and \"Kubernetes\". Key gaps include missing requirements for C#, SQL, .NET, TypeScript, and NoSQL. The application has been escalated for manual review despite the low fit and missing must-have skills.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 4,
-    "job_id": "JD05",
-    "resume_id": "R028",
-    "score": 0.2695,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.375,
-      "nice_to_have": 0.1667,
-      "experience": 1.0,
-      "role_relevance": 0.2444
-    },
-    "yoe": 5.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "computer science degree",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 1.0,
-        "basis": "degree",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "c#",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "sql",
-        "level": "must",
-        "matched_skill": "sql",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "SQL"
-      },
-      {
-        "requirement": ".net",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "javascript",
-        "level": "nice",
-        "matched_skill": "node.js",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:node.js->javascript",
-        "quote": "Node.js"
-      },
-      {
-        "requirement": "typescript",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:docker->containerisation",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: machine learning",
-      "missing must-have: c#",
-      "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: nosql"
-    ],
-    "flags": [],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.27 for the AI Software Developer position. Their strongest evidence includes a computer science degree, as well as experience with \"SQL\", \"Node.js\", and \"Docker\". Key gaps include missing requirements for machine learning, C#, .NET, typescript, react.js, and nosql. The application has been escalated for further review despite the low fit and missing must-have qualifications.",
-      "n_quotes": 3,
-      "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 505997f6c2c9"
     }
   },
   {
     "rank": 5,
     "job_id": "JD05",
     "resume_id": "R033",
-    "score": 0.2686,
+    "score": 0.2761,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -9125,7 +9058,7 @@
     ],
     "components": {
       "must_have": 0.375,
-      "nice_to_have": 0.1667,
+      "nice_to_have": 0.25,
       "experience": 1.0,
       "role_relevance": 0.2343
     },
@@ -9165,6 +9098,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "docker",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:docker->containerisation",
+        "quote": "Docker"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -9187,56 +9128,31 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:docker->containerisation",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
       "missing must-have: c#",
       "missing must-have: sql",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.27 for the AI Software Developer position. Their strongest evidence is a computer science degree and experience with \"Machine Learning\", \"JavaScript\", and \"Docker\". Key gaps include the absence of C#, SQL, .NET, TypeScript, React.js, and NoSQL. The application has been escalated for further review despite missing mandatory requirements and a low overall fit.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for d8aef467fdf8"
     }
   },
   {
     "rank": 6,
     "job_id": "JD05",
     "resume_id": "R061",
-    "score": 0.2637,
+    "score": 0.2712,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -9245,7 +9161,7 @@
     ],
     "components": {
       "must_have": 0.375,
-      "nice_to_have": 0.1667,
+      "nice_to_have": 0.25,
       "experience": 1.0,
       "role_relevance": 0.18
     },
@@ -9285,6 +9201,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "docker",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:docker->containerisation",
+        "quote": "Docker"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -9307,56 +9231,31 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:docker->containerisation",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
       "missing must-have: c#",
       "missing must-have: sql",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2637 for the AI Software Developer position. The strongest evidence for their application is a computer science degree and experience listed as \"Machine Learning\". Key gaps include missing requirements for C#, SQL, .NET, TypeScript, React.js, and NoSQL. The application has been escalated for review despite the low fit and missing must-have skills.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 2d6a98581696"
     }
   },
   {
     "rank": 7,
     "job_id": "JD05",
     "resume_id": "R009",
-    "score": 0.262,
+    "score": 0.2657,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -9365,7 +9264,7 @@
     ],
     "components": {
       "must_have": 0.375,
-      "nice_to_have": 0.0833,
+      "nice_to_have": 0.125,
       "experience": 1.0,
       "role_relevance": 0.2444
     },
@@ -9405,6 +9304,14 @@
         "quote": "SQL"
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "docker",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:docker->containerisation",
+        "quote": "Docker"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -9427,30 +9334,6 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:docker->containerisation",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
@@ -9458,26 +9341,25 @@
       "missing must-have: c#",
       "missing nice-have: .net",
       "missing nice-have: javascript",
-      "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.262 for the AI Software Developer position. Their strongest evidence includes a computer science degree and experience with \"SQL\" and \"Docker\" for containerisation. Key gaps include the absence of machine learning, C#, .NET, JavaScript, TypeScript, React.js, and NoSQL. Despite the low fit and missing must-have requirements, the application has been escalated for further review due to the candidate's 5.54 years of relevant experience.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 15a40d679fc0"
     }
   },
   {
     "rank": 8,
     "job_id": "JD05",
     "resume_id": "R048",
-    "score": 0.262,
+    "score": 0.2657,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -9486,7 +9368,7 @@
     ],
     "components": {
       "must_have": 0.375,
-      "nice_to_have": 0.0833,
+      "nice_to_have": 0.125,
       "experience": 1.0,
       "role_relevance": 0.2444
     },
@@ -9526,6 +9408,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -9548,50 +9438,25 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
       "missing must-have: c#",
       "missing must-have: sql",
+      "missing nice-have: 1+ of: react.js, containerisation, docker, kubernetes…",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: containerisation",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.262 for the AI Software Developer position. The strongest evidence for their application is a computer science degree and experience listed as \"Machine Learning\". Key gaps include missing requirements for C#, SQL, .NET, TypeScript, React.js, containerisation, and NoSQL. The application has been escalated for manual review despite the missing must-have skills and low overall fit.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 5b0653c2c5c0"
     }
   },
   {
@@ -9647,6 +9512,14 @@
         "quote": "SQL"
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -9669,9 +9542,90 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: machine learning",
+      "missing must-have: c#",
+      "missing nice-have: 1+ of: react.js, containerisation, docker, kubernetes…",
+      "missing nice-have: .net",
+      "missing nice-have: javascript",
+      "missing nice-have: typescript"
+    ],
+    "flags": [],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for 97b0b82d43d4"
+    }
+  },
+  {
+    "rank": 10,
+    "job_id": "JD05",
+    "resume_id": "R078",
+    "score": 0.2486,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "MISSING_MUST_HAVE",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.375,
+      "nice_to_have": 0.25,
+      "experience": 0.77,
+      "role_relevance": 0.2358
+    },
+    "yoe": 1.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "computer science degree",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 1.0,
+        "basis": "degree",
+        "quote": null
       },
       {
-        "requirement": "react.js",
+        "requirement": "machine learning",
+        "level": "must",
+        "matched_skill": "machine learning",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "Machine Learning"
+      },
+      {
+        "requirement": "c#",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "sql",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
+        "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -9679,15 +9633,15 @@
         "quote": null
       },
       {
-        "requirement": "containerisation",
+        "requirement": "javascript",
         "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:react->javascript",
+        "quote": "React"
       },
       {
-        "requirement": "nosql",
+        "requirement": "typescript",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -9696,28 +9650,26 @@
       }
     ],
     "gaps": [
-      "missing must-have: machine learning",
       "missing must-have: c#",
+      "missing must-have: sql",
       "missing nice-have: .net",
-      "missing nice-have: javascript",
       "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: containerisation",
-      "missing nice-have: nosql"
+      "experience 1.5y below 2y"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2545 for the AI Software Developer position. Their strongest evidence is a computer science degree and experience listed as \"SQL\". Key gaps include missing requirements for machine learning, C#, and several nice-to-have technologies. The application has been escalated for manual review despite the low fit and missing must-have qualifications.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 647b5452bec5"
     }
   },
   {
-    "rank": 10,
+    "rank": 11,
     "job_id": "JD05",
     "resume_id": "R008",
     "score": 0.2433,
@@ -9769,6 +9721,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -9791,30 +9751,6 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:docker->containerisation",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
@@ -9822,139 +9758,18 @@
       "missing must-have: c#",
       "missing must-have: sql",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall score of 0.2433 for the AI Software Developer position. The strongest evidence for their application is a computer science degree and 4.54 years of experience, alongside familiarity with \"JavaScript\", \"React\", and \"Docker\". Key gaps include the absence of required machine learning, C#, and SQL expertise, as well as missing nice-to-have skills like .NET, TypeScript, and NoSQL. The application has been escalated for further review despite the low fit and missing must-have requirements.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 11,
-    "job_id": "JD05",
-    "resume_id": "R078",
-    "score": 0.2411,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.375,
-      "nice_to_have": 0.1667,
-      "experience": 0.77,
-      "role_relevance": 0.2358
-    },
-    "yoe": 1.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "computer science degree",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 1.0,
-        "basis": "degree",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "must",
-        "matched_skill": "machine learning",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Machine Learning"
-      },
-      {
-        "requirement": "c#",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "sql",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": ".net",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "javascript",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:react->javascript",
-        "quote": "React"
-      },
-      {
-        "requirement": "typescript",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: c#",
-      "missing must-have: sql",
-      "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: containerisation",
-      "missing nice-have: nosql",
-      "experience 1.5y below 2y"
-    ],
-    "flags": [],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2411 for the AI Software Developer position. Their strongest evidence is a computer science degree and experience listed as \"Machine Learning\". Key gaps include missing requirements for C#, SQL, .NET, TypeScript, containerisation, and NoSQL, alongside having less than two years of experience. The application has been escalated for manual review despite the missing must-have skills and low overall fit.",
-      "n_quotes": 1,
-      "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 2e68b6451ceb"
     }
   },
   {
@@ -10010,6 +9825,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -10032,17 +9855,81 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: machine learning",
+      "missing must-have: c#",
+      "missing must-have: sql",
+      "missing nice-have: .net",
+      "missing nice-have: typescript"
+    ],
+    "flags": [],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for b1917e9ed013"
+    }
+  },
+  {
+    "rank": 13,
+    "job_id": "JD05",
+    "resume_id": "R081",
+    "score": 0.2395,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "MISSING_MUST_HAVE",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.25,
+      "nice_to_have": 0.25,
+      "experience": 1.0,
+      "role_relevance": 0.2444
+    },
+    "yoe": 5.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "computer science degree",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 1.0,
+        "basis": "degree",
+        "quote": null
       },
       {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
+        "requirement": "machine learning",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
       },
       {
-        "requirement": "containerisation",
+        "requirement": "c#",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "sql",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "docker",
         "strength": 0.5,
@@ -10050,7 +9937,23 @@
         "quote": "Docker"
       },
       {
-        "requirement": "nosql",
+        "requirement": ".net",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "javascript",
+        "level": "nice",
+        "matched_skill": "node.js",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:node.js->javascript",
+        "quote": "Node.js"
+      },
+      {
+        "requirement": "typescript",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -10063,22 +9966,126 @@
       "missing must-have: c#",
       "missing must-have: sql",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall score of 0.24 for the AI Software Developer position. Their strongest evidence includes experience with \"React\" and \"Docker,\" which support the javascript, react.js, and containerisation requirements. Key gaps include the absence of a computer science degree, machine learning, c#, sql, .net, typescript, and nosql. Despite the low fit and missing must-have requirements, this application has been escalated for further review.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for f6c87530a3a8"
     }
   },
   {
-    "rank": 13,
+    "rank": 14,
+    "job_id": "JD05",
+    "resume_id": "R041",
+    "score": 0.2387,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "MISSING_MUST_HAVE",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.25,
+      "nice_to_have": 0.25,
+      "experience": 1.0,
+      "role_relevance": 0.2358
+    },
+    "yoe": 2.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "computer science degree",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 1.0,
+        "basis": "degree",
+        "quote": null
+      },
+      {
+        "requirement": "machine learning",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "c#",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "sql",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
+        "requirement": ".net",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "javascript",
+        "level": "nice",
+        "matched_skill": "javascript",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "JavaScript"
+      },
+      {
+        "requirement": "typescript",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: machine learning",
+      "missing must-have: c#",
+      "missing must-have: sql",
+      "missing nice-have: .net",
+      "missing nice-have: typescript"
+    ],
+    "flags": [],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for 9629c2a5ca60"
+    }
+  },
+  {
+    "rank": 15,
     "job_id": "JD05",
     "resume_id": "R034",
     "score": 0.2337,
@@ -10130,245 +10137,12 @@
         "quote": null
       },
       {
-        "requirement": ".net",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "javascript",
-        "level": "nice",
-        "matched_skill": "javascript",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "JavaScript"
-      },
-      {
-        "requirement": "typescript",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "react.js",
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "react",
         "strength": 0.5,
         "basis": "listed",
         "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:docker->containerisation",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: machine learning",
-      "missing must-have: c#",
-      "missing must-have: sql",
-      "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: nosql"
-    ],
-    "flags": [],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.23 for the AI Software Developer position. The strongest evidence for their candidacy is a computer science degree and 4.54 years of relevant experience, alongside listed skills in \"JavaScript\", \"React\", and \"Docker\". Key gaps include the absence of required machine learning, C#, and SQL expertise, as well as missing nice-to-have skills like .NET, TypeScript, and NoSQL. Despite the low fit and missing must-have requirements, this application has been escalated for further review.",
-      "n_quotes": 3,
-      "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 14,
-    "job_id": "JD05",
-    "resume_id": "R081",
-    "score": 0.232,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.25,
-      "nice_to_have": 0.1667,
-      "experience": 1.0,
-      "role_relevance": 0.2444
-    },
-    "yoe": 5.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "computer science degree",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 1.0,
-        "basis": "degree",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "c#",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "sql",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": ".net",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "javascript",
-        "level": "nice",
-        "matched_skill": "node.js",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:node.js->javascript",
-        "quote": "Node.js"
-      },
-      {
-        "requirement": "typescript",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:docker->containerisation",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: machine learning",
-      "missing must-have: c#",
-      "missing must-have: sql",
-      "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: nosql"
-    ],
-    "flags": [],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.232 for the AI Software Developer position. Their strongest evidence is a computer science degree and over five years of relevant experience, alongside some familiarity with \"Node.js\" and \"Docker\". Key gaps include the absence of required machine learning, C#, and SQL expertise, as well as several nice-to-have skills. This application has been escalated for manual review despite the missing must-have requirements and low overall fit.",
-      "n_quotes": 2,
-      "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 15,
-    "job_id": "JD05",
-    "resume_id": "R041",
-    "score": 0.2312,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.25,
-      "nice_to_have": 0.1667,
-      "experience": 1.0,
-      "role_relevance": 0.2358
-    },
-    "yoe": 2.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "computer science degree",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 1.0,
-        "basis": "degree",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "c#",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "sql",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       },
       {
         "requirement": ".net",
@@ -10393,30 +10167,6 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
@@ -10424,19 +10174,18 @@
       "missing must-have: c#",
       "missing must-have: sql",
       "missing nice-have: .net",
-      "missing nice-have: typescript",
-      "missing nice-have: containerisation",
-      "missing nice-have: nosql"
+      "missing nice-have: typescript"
     ],
     "flags": [],
     "yoe_confidence": "high",
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.23 for the AI Software Developer position. The strongest evidence for their application is a computer science degree and experience with \"JavaScript\" and \"React\". Key gaps include a lack of required experience in machine learning, C#, and SQL, as well as several missing nice-to-have skills. The application has been escalated for manual review despite the low fit and missing must-have requirements.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for da17fe45c6f3"
     }
   },
   {
@@ -10493,6 +10242,14 @@
         "quote": "SQL"
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -10515,37 +10272,12 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "kubernetes",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:kubernetes->containerisation",
-        "quote": "Kubernetes"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
       "missing must-have: c#",
       "missing nice-have: .net",
       "missing nice-have: typescript",
-      "missing nice-have: nosql",
       "experience 0.5y below 2y"
     ],
     "flags": [],
@@ -10553,17 +10285,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2261 for the AI Software Developer position. The strongest evidence for their application includes a computer science degree and experience listed in \"Machine Learning\", \"SQL\", \"React\", and \"Kubernetes\". Key gaps include a lack of C#, .NET, TypeScript, and NoSQL, as well as having less than two years of experience. This profile has been escalated for review due to a missing must-have requirement, a career switch, and an overall low fit.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 167d4b5735d2"
     }
   },
   {
     "rank": 17,
     "job_id": "JD05",
     "resume_id": "R036",
-    "score": 0.2119,
+    "score": 0.2156,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -10573,7 +10306,7 @@
     ],
     "components": {
       "must_have": 0.5,
-      "nice_to_have": 0.0833,
+      "nice_to_have": 0.125,
       "experience": 0.27,
       "role_relevance": 0.2444
     },
@@ -10613,6 +10346,14 @@
         "quote": "SQL"
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "kubernetes",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:kubernetes->containerisation",
+        "quote": "Kubernetes"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -10635,30 +10376,6 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "kubernetes",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:kubernetes->containerisation",
-        "quote": "Kubernetes"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
@@ -10666,8 +10383,6 @@
       "missing nice-have: .net",
       "missing nice-have: javascript",
       "missing nice-have: typescript",
-      "missing nice-have: react.js",
-      "missing nice-have: nosql",
       "experience 0.5y below 2y"
     ],
     "flags": [],
@@ -10675,17 +10390,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2119 for the AI Software Developer position. The strongest evidence for their application includes a computer science degree, as well as experience listed in \"Machine Learning\", \"SQL\", and \"Kubernetes\". Key gaps include a lack of C#, .NET, JavaScript, TypeScript, React.js, and NoSQL, alongside less than two years of relevant experience. The application was escalated for manual review due to a low overall fit, a missing must-have requirement, and the candidate's background indicating a career switch.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for e29bc750a026"
     }
   },
   {
     "rank": 18,
     "job_id": "JD05",
     "resume_id": "R010",
-    "score": 0.2035,
+    "score": 0.211,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -10694,7 +10410,7 @@
     ],
     "components": {
       "must_have": 0.25,
-      "nice_to_have": 0.1667,
+      "nice_to_have": 0.25,
       "experience": 0.77,
       "role_relevance": 0.2343
     },
@@ -10734,6 +10450,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -10756,30 +10480,6 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
@@ -10788,8 +10488,6 @@
       "missing must-have: sql",
       "missing nice-have: .net",
       "missing nice-have: typescript",
-      "missing nice-have: containerisation",
-      "missing nice-have: nosql",
       "experience 1.5y below 2y"
     ],
     "flags": [],
@@ -10797,10 +10495,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2035 for the AI Software Developer position. The strongest evidence for their application is a computer science degree, along with experience in \"Node.js\" and \"React\". Key gaps include a lack of required machine learning, C#, and SQL skills, as well as less than two years of total experience. Despite these missing requirements and a low overall fit, the application has been escalated for further review.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for edcbc6483b37"
     }
   },
   {
@@ -10856,6 +10555,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -10878,30 +10585,6 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": "kubernetes",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:kubernetes->containerisation",
-        "quote": "Kubernetes"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
@@ -10909,7 +10592,6 @@
       "missing must-have: sql",
       "missing nice-have: .net",
       "missing nice-have: typescript",
-      "missing nice-have: nosql",
       "experience 0.5y below 2y"
     ],
     "flags": [],
@@ -10917,17 +10599,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.1886 for the AI Software Developer position. The strongest evidence for their application is their background in \"Machine Learning,\" \"React,\" and \"Kubernetes.\" Key gaps include a lack of experience with C#, SQL, .NET, TypeScript, and NoSQL, as well as having less than two years of experience. This profile has been escalated for review despite the missing must-have requirements and low overall fit.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 7b1d0f55e048"
     }
   },
   {
     "rank": 20,
     "job_id": "JD05",
     "resume_id": "R082",
-    "score": 0.1811,
+    "score": 0.1886,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -10936,7 +10619,7 @@
     ],
     "components": {
       "must_have": 0.375,
-      "nice_to_have": 0.1667,
+      "nice_to_have": 0.25,
       "experience": 0.27,
       "role_relevance": 0.2358
     },
@@ -10976,6 +10659,14 @@
         "quote": null
       },
       {
+        "requirement": "1+ of: react.js, containerisation, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "react",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "React"
+      },
+      {
         "requirement": ".net",
         "level": "nice",
         "matched_skill": null,
@@ -10998,30 +10689,6 @@
         "strength": 0.0,
         "basis": "missing",
         "quote": null
-      },
-      {
-        "requirement": "react.js",
-        "level": "nice",
-        "matched_skill": "react",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "React"
-      },
-      {
-        "requirement": "containerisation",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       }
     ],
     "gaps": [
@@ -11029,8 +10696,6 @@
       "missing must-have: sql",
       "missing nice-have: .net",
       "missing nice-have: typescript",
-      "missing nice-have: containerisation",
-      "missing nice-have: nosql",
       "experience 0.5y below 2y"
     ],
     "flags": [],
@@ -11038,10 +10703,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.18 for the AI Software Developer position. The strongest evidence for their application is a computer science degree and listed experience in \"Machine Learning\", \"JavaScript\", and \"React\". Key gaps include missing requirements for C#, SQL, .NET, TypeScript, containerisation, and NoSQL, as well as having less than two years of experience. Despite the low fit and missing must-have skills, this application has been escalated for further review.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for d580564b3e3d"
     }
   },
   {
@@ -11172,13 +10838,13 @@
     "rank": 2,
     "job_id": "JD06",
     "resume_id": "R096",
-    "score": 0.6089,
+    "score": 0.6182,
     "decision": "advance",
     "queue": "advance",
     "reasons": [],
     "components": {
       "must_have": 0.6667,
-      "nice_to_have": 0.125,
+      "nice_to_have": 0.1875,
       "experience": 1.0,
       "role_relevance": 0.3785
     },
@@ -11212,10 +10878,10 @@
       {
         "requirement": "web development frameworks",
         "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
+        "matched_skill": "spring boot",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:spring boot->web framework",
+        "quote": "Spring Boot"
       },
       {
         "requirement": "sql",
@@ -11275,7 +10941,6 @@
       }
     ],
     "gaps": [
-      "missing nice-have: web development frameworks",
       "missing nice-have: nosql",
       "missing nice-have: html",
       "missing nice-have: css",
@@ -11287,23 +10952,24 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate is a moderate fit for the Junior Software Engineer role with an overall score of 0.61. The strongest evidence is their computer science degree and listed experience with \"Python\", \"Git\", \"SQL\", and \"Node.js\". Key gaps include a lack of experience in web development frameworks, nosql, html, css, devops, and pytest. The candidate has been advanced because they meet the core requirements for the position.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for d21c8f610b7f"
     }
   },
   {
     "rank": 3,
     "job_id": "JD06",
     "resume_id": "R041",
-    "score": 0.5995,
+    "score": 0.6089,
     "decision": "advance",
     "queue": "advance",
     "reasons": [],
     "components": {
       "must_have": 0.6667,
-      "nice_to_have": 0.0625,
+      "nice_to_have": 0.125,
       "experience": 1.0,
       "role_relevance": 0.3785
     },
@@ -11337,10 +11003,10 @@
       {
         "requirement": "web development frameworks",
         "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
+        "matched_skill": "spring boot",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:spring boot->web framework",
+        "quote": "Spring Boot"
       },
       {
         "requirement": "sql",
@@ -11400,7 +11066,6 @@
       }
     ],
     "gaps": [
-      "missing nice-have: web development frameworks",
       "missing nice-have: sql",
       "missing nice-have: nosql",
       "missing nice-have: html",
@@ -11413,10 +11078,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate is a moderate fit for the Junior Software Engineer role with an overall score of 0.60. The strongest evidence is their computer science degree and their listed experience with \"Python\", \"Git\", and \"JavaScript\". Key gaps include a lack of experience in web development frameworks, sql, nosql, html, css, devops, and pytest. The candidate was advanced because they meet the core requirements and possess the necessary years of experience for the position.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 81edae1a397b"
     }
   },
   {
@@ -11550,8 +11216,8 @@
     "job_id": "JD06",
     "resume_id": "R055",
     "score": 0.5862,
-    "decision": "escalate",
-    "queue": "review",
+    "decision": "advance",
+    "queue": "advance",
     "reasons": [
       "CAREER_SWITCH"
     ],
@@ -11665,25 +11331,26 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate is a moderate fit for the Junior Software Engineer role with an overall score of 0.59. The strongest evidence for their candidacy is a computer science degree and over three years of relevant experience. Key gaps include a lack of experience with web development frameworks, NoSQL, HTML, CSS, and pytest. This application has been escalated for further review because the candidate is currently making a career switch.",
+      "explanation": "[explanation unavailable: CacheMiss]",
       "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for fc2151361c63"
     }
   },
   {
     "rank": 6,
     "job_id": "JD06",
     "resume_id": "R094",
-    "score": 0.5691,
-    "decision": "escalate",
-    "queue": "review",
+    "score": 0.5785,
+    "decision": "advance",
+    "queue": "advance",
     "reasons": [
       "CAREER_SWITCH"
     ],
     "components": {
       "must_have": 0.6667,
-      "nice_to_have": 0.0625,
+      "nice_to_have": 0.125,
       "experience": 1.0,
       "role_relevance": 0.176
     },
@@ -11717,10 +11384,10 @@
       {
         "requirement": "web development frameworks",
         "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
+        "matched_skill": "spring boot",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:spring boot->web framework",
+        "quote": "Spring Boot"
       },
       {
         "requirement": "sql",
@@ -11780,7 +11447,6 @@
       }
     ],
     "gaps": [
-      "missing nice-have: web development frameworks",
       "missing nice-have: nosql",
       "missing nice-have: html",
       "missing nice-have: css",
@@ -11793,10 +11459,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate is a moderate fit for the Junior Software Engineer role with an overall score of 0.57. The strongest evidence for their candidacy is a computer science degree and listed experience with \"Python\", \"Git\", and \"SQL\". Key gaps include a lack of experience in web development frameworks, NoSQL, HTML, CSS, JavaScript, DevOps, and pytest. This application has been escalated for further review due to the candidate's background as a career switcher.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 93fb8aa05884"
     }
   },
   {
@@ -11931,6 +11598,135 @@
   {
     "rank": 8,
     "job_id": "JD06",
+    "resume_id": "R099",
+    "score": 0.3169,
+    "decision": "escalate",
+    "queue": "review",
+    "reasons": [
+      "MISSING_MUST_HAVE",
+      "BELOW_THRESHOLD"
+    ],
+    "components": {
+      "must_have": 0.5,
+      "nice_to_have": 0.1875,
+      "experience": 1.0,
+      "role_relevance": 0.3337
+    },
+    "yoe": 2.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "computer science degree",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 1.0,
+        "basis": "degree",
+        "quote": null
+      },
+      {
+        "requirement": "python",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "git",
+        "level": "must",
+        "matched_skill": "git",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "Git"
+      },
+      {
+        "requirement": "web development frameworks",
+        "level": "nice",
+        "matched_skill": "spring boot",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:spring boot->web framework",
+        "quote": "Spring Boot"
+      },
+      {
+        "requirement": "sql",
+        "level": "nice",
+        "matched_skill": "sql",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "SQL"
+      },
+      {
+        "requirement": "nosql",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "html",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "css",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "javascript",
+        "level": "nice",
+        "matched_skill": "node.js",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:node.js->javascript",
+        "quote": "Node.js"
+      },
+      {
+        "requirement": "devops",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "pytest",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: python",
+      "missing nice-have: nosql",
+      "missing nice-have: html",
+      "missing nice-have: css",
+      "missing nice-have: devops",
+      "missing nice-have: pytest"
+    ],
+    "flags": [],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for 60041308023f"
+    }
+  },
+  {
+    "rank": 9,
+    "job_id": "JD06",
     "resume_id": "R047",
     "score": 0.3153,
     "decision": "escalate",
@@ -11977,7 +11773,7 @@
         "level": "nice",
         "matched_skill": "django",
         "strength": 0.5,
-        "basis": "listed",
+        "basis": "listed+taxonomy:django->web framework",
         "quote": "Django"
       },
       {
@@ -12051,139 +11847,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate is a low fit for the Junior Software Engineer role with an overall score of 0.3153. The strongest evidence for their candidacy is their relevant experience and background, supported by their work with \"Django\" and \"Kubernetes\". Key gaps include a missing must-have requirement for git, as well as several missing nice-to-have skills such as sql, nosql, html, css, javascript, and pytest. Despite the low score and missing requirements, the application has been escalated for further review.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 9,
-    "job_id": "JD06",
-    "resume_id": "R099",
-    "score": 0.3113,
-    "decision": "escalate",
-    "queue": "review",
-    "reasons": [
-      "MISSING_MUST_HAVE",
-      "BELOW_THRESHOLD"
-    ],
-    "components": {
-      "must_have": 0.5,
-      "nice_to_have": 0.125,
-      "experience": 1.0,
-      "role_relevance": 0.3337
-    },
-    "yoe": 2.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "computer science degree",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 1.0,
-        "basis": "degree",
-        "quote": null
-      },
-      {
-        "requirement": "python",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "git",
-        "level": "must",
-        "matched_skill": "git",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Git"
-      },
-      {
-        "requirement": "web development frameworks",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "sql",
-        "level": "nice",
-        "matched_skill": "sql",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "SQL"
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "html",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "css",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "javascript",
-        "level": "nice",
-        "matched_skill": "node.js",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:node.js->javascript",
-        "quote": "Node.js"
-      },
-      {
-        "requirement": "devops",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "pytest",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: python",
-      "missing nice-have: web development frameworks",
-      "missing nice-have: nosql",
-      "missing nice-have: html",
-      "missing nice-have: css",
-      "missing nice-have: devops",
-      "missing nice-have: pytest"
-    ],
-    "flags": [],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate received an overall score of 0.3113 for the Junior Software Engineer position. The strongest evidence for their application includes a computer science degree and experience with \"Git\", \"SQL\", and \"Node.js\". Key gaps include a lack of Python, web development frameworks, NoSQL, HTML, CSS, DevOps, and pytest. Despite missing a required skill and falling below the standard scoring threshold, this application has been escalated for further review.",
-      "n_quotes": 3,
-      "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for a7a19693293c"
     }
   },
   {
@@ -12365,7 +12033,7 @@
         "level": "nice",
         "matched_skill": "django",
         "strength": 0.5,
-        "basis": "listed",
+        "basis": "listed+taxonomy:django->web framework",
         "quote": "Django"
       },
       {
@@ -12438,10 +12106,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.30, indicating they fall below the standard threshold for the Junior Software Engineer role. Their strongest evidence includes a computer science degree and experience listed as \"Python\", \"Django\", \"Node.js\", and \"Docker\". Key gaps include missing requirements for git, sql, nosql, html, css, and pytest. The application has been escalated for review due to the missing must-have requirement, the candidate's career switch, and the low overall score.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 63b3a386970b"
     }
   },
   {
@@ -12494,7 +12163,7 @@
         "level": "nice",
         "matched_skill": "django",
         "strength": 0.5,
-        "basis": "listed",
+        "basis": "listed+taxonomy:django->web framework",
         "quote": "Django"
       },
       {
@@ -12567,10 +12236,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.30, which is below the standard threshold for the Junior Software Engineer role. The strongest evidence for their application includes a computer science degree and experience with \"Python\", \"Django\", \"React\", and \"Docker\". Key gaps include missing requirements for git, sql, nosql, html, css, and pytest. This profile has been escalated for review due to the missing must-have skill, the candidate's background as a career switcher, and the low overall score.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 632448252f31"
     }
   },
   {
@@ -12752,10 +12422,10 @@
       {
         "requirement": "web development frameworks",
         "level": "nice",
-        "matched_skill": "django",
+        "matched_skill": "spring boot",
         "strength": 0.5,
-        "basis": "listed",
-        "quote": "Django"
+        "basis": "listed+taxonomy:spring boot->web framework",
+        "quote": "Spring Boot"
       },
       {
         "requirement": "sql",
@@ -12828,10 +12498,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2971 for the Junior Software Engineer position. Their strongest evidence includes a computer science degree and experience with \"Django\" for python and web development frameworks, as well as \"Docker\" for devops. Key gaps include a missing must-have requirement for git, alongside several missing nice-to-have skills such as sql, nosql, html, css, javascript, and pytest. The application has been escalated for further review because the candidate is overqualified, is making a career switch, and has a low overall fit despite meeting the experience requirements.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for ddda7522a72a"
     }
   },
   {
@@ -12884,7 +12555,7 @@
         "level": "nice",
         "matched_skill": "django",
         "strength": 0.5,
-        "basis": "listed",
+        "basis": "listed+taxonomy:django->web framework",
         "quote": "Django"
       },
       {
@@ -12958,10 +12629,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2961 for the Junior Software Engineer position. The strongest evidence for their application includes a computer science degree, \"Python\" experience, and familiarity with \"Django\" and \"SQL\". Key gaps include a lack of experience with git, nosql, html, css, javascript, devops, and pytest. This application was escalated for review despite a low fit and a career switch because the candidate possesses the required degree and several years of professional experience.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 894934e08252"
     }
   },
   {
@@ -13227,6 +12899,138 @@
   {
     "rank": 18,
     "job_id": "JD06",
+    "resume_id": "R011",
+    "score": 0.2653,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "MISSING_MUST_HAVE",
+      "OVERQUALIFIED",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.3333,
+      "nice_to_have": 0.125,
+      "experience": 1.0,
+      "role_relevance": 0.3785
+    },
+    "yoe": 5.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "computer science degree",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 1.0,
+        "basis": "degree",
+        "quote": null
+      },
+      {
+        "requirement": "python",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "git",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "web development frameworks",
+        "level": "nice",
+        "matched_skill": "spring boot",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:spring boot->web framework",
+        "quote": "Spring Boot"
+      },
+      {
+        "requirement": "sql",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "nosql",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "html",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "css",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "javascript",
+        "level": "nice",
+        "matched_skill": "node.js",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:node.js->javascript",
+        "quote": "Node.js"
+      },
+      {
+        "requirement": "devops",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "pytest",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: python",
+      "missing must-have: git",
+      "missing nice-have: sql",
+      "missing nice-have: nosql",
+      "missing nice-have: html",
+      "missing nice-have: css",
+      "missing nice-have: devops",
+      "missing nice-have: pytest"
+    ],
+    "flags": [],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for 6b37ee4e9483"
+    }
+  },
+  {
+    "rank": 19,
+    "job_id": "JD06",
     "resume_id": "R064",
     "score": 0.2653,
     "decision": "escalate",
@@ -13351,138 +13155,6 @@
     "explanation": {
       "explanation": "This candidate received an overall fit score of 0.2653 for the Junior Software Engineer position. The strongest evidence for their application is a computer science degree and relevant experience with \"SQL\" and \"React\". Key gaps include missing must-have requirements for python and git, as well as several nice-to-have technical skills. This profile has been escalated for review because the candidate is overqualified, has a low overall fit, and is missing required qualifications.",
       "n_quotes": 2,
-      "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 19,
-    "job_id": "JD06",
-    "resume_id": "R011",
-    "score": 0.2597,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "MISSING_MUST_HAVE",
-      "OVERQUALIFIED",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.3333,
-      "nice_to_have": 0.0625,
-      "experience": 1.0,
-      "role_relevance": 0.3785
-    },
-    "yoe": 5.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "computer science degree",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 1.0,
-        "basis": "degree",
-        "quote": null
-      },
-      {
-        "requirement": "python",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "git",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "web development frameworks",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "sql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "nosql",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "html",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "css",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "javascript",
-        "level": "nice",
-        "matched_skill": "node.js",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:node.js->javascript",
-        "quote": "Node.js"
-      },
-      {
-        "requirement": "devops",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "pytest",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: python",
-      "missing must-have: git",
-      "missing nice-have: web development frameworks",
-      "missing nice-have: sql",
-      "missing nice-have: nosql",
-      "missing nice-have: html",
-      "missing nice-have: css",
-      "missing nice-have: devops",
-      "missing nice-have: pytest"
-    ],
-    "flags": [],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.26 for the Junior Software Engineer position. Their strongest evidence is a computer science degree and over five years of professional experience. Key gaps include missing requirements for python, git, and several nice-to-have technical skills, though they do have experience with \"Node.js\" which relates to javascript. This application has been escalated for review because the candidate is overqualified for the role despite missing specific must-have qualifications and showing a low overall fit.",
-      "n_quotes": 1,
       "n_ungrounded": 0,
       "ungrounded": []
     }
@@ -17330,7 +17002,7 @@
     "rank": 1,
     "job_id": "JD08",
     "resume_id": "R001",
-    "score": 0.2473,
+    "score": 0.2484,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -17340,7 +17012,7 @@
     ],
     "components": {
       "must_have": 0.375,
-      "nice_to_have": 0.0714,
+      "nice_to_have": 0.0833,
       "experience": 1.0,
       "role_relevance": 0.0932
     },
@@ -17404,44 +17076,12 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
+        "strength": 0.25,
+        "basis": "listed+group:1/2",
         "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       },
       {
         "requirement": "grafana",
@@ -17464,10 +17104,7 @@
       "missing must-have: boost",
       "missing must-have: linux",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "weak evidence (listed+group:1/2) for nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "missing nice-have: machine learning"
     ],
@@ -17478,175 +17115,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.2473 for the Senior C++ Engineer position. The strongest evidence for their candidacy is their experience with \"REST API\", alongside listed experience in C++, cloud infrastructure, and relational databases. Key gaps include missing requirements for boost, linux, non-relational databases, and several nice-to-have tools. Despite the low fit, missing must-have skills, and a location mismatch, the application has been escalated for further review.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for ab4e852fd035"
     }
   },
   {
     "rank": 2,
     "job_id": "JD08",
-    "resume_id": "R076",
-    "score": 0.235,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "LOCATION_MISMATCH",
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.3125,
-      "nice_to_have": 0.1429,
-      "experience": 1.0,
-      "role_relevance": 0.0932
-    },
-    "yoe": 4.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "c++",
-        "level": "must",
-        "matched_skill": "c++",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "C++"
-      },
-      {
-        "requirement": "boost",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "rest api",
-        "level": "must",
-        "matched_skill": "rest api",
-        "strength": 1.0,
-        "basis": "used",
-        "quote": "Built REST APIs"
-      },
-      {
-        "requirement": "linux",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "cloud infrastructure",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "relational databases",
-        "level": "must",
-        "matched_skill": "sql",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:sql->relational database",
-        "quote": "SQL"
-      },
-      {
-        "requirement": "non-relational databases",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": "kubernetes",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Kubernetes"
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "grafana",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: boost",
-      "missing must-have: linux",
-      "missing must-have: cloud infrastructure",
-      "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: prometheus",
-      "missing nice-have: grafana",
-      "missing nice-have: machine learning"
-    ],
-    "flags": [
-      "LOCATION_MISMATCH"
-    ],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.235 for the Senior C++ Engineer position. The strongest evidence for their application is that they have \"Built REST APIs\" and listed experience with C++, SQL, Docker, and Kubernetes. Key gaps include a lack of experience with boost, linux, cloud infrastructure, and non-relational databases. Despite the low fit, location mismatch, and missing must-have requirements, this application has been escalated for further review.",
-      "n_quotes": 1,
-      "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 3,
-    "job_id": "JD08",
     "resume_id": "R062",
-    "score": 0.2318,
+    "score": 0.2425,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -17656,7 +17136,7 @@
     ],
     "components": {
       "must_have": 0.25,
-      "nice_to_have": 0.2143,
+      "nice_to_have": 0.3333,
       "experience": 1.0,
       "role_relevance": 0.1943
     },
@@ -17720,44 +17200,12 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "kubernetes",
         "strength": 0.5,
-        "basis": "listed",
+        "basis": "listed+group:2/2",
         "quote": "Kubernetes"
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       },
       {
         "requirement": "grafana",
@@ -17782,9 +17230,6 @@
       "missing must-have: cloud infrastructure",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: prometheus",
       "missing nice-have: grafana"
     ],
     "flags": [
@@ -17794,17 +17239,142 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.23 for the Senior C++ Engineer position. The strongest evidence for their application includes experience with \"REST API\" and \"C++\", alongside listed familiarity with \"Docker\", \"Kubernetes\", and \"Machine Learning\". Key gaps include missing requirements for boost, linux, cloud infrastructure, relational databases, non-relational databases, ci/cd, jenkins, prometheus, and grafana. The application has been escalated for review despite a low fit score, a mismatch in location, and missing must-have qualifications.",
-      "n_quotes": 5,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 368ce97083d2"
+    }
+  },
+  {
+    "rank": 3,
+    "job_id": "JD08",
+    "resume_id": "R076",
+    "score": 0.2371,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "LOCATION_MISMATCH",
+      "MISSING_MUST_HAVE",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.3125,
+      "nice_to_have": 0.1667,
+      "experience": 1.0,
+      "role_relevance": 0.0932
+    },
+    "yoe": 4.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "c++",
+        "level": "must",
+        "matched_skill": "c++",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "C++"
+      },
+      {
+        "requirement": "boost",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "rest api",
+        "level": "must",
+        "matched_skill": "rest api",
+        "strength": 1.0,
+        "basis": "used",
+        "quote": "Built REST APIs"
+      },
+      {
+        "requirement": "linux",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "cloud infrastructure",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "relational databases",
+        "level": "must",
+        "matched_skill": "sql",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:sql->relational database",
+        "quote": "SQL"
+      },
+      {
+        "requirement": "non-relational databases",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "kubernetes",
+        "strength": 0.5,
+        "basis": "listed+group:2/2",
+        "quote": "Kubernetes"
+      },
+      {
+        "requirement": "grafana",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "machine learning",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: boost",
+      "missing must-have: linux",
+      "missing must-have: cloud infrastructure",
+      "missing must-have: non-relational databases",
+      "missing nice-have: grafana",
+      "missing nice-have: machine learning"
+    ],
+    "flags": [
+      "LOCATION_MISMATCH"
+    ],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for ff194c688a89"
     }
   },
   {
     "rank": 4,
     "job_id": "JD08",
     "resume_id": "R070",
-    "score": 0.2183,
+    "score": 0.2205,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -17814,7 +17384,7 @@
     ],
     "components": {
       "must_have": 0.25,
-      "nice_to_have": 0.1429,
+      "nice_to_have": 0.1667,
       "experience": 1.0,
       "role_relevance": 0.1162
     },
@@ -17878,44 +17448,12 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "kubernetes",
         "strength": 0.5,
-        "basis": "listed",
+        "basis": "listed+group:2/2",
         "quote": "Kubernetes"
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       },
       {
         "requirement": "grafana",
@@ -17939,9 +17477,6 @@
       "missing must-have: boost",
       "missing must-have: linux",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: prometheus",
       "missing nice-have: grafana",
       "missing nice-have: machine learning"
     ],
@@ -17952,14 +17487,140 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.2183 for the Senior C++ Engineer position. The strongest evidence of their qualifications includes \"Built REST APIs\", \"AWS\", \"SQL\", \"Docker\", and \"Kubernetes\". Key gaps include the absence of several must-have requirements such as C++, Boost, Linux, and non-relational databases. Despite the low fit, missing must-have skills, and a location mismatch, this application has been escalated for further review.",
-      "n_quotes": 5,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for cb49fd8d040f"
     }
   },
   {
     "rank": 5,
+    "job_id": "JD08",
+    "resume_id": "R071",
+    "score": 0.2201,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "LOCATION_MISMATCH",
+      "MISSING_MUST_HAVE",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.1875,
+      "nice_to_have": 0.1667,
+      "experience": 1.0,
+      "role_relevance": 0.3204
+    },
+    "yoe": 5.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "c++",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "boost",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "rest api",
+        "level": "must",
+        "matched_skill": "rest api",
+        "strength": 1.0,
+        "basis": "used",
+        "quote": "REST API"
+      },
+      {
+        "requirement": "linux",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "cloud infrastructure",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "relational databases",
+        "level": "must",
+        "matched_skill": "sql",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:sql->relational database",
+        "quote": "SQL"
+      },
+      {
+        "requirement": "non-relational databases",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "grafana",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "machine learning",
+        "level": "nice",
+        "matched_skill": "machine learning",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "Machine Learning"
+      }
+    ],
+    "gaps": [
+      "missing must-have: c++",
+      "missing must-have: boost",
+      "missing must-have: linux",
+      "missing must-have: cloud infrastructure",
+      "missing must-have: non-relational databases",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
+      "missing nice-have: grafana"
+    ],
+    "flags": [
+      "LOCATION_MISMATCH"
+    ],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for 064e83723d85"
+    }
+  },
+  {
+    "rank": 6,
     "job_id": "JD08",
     "resume_id": "R032",
     "score": 0.2175,
@@ -18036,39 +17697,7 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -18096,11 +17725,7 @@
       "missing must-have: boost",
       "missing must-have: linux",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "missing nice-have: machine learning",
       "experience 2.5y below implied 4y"
@@ -18112,177 +17737,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2175 for the Senior C++ Engineer position. The strongest evidence for their application is their experience with \"REST API\", alongside listed experience in C++, AWS, and SQL. Key gaps include a lack of experience with boost, linux, and non-relational databases, as well as a total of 2.54 years of experience which falls below the implied requirement. This profile has been escalated for manual review due to the location mismatch, missing must-have requirements, and a low overall fit score.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 6,
-    "job_id": "JD08",
-    "resume_id": "R071",
-    "score": 0.2115,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "LOCATION_MISMATCH",
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.1875,
-      "nice_to_have": 0.0714,
-      "experience": 1.0,
-      "role_relevance": 0.3204
-    },
-    "yoe": 5.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "c++",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "boost",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "rest api",
-        "level": "must",
-        "matched_skill": "rest api",
-        "strength": 1.0,
-        "basis": "used",
-        "quote": "REST API"
-      },
-      {
-        "requirement": "linux",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "cloud infrastructure",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "relational databases",
-        "level": "must",
-        "matched_skill": "sql",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:sql->relational database",
-        "quote": "SQL"
-      },
-      {
-        "requirement": "non-relational databases",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "grafana",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "nice",
-        "matched_skill": "machine learning",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Machine Learning"
-      }
-    ],
-    "gaps": [
-      "missing must-have: c++",
-      "missing must-have: boost",
-      "missing must-have: linux",
-      "missing must-have: cloud infrastructure",
-      "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
-      "missing nice-have: grafana"
-    ],
-    "flags": [
-      "LOCATION_MISMATCH"
-    ],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.21 for the Senior C++ Engineer position. The strongest evidence of their qualifications is their experience with \"REST API\" and \"SQL\" for relational databases. Key gaps include missing requirements for C++, Boost, Linux, cloud infrastructure, and non-relational databases. The application was escalated for manual review despite a low fit, missing must-have skills, and a location mismatch.",
-      "n_quotes": 2,
-      "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 019df4492b60"
     }
   },
   {
     "rank": 7,
     "job_id": "JD08",
     "resume_id": "R079",
-    "score": 0.2115,
+    "score": 0.2126,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -18292,7 +17758,7 @@
     ],
     "components": {
       "must_have": 0.1875,
-      "nice_to_have": 0.0714,
+      "nice_to_have": 0.0833,
       "experience": 1.0,
       "role_relevance": 0.3204
     },
@@ -18356,44 +17822,12 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
+        "strength": 0.25,
+        "basis": "listed+group:1/2",
         "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       },
       {
         "requirement": "grafana",
@@ -18418,10 +17852,7 @@
       "missing must-have: linux",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "weak evidence (listed+group:1/2) for nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "missing nice-have: machine learning"
     ],
@@ -18432,10 +17863,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.2115 for the Senior C++ Engineer position. The strongest evidence of their qualifications is that they \"Built REST APIs\" and have experience with \"AWS\" and \"Docker\". Key gaps include a lack of experience with C++, Boost, Linux, and various database technologies. Despite the low fit, missing must-have requirements, and a location mismatch, this application has been escalated for further review.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 2d3ac639464d"
     }
   },
   {
@@ -18516,39 +17948,7 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -18576,11 +17976,7 @@
       "missing must-have: boost",
       "missing must-have: linux",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "missing nice-have: machine learning",
       "experience 2.5y below implied 4y"
@@ -18592,177 +17988,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.1992 for the Senior C++ Engineer position. The strongest evidence for their candidacy is their experience with \"REST API\", \"C++\", \"AWS\", and \"SQL\". Key gaps include a lack of experience with boost, linux, and non-relational databases, as well as a total of 2.54 years of experience. Despite the low fit, missing must-have requirements, and a location mismatch, this profile has been escalated for further review.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for b583dbeb2612"
     }
   },
   {
     "rank": 9,
     "job_id": "JD08",
-    "resume_id": "R005",
-    "score": 0.1868,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "LOCATION_MISMATCH",
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.3125,
-      "nice_to_have": 0.0714,
-      "experience": 0.635,
-      "role_relevance": 0.1162
-    },
-    "yoe": 2.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "c++",
-        "level": "must",
-        "matched_skill": "c++",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "C++"
-      },
-      {
-        "requirement": "boost",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "rest api",
-        "level": "must",
-        "matched_skill": "rest api",
-        "strength": 1.0,
-        "basis": "used",
-        "quote": "REST API"
-      },
-      {
-        "requirement": "linux",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "cloud infrastructure",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "relational databases",
-        "level": "must",
-        "matched_skill": "sql",
-        "strength": 0.5,
-        "basis": "listed+taxonomy:sql->relational database",
-        "quote": "SQL"
-      },
-      {
-        "requirement": "non-relational databases",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": "kubernetes",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Kubernetes"
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "grafana",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: boost",
-      "missing must-have: linux",
-      "missing must-have: cloud infrastructure",
-      "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: prometheus",
-      "missing nice-have: grafana",
-      "missing nice-have: machine learning",
-      "experience 2.5y below implied 4y"
-    ],
-    "flags": [
-      "LOCATION_MISMATCH"
-    ],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.1868 for the Senior C++ Engineer position. The strongest evidence includes their experience with \"REST API\", \"C++\", \"SQL\", and \"Kubernetes\". Key gaps include a lack of experience with boost, linux, cloud infrastructure, and non-relational databases, as well as only 2.54 years of experience. The application was escalated for manual review despite the low fit, missing must-have requirements, and a location mismatch.",
-      "n_quotes": 4,
-      "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 10,
-    "job_id": "JD08",
     "resume_id": "R015",
-    "score": 0.1826,
+    "score": 0.1912,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -18772,7 +18009,7 @@
     ],
     "components": {
       "must_have": 0.25,
-      "nice_to_have": 0.0714,
+      "nice_to_have": 0.1667,
       "experience": 0.635,
       "role_relevance": 0.2775
     },
@@ -18836,39 +18073,7 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -18898,11 +18103,7 @@
       "missing must-have: cloud infrastructure",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "experience 2.5y below implied 4y"
     ],
@@ -18913,17 +18114,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.1826 for the Senior C++ Engineer position. The strongest evidence is their experience with \"REST API\" and \"C++\", as well as \"Machine Learning\". Key gaps include a lack of required experience in boost, linux, cloud infrastructure, relational databases, and non-relational databases, alongside a total of 2.54 years of experience. This application was escalated for manual review despite the low fit, missing must-have requirements, and a location mismatch.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 3041d1865e17"
     }
   },
   {
-    "rank": 11,
+    "rank": 10,
     "job_id": "JD08",
-    "resume_id": "R067",
-    "score": 0.1752,
+    "resume_id": "R005",
+    "score": 0.1879,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -18933,7 +18135,134 @@
     ],
     "components": {
       "must_have": 0.3125,
-      "nice_to_have": 0.0714,
+      "nice_to_have": 0.0833,
+      "experience": 0.635,
+      "role_relevance": 0.1162
+    },
+    "yoe": 2.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "c++",
+        "level": "must",
+        "matched_skill": "c++",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "C++"
+      },
+      {
+        "requirement": "boost",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "rest api",
+        "level": "must",
+        "matched_skill": "rest api",
+        "strength": 1.0,
+        "basis": "used",
+        "quote": "REST API"
+      },
+      {
+        "requirement": "linux",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "cloud infrastructure",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "relational databases",
+        "level": "must",
+        "matched_skill": "sql",
+        "strength": 0.5,
+        "basis": "listed+taxonomy:sql->relational database",
+        "quote": "SQL"
+      },
+      {
+        "requirement": "non-relational databases",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "kubernetes",
+        "strength": 0.25,
+        "basis": "listed+group:1/2",
+        "quote": "Kubernetes"
+      },
+      {
+        "requirement": "grafana",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "machine learning",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: boost",
+      "missing must-have: linux",
+      "missing must-have: cloud infrastructure",
+      "missing must-have: non-relational databases",
+      "weak evidence (listed+group:1/2) for nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
+      "missing nice-have: grafana",
+      "missing nice-have: machine learning",
+      "experience 2.5y below implied 4y"
+    ],
+    "flags": [
+      "LOCATION_MISMATCH"
+    ],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for 3d851e46df7c"
+    }
+  },
+  {
+    "rank": 11,
+    "job_id": "JD08",
+    "resume_id": "R067",
+    "score": 0.1838,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "LOCATION_MISMATCH",
+      "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.3125,
+      "nice_to_have": 0.1667,
       "experience": 0.385,
       "role_relevance": 0.3204
     },
@@ -18997,39 +18326,7 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -19058,11 +18355,7 @@
       "missing must-have: linux",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "experience 1.5y below implied 4y"
     ],
@@ -19073,17 +18366,144 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.1752 for the Senior C++ Engineer position. The strongest evidence of their qualifications includes that they \"Built REST APIs,\" listed C++, and have experience with AWS and Machine Learning. Key gaps include a lack of experience with boost, linux, relational databases, and non-relational databases, as well as a total of 1.54 years of experience. This application has been escalated for manual review due to the candidate's location, missing must-have requirements, and a low overall fit score.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for a0aa802c884a"
     }
   },
   {
     "rank": 12,
     "job_id": "JD08",
+    "resume_id": "R037",
+    "score": 0.1767,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "LOCATION_MISMATCH",
+      "MISSING_MUST_HAVE",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.25,
+      "nice_to_have": 0.1667,
+      "experience": 0.635,
+      "role_relevance": 0.1162
+    },
+    "yoe": 2.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "c++",
+        "level": "must",
+        "matched_skill": "c++",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "C++"
+      },
+      {
+        "requirement": "boost",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "rest api",
+        "level": "must",
+        "matched_skill": "rest api",
+        "strength": 1.0,
+        "basis": "used",
+        "quote": "REST API"
+      },
+      {
+        "requirement": "linux",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "cloud infrastructure",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "relational databases",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "non-relational databases",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "grafana",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "machine learning",
+        "level": "nice",
+        "matched_skill": "machine learning",
+        "strength": 0.5,
+        "basis": "listed",
+        "quote": "Machine Learning"
+      }
+    ],
+    "gaps": [
+      "missing must-have: boost",
+      "missing must-have: linux",
+      "missing must-have: cloud infrastructure",
+      "missing must-have: relational databases",
+      "missing must-have: non-relational databases",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
+      "missing nice-have: grafana",
+      "experience 2.5y below implied 4y"
+    ],
+    "flags": [
+      "LOCATION_MISMATCH"
+    ],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for 25aff3d8789b"
+    }
+  },
+  {
+    "rank": 13,
+    "job_id": "JD08",
     "resume_id": "R031",
-    "score": 0.1723,
+    "score": 0.1734,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -19093,7 +18513,7 @@
     ],
     "components": {
       "must_have": 0.125,
-      "nice_to_have": 0.0714,
+      "nice_to_have": 0.0833,
       "experience": 1.0,
       "role_relevance": 0.0932
     },
@@ -19157,44 +18577,12 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
+        "strength": 0.25,
+        "basis": "listed+group:1/2",
         "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       },
       {
         "requirement": "grafana",
@@ -19220,10 +18608,7 @@
       "missing must-have: cloud infrastructure",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "weak evidence (listed+group:1/2) for nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "missing nice-have: machine learning"
     ],
@@ -19234,340 +18619,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.17 for the Senior C++ Engineer position. The strongest evidence of their qualifications is that they \"Built REST APIs\" and have listed Docker experience. Significant gaps exist, as the candidate is missing several must-have requirements including C++, Boost, Linux, cloud infrastructure, and database experience. Despite the low fit, location mismatch, and missing must-have skills, this application has been escalated for further review.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 13,
-    "job_id": "JD08",
-    "resume_id": "R037",
-    "score": 0.1681,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "LOCATION_MISMATCH",
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.25,
-      "nice_to_have": 0.0714,
-      "experience": 0.635,
-      "role_relevance": 0.1162
-    },
-    "yoe": 2.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "c++",
-        "level": "must",
-        "matched_skill": "c++",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "C++"
-      },
-      {
-        "requirement": "boost",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "rest api",
-        "level": "must",
-        "matched_skill": "rest api",
-        "strength": 1.0,
-        "basis": "used",
-        "quote": "REST API"
-      },
-      {
-        "requirement": "linux",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "cloud infrastructure",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "relational databases",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "non-relational databases",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "grafana",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "nice",
-        "matched_skill": "machine learning",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Machine Learning"
-      }
-    ],
-    "gaps": [
-      "missing must-have: boost",
-      "missing must-have: linux",
-      "missing must-have: cloud infrastructure",
-      "missing must-have: relational databases",
-      "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
-      "missing nice-have: grafana",
-      "experience 2.5y below implied 4y"
-    ],
-    "flags": [
-      "LOCATION_MISMATCH"
-    ],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.1681 for the Senior C++ Engineer position. The strongest evidence is their experience with \"REST API\" and \"C++\", alongside \"Machine Learning\". Key gaps include a lack of required experience in boost, linux, cloud infrastructure, relational databases, and non-relational databases, as well as a total of 2.54 years of experience. The application was escalated for manual review despite the location mismatch, missing must-have requirements, and low overall fit.",
-      "n_quotes": 3,
-      "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for debfe675c2b4"
     }
   },
   {
     "rank": 14,
     "job_id": "JD08",
-    "resume_id": "R021",
-    "score": 0.1606,
-    "decision": "escalate",
-    "queue": "low_priority",
-    "reasons": [
-      "LOCATION_MISMATCH",
-      "MISSING_MUST_HAVE",
-      "LOW_FIT"
-    ],
-    "components": {
-      "must_have": 0.125,
-      "nice_to_have": 0.0714,
-      "experience": 0.885,
-      "role_relevance": 0.1162
-    },
-    "yoe": 3.54,
-    "capped": true,
-    "evidence": [
-      {
-        "requirement": "c++",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "boost",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "rest api",
-        "level": "must",
-        "matched_skill": "rest api",
-        "strength": 1.0,
-        "basis": "used",
-        "quote": "Built REST APIs"
-      },
-      {
-        "requirement": "linux",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "cloud infrastructure",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "relational databases",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "non-relational databases",
-        "level": "must",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "grafana",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "machine learning",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      }
-    ],
-    "gaps": [
-      "missing must-have: c++",
-      "missing must-have: boost",
-      "missing must-have: linux",
-      "missing must-have: cloud infrastructure",
-      "missing must-have: relational databases",
-      "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
-      "missing nice-have: grafana",
-      "missing nice-have: machine learning",
-      "experience 3.5y below implied 4y"
-    ],
-    "flags": [
-      "LOCATION_MISMATCH"
-    ],
-    "yoe_confidence": "high",
-    "extraction_attempts": 1,
-    "extraction_error": null,
-    "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.16 for the Senior C++ Engineer position. The strongest evidence of their capability is that they \"Built REST APIs\" and have listed Docker experience. Significant gaps exist as the candidate lacks the required C++, Boost, Linux, cloud infrastructure, and database expertise, and their 3.5 years of experience falls below the expected threshold. Despite these deficiencies, the application has been escalated for review due to the candidate's location mismatch, missing must-have requirements, and overall low fit.",
-      "n_quotes": 1,
-      "n_ungrounded": 0,
-      "ungrounded": []
-    }
-  },
-  {
-    "rank": 15,
-    "job_id": "JD08",
     "resume_id": "R087",
-    "score": 0.1601,
+    "score": 0.1708,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -19577,7 +18640,7 @@
     ],
     "components": {
       "must_have": 0.1875,
-      "nice_to_have": 0.2143,
+      "nice_to_have": 0.3333,
       "experience": 0.635,
       "role_relevance": 0.0932
     },
@@ -19641,44 +18704,12 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "kubernetes",
         "strength": 0.5,
-        "basis": "listed",
+        "basis": "listed+group:2/2",
         "quote": "Kubernetes"
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       },
       {
         "requirement": "grafana",
@@ -19703,9 +18734,6 @@
       "missing must-have: linux",
       "missing must-have: cloud infrastructure",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: prometheus",
       "missing nice-have: grafana",
       "experience 2.5y below implied 4y"
     ],
@@ -19716,17 +18744,18 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.16 for the Senior C++ Engineer position. The strongest evidence of their qualifications is their experience with \"REST API\" and \"SQL\". Key gaps include a lack of experience in C++, Boost, Linux, cloud infrastructure, and non-relational databases, as well as having only 2.5 years of experience. This application has been escalated for manual review despite the location mismatch, missing must-have requirements, and low overall fit.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 91d76219cdae"
     }
   },
   {
-    "rank": 16,
+    "rank": 15,
     "job_id": "JD08",
-    "resume_id": "R085",
-    "score": 0.1414,
+    "resume_id": "R021",
+    "score": 0.1617,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
@@ -19736,7 +18765,135 @@
     ],
     "components": {
       "must_have": 0.125,
-      "nice_to_have": 0.2143,
+      "nice_to_have": 0.0833,
+      "experience": 0.885,
+      "role_relevance": 0.1162
+    },
+    "yoe": 3.54,
+    "capped": true,
+    "evidence": [
+      {
+        "requirement": "c++",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "boost",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "rest api",
+        "level": "must",
+        "matched_skill": "rest api",
+        "strength": 1.0,
+        "basis": "used",
+        "quote": "Built REST APIs"
+      },
+      {
+        "requirement": "linux",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "cloud infrastructure",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "relational databases",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "non-relational databases",
+        "level": "must",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
+        "level": "nice",
+        "matched_skill": "docker",
+        "strength": 0.25,
+        "basis": "listed+group:1/2",
+        "quote": "Docker"
+      },
+      {
+        "requirement": "grafana",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      },
+      {
+        "requirement": "machine learning",
+        "level": "nice",
+        "matched_skill": null,
+        "strength": 0.0,
+        "basis": "missing",
+        "quote": null
+      }
+    ],
+    "gaps": [
+      "missing must-have: c++",
+      "missing must-have: boost",
+      "missing must-have: linux",
+      "missing must-have: cloud infrastructure",
+      "missing must-have: relational databases",
+      "missing must-have: non-relational databases",
+      "weak evidence (listed+group:1/2) for nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
+      "missing nice-have: grafana",
+      "missing nice-have: machine learning",
+      "experience 3.5y below implied 4y"
+    ],
+    "flags": [
+      "LOCATION_MISMATCH"
+    ],
+    "yoe_confidence": "high",
+    "extraction_attempts": 1,
+    "extraction_error": null,
+    "explanation": {
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
+      "n_ungrounded": 0,
+      "ungrounded": [],
+      "error": "offline and no cache entry for 1bc6b5c12924"
+    }
+  },
+  {
+    "rank": 16,
+    "job_id": "JD08",
+    "resume_id": "R085",
+    "score": 0.1521,
+    "decision": "escalate",
+    "queue": "low_priority",
+    "reasons": [
+      "LOCATION_MISMATCH",
+      "MISSING_MUST_HAVE",
+      "LOW_FIT"
+    ],
+    "components": {
+      "must_have": 0.125,
+      "nice_to_have": 0.3333,
       "experience": 0.635,
       "role_relevance": 0.0932
     },
@@ -19800,44 +18957,12 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": "docker",
-        "strength": 0.5,
-        "basis": "listed",
-        "quote": "Docker"
-      },
-      {
-        "requirement": "kubernetes",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": "kubernetes",
         "strength": 0.5,
-        "basis": "listed",
+        "basis": "listed+group:2/2",
         "quote": "Kubernetes"
-      },
-      {
-        "requirement": "prometheus",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
       },
       {
         "requirement": "grafana",
@@ -19863,9 +18988,6 @@
       "missing must-have: cloud infrastructure",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: prometheus",
       "missing nice-have: grafana",
       "experience 2.5y below implied 4y"
     ],
@@ -19876,27 +18998,29 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate has an overall fit score of 0.14 for the Senior C++ Engineer position. The strongest evidence of their capability is that they \"Built REST APIs\". Key gaps include a lack of experience with C++, Boost, Linux, cloud infrastructure, and various database systems, as well as having only 2.5 years of experience. This application has been escalated for manual review despite the location mismatch, missing must-have requirements, and low overall fit.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 0de292721e5d"
     }
   },
   {
     "rank": 17,
     "job_id": "JD08",
     "resume_id": "R007",
-    "score": 0.1193,
+    "score": 0.1279,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
       "LOCATION_MISMATCH",
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
       "must_have": 0.1875,
-      "nice_to_have": 0.0714,
+      "nice_to_have": 0.1667,
       "experience": 0.385,
       "role_relevance": 0.1162
     },
@@ -19960,39 +19084,7 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -20022,11 +19114,7 @@
       "missing must-have: linux",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "experience 1.5y below implied 4y"
     ],
@@ -20037,10 +19125,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received a low overall fit score of 0.1193 for the Senior C++ Engineer position. Their strongest evidence includes experience where they \"Built REST APIs\" and listed \"AWS\" and \"Machine Learning\". Key gaps include a lack of experience with C++, Boost, Linux, and various database technologies, as well as having only 1.54 years of experience. This application was escalated for manual review due to a location mismatch, missing must-have requirements, and a low overall fit.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for bbc6e7f96585"
     }
   },
   {
@@ -20053,6 +19142,7 @@
     "reasons": [
       "LOCATION_MISMATCH",
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -20121,39 +19211,7 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -20183,11 +19241,7 @@
       "missing must-have: cloud infrastructure",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "missing nice-have: machine learning",
       "experience 0.5y below implied 4y"
@@ -20199,10 +19253,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received a low overall fit score of 0.1017 for the Senior C++ Engineer position. The strongest evidence of their qualifications is that they have \"Built REST APIs\" and listed \"C++\" experience. Key gaps include a lack of required experience in boost, linux, cloud infrastructure, relational databases, and non-relational databases. Despite these significant gaps, the application was escalated for review due to the candidate's location, missing must-have requirements, and low overall fit.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for ab69c31cd15a"
     }
   },
   {
@@ -20215,6 +19270,7 @@
     "reasons": [
       "LOCATION_MISMATCH",
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -20283,39 +19339,7 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -20345,11 +19369,7 @@
       "missing must-have: linux",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "missing nice-have: machine learning",
       "experience 0.5y below implied 4y"
@@ -20361,27 +19381,29 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate has a low overall fit for the Senior C++ Engineer role with a score of 0.0829. The strongest evidence of their qualifications is that they \"Built REST APIs\" and have experience with \"AWS\" for cloud infrastructure. Key gaps include a lack of experience in C++, Boost, Linux, and both relational and non-relational databases, as well as insufficient total years of experience. Despite these significant shortcomings, the application has been escalated for review due to the candidate's location mismatch, missing must-have requirements, and low overall fit.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 514e91fcdc59"
     }
   },
   {
     "rank": 20,
     "job_id": "JD08",
     "resume_id": "R059",
-    "score": 0.0685,
+    "score": 0.0771,
     "decision": "escalate",
     "queue": "low_priority",
     "reasons": [
       "LOCATION_MISMATCH",
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
       "must_have": 0.125,
-      "nice_to_have": 0.0714,
+      "nice_to_have": 0.1667,
       "experience": 0.135,
       "role_relevance": 0.0932
     },
@@ -20445,39 +19467,7 @@
         "quote": null
       },
       {
-        "requirement": "ci/cd",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "jenkins",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "docker",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "kubernetes",
-        "level": "nice",
-        "matched_skill": null,
-        "strength": 0.0,
-        "basis": "missing",
-        "quote": null
-      },
-      {
-        "requirement": "prometheus",
+        "requirement": "2+ of: ci/cd, jenkins, docker, kubernetes…",
         "level": "nice",
         "matched_skill": null,
         "strength": 0.0,
@@ -20508,11 +19498,7 @@
       "missing must-have: cloud infrastructure",
       "missing must-have: relational databases",
       "missing must-have: non-relational databases",
-      "missing nice-have: ci/cd",
-      "missing nice-have: jenkins",
-      "missing nice-have: docker",
-      "missing nice-have: kubernetes",
-      "missing nice-have: prometheus",
+      "missing nice-have: 2+ of: ci/cd, jenkins, docker, kubernetes…",
       "missing nice-have: grafana",
       "experience 0.5y below implied 4y"
     ],
@@ -20523,10 +19509,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.0685 for the Senior C++ Engineer position. The strongest evidence of their qualifications is that they \"Built REST APIs\" and have experience with \"Machine Learning\". Key gaps include a lack of required experience in C++, Boost, Linux, cloud infrastructure, and various database technologies, as well as insufficient total years of experience. This application was escalated for manual review despite the low fit, missing must-have requirements, and a location mismatch.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for cfebf617eef5"
     }
   },
   {
@@ -20963,6 +19950,7 @@
     "queue": "low_priority",
     "reasons": [
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -21032,10 +20020,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2992 for the Senior Software Engineer position. The strongest evidence includes their experience with \"Django\", \"Node.js\", \"React\", and \"AWS\". Key gaps include a missing must-have requirement for vue.js and a total of 1.54 years of experience, which is below the implied requirement. Despite the missing must-have skill and low overall fit, the application has been escalated for further review.",
-      "n_quotes": 4,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for ad4ae6898501"
     }
   },
   {
@@ -21562,6 +20551,7 @@
     "queue": "low_priority",
     "reasons": [
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -21632,10 +20622,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall score of 0.26 for the Senior Software Engineer position, indicating a low fit. The strongest evidence for their application includes experience with \"Node.js\", \"React\", and \"AWS\", as well as holding a computer science degree. Key gaps include the absence of python and vue.js, as well as having only 1.5 years of experience compared to the implied 4-year requirement. The application has been escalated for further review despite these missing must-have qualifications and low overall fit.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for bda43ca8b43b"
     }
   },
   {
@@ -21733,6 +20724,7 @@
     "queue": "low_priority",
     "reasons": [
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -21803,10 +20795,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall score of 0.2454 for the Senior Software Engineer position. Their strongest evidence includes experience with \"Python\", \"React\", and \"AWS\". Key gaps include a lack of experience with vue.js and node.js, as well as having only 1.5 years of experience compared to the implied 4-year requirement. The application has been escalated for further review despite the missing must-have skills and low overall fit.",
-      "n_quotes": 3,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 6712d2f4a271"
     }
   },
   {
@@ -21818,6 +20811,7 @@
     "queue": "low_priority",
     "reasons": [
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -21889,10 +20883,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2051 for the Senior Software Engineer position. Their strongest evidence includes a computer science degree and experience listed as \"Python\" and \"React\". Key gaps include missing requirements for vue.js, node.js, and aws, as well as having 0.5 years less experience than the implied four-year requirement. Despite the low fit and missing must-have skills, the application has been escalated for further review.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 97b67a29246f"
     }
   },
   {
@@ -21904,6 +20899,7 @@
     "queue": "low_priority",
     "reasons": [
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -21975,10 +20971,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.2051 for the Senior Software Engineer position. Their strongest evidence includes a computer science degree and experience listed as \"Python\" and \"React\". Key gaps include missing requirements for vue.js, node.js, and aws, as well as having 0.5 years less experience than the implied four-year requirement. Despite the low fit and missing must-have skills, the application has been escalated for further review.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 97b67a29246f"
     }
   },
   {
@@ -21990,6 +20987,7 @@
     "queue": "low_priority",
     "reasons": [
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -22062,10 +21060,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.19 for the Senior Software Engineer position. The strongest evidence of their qualifications is their experience with \"Python\" and the possession of a computer science degree. However, the application has significant gaps, including a lack of experience with vue.js, node.js, react, and aws, as well as having 1.5 years of experience compared to the implied 4-year requirement. This profile was escalated for manual review despite the low fit and missing must-have requirements.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for b5775195b704"
     }
   },
   {
@@ -22077,6 +21076,7 @@
     "queue": "low_priority",
     "reasons": [
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -22149,10 +21149,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.1756 for the Senior Software Engineer position. The strongest evidence for their application is their background in \"React\" and the possession of a computer science degree. Key gaps include a lack of experience with python, vue.js, node.js, and aws, as well as having 0.5 years of experience compared to the implied 4-year requirement. This profile was escalated for manual review despite the low fit and missing must-have requirements.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 7b373aef11f3"
     }
   },
   {
@@ -22164,6 +21165,7 @@
     "queue": "low_priority",
     "reasons": [
       "MISSING_MUST_HAVE",
+      "UNDER_SENIORITY",
       "LOW_FIT"
     ],
     "components": {
@@ -22236,10 +21238,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate received an overall fit score of 0.1512 for the Senior Software Engineer position. Their strongest evidence is a computer science degree and experience with \"Node.js\". Key gaps include a lack of experience with python, vue.js, react, and aws, as well as having 0.5 years less experience than the implied requirement. This application was escalated for manual review despite the low fit and missing must-have requirements.",
-      "n_quotes": 1,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 218b4f4e039c"
     }
   },
   {
@@ -22359,8 +21362,8 @@
     "job_id": "JD10",
     "resume_id": "R094",
     "score": 0.6617,
-    "decision": "escalate",
-    "queue": "review",
+    "decision": "advance",
+    "queue": "advance",
     "reasons": [
       "LOCATION_MISMATCH",
       "CAREER_SWITCH"
@@ -22407,10 +21410,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate is a moderate fit for the Software Engineer role with an overall score of 0.66. Their strongest evidence includes experience with \"Spring Boot\" and \"SQL\" to meet programming languages and relational database requirements. While they have a computer science degree, the application was escalated for further review due to a mismatch with the preferred work location and a history of changing career paths.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for 2aff5bea7764"
     }
   },
   {
@@ -22418,8 +21422,8 @@
     "job_id": "JD10",
     "resume_id": "R028",
     "score": 0.6568,
-    "decision": "escalate",
-    "queue": "review",
+    "decision": "advance",
+    "queue": "advance",
     "reasons": [
       "LOCATION_MISMATCH",
       "CAREER_SWITCH"
@@ -22466,10 +21470,11 @@
     "extraction_attempts": 1,
     "extraction_error": null,
     "explanation": {
-      "explanation": "This candidate is a moderate fit for the Software Engineer role with an overall score of 0.6568. They demonstrate strong professional experience and meet the computer science degree requirement, with specific proficiency in \"C++\" and \"SQL\". While there are no technical gaps identified, the application was escalated for manual review due to a mismatch with the preferred work location and a history of changing career paths.",
-      "n_quotes": 2,
+      "explanation": "[explanation unavailable: CacheMiss]",
+      "n_quotes": 0,
       "n_ungrounded": 0,
-      "ungrounded": []
+      "ungrounded": [],
+      "error": "offline and no cache entry for f44933964df1"
     }
   },
   {

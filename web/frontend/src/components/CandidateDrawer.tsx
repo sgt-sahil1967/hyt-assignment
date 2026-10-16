@@ -1,6 +1,6 @@
-import { AlertTriangle, CheckCircle2, CircleDashed, Lock, RefreshCw, ShieldAlert, Undo2, X, XCircle } from 'lucide-react'
+import { AlertTriangle, CheckCircle2, CircleDashed, Lock, Play, RefreshCw, ShieldAlert, Undo2, X, XCircle } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
-import { api, type CandidateDetail, type Evidence, type Settings, type Stage } from '../api'
+import { api, type CandidateDetail, type Comparison, type Evidence, type Settings, type Stage } from '../api'
 import { Bar, Button, Callout, Chip, cx, IconButton, reasonLabel, Score, Sheet, Spinner, StagePill, Tabs, useToast } from './ui'
 
 const DEFAULT_WEIGHTS = { must_have: 0.5, nice_to_have: 0.15, experience: 0.2, role_relevance: 0.15 }
@@ -53,7 +53,7 @@ function Block({ title, children, right }: { title: string; children: ReactNode;
   )
 }
 
-type Tab = 'summary' | 'evidence' | 'resume' | 'activity'
+type Tab = 'summary' | 'evidence' | 'compare' | 'resume' | 'activity'
 
 export default function CandidateDrawer({
   jobId, cid, settings, showLabels, onClose, onChanged,
@@ -70,10 +70,12 @@ export default function CandidateDrawer({
   const [rejecting, setRejecting] = useState(false)
   const [note, setNote] = useState('')
   const [busy, setBusy] = useState(false)
+  const [cmp, setCmp] = useState<Comparison | null>(null)
+  const [cmpBusy, setCmpBusy] = useState<false | 'base' | 'llm'>(false)
   const toast = useToast()
 
   const load = () => api.candidate(jobId, cid).then(setC).catch((e) => toast({ title: 'Could not load candidate', body: e.message, tone: 'error' }))
-  useEffect(() => { setC(null); setRejecting(false); setNote(''); load() }, [jobId, cid]) // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { setC(null); setCmp(null); setRejecting(false); setNote(''); load() }, [jobId, cid]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const quotes = useMemo(() => (c?.full_evidence ?? []).filter((e) => e.strength > 0).map((e) => e.quote ?? ''), [c])
   const weights = settings?.weights ?? DEFAULT_WEIGHTS
@@ -108,6 +110,14 @@ export default function CandidateDrawer({
     } finally { setBusy(false) }
   }
 
+  // Baselines run only when the recruiter asks for them (never on open), and the LLM one only on a second click.
+  const runCompare = async (llm: boolean) => {
+    setCmpBusy(llm ? 'llm' : 'base')
+    try { setCmp(await api.compare(jobId, cid, llm)) } catch (e) {
+      toast({ title: 'Comparison failed', body: (e as Error).message, tone: 'error' })
+    } finally { setCmpBusy(false) }
+  }
+
   const header = (
     <div className="shrink-0 border-b border-line px-5 pt-4">
       <div className="flex items-start gap-4">
@@ -137,7 +147,7 @@ export default function CandidateDrawer({
         </div>
       )}
       <Tabs className="mt-3 border-b-0" value={tab} onChange={setTab} tabs={[
-        { value: 'summary', label: 'Summary' }, { value: 'evidence', label: 'Evidence' },
+        { value: 'summary', label: 'Summary' }, { value: 'evidence', label: 'Evidence' }, { value: 'compare', label: 'Compare' },
         { value: 'resume', label: 'Resume' }, { value: 'activity', label: 'Activity', count: c?.history.length || undefined },
       ]} />
     </div>
@@ -253,6 +263,10 @@ export default function CandidateDrawer({
             </Block>
           </>)}
 
+          {tab === 'compare' && (
+            <CompareView data={cmp} busy={cmpBusy} offline={!!settings?.offline} onRun={runCompare} />
+          )}
+
           {tab === 'resume' && (
             <Block title="Resume, with contact details masked">
               <pre className="whitespace-pre-wrap font-sans text-[13px] leading-6 text-muted">{highlight(c.masked_text, quotes)}</pre>
@@ -276,5 +290,74 @@ export default function CandidateDrawer({
         </div>
       )}
     </Sheet>
+  )
+}
+
+function CompareView({ data, busy, offline, onRun }: {
+  data: Comparison | null; busy: false | 'base' | 'llm'; offline: boolean; onRun: (llm: boolean) => void
+}) {
+  if (!data) {
+    return (
+      <div className="rounded-lg border border-dashed border-line p-5 text-center">
+        <div className="text-[13px] font-medium">How would simpler methods have judged this candidate?</div>
+        <p className="mx-auto mt-1 max-w-sm text-xs leading-5 text-muted">
+          Scores this role's applicants with keyword overlap, TF-IDF and embeddings, then shows this candidate's rank and
+          decision under each, next to the pipeline. LLM zero-shot is read from the cache only, so no API call is made.
+        </p>
+        <Button className="mx-auto mt-3" variant="primary" onClick={() => onRun(false)} disabled={!!busy}>
+          {busy ? <Spinner /> : <Play size={13} />}Run comparison
+        </Button>
+        {busy && <p className="mt-2 text-xs text-faint">The first run for a role takes a few seconds; after that it's instant.</p>}
+      </div>
+    )
+  }
+  const zs = data.systems.find((s) => s.key === 'llm_zeroshot')
+  const fmt = (v: number | null) => (v == null ? '–' : v >= 0.1 || v === 0 ? v.toFixed(2) : v.toFixed(3))
+  return (
+    <div className="space-y-4">
+      {data.label && (
+        <p className="text-xs text-muted">Golden-set label: relevance <b className="text-fg">{data.label.relevance}/3</b>, ideal decision <b className="text-fg">{data.label.ideal}</b>. ✓ and ✕ mark agreement with it.</p>
+      )}
+      <div className="overflow-hidden rounded-lg border border-line">
+        <table className="w-full text-[13px]">
+          <thead><tr className="border-b border-line text-left text-xs text-faint">
+            <th className="px-3 py-2 font-normal">Method</th><th className="px-2 py-2 text-right font-normal">Rank</th>
+            <th className="px-2 py-2 text-right font-normal">Score</th><th className="whitespace-nowrap px-2 py-2 text-right font-normal">Cut-off</th>
+            <th className="px-3 py-2 font-normal">Decision</th>
+          </tr></thead>
+          <tbody>
+            {data.systems.map((s) => (
+              <tr key={s.key} className={cx('border-b border-line-soft last:border-b-0', s.key === 'pipeline' && 'bg-accent-soft/50')} title={s.how}>
+                <td className="px-3 py-2"><div className={cx(s.key === 'pipeline' && 'font-medium')}>{s.name}</div><div className="text-xs text-faint">{s.how}</div></td>
+                <td className="num px-2 py-2 text-right align-top">{s.rank == null ? <span className="text-faint">–</span> : <>#{s.rank}<span className="text-xs text-faint">/{data.pool_size}</span></>}</td>
+                <td className="num px-2 py-2 text-right align-top">{fmt(s.score)}</td>
+                <td className="num px-2 py-2 text-right align-top text-muted">{fmt(s.threshold)}</td>
+                <td className="px-3 py-2 align-top">
+                  {s.decision ? (
+                    <span className={cx('whitespace-nowrap', s.decision === 'advance' ? 'text-fg' : 'text-muted')}>
+                      {s.decision === 'advance' ? 'Shortlist' : 'Escalate'}
+                      {s.agrees != null && <span className={cx('ml-1', s.agrees ? 'text-good' : 'text-bad')}>{s.agrees ? '✓' : '✕'}</span>}
+                    </span>
+                  ) : <span className="text-xs text-faint">{s.status === 'not_cached' ? 'not cached' : 'unavailable'}</span>}
+                  {s.own_decision && <div className="text-xs text-faint">its own call: {s.own_decision}</div>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {zs && zs.status !== 'ok' && (
+        <Callout>
+          LLM zero-shot has no cached answer for this pair.{' '}
+          {offline ? 'Turn off Cache only in Settings → Model to run it (one Gemini call).' : (
+            <Button size="sm" className="ml-1" onClick={() => onRun(true)} disabled={!!busy}>{busy === 'llm' ? <Spinner /> : <Play size={12} />}Run it (1 Gemini call)</Button>
+          )}
+        </Callout>
+      )}
+      <p className="text-xs text-faint">
+        Ranks are within this role's {data.pool_size} applicants. Each baseline shortlists when its score reaches a cut-off tuned on the dev split with the same cost matrix as the pipeline.
+        Baselines have no must-have check, so their scores aren't comparable to the pipeline's; compare ranks and decisions.
+      </p>
+    </div>
   )
 }

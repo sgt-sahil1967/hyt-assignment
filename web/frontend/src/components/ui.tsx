@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { X } from 'lucide-react'
-import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import type { Stage } from '../api'
 
 export const cx = clsx
@@ -137,27 +138,52 @@ export function Tabs<T extends string>({ value, tabs, onChange, className }: {
   )
 }
 
+/** Dropdown rendered in a portal with fixed positioning, so table/scroll containers never clip it.
+ *  Opens below the trigger, or above it when there isn't room. */
 export function Menu({ trigger, children, align = 'right' }: { trigger: ReactNode; children: (close: () => void) => ReactNode; align?: 'left' | 'right' }) {
-  const [open, setOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const [pos, setPos] = useState<CSSProperties | null>(null)
+  const anchor = useRef<HTMLDivElement>(null)
+  const pop = useRef<HTMLDivElement>(null)
+  const close = useCallback(() => setPos(null), [])
+  const place = useCallback(() => {
+    const r = anchor.current?.getBoundingClientRect()
+    if (!r) return
+    const h = pop.current?.offsetHeight ?? 0
+    const below = window.innerHeight - r.bottom
+    const up = h > 0 && below < h + 8 && r.top > below
+    setPos({
+      position: 'fixed',
+      ...(up ? { bottom: window.innerHeight - r.top + 4 } : { top: r.bottom + 4 }),
+      ...(align === 'right' ? { right: window.innerWidth - r.right } : { left: r.left }),
+      visibility: h > 0 ? 'visible' : 'hidden',
+    })
+  }, [align])
+  const open = pos !== null
+  useLayoutEffect(() => { if (open && pos.visibility === 'hidden') place() }, [open, pos, place])
   useEffect(() => {
     if (!open) return
-    const h = (e: MouseEvent) => { if (!ref.current?.contains(e.target as Node)) setOpen(false) }
-    const k = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    const h = (e: MouseEvent) => { if (!anchor.current?.contains(e.target as Node) && !pop.current?.contains(e.target as Node)) close() }
+    const k = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
     document.addEventListener('mousedown', h)
     document.addEventListener('keydown', k)
-    return () => { document.removeEventListener('mousedown', h); document.removeEventListener('keydown', k) }
-  }, [open])
+    // a scroll outside the menu would detach it from its trigger
+    const sc = (e: Event) => { if (!pop.current?.contains(e.target as Node)) close() }
+    window.addEventListener('resize', close)
+    window.addEventListener('scroll', sc, true)
+    return () => {
+      document.removeEventListener('mousedown', h); document.removeEventListener('keydown', k)
+      window.removeEventListener('resize', close); window.removeEventListener('scroll', sc, true)
+    }
+  }, [open, close])
   return (
-    <div className="relative" ref={ref}>
-      <div onClick={(e) => { e.stopPropagation(); setOpen((o) => !o) }}>{trigger}</div>
-      {open && (
-        <div onClick={(e) => e.stopPropagation()} className={cx(
-          'fadein absolute z-30 mt-1 min-w-44 rounded-lg border border-line bg-panel p-1 shadow-lg shadow-black/10 dark:shadow-black/40',
-          align === 'right' ? 'right-0' : 'left-0',
-        )}>
-          {children(() => setOpen(false))}
-        </div>
+    <div ref={anchor} className="inline-flex">
+      <div onClick={(e) => { e.stopPropagation(); if (open) close(); else setPos({ position: 'fixed', top: 0, left: 0, visibility: 'hidden' }) }}>{trigger}</div>
+      {open && createPortal(
+        <div ref={pop} style={pos} onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}
+          className="fadein z-[70] max-h-[70vh] min-w-44 overflow-auto rounded-lg border border-line bg-panel p-1 shadow-lg shadow-black/10 dark:shadow-black/40">
+          {children(close)}
+        </div>,
+        document.body,
       )}
     </div>
   )
@@ -302,7 +328,7 @@ const REASON_SHORT: Record<string, string> = {
   MISSING_MUST_HAVE: 'Missing must-have', AMBIGUOUS_EVIDENCE: 'Weak evidence', BORDERLINE_SCORE: 'Borderline score',
   BELOW_THRESHOLD: 'Below threshold', LOW_FIT: 'Low fit', OVERQUALIFIED: 'Overqualified', SUSPECTED_MANIPULATION: 'Possible manipulation',
   EXTRACTION_FAILED: 'Not parsed', SPARSE_RESUME: 'Sparse resume', LOW_CONFIDENCE_DATES: 'Unclear dates', NON_ENGLISH: 'Non-English',
-  CAREER_SWITCH: 'Career switch', LOCATION_MISMATCH: 'Location',
+  CAREER_SWITCH: 'Career switch', LOCATION_MISMATCH: 'Location', UNDER_SENIORITY: 'Below seniority',
 }
 export const reasonLabel = (code: string) =>
   REASON_SHORT[code] ?? code.toLowerCase().replace(/_/g, ' ').replace(/^./, (c) => c.toUpperCase())

@@ -28,6 +28,10 @@ SPEC: list[dict] = [
      "help": "Past roles less related than this (with must-haves met) raise CAREER_SWITCH."},
     {"key": "decide.overqualified_junior_only", "group": "Decision", "label": "Overqualified: junior roles only", "kind": "bool",
      "help": "v1.2. Off = flag OVERQUALIFIED for every seniority band."},
+    {"key": "decide.under_seniority_blocking", "group": "Decision", "label": "Below-seniority blocks shortlisting", "kind": "bool",
+     "help": "v1.3. Senior/lead role with no stated minimum years: escalate when experience is under a fraction of the implied minimum (senior 4y, lead 6y)."},
+    {"key": "decide.under_seniority_fraction", "group": "Decision", "label": "Below-seniority fraction", "kind": "float", "min": 0, "max": 1, "step": 0.05,
+     "help": "Escalate below this share of the implied minimum (0.5 = under 2y for senior, under 3y for lead)."},
     {"key": "decide.overqualified_years_over", "group": "Decision", "label": "Overqualified margin (years)", "kind": "int", "min": 0, "max": 15, "step": 1,
      "help": "Years above the seniority band's maximum before OVERQUALIFIED is raised."},
     # scoring

@@ -29,7 +29,8 @@ CODE_HELP = agent.REASON_HELP
 
 # ------------------------------------------------------------------ small UI helpers
 def load_json(name: str):
-    return agent.results(name)
+    """Headline files come from the frozen v1.0 archive (REPORT §4-5, §8); the rest from results/ (current system)."""
+    return agent.headline(name) if name in agent.HEADLINE_FILES else agent.results(name)
 
 
 @st.cache_data
@@ -39,7 +40,7 @@ def labels() -> pd.DataFrame:
 
 @st.cache_data
 def golden_predictions() -> pd.DataFrame | None:
-    p = agent.results("golden_predictions.json")
+    p = load_json("golden_predictions.json")
     return pd.DataFrame(p) if p else None
 
 
@@ -274,7 +275,10 @@ digraph G { rankdir=LR; node [shape=box, style="rounded,filled", fillcolor="#eef
              "Extraction accuracy": "extraction_metrics.json", "Ablations": "ablations.json", "Robustness": "robustness.json",
              "Adversarial": "adversarial.json", "Fairness": "fairness.json", "Judge agreement": "judge_agreement.json",
              "Label agreement": "label_agreement.json"}
-    st.dataframe(pd.DataFrame([{"artifact": k, "file": f"results/{v}", "status": "✅ ready" if (R / v).exists() else "⏳ pending"}
+    def where(v):
+        return f"v1_0_frozen/{v}" if v in agent.HEADLINE_FILES else v
+
+    st.dataframe(pd.DataFrame([{"artifact": k, "file": f"results/{where(v)}", "status": "✅ ready" if (R / where(v)).exists() else "⏳ pending"}
                                for k, v in files.items()]), hide_index=True, width="stretch")
     if b:
         st.subheader("Pipeline vs baselines (test)")
@@ -478,7 +482,7 @@ def robustness_page():
         c3.metric("Auto-advanced after attack", f"{adv['overall_auto_advance_rate']:.0%}")
         df = pd.DataFrame(adv["per_attack"]).T.reset_index().rename(columns={"index": "attack"})
         st.dataframe(df, hide_index=True, width="stretch")
-        runs = R / "adversarial_runs.csv"
+        runs = R / "v1_0_frozen" / "adversarial_runs.csv"
         if runs.exists():
             with st.expander("All cases"):
                 st.dataframe(pd.read_csv(runs), hide_index=True, width="stretch")

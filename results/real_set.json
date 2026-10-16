@@ -112,6 +112,31 @@
         }
       },
       "spearman": 0.3422
+    },
+    "embedding_chunked": {
+      "ranking": {
+        "ndcg@5": {
+          "mean": 0.8969,
+          "lo": 0.7193,
+          "hi": 1.0
+        },
+        "ndcg@10": {
+          "mean": 0.8962,
+          "lo": 0.8041,
+          "hi": 1.0
+        },
+        "p@5": {
+          "mean": 0.12,
+          "lo": 0.0,
+          "hi": 0.24
+        },
+        "mrr": {
+          "mean": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      "spearman": 0.635
     }
   },
   "decision_current": {

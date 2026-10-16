@@ -35,6 +35,7 @@ def cfg() -> dict:
         c["normalize"] = {**c.get("normalize", {}), "skills_file": "src/skills_v1_0.yaml"}
         c["decide"]["career_switch_blocking"] = True
         c["decide"]["overqualified_junior_only"] = False
+        c["decide"]["under_seniority_blocking"] = False
         c["score"]["split_slash_requirements"] = False
         c["score"]["consolidate_example_lists"] = False
         c["sanitize"]["strict_fit_phrase"] = False

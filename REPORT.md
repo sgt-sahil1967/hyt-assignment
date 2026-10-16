@@ -2,10 +2,11 @@
 
 Job family: Software Engineering / IT. Corpus: 100 templated `.docx` resumes, plus 10 hand-picked UK JDs from
 `postings2.csv`. Golden set: 200 labelled (JD, resume) pairs, split dev 60 / test 140. All test numbers come from a
-system frozen on dev. Sources: `results/*.json`. Two demo apps wrap the same `agent.screen()` (README).
+system frozen on dev. Sources: headline (§4-5, §8) `results/v1_0_frozen/*.json`; post-hoc versions and the other
+suites `results/*.json` (current system). Two demo apps wrap the same `agent.screen()` (README).
 
 > **Reproduce:** `make reproduce-v1.0` regenerates every headline figure below (exact match, ~1 min, offline, no
-> API key); `make reproduce` builds the current v1.1 system and all suites (~1.5 min).
+> API key); `make reproduce` rebuilds the current v1.3 system and all suites into `results/` (~2 min).
 >
 > **Versions.** Headline numbers are the **frozen v1.0** system (archived in `results/v1_0_frozen/`). Two changes
 > were made *after* the test evaluation, on evidence from real uploaded resumes and dev data. They are reported
@@ -105,6 +106,7 @@ must-haves to "nice" shortlists **all 8 of 8** golden "should advance" candidate
 | + framework categories in the skill map (DECISIONS #15a) | 0.646 | 0.912 | 0.43 | 1.00 | 0.93 | 65 |
 | **v1.1** = + `CAREER_SWITCH` informational (#15b) | 0.646 | 0.912 | **0.61** | **1.00 (14/14)** | 0.90 | **45** |
 | **v1.2** = + four real-data fixes (#15c, §5c) | 0.642 | 0.911 | 0.61 | 1.00 (14/14) | 0.90 | 45 |
+| **v1.3** = + `UNDER_SENIORITY` escalation (#15d) | 0.642 | 0.911 | 0.61 | 1.00 (14/14) | 0.90 | 45 |
 
 * **#15a** came from a real uploaded resume: Express.js and FastAPI got no credit for "web frameworks such as
   Django or Flask". It changes 5 test scores and 0 decisions.
@@ -136,6 +138,7 @@ blind Sonnet agents, pending the author's review** (`golden_real/`).
 | embedding cosine | 0.34 | 0.51 [0.34, 0.76] | 0.08 |
 | TF-IDF cosine | 0.26 | 0.63 [0.45, 0.87] | 0.12 |
 | keyword Jaccard | 0.02 | 0.39 [0.24, 0.60] | 0.08 |
+| *embedding, chunked (post-test variant, #15d)* | *0.64* | *0.90 [0.72, 1.00]* | *0.12* |
 
 * **Ranking holds up on messy text** (resumes of 321–2,670 words, "Company Name" / "City , State" placeholders,
   duplicated sections, detached dates): the gap over the baselines is larger than on the synthetic set.
@@ -155,6 +158,12 @@ blind Sonnet agents, pending the author's review** (`golden_real/`).
 * **v1.2 on this set:** the one good candidate is auto-advanced; 0 wrong advances; escalation 98%. Within-job ranking is
   unchanged (mean within-job Spearman 0.66 → 0.64, NDCG@5 0.990 → 0.988). On the golden set, 0 decisions change and
   dev is unchanged. **Caveat:** v1.2 was developed *on* this set, so it is no longer a held-out test for v1.2.
+* **v1.3 and a fairer embedding baseline** (both from reviewing one real upload; DECISIONS #15d): a 2.6-year candidate
+  was auto-shortlisted for a *Lead* role that stated no minimum, because the implied minimum only lowered
+  `experience_fit`. `UNDER_SENIORITY` now escalates senior/lead roles below half the implied years. It fires 13 times on
+  the golden set, always alongside another blocking reason, so 0 decisions change anywhere. The embedding baseline only
+  reads the first 256 tokens; averaging 150-word windows lifts it here (0.34 → 0.64) but not on the short synthetic
+  resumes (Spearman −0.15), so the evaluated baseline above is unchanged.
 
 ## 6. Explanation quality
 

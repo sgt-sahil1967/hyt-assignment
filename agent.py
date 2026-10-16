@@ -30,6 +30,7 @@ REASON_HELP = {
     "LOW_FIT": "Score is well below the threshold, so the candidate goes to the low-priority queue.",
     "SPARSE_RESUME": "Resume is too short, or lists no roles or projects.",
     "OVERQUALIFIED": "Years of experience are far above the role's seniority band.",
+    "UNDER_SENIORITY": "Senior or lead role with no stated minimum, and experience is well below what that level implies.",
     "CAREER_SWITCH": "Skills match, but past role titles look unrelated to this one (information only, never blocks).",
     "LOCATION_MISMATCH": "Onsite role in a different city (information only, never blocks).",
     "EXTRACTION_FAILED": "The resume could not be parsed reliably.",
@@ -300,3 +301,58 @@ def results(name: str) -> Any:
 
         return pd.read_csv(f)
     return f.read_text()
+
+
+# results/ holds what `make reproduce` writes for the current system; the REPORT headline (frozen v1.0) is archived apart
+HEADLINE_FILES = ("metrics.json", "baselines.json", "ablations.json", "extraction_metrics.json", "adversarial.json",
+                  "thresholds.json", "golden_predictions.json")
+
+
+def headline(name: str) -> Any:
+    """Headline artefact of the frozen v1.0 system (results/v1_0_frozen/), as reported in REPORT §4-5 and §8."""
+    assert name in HEADLINE_FILES, name
+    return results(f"v1_0_frozen/{name}")
+
+
+# ---------------------------------------------------------------- baselines, on demand (for side-by-side review)
+BASELINES = {
+    "keyword": ("Keyword overlap", "Share of words the job description and resume have in common (Jaccard)."),
+    "tfidf": ("TF-IDF", "Cosine similarity of TF-IDF vectors, fit on every job description and resume."),
+    "embedding": ("Embedding", "Whole-document embedding cosine, as evaluated. The model reads only the first 256 tokens "
+                  "(about 200 words) of each document, so a long JD is judged by its opening, often company boilerplate."),
+    "embedding_chunked": ("Embedding, chunked", "Post-test variant: averages embeddings of overlapping 150-word windows so "
+                          "the whole document counts. Better on real resumes, worse on the short synthetic ones."),
+    "llm_zeroshot": ("LLM zero-shot", "One Gemini prompt rates fit 0-100 and decides, with no extraction or evidence checks."),
+}
+
+
+def baseline_thresholds() -> dict[str, float]:
+    """Each baseline's auto-advance threshold, tuned on dev with the same cost matrix (results/baselines.json)."""
+    b = results("baselines.json") or {}
+    return {k: v["threshold_dev"] for k, v in b.items() if isinstance(v, dict) and "threshold_dev" in v}
+
+
+def baseline_scores(jd_text: str, texts: dict[str, str], corpus: list[str]) -> dict[str, dict[str, float]]:
+    """Keyword, TF-IDF and embedding (plain and chunked) scores for every resume in `texts` against one JD. No LLM call."""
+    from baselines import embedding, keyword
+    from baselines.common import resume_body
+    from baselines.tfidf import TfidfScorer
+    from src.embed import embed
+
+    tf = TfidfScorer(corpus)
+    embed([jd_text[:4000]] + [resume_body(t) for t in texts.values()])  # one batch instead of one call per pair
+    return {cid: {"keyword": keyword.score(jd_text, t), "tfidf": tf.score(jd_text, t),
+                  "embedding": embedding.score(jd_text, t), "embedding_chunked": embedding.score_chunked(jd_text, t)}
+            for cid, t in texts.items()}
+
+
+def zero_shot(jd_text: str, resume_text: str, *, allow_call: bool, private: bool = False) -> dict:
+    """LLM zero-shot baseline for one pair. Without `allow_call` it only reads the cache (never spends quota)."""
+    from baselines import llm_zeroshot
+    from src.llm import cache_only, private_cache
+
+    with private_cache(private), cache_only(not allow_call):
+        s, d = llm_zeroshot.score(jd_text, resume_text)
+    if s is None:
+        return {"status": "unavailable" if allow_call else "not_cached"}
+    return {"status": "ok", "score": s, "own_decision": d if d in ("advance", "escalate") else "escalate"}

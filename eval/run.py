@@ -161,13 +161,15 @@ def baselines():
     df["keyword"] = [keyword.score(jds[j]["text"], res[r]["text"]) for j, r in pairs]
     df["tfidf"] = [tf.score(jds[j]["text"], res[r]["text"]) for j, r in pairs]
     df["embedding"] = [embedding.score(jds[j]["text"], res[r]["text"]) for j, r in pairs]
+    # post-test variant (DECISIONS #15d): whole-document embedding via overlapping chunks; the row above is the evaluated one
+    df["embedding_chunked"] = [embedding.score_chunked(jds[j]["text"], res[r]["text"]) for j, r in pairs]
     with ThreadPoolExecutor(WORKERS) as ex:
         z = list(ex.map(lambda p: llm_zeroshot.score(jds[p[0]]["text"], res[p[1]]["text"]), pairs))
     n_missing = sum(s is None for s, _ in z)
     df["llm_zeroshot"] = [s for s, _ in z]
     df["llm_zeroshot_decision"] = [d if d in ("advance", "escalate") else "escalate" for _, d in z]
     embed.save()
-    cols = ["score", "keyword", "tfidf", "embedding"] + (["llm_zeroshot"] if n_missing == 0 else [])
+    cols = ["score", "keyword", "tfidf", "embedding", "embedding_chunked"] + (["llm_zeroshot"] if n_missing == 0 else [])
     if n_missing:
         print(f"  llm_zeroshot: {n_missing}/{len(z)} pairs unavailable (quota/offline) -> excluded from this run")
 
@@ -197,7 +199,7 @@ def baselines():
     else:
         out["llm_zeroshot_own_decision"] = decision_metrics(test, "llm_zeroshot_decision", d["cost_missed_good"], d["cost_advanced_weak"])
     write_json(R / "baselines.json", out)
-    df[["job_id", "resume_id", "split", "relevance", "score", "keyword", "tfidf", "embedding", "llm_zeroshot",
+    df[["job_id", "resume_id", "split", "relevance", "score", "keyword", "tfidf", "embedding", "embedding_chunked", "llm_zeroshot",
         "llm_zeroshot_decision"]].to_csv(R / "baseline_scores.csv", index=False)
     for k, v in out.items():
         if "ranking" in v:

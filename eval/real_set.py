@@ -100,6 +100,7 @@ def run():
     df["keyword"] = [keyword.score(jds[j]["text"], res[r]["text"]) for j, r in zip(df.job_id, df.resume_id)]
     df["tfidf"] = [tf.score(jds[j]["text"], res[r]["text"]) for j, r in zip(df.job_id, df.resume_id)]
     df["embedding"] = [embedding.score(jds[j]["text"], res[r]["text"]) for j, r in zip(df.job_id, df.resume_id)]
+    df["embedding_chunked"] = [embedding.score_chunked(jds[j]["text"], res[r]["text"]) for j, r in zip(df.job_id, df.resume_id)]
 
     cm = dict(cost_fn=d["cost_missed_good"], cost_fp=d["cost_advanced_weak"])
     out = {"n_pairs": int(len(df)), "n_jobs": int(df.job_id.nunique()), "n_resumes": int(df.resume_id.nunique()),
@@ -107,7 +108,7 @@ def run():
            "t_high": d["t_high"], "label_distribution": df.relevance.value_counts().sort_index().to_dict(),
            "ideal_advance": int((df.ideal_decision == "advance").sum()),
            "extraction_failures": int(df.extraction_error.notna().sum()), "systems": {}}
-    for col in ["score", "keyword", "tfidf", "embedding"]:
+    for col in ["score", "keyword", "tfidf", "embedding", "embedding_chunked"]:  # embedding_chunked: post-test variant
         out["systems"][col] = {"ranking": bootstrap(df, lambda x, c=col: ranking_metrics(x, c)),
                                "spearman": round(float(spearmanr(df[col], df.relevance)[0]), 4)}
     out["decision_current"] = decision_metrics(df, "decision", **cm)  # config.yaml system (v1.2)

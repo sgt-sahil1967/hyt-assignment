@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { api } from '../api'
 import { Callout, Chip, cx, PageHeader, Segmented, Spinner, Tabs } from '../components/ui'
 
-const SYS_LABEL: Record<string, string> = { score: 'HYT pipeline', llm_zeroshot: 'LLM zero-shot', tfidf: 'TF-IDF', keyword: 'Keyword', embedding: 'Embedding' }
+const SYS_LABEL: Record<string, string> = { score: 'HYT pipeline', llm_zeroshot: 'LLM zero-shot', tfidf: 'TF-IDF', keyword: 'Keyword', embedding: 'Embedding', embedding_chunked: 'Embedding, chunked' }
 type Tab = 'accuracy' | 'errors' | 'versions' | 'safety'
 
 function Panel({ title, children, note }: { title: string; children: ReactNode; note?: ReactNode }) {
@@ -35,7 +35,7 @@ function CiBars({ rows }: { rows: { label: string; mean: number; lo: number; hi:
   return (
     <div className="space-y-2">
       {rows.map((r) => (
-        <div key={r.label} className="grid grid-cols-[110px_1fr_40px] items-center gap-3 text-[13px]">
+        <div key={r.label} className="grid grid-cols-[132px_1fr_40px] items-center gap-3 text-[13px]">
           <span className={cx(r.highlight ? 'font-medium' : 'text-muted')}>{r.label}</span>
           <div className="relative h-4 rounded-sm bg-raised">
             <div className={cx('absolute inset-y-0 left-0 rounded-sm', r.highlight ? 'bg-accent' : 'bg-faint/40')} style={{ width: `${r.mean * 100}%` }} />
@@ -103,7 +103,8 @@ export default function InsightsPage() {
 
         {tab === 'accuracy' && (
           <div className="grid gap-5 lg:grid-cols-2">
-            <Panel title="Ranking quality" note="Bars show the mean; the line is the 95% bootstrap interval. Baselines are scored on the same pairs.">
+            <Panel title="Ranking quality" note={<>Bars show the mean; the line is the 95% bootstrap interval. Baselines are scored on the same pairs.
+              {d.real_set?.systems?.embedding_chunked && <> "Embedding, chunked" is a post-test variant that reads whole documents instead of the first 256 tokens. It helps on the long real resumes (Spearman {d.real_set.systems.embedding.spearman.toFixed(2)} → {d.real_set.systems.embedding_chunked.spearman.toFixed(2)}) but not on these short synthetic ones.</>}</>}>
               <div className="mb-4"><Segmented label="Metric" value={metric} onChange={setMetric} options={(['ndcg@5', 'ndcg@10', 'p@5', 'mrr'] as const).map((k) => ({ value: k, label: k.toUpperCase() }))} /></div>
               <CiBars rows={systems.map(([k, v]: any) => ({ label: SYS_LABEL[k] ?? k, ...v.ranking[metric], highlight: k === 'score' })).sort((a, z) => z.mean - a.mean)} />
             </Panel>
@@ -139,7 +140,10 @@ export default function InsightsPage() {
                   const t = d.v1_1[k].test
                   return [label, t.spearman.toFixed(3), t.decision.recall_ideal_advance.toFixed(2), t.decision.precision_auto_advance?.toFixed(2), pct(t.decision.escalation_rate), t.decision.expected_cost]
                 }),
-                ...(d.posthoc?.E_v1_2 ? [(() => { const t = d.posthoc.E_v1_2.golden_test; return ['v1.2: four real-data fixes', t.spearman.toFixed(3), t.recall_ideal_advance.toFixed(2), t.precision_auto_advance?.toFixed(2), pct(t.escalation_rate), t.expected_cost] })()] : []),
+                ...([['E_v1_2', 'v1.2: four real-data fixes'], ['F_v1_3', 'v1.3: below-seniority escalation']] as const).filter(([k]) => d.posthoc?.[k]).map(([k, label]) => {
+                  const t = d.posthoc[k].golden_test
+                  return [label, t.spearman.toFixed(3), t.recall_ideal_advance.toFixed(2), t.precision_auto_advance?.toFixed(2), pct(t.escalation_rate), t.expected_cost]
+                }),
               ]} />
             <p className="mt-4 text-[13px] text-muted">{d.v1_1.decision_flips_v1_0_to_v1_1.length} decisions changed from v1.0 to v1.1, all from escalate to advance, and all for candidates the labels say should advance.</p>
             {d.real_set && (

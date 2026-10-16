@@ -134,6 +134,37 @@ export interface CandidateDetail extends Candidate {
   history: HistoryItem[]
 }
 
+export interface LibraryItem {
+  id: string
+  title: string
+  years: number | null
+  skills: string[]
+  parsed: boolean
+  source: string
+  in_pool: boolean
+  own_upload: boolean
+}
+
+export interface SystemResult {
+  key: 'pipeline' | 'keyword' | 'tfidf' | 'embedding' | 'embedding_chunked' | 'llm_zeroshot'
+  name: string
+  how: string
+  score: number | null
+  rank: number | null
+  threshold: number | null
+  decision: 'advance' | 'escalate' | null
+  agrees: boolean | null
+  own_decision?: string
+  status?: 'ok' | 'not_cached' | 'unavailable'
+}
+
+export interface Comparison {
+  pool_size: number
+  systems: SystemResult[]
+  label: { relevance: number; ideal: 'advance' | 'escalate' } | null
+  live: boolean
+}
+
 export interface Diff {
   entered_shortlist: string[]
   left_shortlist: string[]
@@ -189,6 +220,9 @@ export const api = {
     files.forEach((f) => fd.append('files', f))
     return call<Array<Record<string, unknown>>>('POST', `/jobs/${id}/upload`, fd)
   },
+  library: (id: string) => call<LibraryItem[]>('GET', `/jobs/${id}/library`),
+  setPool: (id: string, ids: string[]) => call<{ added: string[]; removed: string[]; size: number }>('PUT', `/jobs/${id}/pool`, { ids }),
+  compare: (id: string, cid: string, llm = false) => call<Comparison>('POST', `/jobs/${id}/candidates/${cid}/compare${llm ? '?llm=true' : ''}`),
   activity: (id: string) => call<HistoryItem[]>('GET', `/jobs/${id}/activity`),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   insights: () => call<Record<string, any>>('GET', '/insights'),

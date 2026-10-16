@@ -102,9 +102,14 @@ run from the cache by default (no API key needed).
   *outdated* once requirements change), and the audit trail.
 * **Coverage matrix** (candidates × requirements), **resume upload** (PDF, .docx, .html or .txt; hidden text and
   injection are stripped and flagged), **Insights** page with the evaluation results. Candidates are shown blind, by ID.
+* **New roles start empty.** A **Candidates** picker adds already-parsed resumes (benchmark corpus + earlier uploads),
+  searched and selected individually or all at once, with no new LLM call. Benchmark roles keep their golden-set pool.
+* **Compare tab** in the candidate panel: on request only, shows how keyword, TF-IDF, embedding and LLM zero-shot would
+  have ranked and decided this candidate, plus a chunked-embedding variant that reads the whole document (dev-tuned cut-offs, agreement with the golden label when there is one). The
+  three cheap baselines are scored once per role; zero-shot is read from the cache, and a live call needs a second click.
 * **Settings** page: change the agent while it runs (no code edits). It covers the threshold, borderline band and
   low-priority cut-off, score weights and evidence credit, the missing-must-have multiplier, career-switch and
-  overqualified rules, the four v1.2 flags, safety thresholds, cache-only mode and the extraction model. Values are
+  overqualified rules, the four v1.2 flags, the v1.3 below-seniority rule, safety thresholds, cache-only mode and the extraction model. Values are
   validated (e.g. used ≥ listed ≥ learning), every job re-screens on apply, human stage moves are kept, and overrides
   persist in the gitignored `web/backend/state.json`. `config.yaml` and the reported numbers never change; Insights
   warns while any setting differs from the default. The same settings are in the Streamlit sidebar
@@ -115,7 +120,7 @@ run from the cache by default (no API key needed).
 ```bash
 make setup                     # once: Python 3.11 venv + pinned dependencies
 make reproduce-v1.0            # HEADLINE numbers (REPORT §4-5, §8): frozen v1.0 system
-make reproduce                 # current system (v1.2, REPORT §5b-5c) + fairness, adversarial, judge, real set
+make reproduce                 # current system (v1.3, REPORT §5b-5c) + fairness, adversarial, judge, real set
 ```
 
 * Both run fully **offline** (`HYT_OFFLINE=1`): every LLM response comes from the committed `cache/llm/` and every
@@ -124,6 +129,9 @@ make reproduce                 # current system (v1.2, REPORT §5b-5c) + fairnes
   `data/processed/*.json`; `make data` re-derives those only if the raw `data/` folder is present.
 * `reproduce-v1.0` writes `results/v1_0_reproduced/` and finishes with `eval/compare_v1_0.py`, which checks every
   headline figure against the frozen archive `results/v1_0_frozen/` (exact match; bootstrap CI bounds ±0.01).
+* `reproduce` regenerates the top-level `results/` for the **current** system, and on a fresh clone leaves every
+  tracked file byte-identical (`git status` clean). The headline lives only in `results/v1_0_frozen/`, which no
+  target rewrites; REPORT §4-5 and §8, the Streamlit evaluation pages and the web Insights page read it from there.
 * Measured on a fresh clone: `reproduce-v1.0` 55 s (30/30 headline figures exact), `reproduce` 121 s (after `make setup`).
 
 ## Layout
@@ -154,7 +162,7 @@ golden/                  rubric, sampler, labels (200 pairs), extraction gold, r
 eval/                    run.py (metrics, tuning, baselines, robustness, ablations), judge.py, fairness.py, adversarial.py
 synthetic/               SYNTHETIC fairness / adversarial variants (never in the golden set)
 cache/                   LLM responses (masked inputs only) + embeddings
-results/                 JSON / CSV / PNG consumed by REPORT.md
+results/                 current-system JSON / CSV / PNG (`make reproduce`); v1_0_frozen/ = headline (REPORT §4-5, §8)
 ```
 
 ## Resume formats

@@ -97,4 +97,8 @@ auto-advanced. The next mitigation is to require ≥ 1 "used" must-have to auto-
 5 weak candidates; `OVERQUALIFIED` applies only to junior roles; the "best fit" injection false positive is fixed; and
 "a/b" requirements accept either part. All are deterministic code behind flags that are off in the v1.0 profile. Golden
 decisions are unchanged; on the real set the one good candidate is advanced with 0 wrong advances. The real set
-informed the design, so it is not a clean test of v1.2.
+informed the design, so it is not a clean test of v1.2. (d) **v1.3, `UNDER_SENIORITY`:** a senior/lead role with no stated
+minimum escalates candidates below half the implied years (senior 4y, lead 6y); before, the shortfall only lowered
+`experience_fit`, and a 2.6-year candidate was shortlisted for a Lead role. 0 golden or real-set decisions change. A
+**chunked embedding** variant (whole document, not the first 256 tokens) is reported next to the evaluated baseline,
+never in its place: better on long real resumes, worse on the short synthetic ones.
