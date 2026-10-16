@@ -24,3 +24,6 @@ tools/add_keys.py
 report/*.aux
 report/*.log
 report/main.pdf
+
+# stray cached JD parse (not part of the submission)
+cache/llm/e30fad4c078a4b0c1efc0f98268148de3f42f68e5a5626d909f943d9fa82dec5.json
