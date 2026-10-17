@@ -55,7 +55,8 @@ One rubric slip found later (JD07/R090) was left unchanged rather than edit labe
 ### 9. Explanations: scorer output only, code-checked quotes, judge from a different model family
 The explainer never sees the raw resume. Every quoted span must fuzzy-match the visible resume (partial ratio ≥ 90) or
 it's removed and counted. The LLM judge is **Claude Sonnet** (low effort, run as a separate agent with a fixed rubric
-and blind to the reference ratings), a different family from the Gemini generator, which limits self-preference bias.
+and blind to the author's ratings, which it was later compared against: weighted kappa 0.57 on groundedness, and it
+flagged all five explanations the author found factually wrong), a different family from the Gemini generator, which limits self-preference bias.
 Earlier Gemini judges were abandoned: free-tier quotas allowed only 7 of 40 items. Trade-off: the agent judge can't be
 re-run by `make`, so its scores and exact prompt are committed (`results/judge_scores.csv`, `eval/judge_prompt_sonnet.md`).
 

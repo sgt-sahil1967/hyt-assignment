@@ -64,7 +64,7 @@ I kept the Kaggle data for a separate check on real resumes. When I looked at it
 
 Uploading real resumes, mine included, found the best bugs. Express.js got no credit for ``web frameworks such as Django or Flask'', and a candidate with 2.6 years was shortlisted for a Lead role (section 5.1). I decided to make \code{CAREER\_SWITCH} informational when dev tuning could not calibrate it, and I asked for the requirements panel, the resume picker, the settings page and the on-demand baseline comparison in the app.
 
-Checking Claude's drafts is my part, and I have only partly done it: I labelled 60 pairs blind and read the system's verdict on 40 more (section 10). I have not rated the 40 explanations on the four criteria, so this report has no judge-versus-human number.
+Checking Claude's drafts is my part: I labelled 60 pairs blind, read the system's verdict on 40 more, and rated the 40 explanations myself (sections 6 and 10).
 
 \section{Problem framing}
 
@@ -204,11 +204,11 @@ Four failures showed up, and each got a plain-code fix behind a flag that is off
 
 \section{Explanation quality}
 
-Code checks every quote: all 314 quoted spans in the 140 test explanations appear in the resume (114 of 114 on dev), and a quote that does not match is removed. Quotes are safe, but claims are not always. For 40 test explanations I have a first set of 1 to 5 ratings made before any judge output, by Claude and not a human. The averages are groundedness 4.1, gap correctness 4.7, specificity 4.0 and usefulness 3.0. Eight of the 40 misread a reason code, gave a wrong cause or got the years arithmetic wrong, and one said a degree was missing when it was there.
+Code checks every quote: all 314 quoted spans in the 140 test explanations appear in the resume (114 of 114 on dev), and a quote that does not match is removed. Quotes are safe, but claims are not always. I rated 40 test explanations myself from 1 to 5 without seeing the judge's scores (\code{golden/explanation\_human\_ratings.csv}). My averages are groundedness 3.8, gap correctness 4.7, specificity 3.7 and usefulness 3.6. Five of the 40 state something false: an invented escalation reason (JD05/R009, JD09/R043), a candidate with 0.5 years described as 0.5 years short (JD09/R050, JD09/R075), and a degree called missing when it was there (JD10/R004). Many others are accurate but templated, and several mix must-have and nice-to-have gaps without saying which is which.
 
-The judge is Claude Sonnet, a different model family from the Gemini that writes the explanations. It ran as a separate pass with a fixed rubric (\code{eval/judge\_prompt\_sonnet.md}), did not see the reference ratings, and caught the same real errors.  Against the reference ratings the judge's weighted kappa is 0.66 for groundedness, 0.53 for gap correctness, 0.41 for usefulness and 0.02 for specificity, so it can be trusted on the first three and not on specificity, where the two raters mean different things.
+The judge is Claude Sonnet, a different model family from the Gemini that writes the explanations. It ran as a separate pass with a fixed rubric (\code{eval/judge\_prompt\_sonnet.md}) and never saw my ratings. Against my ratings its weighted kappa is 0.57 for groundedness and 0.53 for gap correctness, but only 0.08 for usefulness and 0.03 for specificity. It flagged all five of my factually wrong explanations (3 or lower on groundedness), but overall it is more lenient than me on groundedness (4.2 against 3.8) and harsher on usefulness (2.8 against 3.6). So it works as a filter for factual errors, not as a judge of whether an explanation is useful or specific.
 
-The brief asks how well the judge agrees with a human, and I cannot answer that yet. The reference rater is a Claude model too, so these kappas are probably optimistic. I wrote my own verdicts on 40 pairs (section 10), but those are not 1 to 5 ratings. The rating sheet is ready (\code{golden/explanation\_rating\_sheet.md}), and once I fill it in, \code{make judge} recomputes the agreement.
+An earlier set of reference ratings drafted by Claude agreed with mine only moderately (weighted kappa 0.41 on groundedness, 0.68 on gap correctness, 0.11 on specificity, 0.14 on usefulness), which is why the numbers above use my ratings. Claude's are kept in \code{golden/explanation\_reference\_ratings\_claude.csv} for comparison.
 
 \section{Fairness}
 
@@ -281,7 +281,7 @@ My own review of 40 pairs added three patterns. All 13 times I thought a score w
 
 \section{What I would do with one more week}
 
-First, the evaluation. I have hand-labelled 60 pairs blind and reviewed the system's verdict on 40 more; next I would label the rest of the 200 the same way, add a second human rater to settle disagreements, and re-tune the threshold on human labels. I would turn my written review of the 40 explanations into 1 to 5 scores so the judge can be compared with a human in numbers, collect real resumes from genuine career switchers to decide whether \code{CAREER\_SWITCH} should ever block again, and build a fresh test set to confirm v1.1.
+First, the evaluation. I have hand-labelled 60 pairs blind and reviewed the system's verdict on 40 more; next I would label the rest of the 200 the same way, add a second human rater to settle disagreements, and re-tune the threshold on human labels. I would also rate more explanations so the judge's weak agreement on usefulness can be fixed or ruled out, collect real resumes from genuine career switchers to decide whether \code{CAREER\_SWITCH} should ever block again, and build a fresh test set to confirm v1.1.
 
 Second, the matching. I would build a skill graph linking higher-level and lower-level technologies (machine learning to Python, Spring Boot to Java, frameworks to their languages) and serve it through a GraphQL API, so matching can follow those links and say when an implied skill is enough. It would replace the hand-written parent and child map. An implied skill would count for a nice-to-have but not satisfy a must-have, and ``collaborated with cross-functional teams'' would be weak evidence for Git. I would also drop requirements that appear as both must-have and nice-to-have, use fixed wording for reason codes and gaps, take skills only from defined resume sections to stop trigger-free injection, and finish the blind fairness mode.
 

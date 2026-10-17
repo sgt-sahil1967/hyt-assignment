@@ -1,0 +1,40 @@
+JD01/R023: groundedness=4 gap_correctness=5 specificity=3 usefulness=3 note=facts correct; "escalated despite low fit/missing musts" frames the escalation reason backwards; generic
+JD01/R028: groundedness=4 gap_correctness=5 specificity=3 usefulness=3 note=java/spring/ci-cd/monitoring gaps right; same "despite" framing; no guidance on what to check
+JD01/R066: groundedness=4 gap_correctness=5 specificity=3 usefulness=3 note=accurate gaps and evidence (REST API, Kubernetes); templated wording
+JD01/R091: groundedness=4 gap_correctness=5 specificity=3 usefulness=3 note=accurate; templated; escalation reason framed as "despite"
+JD01/R096: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=correctly notes java/spring present, ci/cd+monitoring missing, 1.54y vs 2y
+JD03/R008: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=good evidence list (REST, React, Git, Docker, AWS); says "only 4.5 years" but never states the 7y requirement
+JD03/R012: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate gaps (ruby, sql, git, ci/cd, cloud); 7y requirement not stated
+JD03/R029: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate; correctly shows sql/cloud present; 7y not stated
+JD03/R041: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate; many must-haves missing, clearly conveyed
+JD03/R048: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate; reactjs and docker gaps right
+JD03/R091: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate; nodejs and git missing correctly named
+JD04/R011: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=aws/spring present, four must-have gaps right; location mismatch mentioned but not detailed
+JD04/R028: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=spring/IaC/ci-cd gaps right; Python/Docker evidence fits scripting/containers
+JD04/R052: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate; Django as evidence is a loose proxy for scripting
+JD04/R097: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate and consistent with facts
+JD05/R008: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=ML/C#/SQL musts right; mixes in nice-have gaps in same sentence but labels them
+JD05/R009: groundedness=2 gap_correctness=4 specificity=4 usefulness=3 note=invents escalation reason ("due to 5.54 years experience"); nice-have gaps mixed with must-haves unlabeled
+JD05/R026: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=ML evidence right, C#/SQL missing right, under-2y noted
+JD05/R028: groundedness=4 gap_correctness=4 specificity=3 usefulness=3 note=ML/C# musts blurred together with nice-have gaps; no must vs nice distinction
+JD05/R033: groundedness=4 gap_correctness=4 specificity=4 usefulness=3 note=accurate but must vs nice gaps not separated
+JD05/R048: groundedness=4 gap_correctness=4 specificity=3 usefulness=3 note=accurate; thin evidence; must vs nice not separated
+JD05/R078: groundedness=4 gap_correctness=4 specificity=3 usefulness=3 note=accurate; under-2y noted; must vs nice not separated
+JD06/R019: groundedness=5 gap_correctness=5 specificity=4 usefulness=4 note=reasons (missing git, career switch, below threshold) match; career switch not explained
+JD06/R047: groundedness=4 gap_correctness=5 specificity=3 usefulness=3 note=evidence vague ("relevant experience and background"); git gap right
+JD06/R054: groundedness=5 gap_correctness=5 specificity=4 usefulness=4 note=python and git missing correctly flagged; maps Node.js/Kubernetes to requirements
+JD06/R066: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=advance reasoning fine but calls nice-haves (SQL, JS, Kubernetes) "core requirements"
+JD06/R100: groundedness=5 gap_correctness=5 specificity=4 usefulness=4 note=matches facts including career switch and git gap
+JD09/R008: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=python/vue/node gaps right; threshold reason matches
+JD09/R019: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=vue/react gaps right; evidence accurate
+JD09/R026: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=four must gaps and 0.5y vs 4y correct
+JD09/R035: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate incl. 3.54y vs 4y
+JD09/R043: groundedness=2 gap_correctness=5 specificity=3 usefulness=3 note=invents escalation reason ("overall professional experience"); gaps right
+JD09/R050: groundedness=2 gap_correctness=4 specificity=4 usefulness=3 note=misreads experience gap: says "0.5 years less than 4y" but candidate HAS 0.5y (3.5y short)
+JD09/R066: groundedness=4 gap_correctness=5 specificity=4 usefulness=4 note=accurate; 3.54y vs 4y correctly "slightly below"
+JD09/R075: groundedness=2 gap_correctness=3 specificity=4 usefulness=3 note=same experience misread ("0.5 years less" vs actually 0.5y total); gaps otherwise right
+JD10/R002: groundedness=3 gap_correctness=4 specificity=3 usefulness=4 note=misstates experience gap as "0.5y below" 2y (actually has 0.54y); career switch/borderline reasons correct
+JD10/R004: groundedness=1 gap_correctness=2 specificity=3 usefulness=2 note=claims CS degree is missing but facts show it is met; relational DB gap right
+JD10/R017: groundedness=3 gap_correctness=5 specificity=3 usefulness=3 note=no gaps correctly; adds unsupported "role relevance lower, verify depth"
+JD10/R028: groundedness=5 gap_correctness=5 specificity=4 usefulness=4 note=reasons (location, career switch) match; no gaps correctly stated
+JD10/R039: groundedness=5 gap_correctness=5 specificity=4 usefulness=4 note=1.5y vs 2y gap and location mismatch correct

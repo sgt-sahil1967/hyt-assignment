@@ -227,7 +227,8 @@ Everything the project borrowed, used or consulted is listed here; the report on
 
 * Google Gemini API, `gemini-3.1-flash-lite` (extraction and explanations) and `gemini-3-flash-preview` (second labeller).
 * Anthropic Claude Sonnet (LLM judge, extraction and labelling for the real-resume set) and Claude Code (coding assistant).
-  The golden labels and the 40 reference explanation ratings were drafted with it (REPORT §3, §6).
+  The golden labels and an earlier set of explanation ratings were drafted with it; the author's own blind labels (60
+  pairs) and ratings of the 40 explanations are in `golden/` (REPORT §3, §6, §10).
 * Sentence embeddings: `sentence-transformers/all-MiniLM-L6-v2`, <https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2>;
   Reimers & Gurevych, *Sentence-BERT*, EMNLP 2019, <https://arxiv.org/abs/1908.10084>.
 

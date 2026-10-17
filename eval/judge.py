@@ -137,8 +137,8 @@ def agree():
     m = m.dropna(subset=[f"{c}_judge" for c in CRITERIA])  # judge calls lost to quota are excluded, not imputed
     out = {"n": int(len(m)), "n_reference_rated": int(len(h)), "n_judged_total": int(j[CRITERIA[0]].notna().sum()),
            "judge": "claude-sonnet (agent)",
-           "reference_rater": "Claude Opus (the AI coding assistant), same family as the judge, so agreement is likely "
-                              "inflated; replace golden/explanation_human_ratings.csv with the author's ratings and re-run"}
+           "reference_rater": "the author (human), golden/explanation_human_ratings.csv; the earlier AI reference ratings "
+                              "are kept in golden/explanation_reference_ratings_claude.csv"}
     for c in CRITERIA:
         a, b = m[f"{c}_human"].astype(int), m[f"{c}_judge"].astype(int)
         out[c] = {"weighted_kappa": round(weighted_kappa(a, b, labels=[1, 2, 3, 4, 5]), 3),
