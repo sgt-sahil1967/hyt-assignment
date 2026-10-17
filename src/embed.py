@@ -34,6 +34,13 @@ def save():
         _dirty = False
 
 
+def _model_installed() -> bool:
+    """The cloud install (pyproject.toml) leaves out sentence-transformers/torch; behave as lite mode there."""
+    import importlib.util
+
+    return importlib.util.find_spec("sentence_transformers") is not None
+
+
 class EmbeddingUnavailable(RuntimeError):
     """Lite mode (HYT_LITE=1, e.g. the cloud demo): the model is not installed, so only cached texts can be embedded."""
 
@@ -44,8 +51,8 @@ def embed(texts: list[str]) -> np.ndarray:
     name = cfg()["embedding"]["model"]
     keys = [sha(name, t) for t in texts]
     missing = [t for t, k in zip(texts, keys) if k not in cache]
-    if missing and os.environ.get("HYT_LITE") == "1":
-        raise EmbeddingUnavailable(f"{len(missing)} text(s) not in the embedding cache and HYT_LITE=1")
+    if missing and (os.environ.get("HYT_LITE") == "1" or not _model_installed()):
+        raise EmbeddingUnavailable(f"{len(missing)} text(s) not in the embedding cache and no embedding model")
     if missing:
         with _lock:
             if _model is None:
