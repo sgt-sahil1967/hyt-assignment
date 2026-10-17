@@ -9,7 +9,7 @@ harness that measures whether it can be trusted.
 
 See [REPORT.pdf](REPORT.pdf) for results and [DECISIONS.md](DECISIONS.md) for the decision log.
 
-![How it works: one resume through the pipeline (Clean, Read, Normalise, Score, Decide, Explain), from the workspace's How it works page](docs/img/how-it-works.webp)
+![How it works: one resume through the pipeline (Clean, Read, Normalise, Score, Decide, Explain), from the workspace's How it works page](docs/img/how-it-works.gif)
 
 ## Quick start
 
