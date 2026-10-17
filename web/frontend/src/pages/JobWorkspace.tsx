@@ -335,7 +335,8 @@ function ThresholdControl({ job, cands, onApply }: { job: JobDetail; cands: Cand
   const preview = useMemo(() => {
     const would = new Set(cands.filter((c) => !c.locked && c.gates_passed && c.score >= t).map((c) => c.id))
     const now = new Set(cands.filter((c) => !c.locked && c.stage === 'shortlisted').map((c) => c.id))
-    return { enter: [...would].filter((x) => !now.has(x)).length, leave: [...now].filter((x) => !would.has(x)).length, total: would.size }
+    const blocked = cands.filter((c) => !c.locked && !c.gates_passed && c.score >= t).length // above the threshold, held back by a gate
+    return { enter: [...would].filter((x) => !now.has(x)).length, leave: [...now].filter((x) => !would.has(x)).length, total: would.size, blocked }
   }, [cands, t])
   return (
     <Menu trigger={<Button>Threshold <span className="num text-muted">{Math.round(job.threshold * 100)}</span><ChevronDown size={13} /></Button>}>
@@ -350,6 +351,9 @@ function ThresholdControl({ job, cands, onApply }: { job: JobDetail; cands: Cand
             <span className="num text-base font-medium">{Math.round(t * 100)}</span>
             <span className="text-muted"><b className="num text-fg">{preview.total}</b> shortlisted · <span className="text-good">+{preview.enter}</span> <span className="text-bad">−{preview.leave}</span></span>
           </div>
+          {preview.blocked > 0 && (
+            <p className="text-xs text-muted"><b className="num text-fg">{preview.blocked}</b> more score at or above this but are held back by a missing must-have or a flag, so the threshold cannot shortlist them. Change that under Requirements.</p>
+          )}
           <div className="flex justify-end gap-2">
             <Button size="sm" variant="ghost" onClick={() => setT(job.default_threshold)}>Default</Button>
             <Button size="sm" variant="primary" disabled={t === job.threshold} onClick={async () => { await onApply(t); close() }}>Apply</Button>

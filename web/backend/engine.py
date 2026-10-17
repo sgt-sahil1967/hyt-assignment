@@ -82,7 +82,7 @@ class Engine:
         if jid not in self._parsed:
             meta = self.job_meta(jid)
             crit = {"job_id": jid} if meta["kind"] == "benchmark" else meta["text"]
-            p = agent.parse_criteria(crit)
+            p = agent.parse_criteria(crit, variant="v2" if meta["kind"] == "custom" else "v1")
             p.setdefault("job_type", meta["job_type"])
             p.setdefault("location_meta", meta["location"])
             self._parsed[jid] = p
@@ -386,7 +386,7 @@ class Engine:
                     "flags": o["sanitizer_flags"], "warning": d.get("warning")}
 
     def create_job(self, title: str, text: str, location: str = "", job_type: str = "") -> dict:
-        p = agent.parse_criteria(text)  # raises if the LLM is unavailable
+        p = agent.parse_criteria(text, variant="v2")  # raises if the LLM is unavailable
         with self.lock:
             jid = f"C{len(self.state['custom_jobs']) + 1:02d}"
             self.state["custom_jobs"][jid] = {"title": title or p.get("title") or "Untitled role", "text": text,

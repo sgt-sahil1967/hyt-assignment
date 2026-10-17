@@ -288,6 +288,6 @@ Second, the matching. I would build a skill graph linking higher-level and lower
 Third, production. I would rebuild the pipeline on LangChain, with LangGraph for the flow, to make it more production ready: tracing, retries, saved state for the human-in-the-loop steps (escalations and stage moves), and a proper job queue, with the Gemini calls and the cache behind the same interface. That is about reliability and not accuracy. The accuracy problems above are in the prompts, the requirements and the labels, and a new framework will not fix them. After that I would feed recruiter edits and stage moves back in as labels, and turn the score into a calibrated probability of ``should advance''.
 
 \vspace{4pt}
-\noindent\textit{Built with Python, Gemini (\code{gemini-3.1-flash-lite}), Claude Sonnet (judge), sentence-transformers, scikit-learn, rank-bm25, FastAPI, React and Streamlit. Data: Kaggle \code{arshkon/linkedin-job-postings} and \code{snehaanbhawal/resume-dataset}, plus the synthetic resumes in section 3.}
+\noindent\textit{All data sources, models, libraries and other citations are listed and linked in the README (``Sources and citations'').}
 
 \end{document}

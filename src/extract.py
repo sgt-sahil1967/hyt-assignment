@@ -62,9 +62,23 @@ Rules:
 """
 
 
+# v2 is used only for roles created in the app (see agent.parse_criteria). v1 above is frozen: the 10 benchmark jobs and the
+# sample data are cached against its exact text. v1 turned every technology in the responsibilities into a must-have when a
+# posting had no explicit required/desirable split, so nobody could ever pass the gates (REPORT section 9, failure 1).
+JD_PROMPT_V2 = JD_PROMPT.replace(
+    "  If the JD has no explicit split, treat technologies in the title and core responsibilities as must-have.\n",
+    "  If the JD has no explicit split: a technology is must_have only if it is named in the job title, or it is one of the\n"
+    "  3 to 5 core technologies the role is built around (for example the main language and framework). Tools and practices\n"
+    "  that only appear in the list of responsibilities or the role description (CI/CD, monitoring, testing, containers,\n"
+    "  cloud, databases the team happens to use) are nice_to_have. Do not make everything a must-have.\n"
+    "  Never list the same requirement in both lists.\n")
+assert JD_PROMPT_V2 != JD_PROMPT
+
+
 def extract_resume(text: str, salt: str = "") -> tuple[Optional[ResumeExtraction], dict]:
     return generate_model(RESUME_PROMPT.format(guard=GUARD, text=text), ResumeExtraction, salt=salt)
 
 
-def extract_jd(text: str, salt: str = "") -> tuple[Optional[JDExtraction], dict]:
-    return generate_model(JD_PROMPT.format(guard=GUARD, text=text), JDExtraction, salt=salt)
+def extract_jd(text: str, salt: str = "", variant: str = "v1") -> tuple[Optional[JDExtraction], dict]:
+    prompt = JD_PROMPT_V2 if variant == "v2" else JD_PROMPT
+    return generate_model(prompt.format(guard=GUARD, text=text), JDExtraction, salt=salt)

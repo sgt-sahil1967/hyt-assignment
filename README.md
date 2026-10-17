@@ -200,12 +200,42 @@ corrupt files return a clear error.
 | second golden-set labeller | `gemini-3-flash-preview` |
 | embeddings (role relevance, normalisation fallback, baseline) | `sentence-transformers/all-MiniLM-L6-v2` (local) |
 
-## Credits
+## Sources and citations
 
-* **Job postings**: LinkedIn postings, apparently from Kaggle "1.3M LinkedIn Jobs & Skills (2024)" (asaniczka). See Data.
-* **AI assistance**: built with Claude Code (Anthropic) as a coding assistant. The golden labels and the 40 reference
-  explanation ratings were drafted with it (REPORT §3, §6). The LLM judge is Claude Sonnet; the pipeline's LLM is Gemini.
-* Skill alias list and taxonomy: hand-written for this project.
-* Fairness name lists: hand-picked common names; no external list was used.
-* Libraries: see `requirements.txt` (pydantic, google-genai, sentence-transformers, rank_bm25, rapidfuzz, scikit-learn,
-  scipy, pandas, python-docx, langdetect).
+Everything the project borrowed, used or consulted is listed here; the report only points to this section.
+
+**Datasets**
+
+* Kaggle, *Resume Dataset* (snehaanbhawal): <https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset>. 45 resumes in the
+  real-resume sanity set (REPORT §5.2), selected by content.
+* Kaggle, *LinkedIn Job Postings* (arshkon): <https://www.kaggle.com/datasets/arshkon/linkedin-job-postings>. 5 postings in the
+  same set.
+* Kaggle, *1.3M LinkedIn Jobs & Skills (2024)* (asaniczka): <https://www.kaggle.com/datasets/asaniczka/1-3m-linkedin-jobs-and-skills-2024>.
+  The local postings file has this schema; 10 UK postings were hand-picked from it (see Data).
+* Jiechieu, K.F.F., Tsopze, N. *Skills prediction based on multi-label resume classification using CNN with model predictions
+  explanation.* Neural Comput & Applic (2020), <https://doi.org/10.1007/s00521-020-05302-x>. Dataset: `resume_corpus`,
+  <https://github.com/florex/resume_corpus>. Used for a local pilot only (`eval/corpus_set.py`, never committed).
+* Further public datasets reviewed as sources:
+  * Kaggle, *Resume Dataset* (jithinjagadeesh): <https://www.kaggle.com/datasets/jithinjagadeesh/resume-dataset>
+  * CVParserPro, *Software Engineering Dataset*: <https://cvparserpro.io/software-engineering-dataset>
+  * Kaggle, *Software Engineering Jobs Dataset* (yazeedfares): <https://www.kaggle.com/datasets/yazeedfares/software-engineering-jobs-dataset>
+* The 100 main-test resumes are synthetic and were supplied by the author (see Data).
+
+**Models and services**
+
+* Google Gemini API, `gemini-3.1-flash-lite` (extraction and explanations) and `gemini-3-flash-preview` (second labeller).
+* Anthropic Claude Sonnet (LLM judge, extraction and labelling for the real-resume set) and Claude Code (coding assistant).
+  The golden labels and the 40 reference explanation ratings were drafted with it (REPORT §3, §6).
+* Sentence embeddings: `sentence-transformers/all-MiniLM-L6-v2`, <https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2>;
+  Reimers & Gurevych, *Sentence-BERT*, EMNLP 2019, <https://arxiv.org/abs/1908.10084>.
+
+**Software and templates**
+
+* Python libraries: see `requirements.txt` (pydantic, google-genai, sentence-transformers, rank_bm25, rapidfuzz,
+  scikit-learn for TF-IDF, scipy, pandas, python-docx, pdfplumber, langdetect, FastAPI, Streamlit).
+* Frontend: React, Vite, Tailwind CSS, lucide-react.
+* Report: the ACM SIGGRAPH LaTeX template (`report/styles/acmsiggraph.cls`, unmodified), built with Tectonic.
+* FastAPI Cloud documentation was used for deployment: <https://fastapicloud.com/docs/>.
+
+**Written for this project:** the skill alias list and taxonomy; the fairness name lists (hand-picked common names, no
+external list).

@@ -49,21 +49,27 @@ def _benchmark_jobs() -> dict:
 
 
 @lru_cache(maxsize=64)
-def _parse_jd_text(text: str) -> str:
+def _parse_jd_text(text: str, variant: str = "v1") -> str:
     from src.extract import extract_jd
 
-    x, meta = extract_jd(text)
+    x, meta = extract_jd(text, variant=variant)
     if x is None:
         raise RuntimeError(f"could not parse the job description: {meta.get('error')}")
     return json.dumps(x.model_dump())
 
 
-def parse_criteria(criteria: Any) -> dict:
-    """Normalise any accepted `criteria` form into a requirements dict (JD extraction schema + job metadata)."""
+def parse_criteria(criteria: Any, variant: str = "v1") -> dict:
+    """Normalise any accepted `criteria` form into a requirements dict (JD extraction schema + job metadata).
+
+    variant="v2" (roles created in the web app) reads must-haves more selectively and never lists a requirement at both
+    levels; "v1" is the frozen prompt the benchmark and the sample data are cached against."""
     from src.requirements import postprocess
 
     if isinstance(criteria, str):
-        jd = postprocess(json.loads(_parse_jd_text(criteria.strip())), criteria)
+        jd = postprocess(json.loads(_parse_jd_text(criteria.strip(), variant)), criteria)
+        if variant == "v2":  # a requirement listed as both must-have and nice-to-have counts twice: keep the stronger one
+            have = {r["name"] for r in jd["must_have"]}
+            jd["nice_to_have"] = [r for r in jd["nice_to_have"] if r["name"] not in have]
         jd.setdefault("job_type", "")
         return jd
     if isinstance(criteria, dict) and "job_id" in criteria and "must_have" not in criteria:
