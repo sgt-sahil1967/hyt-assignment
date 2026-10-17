@@ -1,19 +1,21 @@
-import { BarChart3, BriefcaseBusiness, ChevronRight, PanelLeft, Settings2 } from 'lucide-react'
+import { BarChart3, BriefcaseBusiness, ChevronRight, PanelLeft, Settings2, Workflow } from 'lucide-react'
 import { useCallback, useEffect, useState } from 'react'
 import { api, type Settings } from './api'
 import { cx, Dot, IconButton, ToastProvider, useToast } from './components/ui'
+import HowItWorksPage from './pages/HowItWorksPage'
 import InsightsPage from './pages/InsightsPage'
 import JobsPage from './pages/JobsPage'
 import JobWorkspace from './pages/JobWorkspace'
 import SettingsPage, { type Theme } from './pages/SettingsPage'
 
-export type Route = { page: 'jobs' } | { page: 'job'; id: string } | { page: 'insights' } | { page: 'settings' }
+export type Route = { page: 'jobs' } | { page: 'job'; id: string } | { page: 'insights' } | { page: 'how' } | { page: 'settings' }
 
 function parseHash(): Route {
   const h = window.location.hash.replace(/^#\/?/, '')
   const [a, b] = h.split('/')
   if (a === 'jobs' && b) return { page: 'job', id: b }
   if (a === 'insights') return { page: 'insights' }
+  if (a === 'how') return { page: 'how' }
   if (a === 'settings') return { page: 'settings' }
   return { page: 'jobs' }
 }
@@ -54,6 +56,7 @@ function Shell() {
   const section = route.page === 'job' ? 'jobs' : route.page
   const nav = [
     { key: 'jobs', label: 'Jobs', icon: BriefcaseBusiness, to: { page: 'jobs' } as Route },
+    { key: 'how', label: 'How it works', icon: Workflow, to: { page: 'how' } as Route },
     { key: 'insights', label: 'Insights', icon: BarChart3, to: { page: 'insights' } as Route },
     { key: 'settings', label: 'Settings', icon: Settings2, to: { page: 'settings' } as Route },
   ]
@@ -81,7 +84,7 @@ function Shell() {
         <header className="flex h-12 shrink-0 items-center gap-2 border-b border-line bg-panel px-3 md:px-4">
           <IconButton onClick={() => setCollapsed((c) => !c)} label="Toggle sidebar"><PanelLeft size={16} /></IconButton>
           <div className="flex min-w-0 items-center gap-1.5 text-[13px]">
-            <button onClick={() => go({ page: section as 'jobs' | 'insights' | 'settings' })} className={cx(route.page === 'job' ? 'text-muted hover:text-fg' : 'font-medium')}>
+            <button onClick={() => go({ page: section as 'jobs' | 'insights' | 'how' | 'settings' })} className={cx(route.page === 'job' ? 'text-muted hover:text-fg' : 'font-medium')}>
               {sectionLabel}
             </button>
             {route.page === 'job' && crumb && <><ChevronRight size={14} className="shrink-0 text-faint" /><span className="truncate font-medium">{crumb}</span></>}
@@ -101,6 +104,7 @@ function Shell() {
           {route.page === 'jobs' && <JobsPage settings={settings} />}
           {route.page === 'job' && <JobWorkspace key={route.id} id={route.id} settings={settings} onTitle={setCrumb} />}
           {route.page === 'insights' && <InsightsPage />}
+          {route.page === 'how' && <HowItWorksPage />}
           {route.page === 'settings' && <SettingsPage theme={theme} onTheme={setTheme} onChanged={refreshSettings} />}
         </main>
       </div>
