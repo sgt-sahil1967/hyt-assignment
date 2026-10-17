@@ -216,7 +216,7 @@ Everything the project borrowed, used or consulted is listed here; the report on
   The local postings file has this schema; 10 UK postings were hand-picked from it (see Data).
 * Jiechieu, K.F.F., Tsopze, N. *Skills prediction based on multi-label resume classification using CNN with model predictions
   explanation.* Neural Comput & Applic (2020), <https://doi.org/10.1007/s00521-020-05302-x>. Dataset: `resume_corpus`,
-  <https://github.com/florex/resume_corpus>. Used for a local pilot only (`eval/corpus_set.py`, never committed).
+  <https://github.com/florex/resume_corpus>. Used for a local pilot only; not committed.
 * Further public datasets reviewed as sources:
   * Kaggle, *Resume Dataset* (jithinjagadeesh): <https://www.kaggle.com/datasets/jithinjagadeesh/resume-dataset>
   * CVParserPro, *Software Engineering Dataset*: <https://cvparserpro.io/software-engineering-dataset>
